@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>catalogue</title>
+</head>
+<body>
+
+    <!--NAVBAR-->
+
+<header>
+  
+    <div class="container-fluid p-0">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand text-white" href="#" style="text-shadow:2px 2px 4px #000000;">
+         <i class="fas fa-home" style="font-size:36px;text-shadow:2px 2px 4px #000000;"> </i>
+      Home </a>
+      
+     <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>-->
+      <div class="collapse navbar-collapse" id="navbarNav">
+       
+        <h2 style="color:transparent">............................................</h2>
+        
+        <h4 class="text-white" >
+           CheikhBooks</h4>
+          
+        
+        </div>
+       
+        <ul id="i1" class="navbar-nav">
+          
+         <li  class="nav-item ">
+            <a  id="i2" class="nav-link collapse navbar-collapse text-white badge-dark" href="#">
+              <i class="far fa-heart" id="icon" style="font-size:25px;"> </i></a>
+            </li>
+
+            <li  class="nav-item ">
+              <a  id="i2" class="nav-link text-white badge-dark" href="#">
+                <i class="fas fa-shopping-cart" id="icon" style="font-size:25px;text-shadow:2px 2px 4px #000000;"> </i></a>
+              </li>
+          
+        </ul>
+      
+    </nav>
+</header>
+
+<main>
+    <div class="container-fluid">
+        <!--MENU on the left-->
+        
+        <div class="row">
+     <div class="col-2 border bg-light">
+       
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+      <nav class="col-sm-3 col-4" id="myScrollspy">
+          <h3>Categories</h3>
+          <br> <br>
+            
+          </nav>
+          
+    </div>
+  </div>
+</div>
+        
+          
+
+     </div>
+
+     <!--LIST OF BOOKS (check "cadre" on bootstrap)-->
+
+     <div class="col-10 border ">
+
+
+<br>
+<div class="container">
+  <div class="row " style=" display: flex;
+  justify-content: space-between;
+">
+
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h5 class="panel-title">
+        <button data-toggle="collapse" href="#collapse1">Filtrer par</button>
+      </h5>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse" style="border-radius: 2px ;border-color: grey;">
+      <ul class="list-group">
+        <li class="list-group-item">Auteur</li>
+        <li class="list-group-item">prix</li>
+        <li class="list-group-item">idk haja okhra</li>
+      </ul>
+      
+
+    </div>
+  </div>
+</div>
+    
+
+
+        <nav aria-label="Page navigation example" >
+          
+          <ul class="pagination" style="display: flex;align-items:flex-end">
+           
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+         
+          </ul>
+        </nav>
+        </div>
+        <br> <br>
+     </div>
+      
+
+      
+      
+         <div class="container">
+           <div class="row">
+             <div class="col">
+            <div class="card " style="width: 12rem;">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h6 class="card-title">Book1  <i class="fas fa-heart" id="icon" 
+                  style="font-size:18px; color:lightgrey;"> </i> </h6>
+                  <p class="card-text" style="font-size: smaller; color:mediumblue"><b>37 Dt</b> <br>
+                  <p class="card-text" style="font-size: small; color:grey;">by auteur <br>  
+                    <i class="fas fa-calendar-alt" style="color:lightskyblue"> 31/01/2020</i> </p>
+                <a href="#" class="btn btn-warning" style="font-size: smaller; ">Ajouter au panier <i class="fas fa-shopping-cart" id="icon"
+                   style="font-size:15px;"> </i></a>
+              </div>
+            </div>
+            </div>
+            <div class="col">
+            <div class="card " style="width: 12rem;">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h6 class="card-title">Book2 <i class="fas fa-heart" id="icon" style="font-size:18px; color:lightgrey;"> </i></h6>
+                <p class="card-text" style="font-size: smaller; color:mediumblue"><b>40 Dt</b> <br>
+                <p class="card-text" style="font-size: small; color:grey;">by auteur <br>  <i class="fas fa-calendar-alt" style="color:lightskyblue"></i></a></p>
+                <a href="#" class="btn btn-warning"style="font-size: smaller; ">Ajouter au panier <i class="fas fa-shopping-cart" id="icon"
+                  style="font-size:15px;"> </i></a>
+              </div>
+            </div>
+            </div>
+
+            <div class="col">
+            <div class="card " style="width: 12rem;">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h6 class="card-title">Book3 <i class="fas fa-heart" id="icon" style="font-size:18px; color:lightgrey;"> </i></h6>
+                <p class="card-text" style="font-size: smaller; color:mediumblue"><b>15 Dt</b> <br>
+                <p class="card-text" style="font-size: small; color:grey;">by auteur <br>  <i class="fas fa-calendar-alt" style="color:lightskyblue"></i></a></p>
+                <a href="#" class="btn btn-warning" style="font-size: smaller;">Ajouter au panier <i class="fas fa-shopping-cart" id="icon"
+                  style="font-size:15px;"> </i></a>
+              </div>
+            </div>
+              </div>
+              <div class="col">
+                <div class="card " style="width: 12rem;">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    
+                    <h6 class="card-title">Book4  <i class="fas fa-heart" id="icon" 
+                      style="font-size:15px; color:lightgrey;"> </i> </h6>
+                      <p class="card-text" style="font-size: smaller; color:mediumblue"><b>20 Dt</b> <br>
+                    <p class="card-text" style="font-size: small; color:grey">by auteur <br>  <i class="fas fa-calendar-alt" style="color:lightskyblue"></i></a></p>
+                    <a href="#" class="btn btn-warning " style="font-size: smaller;">Ajouter au panier <i class="fas fa-shopping-cart" id="icon"
+                       style="font-size:15px;"> </i></a>
+                  </div>
+                </div>
+                </div>
+      
+     
+    </div> <br>
+
+        
+     </div>
+   
+     
+     </div>
+   
+    </main>
+
+<footer>
+    <div class="container-fluid">
+      <div class="row badge-light">
+ 
+      </div>
+    
+    </div>
+   </footer>
+</body>
+
+
+<script>
+ let x=document.
+ ("nav-link")
+
+</script>
+</html>
