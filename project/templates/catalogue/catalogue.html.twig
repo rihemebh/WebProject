@@ -1,0 +1,91 @@
+{% extends 'baseFront.html.twig' %}
+
+{% block Title %}catalogue{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row " style=" display: flex;justify-content: space-between;">
+
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h5 class="panel-title">
+                            <button class="btn btn-md hover shadow-sm" id="buttonfiltre"
+                                    data-toggle="collapse" href="#collapse1">Filtrer par
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse" style="border-radius: 2px ;border-color: grey;">
+                        <ul class="list-group">
+
+                            <li class="list-group-item">Author <input type="text" placeholder="Enter an author name">
+
+                            </li>
+                            <li class="list-group-item">price <input type="range" class="custom-range" id="customRange"
+                                                                     name="points1"></li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <nav aria-label="Page navigation example">
+
+                <ul class="pagination shadow-sm" style="display: flex;align-items:flex-end">
+
+                    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+
+                </ul>
+            </nav>
+        </div>
+        <br> <br>
+    </div>
+
+
+    <!--style="color:#6d2e3e"-->
+
+    <div class="container">
+        <div class="row">
+
+
+
+                {% for livre in livres %}
+            <div class="col">
+                <div class="card " style="width: 11rem; ">
+                    <button class="detail btn" width="20">detail</button>
+                    <img src="{{ livre.path }}" class="book-img  card-img-top" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title">{{ livre.nomLivre }}<i class="fas fa-heart disabled hearticon"> </i></h6>
+                        <p class="card-text price"><b>{{ livre.prix }} Dt</b>
+                        <p class="card-text card_text">By {{ livre.auteur }} </p>
+                        <i class="fas fa-calendar-alt date" id="cardcalendaricon" style="font-size: 12px"> <span style="font-size: smaller">date</span></i>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                        <a href="#" class="btn shadow-sm cardbutton" >Add to Cart <i class="fas fa-shopping-cart  icon"
+                          style="font-size:11px;"> </i></a>
+                    </div><!--ffb84d-->
+                </div>
+
+            </div>
+            {% endfor %}
+
+        </div>
+        <br>
+
+
+    </div>
+
+
+
+
+
+
+
+{% endblock %}

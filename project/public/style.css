@@ -1,0 +1,87 @@
+
+:root{
+  --price_color:#ffa15e;
+  --nav_color:#32bfb7;
+  --cardbutton_color:#b5e3d9;
+  --cheikh:'El Messiri', sans-serif;
+}
+
+
+ .detail{
+  padding: 0.5rem 1rem;
+  border-radius: 25px ;
+  color:black;
+  background-color:var(--nav_color);
+  opacity:1;  
+  position: absolute;
+  margin:3rem;
+
+   
+ }
+
+ 
+.book-img {
+  position:relative;
+  padding:1em;
+  margin:auto;
+}
+
+
+#navbarNav ul li a:hover {
+text-decoration-color:black;
+}
+
+img:hover {
+    opacity: 0.15;
+  }
+
+.price{
+  color: var(--price_color);
+  font-size: smaller;
+}
+
+
+.card_text{
+  font-size: small; 
+  color:grey;
+}
+
+.cardcalendaricon{
+ color:#e881ff;
+}
+.hearticon{
+  font-size:18px; 
+  color:lightgrey;
+}
+
+.cardbutton{
+  font-size: smaller; 
+
+  background-color: var(--cardbutton_color);
+}
+.page-link{
+  color:#37c4aa;
+}
+
+#buttonfiltre{
+color:var(--nav_color); 
+border-color: lightgrey
+}
+
+#header1{
+  background-color:var(--nav_color);  
+  height:20px ;
+}
+
+#header2{
+  background-color:var(--nav_color);  
+  height:40px ;
+}
+
+#cheikh{
+  font-size:40px;
+  text-shadow:1px 1px 2px white;
+  font-family:var(--cheikh);
+
+}
+

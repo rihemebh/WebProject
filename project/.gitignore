@@ -14,4 +14,5 @@
 .phpunit.result.cache
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
-/node-modules/
+/public/node-modules/
+/public/bootstrap/

@@ -1,11 +1,14 @@
 
     <!DOCTYPE html>
     <html lang="en">
-    <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="./catalogue.css">
+
     <head>
+        <meta name="theme-color" content="#000000" />
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('bootstrap/css/bootstrap.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('style.css') }}">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -27,8 +30,12 @@
         </div>
         <div class="container-fluid"  id="header2">
 
-            <h5 class="text-white text-center" id="cheikh"><i>CheikhBooks</i></h5>
+            <h5 class="text-white text-center" id="cheikh" style="position:relative"> <img src="{{ asset('logo1.ico') }}" style="height:50px;
+             width:50px; opacity:0.9" alt="logo.ico">
+                <i>CheikhBooks</i></h5>
 
+        </div>
+        <div class="container-fluid" id="header1" style="height: 15px">
         </div>
         <!--NAVBAR-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-light shadow-sm" style="background-color:  white ;border-color:#333333;">
@@ -85,7 +92,7 @@
 
         </nav>
     </header>
-
+    <div style="height: 165px"></div>
 
         {% block body %}{% endblock %}
 
