@@ -19,7 +19,7 @@
                     <div id="collapse1" class="panel-collapse collapse" style="border-radius: 2px ;border-color: grey;">
                         <ul class="list-group">
 
-                            <li class="list-group-item">Author <input type="text" placeholder="Enter an author name">
+                            <li class="list-group-item">Author <input type="text" class="input-group-text" placeholder="Enter an author name">
 
                             </li>
                             <li class="list-group-item">price <input type="range" class="custom-range" id="customRange"
@@ -89,3 +89,19 @@
 
 
 {% endblock %}
+
+ {% block liItem %}
+     <li class="nav-item dropdown dropleft" >
+         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+             <i class="fas fa-heart" id="icon1" style="font-size:25px; color:#ffb3b3"> </i>
+         </a>
+         <div class="dropdown-menu" >
+             <a class="dropdown-item" href="#" style="color:#6d2e3e;border-color: #a6a6a6;">My wish list</a>
+             <a class="dropdown-item" href="#"><img src="#" middle></a>
+             <div class="dropdown-divider"></div>
+             <a class="dropdown-item" href="#" ><img src="#"></a>
+             <div class="dropdown-divider"></div>
+             <a class="dropdown-item" href="#"><img src="#"></a>
+         </div>
+     </li>
+ {% endblock %}

@@ -16,29 +16,29 @@
 
 
         <title>{% block Title %}base{% endblock %}</title>
+        <link rel = "icon" href ="{{ asset('titlelogo.ico') }}"
+            style="height: 50px; width:50px"   type = "image/x-icon">
+
     </head>
     <body>
 
 
-    <header style="position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   z-index: 30;">
+    <header>
 
         <div class="container-fluid" id="header1">
         </div>
         <div class="container-fluid"  id="header2">
 
-            <h5 class="text-white text-center" id="cheikh" style="position:relative"> <img src="{{ asset('logo1.ico') }}" style="height:50px;
-             width:50px; opacity:0.9" alt="logo.ico">
+            <h5 class="text-white text-center" id="cheikh" style="position:relative"> <img src="{{ asset('logo3.ico') }}"
+                                                                                           style="height:45px;width:45px;
+                                                                                           opacity:0.9;" alt="logo.ico">
                 <i>CheikhBooks</i></h5>
 
         </div>
         <div class="container-fluid" id="header1" style="height: 15px">
         </div>
         <!--NAVBAR-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-light shadow-sm" style="background-color:  white ;border-color:#333333;">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-light shadow-sm" style="background-color:  white ;border-color:#333333; z-index: 30;">
             <a class="navbar-brand " href="#" style=" font-size:medium; color:#a6a6a6;">
                 <i class="fas fa-home"  style=" color: #a6a6a6;"> </i>
                 Home </a>
@@ -51,13 +51,13 @@
             <div class="collapse navbar-collapse  " id="navbarNav">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item  ">
-                        <a class="nav-link bg-light  " href="#" id="a1"  style=" font-size:medium;color: #a6a6a6;">category1 <span class="sr-only">(current)</span></a>
+                        <a class="nav-link bg-light  " href="#" id="a1"  style=" font-size:medium;color: #a6a6a6;">{% block navitem1 %}category1{% endblock %}<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link bg-light"  style="font-size:medium; color: #a6a6a6;" href="#">category2</a>
+                        <a class="nav-link bg-light"  style="font-size:medium; color: #a6a6a6;" href="#">{% block navitem2 %}category2{% endblock %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link bg-light  "  style=" font-size:medium; color: #a6a6a6;" href="#">Category3</a>
+                        <a class="nav-link bg-light  "  style=" font-size:medium; color: #a6a6a6;" href="#">{% block navitem3 %}category3{% endblock %}</a>
                     </li>
 
 
@@ -68,19 +68,7 @@
                 </form>
                 <form class="form-inline my-2 my-lg-0">
                     <ul  class="navbar-nav">
-                        <li class="nav-item dropdown dropleft" >
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-heart" id="icon1" style="font-size:25px; color:#ffb3b3"> </i>
-                            </a>
-                            <div class="dropdown-menu" >
-                                <a class="dropdown-item" href="#" style="color:#6d2e3e;border-color: #a6a6a6;">My wish list</a>
-                                <a class="dropdown-item" href="#"><img src="#" middle></a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" ><img src="#"></a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><img src="#"></a>
-                            </div>
-                        </li>
+                        {% block liItem %}{% endblock %}
 
                         <li  class="nav-item ">
                             <a   class="nav-link text-white bg-light" href="#">
@@ -92,7 +80,7 @@
 
         </nav>
     </header>
-    <div style="height: 165px"></div>
+    <div style="height: 80px"></div>
 
         {% block body %}{% endblock %}
 
@@ -142,7 +130,19 @@
 
         </div>
     </footer>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(window).scroll(function(e){
+        var $el = $('.navbar');
+        var isPositionFixed = ($el.css('position') == 'fixed');
+        if ($(this).scrollTop() > 100 && !isPositionFixed){
+            $el.css({'position': 'fixed', 'top': '0px', 'width' : '100%'});
+        }
+        if ($(this).scrollTop() < 100 && isPositionFixed){
+            $el.css({'position': 'static', 'top': '0px', 'width' : '100%'});
+        }
+    });
+</script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>
