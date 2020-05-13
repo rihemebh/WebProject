@@ -1,9 +1,11 @@
 {% extends 'baseFront.html.twig' %}
 
 {% block Title %}catalogue{% endblock %}
+{% block style %}
 
+{% endblock %}
 {% block body %}
-
+    <div style="height: 80px"></div>
     <div class="container">
         <div class="row " style=" display: flex;justify-content: space-between;">
 
@@ -11,21 +13,38 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h5 class="panel-title">
-                            <button class="btn btn-md hover shadow-sm" id="buttonfiltre"
-                                    data-toggle="collapse" href="#collapse1">Filtrer par
+                            <button class="btn btn-md hover shadow-sm " id="buttonfiltre"
+                                    data-toggle="collapse" href="#collapse1">Filter
                             </button>
                         </h5>
                     </div>
-                    <div id="collapse1" class="panel-collapse collapse" style="border-radius: 2px ;border-color: grey;">
-                        <ul class="list-group">
+                    <div id="collapse1" class="panel-collapse collapse jumbotron"
+                         style="border-radius: 2px ;border-color: grey;">
+                        <form class="form">
 
-                            <li class="list-group-item">Author <input type="text" class="input-group-text" placeholder="Enter an author name">
+{#                           <label>Author</label> <input type="text" class="input-group-text" placeholder="Enter an author name">#}
 
-                            </li>
-                            <li class="list-group-item">price <input type="range" class="custom-range" id="customRange"
-                                                                     name="points1"></li>
+{#                        <lable>Max price</lable> <input type="range" class="custom-range" id="customRange" name="points1">#}
 
-                        </ul>
+                       {{ form_start(form) }}
+                            <div class="form-row">
+                                <div class="col">
+                                    {{ form_row(form.author) }}
+                                </div>
+                                <div class="col">
+                                    <label>Price</label>
+                                    {{ form_row(form.maxPrice) }}
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-row">
+                            <div class="col">
+                            <button type="submit" class="btn btn-info btn-sm" >Search</button>
+                            </div>
+                            </div>
+                            {{ form_end(form) }}
+
+                        </form>
 
                     </div>
                 </div>
@@ -36,11 +55,13 @@
 
                 <ul class="pagination shadow-sm" style="display: flex;align-items:flex-end">
 
+
                     <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  {% for p in 1..nbPage %}
+                    <li class="page-item"><a class="page-link" href="{{ path('catalogue',{'page':p}) }}">
+                            {{ p }}</a></li>
+                    {% endfor %}
+                    <li class="page-item"><a class="page-link" href="{{ path('catalogue',{'page': 2})}}">Next</a></li>
 
                 </ul>
             </nav>
@@ -56,20 +77,19 @@
 
 
 
-                {% for livre in livres %}
+                {% for livre in filtre %}
             <div class="col">
-                <div class="card " style="width: 11rem; ">
-                    <button class="detail btn" width="20">detail</button>
-                    <img src="{{ livre.path }}" class="book-img  card-img-top" alt="...">
+                <div class="card " id="{{ livre.id }}" style="width: 11rem; ">
+                <button class="details btn">details</button>
+
+                    <a href="/livre/{{ livre.id}}"><img src="{{ livre.path }}" class="book-img  card-img-top" alt="..."></a>
+
                     <div class="card-body">
                         <h6 class="card-title">{{ livre.nomLivre }}<i class="fas fa-heart disabled hearticon"> </i></h6>
                         <p class="card-text price"><b>{{ livre.prix }} Dt</b>
                         <p class="card-text card_text">By {{ livre.auteur }} </p>
-                        <i class="fas fa-calendar-alt date" id="cardcalendaricon" style="font-size: 12px"> <span style="font-size: smaller">date</span></i>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-                        <a href="#" class="btn shadow-sm cardbutton" >Add to Cart <i class="fas fa-shopping-cart  icon"
-                          style="font-size:11px;"> </i></a>
+                        <button class="btn shadow-sm cardbutton"data-id="{{ livre.id }}" >Add to Cart <i class="fas fa-shopping-cart  icon"
+                          style="font-size:11px;"> </i></button>
                     </div><!--ffb84d-->
                 </div>
 
@@ -83,25 +103,52 @@
     </div>
 
 
+{% endblock %}
+{% block javascripts %}
+<script>
+    $(document).ready(function(){
+
+$(".cardbutton").on("click", function(){
+    var id_book = $(this).data('id');
+
+    $.ajax({
+        type:"POST",
+        url: "../panier/panier.html.twig",
+        data: {"book-id": id_book},
+        success: function (response) {
+            var get_val = JSON.parse(response);
 
 
+        }
 
+    })
+
+})
+
+    })
+</script>
 
 
 {% endblock %}
 
- {% block liItem %}
-     <li class="nav-item dropdown dropleft" >
-         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-             <i class="fas fa-heart" id="icon1" style="font-size:25px; color:#ffb3b3"> </i>
-         </a>
-         <div class="dropdown-menu" >
-             <a class="dropdown-item" href="#" style="color:#6d2e3e;border-color: #a6a6a6;">My wish list</a>
-             <a class="dropdown-item" href="#"><img src="#" middle></a>
-             <div class="dropdown-divider"></div>
-             <a class="dropdown-item" href="#" ><img src="#"></a>
-             <div class="dropdown-divider"></div>
-             <a class="dropdown-item" href="#"><img src="#"></a>
-         </div>
-     </li>
- {% endblock %}
+{#{% block liItem1 %}#}
+{#     <li class="nav-item dropdown dropleft" >#}
+{#         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">#}
+{#             <i class="fas fa-heart" id="icon1" style="font-size:25px; color:#ffb3b3"> </i>#}
+{#         </a>#}
+{#         <div class="dropdown-menu" >#}
+{#             <a class="dropdown-item" href="#" style="color:#6d2e3e;border-color: #a6a6a6;">My wish list</a>#}
+{#             <a class="dropdown-item" href="#"><img src="#" middle></a>#}
+{#             <div class="dropdown-divider"></div>#}
+{#             <a class="dropdown-item" href="#" ><img src="#"></a>#}
+{#             <div class="dropdown-divider"></div>#}
+{#             <a class="dropdown-item" href="#"><img src="#"></a>#}
+{#         </div>#}
+{#     </li>#}
+{# {% endblock %}#}
+{#{% block liItem3 %}#}
+{#    <li  class="nav-item ">#}
+{#    <a   class="nav-link text-white bg-light" href="#">#}
+{#        <img src="{{ asset('logo.jpg') }}" class="rounded-circle" style="height:30px; width:30px;"> </a>#}
+{#</li>#}
+{#{% endblock %}#}

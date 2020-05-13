@@ -6,43 +6,80 @@
         <meta name="theme-color" content="#000000" />
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
         <link rel="stylesheet" type="text/css" href="{{ asset('bootstrap/css/bootstrap.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('style.css') }}">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
+        <script src="{{ asset('bootstrap/js/bootstrap.js') }}"></script>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+              integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link href="{{ asset('node_modules/font-awesome/css/font-awesome.css') }}">
+{% block link %}{% endblock %}
 
         <title>{% block Title %}base{% endblock %}</title>
-        <link rel = "icon" href ="{{ asset('titlelogo.ico') }}"
+        <link rel = "icon" href ="{{ asset('logo2.ico') }}"
             style="height: 50px; width:50px"   type = "image/x-icon">
 
     </head>
+    {% block style %}{% endblock %}
+    <style>
+         footer{
+             position:absolute;
+
+             bottom:0;
+
+             width:100%;
+
+             padding-top:50px;
+
+         }
+         :root{
+
+             --nav_color: #955251;}
+
+         #header1{
+             background-color:var(--nav_color);
+             height:10px ;
+
+
+         }
+
+         #header2{
+             background-color:var(--nav_color);
+             height:40px ;
+
+
+         }
+
+
+    </style>
     <body>
 
 
     <header>
-
+{% block siteTitle %}
         <div class="container-fluid" id="header1">
         </div>
         <div class="container-fluid"  id="header2">
 
-            <h5 class="text-white text-center" id="cheikh" style="position:relative"> <img src="{{ asset('logo3.ico') }}"
+            <h5 class="text-white text-center" id="cheikh" style="position:relative"> <!--<img src="{{ asset('logo3.ico') }}"
                                                                                            style="height:45px;width:45px;
-                                                                                           opacity:0.9;" alt="logo.ico">
+                                                                                           opacity:0.9;" alt="logo.ico">-->
                 <i>CheikhBooks</i></h5>
 
         </div>
-        <div class="container-fluid" id="header1" style="height: 15px">
+        <div class="container-fluid" id="header1" >
         </div>
+        {% endblock %}
         <!--NAVBAR-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-light shadow-sm" style="background-color:  white ;border-color:#333333; z-index: 30;">
-            <a class="navbar-brand " href="#" style=" font-size:medium; color:#a6a6a6;">
-                <i class="fas fa-home"  style=" color: #a6a6a6;"> </i>
+        {% block nav  %}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-light shadow-sm" style="background-color:  white ;
+        border-color:#333333; z-index: 30;">
+          {% block navitem %}
+            <a class="navbar-brand " href="/acceuil" style=" font-size:medium; color:black;">
+                <i class="fas fa-home"  style=" color: black;"> </i>
                 Home </a>
-
+          {% endblock %}
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav " style=" background-color: #d9d9d9;" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -68,26 +105,34 @@
                 </form>
                 <form class="form-inline my-2 my-lg-0">
                     <ul  class="navbar-nav">
-                        {% block liItem %}{% endblock %}
+                        {% block liItem1 %}{% endblock %}
 
-                        <li  class="nav-item ">
-                            <a   class="nav-link text-white bg-light" href="#">
+                        {% block liItem2 %}
+                            <li  class="nav-item ">
+                            <a   class="nav-link text-white " href="#">
                                 <i class="fas fa-shopping-cart" id="icon2"
-                                   style="font-size:20px; color:#a6a6a6" aria-hidden="true"> </i></a>
+                                   style="font-size:20px; color:black" aria-hidden="true"> </i></a>
                         </li>
+                        {% endblock %}
+                        {% block liItem3 %}
+                            <li style="font-size: 1.25rem">
+                                <i class="far fa-user"></i>
+                            </li>{% endblock %}
 
                     </ul></form></div>
 
         </nav>
+        {% endblock %}
     </header>
-    <div style="height: 80px"></div>
+
 
         {% block body %}{% endblock %}
 
 
-    <footer class="container-fluid badge-light shadow-lg">
+    <footer class="container-fluid badge-light shadow-lg fixed-bottom">
 
-        <div class="container">
+        <div class="container-fluid badge-light ">
+            <div class="container">
             <div class="row badge-light table-responsive">
                 <table class="table table-borderless table-sm">
                     <thead>
@@ -113,13 +158,13 @@
 
 
                 <h6 class="text-center">You can register for free <button class="btn btn-sm"
-                                                                          style="background-color:#964d6b; font-size: 0.75em; border-radius: 25px ;"> Sign up</button>
+                                                                          style="background-color:#457485; font-size: 0.75em; border-radius: 25px ;"> Sign up</button>
                 </h6>
                 <div class="text-center">
-                    <img src="jeune.png" width="50" height="30">
+                    <img src="{{ asset('jeune.png') }}" width="50" height="30">
 
 
-                    <img src="unnamed.jpg" width="50" height="30"></td>
+                    <img src="{{ asset('digicard.png') }}" width="50" height="30">
 
                 </div>
 
@@ -129,8 +174,9 @@
             </div>
 
         </div>
+        </div>
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 <script>
     $(window).scroll(function(e){
         var $el = $('.navbar');

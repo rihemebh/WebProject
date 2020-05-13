@@ -3,7 +3,10 @@
 namespace App\Repository;
 
 use App\Entity\Livre;
+use App\Entity\PropertySearch;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\DBAL\Query\QueryBuilder;
+use Doctrine\ORM\Query;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -17,6 +20,25 @@ class LivreRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Livre::class);
+    }
+
+    /**
+     * @return Query
+     */
+    public function findAllVisibleQuery(PropertySearch $search): Query
+    {
+        $query= $this->createQueryBuilder('p');
+
+        if($search->getAuthor()){
+            $query=$query->andWhere('p.auteur LIKE :author')
+            ->setParameter('author','%'.$search->getAuthor().'%');
+        }
+
+        if($search->getMaxPrice()){
+            $query =$query->andWhere('p.prix <= :price')
+                ->setParameter('price',$search->getMaxPrice());
+        }
+        return $query->getQuery();
     }
 
     // /**

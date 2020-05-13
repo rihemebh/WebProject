@@ -7,6 +7,8 @@
 /public/bundles/
 /var/
 /vendor/
+/public/node-modules/
+/public/bootstrap/
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
@@ -14,5 +16,10 @@
 .phpunit.result.cache
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
-/public/node-modules/
-/public/bootstrap/
+
+###> symfony/webpack-encore-bundle ###
+/node_modules/
+/public/build/
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-bundle ###
