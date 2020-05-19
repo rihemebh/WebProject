@@ -1,0 +1,51 @@
+@import "../style.css";
+.details{
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px ;
+    color:black;
+    background-color:var(--nav_color);
+    opacity:1;
+    position: absolute;
+    margin:3rem;
+}
+
+
+.book-img {
+    position:relative;
+    padding:0em;
+    margin:auto;
+}
+
+.price{
+    color: var(--price_color);
+    font-size: smaller;
+}
+
+#buttonfiltre{
+    color:var(--nav_color);
+    /*border-color: lightgrey*/
+}
+
+.card_text{
+    font-size: small;
+    color:grey;
+}
+
+
+.hearticon{
+    font-size:18px;
+    color:lightgrey;
+}
+
+.hearticon:hover{
+    background-color: darkred;
+}
+
+.cardbutton{
+    font-size: smaller;
+    background-color: var(--cardbutton_color);
+}
+
+.col .card .book-img:hover {
+    opacity: 0.15;
+}

@@ -116,6 +116,7 @@
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/symfony/webpack-encore-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/symfony/yaml" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/twig/extra-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/project/vendor/twig/intl-extra" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/twig/twig" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/willdurand/jsonp-callback-validator" />

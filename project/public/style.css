@@ -7,74 +7,22 @@
 }
 
 
- .details{
-  padding: 0.5rem 1rem;
-  border-radius: 25px ;
-  color:black;
-  background-color:var(--nav_color);
-  opacity:1;
-  position: absolute;
-  margin:3rem;
- }
 
- 
-.book-img {
-  position:relative;
-  padding:1em;
-  margin:auto;
+
+
+#header2{
+    background-color:var(--nav_color);
+    height:70px ;
+
+
 }
 
-
-#navbarNav ul li a:hover {
-text-decoration-color:black;
-}
-
-img:hover {
-    opacity: 0.15;
-  }
-
-.price{
-  color: var(--price_color);
-  font-size: smaller;
-}
-
-
-.card_text{
-  font-size: small; 
-  color:grey;
-}
-
-.cardcalendaricon{
- color:#e881ff;
-}
-.hearticon{
-  font-size:18px; 
-  color:lightgrey;
-}
-
-.cardbutton{
-  font-size: smaller; 
-
-  background-color: var(--cardbutton_color);
-}
 .page-link{
   color:var(--nav_color);
 }
 
-#buttonfiltre{
-color:var(--nav_color); 
-border-color: lightgrey
-}
 
-#header1{
-  background-color:var(--nav_color);
-  height:10px ;
-}
 
-#header2{
-  background-color:var(--nav_color);
-  height:40px ;
-}
 
 #cheikh{
   font-size:29px;

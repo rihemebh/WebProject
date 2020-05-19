@@ -15,12 +15,24 @@ class PropertySearchType extends AbstractType
     {
         $builder
             ->add('author',TextType::Class, [
-
+                'required'=>false,
+                'label'=>false,
                 'attr'=>[
+
+                    'class'=>'form-control small',
                     'placeholder'=>"enter author's name"
                 ]
             ])
-            ->add('maxPrice',RangeType::class, ['label'=>false,])
+            ->add('maxPrice',RangeType::class, [
+                'required'=>false,
+                'label'=>false,
+                'attr'=>[
+                    'class'=>"custom-range smaller" ,
+                    'id'=>"MyRange",
+                    'min'=>"0",
+                    'max'=>"200"
+                ]
+                ])
         ;
     }
 
@@ -29,7 +41,7 @@ class PropertySearchType extends AbstractType
         $resolver->setDefaults([
             'data_class' => PropertySearch::class,
             "method"=>'get',
-            'csrf_protection'=>false
+            'cerf_protection'=>false
         ]);
     }
     public function getBlockPrefix()

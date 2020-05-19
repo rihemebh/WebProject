@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Livre;
 use App\Entity\PropertySearch;
+use App\Entity\SearchCategory;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\DBAL\Query\QueryBuilder;
 use Doctrine\ORM\Query;
@@ -25,7 +26,7 @@ class LivreRepository extends ServiceEntityRepository
     /**
      * @return Query
      */
-    public function findAllVisibleQuery(PropertySearch $search): Query
+    public function findAllVisibleQuery(PropertySearch $search=null): Query
     {
         $query= $this->createQueryBuilder('p');
 
@@ -38,7 +39,14 @@ class LivreRepository extends ServiceEntityRepository
             $query =$query->andWhere('p.prix <= :price')
                 ->setParameter('price',$search->getMaxPrice());
         }
-        return $query->getQuery();
+//
+//        if($categories->getCategories()->count()>0){
+//            foreach ( $categories->getCategories() as  $category){
+//                $query =$query->andWhere(':category MEMBER OF p.categories')
+//                    ->setParameter('category',$category);
+//
+//            }  }
+      return $query->getQuery();
     }
 
     // /**

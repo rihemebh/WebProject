@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Livre;
 use App\Entity\PropertySearch;
+use App\Entity\SearchCategory;
 use App\Form\PropertySearchType;
 use App\Repository\LivreRepository;
 use Knp\Component\Pager\PaginatorInterface;
@@ -29,18 +30,18 @@ private $request;
     {   $search=new PropertySearch();
         $form=$this->createForm(PropertySearchType::class,$search);
         $form->handleRequest($request);
-        $repo = $this->getDoctrine()->getRepository(Livre::class);
-        $nbPage= ($repo->count(array())%16)? ($repo->count(array())/16)+1 : ($repo->count(array())/16) ;
+
+
          $livres_filtre=$paginator->paginate(
             $this->repository->findAllVisibleQuery($search),
-            $request->query->getInt('page',1),16
+            // $this->repository->findAllVisibleQuery($CategorySearch),
+            $request->query->getInt('page',1),20
         );
 
 
 
         return $this->render('catalogue/catalogue.html.twig',[
 
-            'nbPage'=>$nbPage,
             'filtre'=> $livres_filtre,
             'form'=>$form->createView(),
             ]);

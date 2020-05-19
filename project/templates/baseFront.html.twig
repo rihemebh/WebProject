@@ -6,14 +6,13 @@
         <meta name="theme-color" content="#000000" />
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="{{ asset('bootstrap/css/bootstrap.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('bootstrap/dist/css/bootstrap.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('style.css') }}">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="{{ asset('bootstrap/js/bootstrap.js') }}"></script>
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
               integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-        <link href="{{ asset('node_modules/font-awesome/css/font-awesome.css') }}">
 {% block link %}{% endblock %}
 
         <title>{% block Title %}base{% endblock %}</title>
@@ -23,57 +22,42 @@
     </head>
     {% block style %}{% endblock %}
     <style>
-         footer{
-             position:absolute;
 
-             bottom:0;
+        :root{
+            --price_color:#ffa15e;
+            --nav_color:#7FCDCD;
+            --cardbutton_color:#b5e3d9;
+            --cheikh:'El Messiri', sans-serif;
+        }
 
-             width:100%;
-
-             padding-top:50px;
-
-         }
-         :root{
-
-             --nav_color: #955251;}
-
-         #header1{
-             background-color:var(--nav_color);
-             height:10px ;
-
-
-         }
-
-         #header2{
-             background-color:var(--nav_color);
-             height:40px ;
-
-
-         }
-
+        #header2{
+            background-color:#0F2B39;
+            height:205px ;
+        }
 
     </style>
+
     <body>
 
 
     <header>
 {% block siteTitle %}
-        <div class="container-fluid" id="header1">
-        </div>
+
         <div class="container-fluid"  id="header2">
+<div class="row">
 
-            <h5 class="text-white text-center" id="cheikh" style="position:relative"> <!--<img src="{{ asset('logo3.ico') }}"
-                                                                                           style="height:45px;width:45px;
-                                                                                           opacity:0.9;" alt="logo.ico">-->
-                <i>CheikhBooks</i></h5>
+           <div class="col-md-7 col-sm-7"  >
+            <img src="{{ asset('logo3.ico') }}" class="img float-right " style="height:60%;width:auto; min-height: 80%" alt="logo.ico">
+        </div>
 
+</div>
         </div>
-        <div class="container-fluid" id="header1" >
-        </div>
+
         {% endblock %}
         <!--NAVBAR-->
         {% block nav  %}
-        <nav class="navbar navbar-expand-lg navbar-dark bg-light shadow-sm" style="background-color:  white ;
+        <nav class="navbar navbar-expand-lg navbar-dark bg-white shadow-sm"
+             style="background-color:  white ;
         border-color:#333333; z-index: 30;">
           {% block navitem %}
             <a class="navbar-brand " href="/acceuil" style=" font-size:medium; color:black;">
@@ -88,38 +72,46 @@
             <div class="collapse navbar-collapse  " id="navbarNav">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item  ">
-                        <a class="nav-link bg-light  " href="#" id="a1"  style=" font-size:medium;color: #a6a6a6;">{% block navitem1 %}category1{% endblock %}<span class="sr-only">(current)</span></a>
+                        {% block navitem1 %}
+                            <a class="nav-link  small text-secondary" href="#" id="a1"  >category1<span class="sr-only">(current)</span></a>{% endblock %}
+
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link bg-light"  style="font-size:medium; color: #a6a6a6;" href="#">{% block navitem2 %}category2{% endblock %}</a>
+                        {% block navitem2 %}     <a class="nav-link  small text-secondary"   href="#">category2</a>{% endblock %}
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link bg-light  "  style=" font-size:medium; color: #a6a6a6;" href="#">{% block navitem3 %}category3{% endblock %}</a>
+                        {% block navitem3 %}   <a class="nav-link  small text-secondary"   href="#">category3</a>{% endblock %}
                     </li>
 
 
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search">
-                    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit" id="search">Search</button>
-                </form>
+
                 <form class="form-inline my-2 my-lg-0">
                     <ul  class="navbar-nav">
-                        {% block liItem1 %}{% endblock %}
+                        {% block liItem1 %}
+                            <li class="nav-item" style="width: 50px; ">
+                                <a class="nav-link  text-secondary small" href="#" >
+                          <i class="fas fa-search"></i>
+                                </a>
+                            </li>
+                        {% endblock %}
 
                         {% block liItem2 %}
-                            <li  class="nav-item ">
-                            <a   class="nav-link text-white " href="#">
-                                <i class="fas fa-shopping-cart" id="icon2"
-                                   style="font-size:20px; color:black" aria-hidden="true"> </i></a>
-                        </li>
+                            <li  class="nav-item " style="width: 50px; " >
+                                <a class="nav-link text-secondary small " href="#" data-toggle="tooltip" data-placement="bottom" title="visit your Cart" >
+                                <i class="fas fa-shopping-cart "> </i>
+                                </a>
+                           </li>
                         {% endblock %}
                         {% block liItem3 %}
-                            <li style="font-size: 1.25rem">
-                                <i class="far fa-user"></i>
-                            </li>{% endblock %}
+                            <li class="nav-item" style="width: 50px; ">
+                                <a class="nav-link  text-secondary small " href="#" data-toggle="tooltip" data-placement="bottom" title="log in"  >
+                                    <i class="far fa-user-alt"></i></a>
+                            </li>
+                        {% endblock %}
 
-                    </ul></form></div>
+                    </ul>
+                </form></div>
 
         </nav>
         {% endblock %}
@@ -129,7 +121,7 @@
         {% block body %}{% endblock %}
 
 
-    <footer class="container-fluid badge-light shadow-lg fixed-bottom">
+    <footer>
 
         <div class="container-fluid badge-light ">
             <div class="container">
@@ -181,10 +173,10 @@
     $(window).scroll(function(e){
         var $el = $('.navbar');
         var isPositionFixed = ($el.css('position') == 'fixed');
-        if ($(this).scrollTop() > 100 && !isPositionFixed){
+        if ($(this).scrollTop() > 150 && !isPositionFixed){
             $el.css({'position': 'fixed', 'top': '0px', 'width' : '100%'});
         }
-        if ($(this).scrollTop() < 100 && isPositionFixed){
+        if ($(this).scrollTop() < 150 && isPositionFixed){
             $el.css({'position': 'static', 'top': '0px', 'width' : '100%'});
         }
     });

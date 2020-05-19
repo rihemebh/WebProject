@@ -15,29 +15,10 @@ class PropertySearch{
      */
     private $maxPrice;
 
-    /**
-     * @return String|null
-     */
-    public function getCategory(): ?string
-    {
-        return $this->category;
-    }
-
-    /**
-     * @param String|null $category
-     * @return PropertySearch
-     */
-    public function setCategory(?string $category): PropertySearch
-    {
-        $this->category = $category;
-        return $this;
-    }
 
 
-    /**
-     * @var String|null
-     */
-    private $category ;
+
+
     /**
      * @return String|null
      */

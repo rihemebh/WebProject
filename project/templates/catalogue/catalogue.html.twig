@@ -1,46 +1,128 @@
 {% extends 'baseFront.html.twig' %}
 
 {% block Title %}catalogue{% endblock %}
+{% block link %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('catalogue\style.css') }}">
+{% endblock %}
 {% block style %}
+<style>
+    @import "../style.css";
+    .details{
+        padding: 0.5rem 1.5rem;
+        border-radius: 25px ;
+        color:black;
+        background-color:var(--nav_color);
+        opacity:1;
+        position: absolute;
+        margin:3rem;
+    }
 
+.form{
+    width:800px;
+}
+    @media only screen and (max-width: 700px) {
+       .form{
+           float: none;
+           width: 100%;
+       }
+    }
+
+    .book-img {
+        position:relative;
+        padding:0em;
+        margin:auto;
+    }
+
+    .price{
+        color: var(--price_color);
+        font-size: smaller;
+    }
+
+    #buttonfiltre{
+        color:var(--nav_color);
+        border-color: lightgrey
+    }
+    .sc{
+        color:var(--nav_color);
+        border-color: lightgrey
+    }
+
+    .card_text{
+        font-size: 15px;
+        color:grey;
+    }
+
+
+    .hearticon{
+        font-size:18px;
+        color:lightgrey;
+    }
+
+    .hearticon:hover{
+        color: darkred;
+    }
+
+    .cardbutton{
+        font-size: smaller;
+        background-color: var(--cardbutton_color);
+        width:90%;
+    }
+
+    .col .card .book-img:hover {
+        opacity: 0.15;
+    }
+    .custom-range::-webkit-slider-thumb {
+        background: var(--nav_color);
+        size
+    }
+
+    .form-control::placeholder{
+        font-size: 15px;
+    }
+    .form-control{
+        font-size: 17px;
+    }
+
+
+</style>
 {% endblock %}
 {% block body %}
-    <div style="height: 80px"></div>
-    <div class="container">
-        <div class="row " style=" display: flex;justify-content: space-between;">
 
-            <div class="panel-group">
+    <div style="height: 40px;"></div>
+    <div class="container">
+        <div class="row" >
+
+            <div class="col-6 panel-group ">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h5 class="panel-title">
-                            <button class="btn btn-md hover shadow-sm " id="buttonfiltre"
-                                    data-toggle="collapse" href="#collapse1">Filter
+                            <button class="btn btn-white hover "
+                                    data-toggle="collapse" href="#collapse1">
+                               <i class="fas fa-sliders-h small"></i> Filter
                             </button>
                         </h5>
                     </div>
-                    <div id="collapse1" class="panel-collapse collapse jumbotron"
-                         style="border-radius: 2px ;border-color: grey;">
-                        <form class="form">
-
-{#                           <label>Author</label> <input type="text" class="input-group-text" placeholder="Enter an author name">#}
-
-{#                        <lable>Max price</lable> <input type="range" class="custom-range" id="customRange" name="points1">#}
-
-                       {{ form_start(form) }}
-                            <div class="form-row">
-                                <div class="col">
+                    <div id="collapse1" class="panel-collapse  collapse ">
+                        <form  class="form">
+                            {{ form_start(form) }}
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="float-left small">Author :</label>
                                     {{ form_row(form.author) }}
                                 </div>
-                                <div class="col">
-                                    <label>Price</label>
+
+                            <hr>
+
+                                <div class="col-md-6">
+                                    <label class="float-left small">Price</label> <small class="float-right">0-200dt</small>
                                     {{ form_row(form.maxPrice) }}
                                 </div>
                             </div>
-                            <br>
-                            <div class="form-row">
-                            <div class="col">
-                            <button type="submit" class="btn btn-info btn-sm" >Search</button>
-                            </div>
+                            <hr>
+                            <div class="form">
+                                <div class="col">
+                                    <button type="submit" class="btn sc btn-sm">Search</button>
+                                </div>
                             </div>
                             {{ form_end(form) }}
 
@@ -51,86 +133,83 @@
             </div>
 
 
-            <nav aria-label="Page navigation example">
-
-                <ul class="pagination shadow-sm" style="display: flex;align-items:flex-end">
 
 
-                    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                  {% for p in 1..nbPage %}
-                    <li class="page-item"><a class="page-link" href="{{ path('catalogue',{'page':p}) }}">
-                            {{ p }}</a></li>
-                    {% endfor %}
-                    <li class="page-item"><a class="page-link" href="{{ path('catalogue',{'page': 2})}}">Next</a></li>
 
-                </ul>
-            </nav>
+     <div class="col-6">
+            <div class="dropdown float-right">
+                <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   Sort By
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item small" href="#">price <i class="fas fa-sort-amount-up small "></i></a>
+                    <a class="dropdown-item small " href="#">price <i class="fas fa-sort-amount-down small "></i></a>
+                    <a class="dropdown-item small " href="#">newest</a>
+                </div>
+            </div>
         </div>
-        <br> <br>
+    </div>
     </div>
 
-
+    <br>
     <!--style="color:#6d2e3e"-->
-
-    <div class="container">
+<br>
+    <div class="container col-container">
         <div class="row">
 
 
+            {% for livre in filtre %}
+                <div class="col">
+                    <div class="card " id="{{ livre.id }}" style="width: 12rem; ">
+                        <button class="mask details btn rgba-blue-light  ">details</button>
+                        <a href="/livre/{{ livre.id }}"> <img src="{{ livre.path }}" class="book-img  card-img-top"
+                                                             alt="..." style="width:100%"></a>
 
-                {% for livre in filtre %}
-            <div class="col">
-                <div class="card " id="{{ livre.id }}" style="width: 11rem; ">
-                <button class="details btn">details</button>
+                        <div class="card-body">
+                            <h6 class="card-title">{{ livre.nomLivre }}  <i class="fas fa-heart disabled hearticon"> </i>
+                            </h6>
+                            <p class="card-text price"><b>{{ livre.prix }} Dt</b>
+                            <p class="card-text card_text">By {{ livre.auteur }} </p>
+                           <button class="btn shadow-sm cardbutton" data-id="{{ livre.id }}">Add to Cart <i
+                                        class="fas fa-shopping-cart  icon"
+                                        style="font-size:11px;"> </i></button>
+                        </div><!--ffb84d-->
+                    </div>
 
-                    <a href="/livre/{{ livre.id}}"><img src="{{ livre.path }}" class="book-img  card-img-top" alt="..."></a>
-
-                    <div class="card-body">
-                        <h6 class="card-title">{{ livre.nomLivre }}<i class="fas fa-heart disabled hearticon"> </i></h6>
-                        <p class="card-text price"><b>{{ livre.prix }} Dt</b>
-                        <p class="card-text card_text">By {{ livre.auteur }} </p>
-                        <button class="btn shadow-sm cardbutton"data-id="{{ livre.id }}" >Add to Cart <i class="fas fa-shopping-cart  icon"
-                          style="font-size:11px;"> </i></button>
-                    </div><!--ffb84d-->
                 </div>
 
-            </div>
             {% endfor %}
 
         </div>
         <br>
+<div class="container">
+    <div class="row">
+        <div class="col-7">
+            <nav class="float-right" aria-label=" shadow Page navigation example">
+                {{ knp_pagination_render(filtre)}}
 
+            </nav>
+        </div>
 
     </div>
+</div>
+
+    </div>
+
+    <script>
+        const slider = document.getElementById("myRange");
+        const output = document.getElementById("value");
+        console.log("slider"+slider);
+        output.innerHTML = slider.value; // Display the default slider value
+        slider.oninput = function() {
+            output.innerHTML = this.value;
+        }</script>
 
 
 {% endblock %}
 {% block javascripts %}
-<script>
-    $(document).ready(function(){
-
-$(".cardbutton").on("click", function(){
-    var id_book = $(this).data('id');
-
-    $.ajax({
-        type:"POST",
-        url: "../panier/panier.html.twig",
-        data: {"book-id": id_book},
-        success: function (response) {
-            var get_val = JSON.parse(response);
-
-
-        }
-
-    })
-
-})
-
-    })
-</script>
-
-
 {% endblock %}
-
+{#wishlist#}
 {#{% block liItem1 %}#}
 {#     <li class="nav-item dropdown dropleft" >#}
 {#         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">#}

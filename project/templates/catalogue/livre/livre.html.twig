@@ -1,12 +1,99 @@
 {% extends 'baseFront.html.twig' %}
-{% block navitem1 %} catalog {% endblock %}
+{% block Title %}
+    {{ livre.nomLivre }}
+{% endblock %}
+{% block navitem1 %}  <a class="nav-link bg-light  " href="/catalogue" id="a1"
+                         style=" font-size:medium;color: #a6a6a6;">catalog </a> {% endblock %}
 {% block navitem2 %} {% endblock %}
 {% block navitem3 %} {% endblock %}
 
-{% block body %}
-    <h5>{{livre.nomLivre}}</h5>
-    <a href="/catalogue">Back</a>
-/* nbre de like
-    date de pub
-    */
+{% block link %}
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
 {% endblock %}
+
+{% block style %}
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&display=swap');
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div style="height: 80px"></div>
+
+
+
+
+    <div class="container d-flex align-items-center bg-light shadow" style="height:50%; width:70%;">
+        <div class="row">
+            <div class="col-md-5">
+                <br>
+                <br>
+                <img src="{{ livre.path }}" class="shadow rounded mx-auto d-block" style="max-width: 100%; height: auto;">
+
+
+            </div>
+
+            <div class="col-md-7">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>{{ livre.nomLivre }}</h1>
+                        <p class="badge badge-primary" style="font-size: 12px">type{{ livre.type }}</p>
+                        <p class="badge badge-primary" style="font-size: 12px">category</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <span class="label label-info">By {{ livre.auteur }}  </span>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p style="font-size: 16px; font-family:  'Balsamiq Sans', cursive;"> {{ livre.description }} {{ livre.description }} {{ livre.description }}
+                            {{ livre.description }}  {{ livre.description }}</p>
+
+                    </div>
+                </div>
+
+
+                <hr>
+                <div class="row">
+                    <div class="col-md-12 bottom-rule">
+                        <h3 class="product-price">{{ livre.prix }} Dt</h3>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-lg btn-block shadow-sm page-link btn-secondary font-weight-light"
+
+                                data-id="{{ livre.id }}">Add to Cart <i
+                                    class="fas fa-shopping-cart  icon"> </i></button>
+
+                        <small> <i class="far fa-calendar-alt"></i> Added on {{ livre.datePub | format_datetime() }}</small>
+                   
+                    </div>
+
+                </div>
+
+
+            </div>
+            <br>
+        </div>
+        <br>
+    </div>
+
+<br>
+    <br>
+
+{#    <div style="height: 100px" class="bg-light"></div>#}
+
+{#related product#}
+
+{% endblock %}
+
+
+
