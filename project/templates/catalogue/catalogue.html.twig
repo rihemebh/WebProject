@@ -8,7 +8,7 @@
 <style>
     @import "../style.css";
     .details{
-        padding: 0.5rem 1.5rem;
+        padding: 0.5rem 1.0rem;
         border-radius: 25px ;
         color:black;
         background-color:var(--nav_color);
@@ -20,13 +20,19 @@
 .form{
     width:800px;
 }
-    @media only screen and (max-width: 700px) {
+    @media only screen and (max-width: 950px) {
        .form{
            float: none;
            width: 100%;
        }
     }
 
+    @media only screen and (max-width: 950px) {
+        .card-col{
+            float: none;
+            font-size: small;
+        }
+    }
     .book-img {
         position:relative;
         padding:0em;
@@ -159,18 +165,19 @@
 
 
             {% for livre in filtre %}
-                <div class="col">
-                    <div class="card " id="{{ livre.id }}" style="width: 12rem; ">
-                        <button class="mask details btn rgba-blue-light  ">details</button>
+                <div class="col card-col">
+                    <div class="card " id="{{ livre.id }}" style="width: 10rem; ">
+                        <button class="details btn" style="font-size:70%" >details</button>
                         <a href="/livre/{{ livre.id }}"> <img src="{{ livre.path }}" class="book-img  card-img-top"
                                                              alt="..." style="width:100%"></a>
 
                         <div class="card-body">
-                            <h6 class="card-title">{{ livre.nomLivre }}  <i class="fas fa-heart disabled hearticon"> </i>
-                            </h6>
-                            <p class="card-text price"><b>{{ livre.prix }} Dt</b>
-                            <p class="card-text card_text">By {{ livre.auteur }} </p>
-                           <button class="btn shadow-sm cardbutton" data-id="{{ livre.id }}">Add to Cart <i
+                            <p class="card-title" style="font-size:75%">{{ livre.nomLivre }}
+                                <i style="font-size:70%" class="fas fa-heart disabled hearticon" data-toggle="tooltip" data-placement="bottom" title="love this book"> </i>
+                            </p>
+                            <p class="card-text price" style="font-size:70%"><b>{{ livre.prix }} Dt</b>
+                            <p class="card-text card_text" style="font-size:60%">By {{ livre.auteur }} </p>
+                           <button class="btn shadow-sm cardbutton" data-id="{{ livre.id }}" style="font-size:70%">Add to Cart <i
                                         class="fas fa-shopping-cart  icon"
                                         style="font-size:11px;"> </i></button>
                         </div><!--ffb84d-->
