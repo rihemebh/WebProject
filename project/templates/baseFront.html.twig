@@ -26,13 +26,14 @@
         :root{
             --price_color:#ffa15e;
             --nav_color:#7FCDCD;
+            --nav_backcolor:#05212F ;
             --cardbutton_color:#b5e3d9;
             --cheikh:'El Messiri', sans-serif;
         }
 
         #header2{
             background-color:#05212F;
-            height:98px ;
+            height:90px ;
         }
 
     </style>
@@ -46,11 +47,11 @@
         <div class="container-fluid"  id="header2">
 <div class="row">
 
-           <div class="col-md-7 col-sm-7"  >
-            <img src="{{ asset('logo1.jpg') }}" class="img float-right " style="margin-top: 0; height:auto" alt="logo.ico">
+           <div class="col-md-7 col-sm-8"  >
+            <img src="{{ asset('logo1.jpg') }}" class="img float-right " style="margin-top: 0; height:85px;width:auto" alt="logo.ico">
         </div>
 
-</div>;
+</div>
         </div>
 
         {% endblock %}
@@ -123,33 +124,33 @@
 
     <footer>
 
-        <div class="container-fluid badge-light ">
+        <div class="container-fluid  " style="background-color: #05212F">
             <div class="container">
-            <div class="row badge-light table-responsive">
-                <table class="table table-borderless table-sm">
+            <div class="row  table-responsive">
+                <table class="table table-borderless table-sm" style="background-color: #05212F">
                     <thead>
                     <tr>
-                        <th class="text-center">Contact Us</th>
+                        <th class="text-center text-white">Contact Us</th>
 
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td><a href="https://www.facebook.com/cheikhbooks/?epa=SEARCH_BOX" style="color:black" ><i class="fab fa-facebook">
-                                    <span style="color:grey"> @cheikhbooks</span></i></a>
+                        <td><a href="https://www.facebook.com/cheikhbooks/?epa=SEARCH_BOX" style="color:black" ><i class="fab fa-facebook"style="color:white">
+                                    <span class=" small" style="color:lightgrey"> @cheikhbooks</span></i></a>
                         </td>
 
 
-                        <td><a href="https://www.instagram.com/cheikhbooks.tn/" style="color:black"><i class="fab fa-instagram">
-                                    <span style="color:grey"> cheikhbooks.tn   </span></i></a></td>
-                        <td><i class="fas fa-phone"><span style="color:grey"> +216 54053754  </span></i></td>
-                        <td><i class="fas fa-at" style="color:black"><span style="color:grey ;font-size:small"> cheikhbooks@gmail.com </span></i></td>
+                        <td><a href="https://www.instagram.com/cheikhbooks.tn/"  ><i class="fab fa-instagram" style="color:white">
+                                    <span class=" small" style="color:lightgrey"> cheikhbooks.tn   </span></i></a></td>
+                        <td> <i class="fas fa-phone" style="color:white"> <span class=" small" style="color:lightgrey"> +216 54053754  </span></i></td>
+                        <td><i class="fas fa-at"style="color:white"><span class="small" style="color:lightgrey"> cheikhbooks@gmail.com </span></i></td>
                     </tr>
                     </tbody>
                 </table>
 
 
-                <h6 class="text-center">You can register for free <button class="btn btn-sm"
+                <h6 class="text-center text-white">You can register for free <button class="btn btn-sm"
                                                                           style="background-color:#457485; font-size: 0.75em; border-radius: 25px ;"> Sign up</button>
                 </h6>
                 <div class="text-center">
@@ -162,7 +163,7 @@
 
 
 
-                <p class="text-center " style="font-size: smaller;">&copy; Copyright 2020 .</p>
+                <p class="text-center smaller" style="color:lightgrey">&copy; Copyright 2020 .</p>
             </div>
 
         </div>

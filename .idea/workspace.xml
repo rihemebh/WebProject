@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="937d4a38-440b-4eaf-9c53-d9bf323c9708" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/project/public/logo.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/public/logo1.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/project/public/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/acceuil/acceuil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/acceuil/acceuil.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/templates/baseFront.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/baseFront.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/templates/catalogue/catalogue.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/catalogue/catalogue.html.twig" afterDir="false" />
     </list>
@@ -209,7 +207,8 @@
       <workItem from="1589765797951" duration="5106000" />
       <workItem from="1589831647224" duration="7445000" />
       <workItem from="1589851596966" duration="5866000" />
-      <workItem from="1589868941177" duration="10363000" />
+      <workItem from="1589868941177" duration="14812000" />
+      <workItem from="1590504680158" duration="604000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1589405183358</created>
@@ -225,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589881789177</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="..">
+      <created>1589938584762</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1589938584762</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,10 +260,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="427" y="208" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1360.728@0.0.1360.728" timestamp="1589430285213" />
-    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1589881777629">
+    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1589938580021">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1589881777629" />
+    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1589938580021" />
     <state x="460" y="119" key="FileChooserDialogImpl" timestamp="1588979381921">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -274,10 +280,14 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1360.728@0.0.1360.728" timestamp="1589170306071" />
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2" timestamp="1589405246267">
+    <state x="272" y="97" key="Vcs.Push.Dialog.v2" timestamp="1589938618302">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1589405246267" />
+    <state x="272" y="97" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1589938618302" />
+    <state x="489" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589938598119">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="489" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1360.728@0.0.1360.728" timestamp="1589938598119" />
     <state x="0" y="0" width="1119" height="540" maximized="true" key="dock-window-1" timestamp="1589763476078">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
