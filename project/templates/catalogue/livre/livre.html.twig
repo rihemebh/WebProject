@@ -14,79 +14,134 @@
 {% block style %}
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&display=swap');
+        .love{
+            padding: 0.5rem 1.0rem;
+            border-radius: 25px ;
+            color:black;
+            opacity:1;
+            position: absolute;
+            margin:3rem;
+        }
+        .book-img {
+            position:relative;
+            padding:0em;
+            margin:auto;
+        }
+        .hearticon{
+            font-size:18px;
+            color:lightgrey;
+        }
+
+        .hearticon:hover{
+            color:#e60000;
+        }
+        .col .card .book-img:hover {
+            opacity: 0.15;
+        }
     </style>
 {% endblock %}
 
 {% block body %}
-    <div style="height: 80px"></div>
+    <div style="height: 70px"></div>
 
 
-
-
-    <div class="container d-flex align-items-center bg-light shadow" style="height:50%; width:70%;">
-        <div class="row">
-            <div class="col-md-5">
-                <br>
-                <br>
-                <img src="{{ livre.path }}" class="shadow rounded mx-auto d-block" style="max-width: 100%; height: auto;">
-
-
-            </div>
-
-            <div class="col-md-7">
-
+<div class="container-fluid">
+    <div class="row">
+        <div class="col shadow">
+            <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
-                        <h1>{{ livre.nomLivre }}</h1>
-                        <p class="badge badge-primary" style="font-size: 12px">type{{ livre.type }}</p>
-                        <p class="badge badge-primary" style="font-size: 12px">category</p>
-                    </div>
-                </div>
+                    <div class="col-md-5">
+                        <br>
+                        <br>
+                        <img src="{{ livre.path }}" class="shadow rounded mx-auto d-block" style="max-width: 100%; height: auto;">
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <span class="label label-info">By {{ livre.auteur }}  </span>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-md-12">
-                        <p style="font-size: 16px; font-family:  'Balsamiq Sans', cursive;"> {{ livre.description }} {{ livre.description }} {{ livre.description }}
-                            {{ livre.description }}  {{ livre.description }}</p>
 
                     </div>
-                </div>
+
+                    <div class="col-md-7">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2>{{ livre.nomLivre }}</h2>
+                                <p class="badge badge-primary" style="font-size: 12px">type{{ livre.type }}</p>
+                                <p class="badge badge-primary" style="font-size: 12px">category</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <span class="label label-info">By {{ livre.auteur }}  </span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p style="font-size: 14px; font-family:  'Balsamiq Sans', cursive;"> {{ livre.description }} {{ livre.description }} {{ livre.description }}
+                                    {{ livre.description }}  {{ livre.description }}</p>
+
+                            </div>
+                        </div>
 
 
-                <hr>
-                <div class="row">
-                    <div class="col-md-12 bottom-rule">
-                        <h3 class="product-price">{{ livre.prix }} Dt</h3>
-                    </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <button class="btn btn-lg btn-block shadow-sm page-link btn-secondary font-weight-light"
-
-                                data-id="{{ livre.id }}">Add to Cart <i
-                                    class="fas fa-shopping-cart  icon"> </i></button>
-
-                        <small> <i class="far fa-calendar-alt"></i> Added on {{ livre.datePub | format_datetime() }}</small>
-                   
-                    </div>
-
-                </div>
-
-
-            </div>
-            <br>
-        </div>
-        <br>
-    </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-12 bottom-rule">
+                                <h4 class="product-price">{{ livre.prix }} Dt</h4>
+                            </div>
+                        </div>
 
 <br>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button class="btn btn-lg btn-block shadow-sm page-link btn-secondary font-weight-light"
+
+                                        data-id="{{ livre.id }}">Add to Cart <i
+                                            class="fas fa-shopping-cart  icon"> </i></button>
+
+                                <small> <i class="far fa-calendar-alt"></i> Added on {{ livre.datePub | format_datetime() }}</small>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+</div>
+
+
+<br>
+    <div class="container-fluid">
+        <div  class="row">
+            <h3> related books</h3>
+        </div>
+        <div class="row">
+   {% for i in 1..5 %}
+    <div class="col card-col">
+                <div class="card " id="{{ livre.id }}">
+                    {#                        <button class="details btn" style="font-size:70%" >details</button>#}
+                    <i style="font-size:70% " class="fas fa-heart disabled love"><small> 2</small></i>
+                    <a href="/livre/{{ livre.id }}"> <img src="{{ livre.path }}" class="book-img  card-img-top"
+                                                          alt="..." style="width:100%"></a>
+
+                    <div class="card-body">
+                        <p class="card-title" style="font-size:75%"><b>{{ livre.nomLivre }}</b>
+                            <i style="font-size:70%" class="fas fa-heart disabled hearticon" data-toggle="tooltip" data-placement="bottom" title="love this book"> </i>
+                        </p>
+
+                    </div><!--ffb84d-->
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
     <br>
 
 {#    <div style="height: 100px" class="bg-light"></div>#}

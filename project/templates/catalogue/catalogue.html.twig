@@ -17,6 +17,15 @@
         margin:3rem;
     }
 
+    .love{
+        padding: 0.5rem 1.0rem;
+        border-radius: 25px ;
+        color:black;
+        opacity:1;
+        position: absolute;
+        margin:3rem;
+    }
+
 .form{
     width:800px;
 }
@@ -65,7 +74,7 @@
     }
 
     .hearticon:hover{
-        color: darkred;
+        color:#e60000;
     }
 
     .cardbutton{
@@ -108,8 +117,16 @@
                         </h5>
                     </div>
                     <div id="collapse1" class="panel-collapse  collapse ">
+
                         <form  class="form">
                             {{ form_start(form) }}
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control empty small"
+                                           placeholder="Search">
+                                </div>
+                            </div>
+                            <hr>
                             <div class="row">
                                 <div class="col-md-6">
                                     <label class="float-left small">Author :</label>
@@ -166,7 +183,8 @@
             {% for livre in filtre %}
                 <div class="col card-col">
                     <div class="card " id="{{ livre.id }}" style="width: 10rem; ">
-                        <button class="details btn" style="font-size:70%" >details</button>
+{#                        <button class="details btn" style="font-size:70%" >details</button>#}
+                        <i style="font-size:70% " class="fas fa-heart disabled love"><small> 2</small></i>
                         <a href="/livre/{{ livre.id }}"> <img src="{{ livre.path }}" class="book-img  card-img-top"
                                                              alt="..." style="width:100%"></a>
 
