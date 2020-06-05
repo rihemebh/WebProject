@@ -1,0 +1,85 @@
+body{
+    background: url("cover2.jpg") rgba(0,0,0,0.7);
+
+}
+
+
+small{
+    font-size: 10px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: -5px;
+}
+h5.modal-title{
+    font-weight: bold;
+    text-align: center;
+}
+.register{
+    background-color: whitesmoke;
+    width: 380px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top:25px;
+    margin-bottom: 25px;
+}
+
+.form-control{
+    width: 330px;
+    margin-top: 10px;
+    margin-left: -50px;
+    background: none;
+    padding-left: 40px;
+
+}
+.form-control:focus{
+    background: none;
+}
+.input-icons{
+    display:flex;
+}
+
+.adjust{
+    margin-left:-45px;
+}
+
+i{
+    padding:20px ;
+    color: gray;
+    float: left;
+}
+.signup{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+input[name="username"],input[name="tel"]{
+    margin-left: -45px;
+}
+a,a:hover{
+    text-decoration: none;
+}
+
+button{
+    margin-top: 20px;
+}
+
+p{
+    font-size: 15px;
+}
+.modal-footer p{
+    padding: 10px;
+}
+
+
+.btn {
+    width: 150px;
+    margin-left: 95px;
+}
