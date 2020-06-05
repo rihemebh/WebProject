@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="theme-color" content="#000000"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('acceuil/style.css') }}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
+</head>
+<title>cheikhBooks.tn</title>
+<link rel="icon" href="{{ asset('logo2.ico') }}"
+      style="height: 50px; width:50px" type="image/x-icon">
+<style>
+
+    /*hedha lkol bch yethat f fichier style.css just fama probleme ki nhotou ghady
+    yok3od barsha bch yestaw3eb ki naaml modification  */
+    body {
+        background-image: url("{{ asset('logo3.ico') }}"), url("{{ asset('cover3.jpg') }}");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 300px, cover;
+        background-position: center, center;
+        left: 30px;
+        background-color: rgba(0, 0, 0, 0.2);
+
+    }
+
+    .navbar {
+        border-color: #333333;
+        z-index: 30;
+        margin: 0 auto;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    :root {
+
+        --nav_color: #7FCDCD;
+    }
+
+
+</style>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark  shadow-sm">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav "
+            style=" background-color: #d9d9d9;" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse  " id="navbarNav">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item  small">
+                <a class="nav-link small " href="/catalogue" id="a1" style=" font-size:1.25em;">Books<span
+                            class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item small">
+                <a class="nav-link small" style="font-size:1.25em; " href="#">Categories</a>
+            </li>
+
+
+        </ul>
+
+        <form class="form-inline my-2 my-lg-0">
+            <ul class="navbar-nav">
+                <li class="nav-item small " style="width: 60px; ">
+                    <a class="nav-link  small" href="#" style=" font-size:1.25em;"> <i class="fas fa-search"></i></a>
+                    {# ki tenzel aaliha tokhrej input taa recherche lawj aal ahaja esmha "search modal" kn theb tekhdemha akeka sinon
+                    kima theb (ki tekhdemha zidha zeda f baseFront.html.twig #}
+                </li>
+
+                <li class="nav-item  small " style="width: 60px; ">
+                    <a class="nav-link  small" href="#" style=" font-size:1.25em;"><i class="far fa-user"></i></a>
+                    {#                         log in#}
+                </li>
+
+                <li class="nav-item small " style="width: 60px; ">
+                    <a class="nav-link  small" href="#" style=" font-size:1.25em;"><i class="fas fa-user-plus"></i></a>
+                    {#                        sign up#}
+                </li>
+
+
+            </ul>
+        </form>
+    </div>
+
+</nav>
+
+
+<div class="view">
+
+</div>
+
+</body>
+{#<footer class="container-fluid badge-light shadow-lg fixed-bottom">#}
+
+{#    <div class="container-fluid badge-light ">#}
+{#        <div class="container">#}
+{#            <div class="row badge-light table-responsive">#}
+{#                <table class="table table-borderless table-sm">#}
+{#                    <thead>#}
+{#                    <tr>#}
+{#                        <th class="text-center">Contact Us</th>#}
+
+{#                    </tr>#}
+{#                    </thead>#}
+{#                    <tbody>#}
+{#                    <tr>#}
+{#                        <td><a href="https://www.facebook.com/cheikhbooks/?epa=SEARCH_BOX" style="color:black" ><i class="fab fa-facebook">#}
+{#                                    <span style="color:grey"> @cheikhbooks</span></i></a>#}
+{#                        </td>#}
+
+
+{#                        <td><a href="https://www.instagram.com/cheikhbooks.tn/" style="color:black"><i class="fab fa-instagram">#}
+{#                                    <span style="color:grey"> cheikhbooks.tn   </span></i></a></td>#}
+{#                        <td><i class="fas fa-phone"><span style="color:grey"> +216 54053754  </span></i></td>#}
+{#                        <td><i class="fas fa-at" style="color:black"><span style="color:grey ;font-size:small"> cheikhbooks@gmail.com </span></i></td>#}
+{#                    </tr>#}
+{#                    </tbody>#}
+{#                </table>#}
+
+
+{#                <h6 class="text-center">You can register for free <button class="btn btn-sm"#}
+{#                                                                          style="background-color:#457485; font-size: 0.75em; border-radius: 25px ;"> Sign up</button>#}
+{#                </h6>#}
+{#                <div class="text-center">#}
+{#                    <img src="{{ asset('jeune.png') }}" width="50" height="30">#}
+
+
+{#                    <img src="{{ asset('digicard.png') }}" width="50" height="30">#}
+
+{#                </div>#}
+
+
+
+{#                <p class="text-center " style="font-size: smaller;">&copy; Copyright 2020 .</p>#}
+{#            </div>#}
+
+{#        </div>#}
+{#    </div>#}
+{#</footer>#}
+
+</html>
+

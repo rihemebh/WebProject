@@ -1,0 +1,257 @@
+{% extends 'baseFront.html.twig' %}
+
+{% block Title %}catalogue{% endblock %}
+{% block link %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('catalogue/style.css') }}">
+{% endblock %}
+{% block style %}
+<style>
+    @import "../style.css";
+    .details{
+        padding: 0.5rem 1.0rem;
+        border-radius: 25px ;
+        color:black;
+        background-color:var(--nav_color);
+        opacity:1;
+        position: absolute;
+        margin:3rem;
+    }
+
+    .love{
+        padding: 0.5rem 1.0rem;
+        border-radius: 25px ;
+        color:black;
+        opacity:1;
+        position: absolute;
+        margin:3rem;
+    }
+
+.form{
+    width:800px;
+}
+    @media only screen and (max-width: 950px) {
+       .form{
+           float: none;
+           width: 100%;
+       }
+    }
+
+    @media only screen and (max-width: 950px) {
+        .card-col{
+            float: none;
+            font-size: small;
+        }
+    }
+    .book-img {
+        position:relative;
+        padding:0em;
+        margin:auto;
+    }
+
+    .price{
+        color: var(--price_color);
+        font-size: smaller;
+    }
+
+    #buttonfiltre{
+        color:var(--nav_color);
+        border-color: lightgrey
+    }
+    .sc{
+        color:var(--nav_color);
+        border-color: lightgrey
+    }
+
+    .card_text{
+        font-size: 15px;
+        color:grey;
+    }
+
+
+    .hearticon{
+        font-size:18px;
+        color:lightgrey;
+    }
+
+    .hearticon:hover{
+        color:#e60000;
+    }
+
+    .cardbutton{
+        font-size: smaller;
+        background-color: var(--cardbutton_color);
+        width:90%;
+    }
+
+    .col .card .book-img:hover {
+        opacity: 0.15;
+    }
+    .custom-range::-webkit-slider-thumb {
+        background: var(--nav_color);
+    }
+
+    .form-control::placeholder{
+        font-size: 15px;
+    }
+    .form-control{
+        font-size: 17px;
+    }
+
+
+</style>
+{% endblock %}
+{% block body %}
+
+    <div style="height: 40px;"></div>
+    <div class="container">
+        <div class="row" >
+
+            <div class="col-6 panel-group ">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h5 class="panel-title">
+                            <button class="btn btn-white hover "
+                                    data-toggle="collapse" href="#collapse1">
+                               <i class="fas fa-sliders-h small"></i> Filter
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapse1" class="panel-collapse  collapse ">
+
+                        <form  class="form">
+                            {{ form_start(form) }}
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control empty small"
+                                           placeholder="Search">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="float-left small">Author :</label>
+                                    {{ form_row(form.author) }}
+                                </div>
+
+                            <hr>
+
+                                <div class="col-md-6">
+                                    <label class="float-left small">Price</label> <small class="float-right">0-200dt</small>
+                                    {{ form_row(form.maxPrice) }}
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="form">
+                                <div class="col">
+                                    <button type="submit" class="btn sc btn-sm">Search</button>
+                                </div>
+                            </div>
+                            {{ form_end(form) }}
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+     <div class="col-6">
+            <div class="dropdown float-right">
+                <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   Sort By
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item small" href="#">price <i class="fas fa-sort-amount-up small "></i></a>
+                    <a class="dropdown-item small " href="#">price <i class="fas fa-sort-amount-down small "></i></a>
+                    <a class="dropdown-item small " href="#">newest</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <br>
+    <!--style="color:#6d2e3e"-->
+<br>
+    <div class="container-fluid col-container">
+        <div class="row">
+
+
+            {% for livre in filtre %}
+                <div class="col card-col">
+                    <div class="card " id="{{ livre.id }}" style="width: 10rem; ">
+{#                        <button class="details btn" style="font-size:70%" >details</button>#}
+                        <i style="font-size:70% " class="fas fa-heart disabled love"><small> 2</small></i>
+                        <a href="/livre/{{ livre.id }}"> <img src="{{ livre.path }}" class="book-img  card-img-top"
+                                                             alt="..." style="width:100%"></a>
+
+                        <div class="card-body">
+                            <p class="card-title" style="font-size:75%">{{ livre.nomLivre }}
+                                <i style="font-size:70%" class="fas fa-heart disabled hearticon" data-toggle="tooltip" data-placement="bottom" title="love this book"> </i>
+                            </p>
+                            <p class="card-text price" style="font-size:70%"><b>{{ livre.prix }} Dt</b>
+                            <p class="card-text card_text" style="font-size:60%">By {{ livre.auteur }} </p>
+                           <button class="btn shadow-sm cardbutton" data-id="{{ livre.id }}" style="font-size:70%">Add to Cart <i
+                                        class="fas fa-shopping-cart  icon"
+                                        style="font-size:11px;"> </i></button>
+                        </div><!--ffb84d-->
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+        <br>
+<div class="container">
+    <div class="row">
+        <div class="col-7">
+            <nav class="float-right" aria-label=" shadow Page navigation example">
+                {{ knp_pagination_render(filtre)}}
+
+            </nav>
+        </div>
+
+    </div>
+</div>
+
+    </div>
+
+    <script>
+        const slider = document.getElementById("myRange");
+        const output = document.getElementById("value");
+        console.log("slider"+slider);
+        output.innerHTML = slider.value; // Display the default slider value
+        slider.oninput = function() {
+            output.innerHTML = this.value;
+        }</script>
+
+
+{% endblock %}
+{% block javascripts %}
+{% endblock %}
+{#wishlist#}
+{#{% block liItem1 %}#}
+{#     <li class="nav-item dropdown dropleft" >#}
+{#         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">#}
+{#             <i class="fas fa-heart" id="icon1" style="font-size:25px; color:#ffb3b3"> </i>#}
+{#         </a>#}
+{#         <div class="dropdown-menu" >#}
+{#             <a class="dropdown-item" href="#" style="color:#6d2e3e;border-color: #a6a6a6;">My wish list</a>#}
+{#             <a class="dropdown-item" href="#"><img src="#" middle></a>#}
+{#             <div class="dropdown-divider"></div>#}
+{#             <a class="dropdown-item" href="#" ><img src="#"></a>#}
+{#             <div class="dropdown-divider"></div>#}
+{#             <a class="dropdown-item" href="#"><img src="#"></a>#}
+{#         </div>#}
+{#     </li>#}
+{# {% endblock %}#}
+{#{% block liItem3 %}#}
+{#    <li  class="nav-item ">#}
+{#    <a   class="nav-link text-white bg-light" href="#">#}
+{#        <img src="{{ asset('logo.jpg') }}" class="rounded-circle" style="height:30px; width:30px;"> </a>#}
+{#</li>#}
+{#{% endblock %}#}
