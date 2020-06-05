@@ -5,10 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="937d4a38-440b-4eaf-9c53-d9bf323c9708" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/Migrations/Version20200605144023.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/Migrations/Version20200605144051.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/WebProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WebProject.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/acceuil/acceuil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/acceuil/acceuil.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/project/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/config/packages/assets.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/project/config/packages/assets.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Migrations/Version20200503120454.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Migrations/Version20200503124256.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Migrations/Version20200503125827.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Migrations/Version20200503144240.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Migrations/Version20200605015226.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/project/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/baseFront.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/baseFront.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/templates/catalogue/catalogue.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/catalogue/catalogue.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/catalogue/livre/livre.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/catalogue/livre/livre.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +55,6 @@
       <path value="$PROJECT_DIR$/project/vendor/doctrine/doctrine-fixtures-bundle" />
       <path value="$PROJECT_DIR$/project/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/project/vendor/twig/extra-bundle" />
-      <path value="$PROJECT_DIR$/project/vendor/jdorn/sql-formatter" />
       <path value="$PROJECT_DIR$/project/vendor/nikic/php-parser" />
       <path value="$PROJECT_DIR$/project/vendor/sensio/framework-extra-bundle" />
       <path value="$PROJECT_DIR$/project/vendor/egulias/email-validator" />
@@ -63,7 +76,6 @@
       <path value="$PROJECT_DIR$/project/vendor/symfony/security-http" />
       <path value="$PROJECT_DIR$/project/vendor/symfony/orm-pack" />
       <path value="$PROJECT_DIR$/project/vendor/symfony/browser-kit" />
-      <path value="$PROJECT_DIR$/project/vendor/symfony/mailer" />
       <path value="$PROJECT_DIR$/project/vendor/symfony/validator" />
       <path value="$PROJECT_DIR$/project/vendor/symfony/property-access" />
       <path value="$PROJECT_DIR$/project/vendor/symfony/dotenv" />
@@ -146,6 +158,9 @@
       <path value="$PROJECT_DIR$/project/vendor/knplabs/knp-paginator-bundle" />
       <path value="$PROJECT_DIR$/project/vendor/knplabs/knp-components" />
       <path value="$PROJECT_DIR$/project/vendor/twig/intl-extra" />
+      <path value="$PROJECT_DIR$/project/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/project/vendor/symfony/mailer" />
+      <path value="$PROJECT_DIR$/project/vendor/doctrine/sql-formatter" />
     </include_path>
   </component>
   <component name="ProjectId" id="1bMyhbNcHeQ1jivC3H9gjudzrbn" />
@@ -160,18 +175,23 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../phptest/website2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.stylelint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.stylelint" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -214,6 +234,7 @@
       <workItem from="1590663734422" duration="598000" />
       <workItem from="1591185801539" duration="1994000" />
       <workItem from="1591352772202" duration="1939000" />
+      <workItem from="1591359890138" duration="9898000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1589405183358</created>
@@ -243,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590505398990</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="annuler dernier push">
+      <created>1591360126634</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1591360126634</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,7 +282,8 @@
     <MESSAGE value="." />
     <MESSAGE value=".." />
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="annuler dernier push" />
+    <option name="LAST_COMMIT_MESSAGE" value="annuler dernier push" />
   </component>
   <component name="WindowStateProjectService">
     <state x="490" y="256" key="#Composer" timestamp="1588968667668">
@@ -273,10 +302,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="427" y="208" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1360.728@0.0.1360.728" timestamp="1589430285213" />
-    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1590505392030">
+    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1591360123114">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1590505392030" />
+    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1591360123114" />
     <state x="460" y="119" key="FileChooserDialogImpl" timestamp="1588979381921">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -289,14 +318,18 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="514" y="287" key="NewPhpFileDialog/0.0.1360.728@0.0.1360.728" timestamp="1589445906619" />
+    <state x="181" y="11" width="998" height="708" key="SettingsEditor" timestamp="1591368403217">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="181" y="11" width="998" height="708" key="SettingsEditor/0.0.1360.728@0.0.1360.728" timestamp="1591368403217" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1589170306071">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1360.728@0.0.1360.728" timestamp="1589170306071" />
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2" timestamp="1590505418811">
+    <state x="272" y="97" key="Vcs.Push.Dialog.v2" timestamp="1591360143325">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1590505418811" />
+    <state x="272" y="97" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1591360143325" />
     <state x="489" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591356168399">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -325,5 +358,9 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="336" y="162" key="run.anything.popup/0.0.1360.728@0.0.1360.728" timestamp="1590505946045" />
+    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1591368784903">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1591368784903" />
   </component>
 </project>

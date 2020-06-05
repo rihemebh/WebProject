@@ -6,6 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "doctrine/doctrine-fixtures-bundle": "^3.3",
+        "doctrine/doctrine-migrations-bundle": "^2.1",
         "friendsofsymfony/jsrouting-bundle": "^2.5",
         "fzaninotto/faker": "^1.9",
         "knplabs/knp-paginator-bundle": "^5.2",

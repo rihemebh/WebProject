@@ -25,10 +25,10 @@
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/doctrine/orm" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/doctrine/persistence" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/doctrine/reflection" />
+      <excludeFolder url="file://$MODULE_DIR$/project/vendor/doctrine/sql-formatter" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/egulias/email-validator" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/friendsofsymfony/jsrouting-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/fzaninotto/faker" />
-      <excludeFolder url="file://$MODULE_DIR$/project/vendor/jdorn/sql-formatter" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/knplabs/knp-components" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/knplabs/knp-paginator-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/monolog/monolog" />
@@ -87,6 +87,7 @@
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/symfony/polyfill-intl-normalizer" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/symfony/polyfill-mbstring" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/symfony/polyfill-php73" />
+      <excludeFolder url="file://$MODULE_DIR$/project/vendor/symfony/polyfill-php80" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/symfony/process" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/symfony/profiler-pack" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/symfony/property-access" />
