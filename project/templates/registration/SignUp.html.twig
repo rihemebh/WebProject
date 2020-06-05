@@ -14,10 +14,12 @@
         <div class="modal-body">
             {{ form_start(signup, {'attr': {'novalidate': 'novalidate','autocomplete':'off'}})  }}
             <div>{{ form_errors(signup.First_Name) }}</div>
+
             <div class="input-icons">
                 <i class="fa fa-address-card icon"> </i>
                 {{ form_widget(signup.First_Name)}}
             </div>
+
             <div>{{ form_errors(signup.Last_Name) }}</div>
             <div class="input-icons">
                 <i class="fa fa-id-card"></i>
