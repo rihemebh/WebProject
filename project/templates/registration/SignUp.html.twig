@@ -1,0 +1,64 @@
+{% extends 'baseFront.html.twig' %}
+
+{% block link %}<link rel="stylesheet" href={{ asset('form.css') }}>{% endblock %}
+    {% block Title %}Register{% endblock %}
+
+{% block body %}
+<div class="signup">
+    <div class="register">
+        <div class="modal-header">
+            <h5 class="modal-title" id="Title">Sign Up <br>
+                <p>Join Our Community Of Book Lovers</p>
+            </h5>
+        </div>
+        <div class="modal-body">
+            {{ form_start(signup, {'attr': {'novalidate': 'novalidate','autocomplete':'off'}})  }}
+            <div>{{ form_errors(signup.First_Name) }}</div>
+            <div class="input-icons">
+                <i class="fa fa-address-card icon"> </i>
+                {{ form_widget(signup.First_Name)}}
+            </div>
+            <div>{{ form_errors(signup.Last_Name) }}</div>
+            <div class="input-icons">
+                <i class="fa fa-id-card"></i>
+                {{ form_widget(signup.Last_Name) }}
+
+            </div>
+            <div> {{ form_errors(signup.User_Name) }}</div>
+            <div class="input-icons">
+                <i class="fa fa-user icon">
+                </i>
+                {{ form_widget(signup.User_Name) }}
+            </div>
+            <div>  {{ form_errors(signup.Email) }}</div>
+            <div class="input-icons">
+                <i class="fa fa-envelope icon">
+                </i>
+                {{ form_widget(signup.Email) }}
+            </div>
+            <div>  {{ form_errors(signup.Password.password) }}</div>
+            <div class="input-icons">
+                <i class="fa fa-key icon">
+                </i>
+                {{ form_widget(signup.Password.password) }}
+            </div >
+            <div>{{ form_errors(signup.Password.confirm) }}</div>
+            <div class="input-icons">
+                <i class="fa fa-check icon"></i>
+                {{ form_widget(signup.Password.confirm) }}
+            </div>
+            <div> {{ form_errors(signup.Phone_Number) }}</div>
+            <div class="input-icons">
+                <i class="fa fa-phone icon"> </i>
+                {{ form_widget(signup.Phone_Number) }}
+            </div>
+            {{form_widget(signup.Register) }}
+            {{ form_end(signup) }}
+        </div>
+        <div class="modal-footer">
+            <p>Already Have An Account ? <a href ={{ path('app_login')}}  >Log In</a> </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

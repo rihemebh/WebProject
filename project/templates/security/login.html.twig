@@ -1,0 +1,36 @@
+{% extends "baseFront.html.twig" %}
+{% block link %}<link rel="stylesheet" href={{ asset('form.css') }}>{% endblock %}
+{% block body %}
+    <div class="signup" style ="margin-top: 5%; margin-bottom:5%;">
+        <div class="register">
+            <div class="modal-header">
+                <h5>Welcome Back !</h5>
+            </div>
+            <div class="modal-body">
+                <form method ="post" autocomplete="off"  action={{ path('app_login') }}>
+                    {% if error %}
+                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+                    <div class="input-icons">
+                        <i class="fa fa-envelope icon">
+                        </i>
+                        <input type="text" placeholder="Email Address" class="form-control" name="Email" value="{{ last_username }}">
+                    </div>
+                    <div class="input-icons">
+                        <i class="fa fa-key icon">
+                        </i>
+                        <input type="password" placeholder="Password" class="form-control" name="password">
+                    </div >
+                    <a href=# id="forgot" style="margin-left: 90px;">Password Forgotten?</a>
+                    <input type="hidden" name="_csrf_token"
+                           value="{{ csrf_token('authenticate') }}"
+                    >
+                    <button type="submit" class="btn btn-primary" style="margin-bottom: 20px";>Log In</button>
+                </form>
+                <div class="modal-footer">
+                    <p style="margin-right: 25px; ">Don't Have An Account?   <a href="{{ path('register') }}" >Register</a> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

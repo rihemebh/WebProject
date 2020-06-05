@@ -1,0 +1,106 @@
+{% extends 'baseFront.html.twig' %}
+{% block link %}<link rel="stylesheet" href={{ asset('AccountStyle.css') }}>{% endblock %}
+{% block Title %}My Account{% endblock %}
+{% block body %}
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <div class="wrapper">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3 style="margin-left: 20px;">My Account</h3>
+                </div>
+
+                <ul class="list-unstyled components" >
+                    <li class="active">
+                        <a href="#">
+                            <i class="fad fa-cog"></i>Account
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fad fa-street-view"></i> My Address
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fad fa-camera"></i>My Picture
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fad fa-shopping-cart"></i>My Purchases
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="fad fa-home"></i>Home
+                        </a>
+                    </li>
+                </ul>
+                <div id="signout">
+                    <a href="{{ path('app_logout') }}">
+                        <i class="fas fa-sign-out-alt" ></i> <strong style="margin-left: 5px;"> Sign Out</strong>
+                    </a>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Hide</span>
+                    </button>
+
+                </div>
+            </nav>
+            <div>
+                {{ form_start(form) }}
+                <h3>Personal Information</h3>
+                <hr>
+                <p class="message"><i class="fad fa-user"></i>General Settings</p>
+                {{ form_errors(form.First_Name)}}
+                {{ form_widget(form.First_Name)}}
+                {{ form_errors(form.Last_Name) }}
+                {{ form_widget(form.Last_Name) }}
+                {{ form_errors(form.User_Name) }}
+                {{ form_widget(form.User_Name) }}
+
+                <hr>
+                <p class="message"><i class="fad fa-shield"></i>Security : Reset Your Password</p>
+                {{ form_errors(form.Password.password) }}
+                {{ form_widget(form.Password.password) }}
+                {{ form_errors(form.Password.confirm) }}
+                {{ form_widget(form.Password.confirm) }}
+                <hr>
+                <p class="message"><i class="fad fa-phone"></i>Contacts</p>
+
+                {{ form_errors(form.Phone_Number) }}
+                {{ form_widget(form.Phone_Number) }}
+
+                {{ form_errors(form.Email) }}
+                {{ form_widget(form.Email) }}
+                {{ form_widget(form.Save_Changes) }}
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $('#pic').toggleClass('show');
+            });
+        });
+    </script>
+{% endblock %}
