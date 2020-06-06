@@ -105,9 +105,11 @@ p>i{
 }
 
 #sidebar {
+    margin-top: -40px;
+    height: 800px;
     min-width: 250px;
     max-width: 250px;
-    background: #7386D5;
+    background:#073850;
     color: #fff;
     transition: all 0.3s;
 }
@@ -156,13 +158,13 @@ p>i{
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #6d7fcc;
+    background: #073850;
 }
 
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+    border-bottom: 1px solid #B6FFFD;
 }
 #signout{
     margin-left: 10px;
@@ -175,7 +177,7 @@ p>i{
 }
 
 #sidebar ul li a:hover {
-    color: #7386D5;
+    color: #003C63;
     background: #fff;
 }
 
@@ -186,7 +188,7 @@ p>i{
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color: #fff;
-    background: #6d7fcc;
+    background:#577C85;
 }
 
 a[data-toggle="collapse"] {
@@ -196,7 +198,7 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
+    background: #003C63;
 }
 
 ul.CTAs {
@@ -216,6 +218,7 @@ ul.CTAs a {
     padding: 20px;
     min-height: 100vh;
     transition: all 0.3s;
+    margin-top: -20px;
 }
 
 
@@ -266,5 +269,41 @@ ul.CTAs a {
     }
 }
 .form-control{
-    width: 300px;
+    width: 250px;
+    margin-bottom: 10px;
+}
+.box{
+ display: flex;
+    flex-direction: column;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.label{
+    margin-left:30px;
+}
+
+.btn {
+    height: 40px;
+    margin-left: 95px;
+    background-color: #6BD5CB;
+    border: #6BD5CB;
+    color: whitesmoke;
+
+}
+.btn:hover , .btn:active{
+    background-color: #52ACB4;
+    border: #52ACB4;
+    color: whitesmoke;
+}
+.save{
+    margin-left: 1000px;
+}
+.btn-info{
+    margin-left: -8px;
+    margin-bottom: 20px;
 }

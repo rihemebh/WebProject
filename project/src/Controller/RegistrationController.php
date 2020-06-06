@@ -19,6 +19,10 @@ class RegistrationController extends AbstractController
      */
     public function adduser(Request $request, EntityManagerInterface $manager ,UserPasswordEncoderInterface $encoder, GuardAuthenticatorHandler $guardHandler, UserAuthenticator $formAuthenticator)
     {
+        if ($this->getUser()) {
+            return $this->redirectToRoute('account');
+        }
+
         $user=new User();
         $SignUp=$this->createForm(UserType::class,$user);
         try {
@@ -45,13 +49,5 @@ class RegistrationController extends AbstractController
         ]);
     }
 
-
-    /**
-     * @Route("/log", name="logout")
-     */
-    public function logout()
-    {
-        return $this->render('acceuil/acceuil.html.twig');
-    }
 }
 ?>
