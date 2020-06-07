@@ -5,8 +5,6 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -17,57 +15,51 @@ class AccountType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->remove('Password')
+            ->remove('Profile_Picture')
             ->add('First_Name',TextType::class,array(
+                'label' =>'First Name :',
+                'label_attr'=>array(
+                    'class'=>'label'
+                ),
                 'attr'=> array(
-                    'class' =>'organize-form ',
-                    'placeholder'=>'First Name'
+                    'class' =>'organize-form form-control '
                 )
             ))
             ->add('Last_Name',TextType::class,array(
+                'label_attr'=>array(
+                    'class'=>'label'),
+                'label' =>'Last Name :',
                 'attr'=> array(
-                    'class' =>'organize-form ',
-                    'placeholder'=>'Last Name'
+                    'class' =>'organize-form form-control '
                 )
             ))
             ->add('Email',TextType::class,array(
+                'label' =>'Email :',
+                'label_attr'=>array(
+                    'class'=>'label'),
                 'attr'=> array(
-                    'class' =>'organize-form ',
-                    'placeholder'=>'Email Address'
+                    'class' =>'organize-form form-control'
                 )
             ))
-            ->add('Password', RepeatedType::class, [
-                'type' =>PasswordType::class,
-                'first_options'  => array(
-                    'attr'=>array(
-                        'class' => 'organize-form ',
-                        'placeholder'=>'New Password'
-                    )
-                ),
-                'second_options' => array(
-                    'attr'=>array(
-                        'class' => 'organize-form ',
-                        'placeholder'=>'Retype New Password',
-                        'invalid_message' => 'Passwords Do Not Match'
-                    )
-                ),
-                'second_name'=>'confirm',
-                'first_name'=>'password',
-
-            ])
             ->add('Phone_Number',NumberType::class,array(
+                'label_attr'=>array(
+                    'class'=>'label'),
+                'label' =>'Phone Number :',
                 'attr'=> array(
-                    'class' =>'organize-form ',
-                    'placeholder'=>'Phone Number'
+                    'class' =>'organize-form form-control'
                 )
             ))
             ->add('User_Name',TextType::class,array(
+                'label_attr'=>array(
+                    'class'=>'label'),
+                'label' =>'User Name :',
                 'attr'=> array(
-                    'class' =>'organize-form ',
-                    'placeholder'=>'User Name'
+                    'class' =>'organize-form form-control'
                 )
             ))
             ->add('Save_Changes',SubmitType::class,array(
-                'attr'=>array('class'=>'button btn btn-primary')
+                'attr'=>array('class'=>' btn save')
             ))
         ;
     }

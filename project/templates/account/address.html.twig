@@ -1,0 +1,43 @@
+{% extends 'account/BaseAccount.html.twig' %}
+{% block link_info %}{% endblock %}
+{% block link_address %}"active" {% endblock %}
+{% block link_purchase %}""{% endblock %}
+{% block header %} Address Update {% endblock %}
+{% block form %}
+    <div class="container">
+        <div class="row">
+        </div>
+    {{ form_start( form , {'attr': {'novalidate': 'novalidate','autocomplete':'off'}}) }}
+    <div class="row" style="display: flex; flex-direction: column; justify-content: center; ">
+        <div >
+        {{ form_label(form.House_address_number) }}
+        {{ form_widget(form.House_address_number) }}
+            <p class="optional"> *  Optional</p>
+       </div>
+        <div >
+        {{ form_label(form.Street) }}
+        {{ form_widget(form.Street) }}
+            <p class="optional"> * Optional</p>
+        </div>
+        <div class="row" style="margin-left: 5px">
+            <p class="ad"> City :</p>
+            <div class="in">
+        {{ form_errors(form.City) }}
+        {{ form_widget(form.City) }}
+        </div>
+        </div>
+        <div class="row" style="margin-left: 5px">
+            <p class="ad"> Code :</p>
+            <div class="in">
+                {{ form_errors(form.Code) }}
+                {{ form_widget(form.Code) }}
+            </div>
+        </div>
+        </div>
+        <div>
+         {{ form_row(form.Save) }}
+        </div>
+    </div>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

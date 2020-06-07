@@ -1,9 +1,10 @@
 body{
-    background: url("cover2.jpg") rgba(0,0,0,0.7);
+    background: url("cover1(2).jpg") rgba(0,0,0,0.7);
 
 }
-
-
+#forgot{
+    color: #004041;
+}
 small{
     font-size: 10px;
     font-weight: bold;
@@ -13,9 +14,14 @@ small{
 h5.modal-title{
     font-weight: bold;
     text-align: center;
+    color:whitesmoke;
 }
+
+h5.modal-title p{
+    color:whitesmoke;
+}
+
 .register{
-    background-color: whitesmoke;
     width: 380px;
     border-radius: 10px;
     display: flex;
@@ -24,6 +30,8 @@ h5.modal-title{
     justify-content: center;
     margin-top:25px;
     margin-bottom: 25px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(60px);
 }
 
 .form-control{
@@ -32,6 +40,7 @@ h5.modal-title{
     margin-left: -50px;
     background: none;
     padding-left: 40px;
+    color: whitesmoke;
 
 }
 .form-control:focus{
@@ -45,15 +54,17 @@ h5.modal-title{
     margin-left:-45px;
 }
 
-i{
+.register i{
     padding:20px ;
-    color: gray;
+    color: white;
     float: left;
 }
+
 .signup{
     display: flex;
     align-items: center;
     flex-direction: column;
+
 }
 form{
     display: flex;
@@ -82,4 +93,33 @@ p{
 .btn {
     width: 150px;
     margin-left: 95px;
+    background-color: #6BD5CB;
+    border: #6BD5CB;
+    color: whitesmoke;
+
+}
+.btn:hover , .btn:active{
+    background-color: #52ACB4;
+    border: #52ACB4;
+    color: whitesmoke;
+}
+.modal-footer a{
+    color: #6BD5CB;
+}
+
+.modal-footer p{
+    color: whitesmoke;
+}
+
+::placeholder {
+    color: whitesmoke;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: whitesmoke;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: whitesmoke;
 }

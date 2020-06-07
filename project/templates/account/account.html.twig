@@ -1,102 +1,47 @@
-{% extends 'baseFront.html.twig' %}
-{% block link %}<link rel="stylesheet" href={{ asset('AccountStyle.css') }}>{% endblock %}
-{% block Title %}My Account{% endblock %}
-{% block body %}
-    <div class="wrapper">
-        <!-- Sidebar  -->
-        <div class="wrapper">
-            <!-- Sidebar  -->
-            <nav id="sidebar">
-                <div class="sidebar-header">
-                    <h3 style="margin-left: 20px;">My Account</h3>
-                </div>
+{% extends 'account/BaseAccount.html.twig' %}
+{% block link_info %}"active" {% endblock %}
+{% block link_address %}"" {% endblock %}
+{% block link_purchase %}""{% endblock %}
+{% block header %} Personal Information {% endblock %}
+{% block form %}
 
-                <ul class="list-unstyled components" >
-                    <li class="active">
-                        <a href="#">
-                            <i class="fad fa-cog"></i>Account
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fad fa-street-view"></i> My Address
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fad fa-camera"></i>My Picture
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fad fa-shopping-cart"></i>My Purchases
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <i class="fad fa-home"></i>Home
-                        </a>
-                    </li>
-                </ul>
-                <div id="signout">
-                    <a href="{{ path('app_logout') }}">
-                        <i class="fas fa-sign-out-alt" ></i> <strong style="margin-left: 5px;"> Sign Out</strong>
-                    </a>
-                </div>
-            </nav>
-        </div>
+    {{ form_start( form , {'attr': {'novalidate': 'novalidate','autocomplete':'off'}}) }}
+    <hr>
+    <p class="message"><i class="fad fa-user"></i>General Settings</p>
+    <div class="row">
+                            <div class="box">
+                                {{ form_label(form.First_Name) }}
+                                 {{ form_errors(form.First_Name) }}
+                                {{ form_widget(form.First_Name)}}
+                            </div>
+                            <div class="box">
+                                {{ form_label(form.Last_Name) }}
+                                {{ form_widget(form.Last_Name) }}
+                            </div>
+                            <div class="box">
+                                {{ form_label(form.User_Name) }}
+                                {{ form_errors(form.User_Name) }}
+                                {{ form_widget(form.User_Name) }}
+                            </div>
+                        </div>
+    <hr>
+    <p class="message"><i class="fad fa-phone"></i>Contacts</p>
+    <div class="row">
+                            <div class="box">
+                                {{ form_label(form.Phone_Number) }}
+                                {{ form_errors(form.Phone_Number) }}
+                                {{ form_widget(form.Phone_Number) }}
+                            </div>
+                            <div class="box">
+                                {{ form_label(form.Email) }}
+                                {{ form_errors(form.Email) }}
+                                {{ form_widget(form.Email) }}
 
-        <!-- Page Content  -->
-        <div id="content">
-
-            <nav class="navbar navbar-expand-lg navbar-white bg-white">
-                <div class="container-fluid">
-
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fas fa-align-left"></i>
-                        <span>Hide</span>
-                    </button>
-
-                </div>
-            </nav>
-            <div>
-                {{ form_start(form) }}
-                <h3>Personal Information</h3>
-                <hr>
-                <p class="message"><i class="fad fa-user"></i>General Settings</p>
-                {{ form_errors(form.First_Name)}}
-                {{ form_widget(form.First_Name)}}
-                {{ form_errors(form.Last_Name) }}
-                {{ form_widget(form.Last_Name) }}
-                {{ form_errors(form.User_Name) }}
-                {{ form_widget(form.User_Name) }}
-
-                <hr>
-                <p class="message"><i class="fad fa-shield"></i>Security : Reset Your Password</p>
-                {{ form_errors(form.Password.password) }}
-                {{ form_widget(form.Password.password) }}
-                {{ form_errors(form.Password.confirm) }}
-                {{ form_widget(form.Password.confirm) }}
-                <hr>
-                <p class="message"><i class="fad fa-phone"></i>Contacts</p>
-
-                {{ form_errors(form.Phone_Number) }}
-                {{ form_widget(form.Phone_Number) }}
-
-                {{ form_errors(form.Email) }}
-                {{ form_widget(form.Email) }}
-                {{ form_widget(form.Save_Changes) }}
-                {{ form_end(form) }}
-            </div>
-        </div>
-    </div>
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-                $('#pic').toggleClass('show');
-            });
-        });
-    </script>
+                            </div>
+                            <hr>
+                        </div>
+    <div class="row">
+                            {{ form_widget(form.Save_Changes) }}
+                        </div>
+    {{ form_end(form) }}
 {% endblock %}

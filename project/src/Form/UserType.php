@@ -68,7 +68,7 @@ class UserType extends AbstractType
             ))
             ->add('Register',SubmitType::class,array(
                 'attr'=>array(
-                    'class' => 'btn btn-primary',
+                    'class' => 'btn',
                 )
             ))
         ;
