@@ -11,6 +11,7 @@
     <div class="row">
                             <div class="box">
                                 {{ form_label(form.First_Name) }}
+                                 {{ form_errors(form.First_Name) }}
                                 {{ form_widget(form.First_Name)}}
                             </div>
                             <div class="box">
@@ -19,6 +20,7 @@
                             </div>
                             <div class="box">
                                 {{ form_label(form.User_Name) }}
+                                {{ form_errors(form.User_Name) }}
                                 {{ form_widget(form.User_Name) }}
                             </div>
                         </div>
@@ -31,8 +33,8 @@
                                 {{ form_widget(form.Phone_Number) }}
                             </div>
                             <div class="box">
-                                {{ form_errors(form.Email) }}
                                 {{ form_label(form.Email) }}
+                                {{ form_errors(form.Email) }}
                                 {{ form_widget(form.Email) }}
 
                             </div>
@@ -40,6 +42,6 @@
                         </div>
     <div class="row">
                             {{ form_widget(form.Save_Changes) }}
-                            {{ form_end(form) }}
                         </div>
+    {{ form_end(form) }}
 {% endblock %}

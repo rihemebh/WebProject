@@ -26,6 +26,8 @@ body {
 .organize-form {
     display: inline-block;
     margin-left:20px ;
+    width: 250px;
+    margin-bottom: 10px;
 }
 
 .Account{
@@ -268,10 +270,7 @@ ul.CTAs a {
         display: none;
     }
 }
-.form-control{
-    width: 250px;
-    margin-bottom: 10px;
-}
+
 .box{
  display: flex;
     flex-direction: column;
@@ -301,9 +300,31 @@ ul.CTAs a {
     color: whitesmoke;
 }
 .save{
-    margin-left: 1000px;
+    margin-left: 60%;
 }
 .btn-info{
     margin-left: -8px;
     margin-bottom: 20px;
+}
+
+.ad{
+    width: 120px;
+    text-align:left;
+    color: black;
+    font-size: 15px;
+    display: inline-block;
+}
+.save1{
+    margin-left: 30%;
+    margin-top:10px;
+}
+
+.in{
+    display: flex;
+    flex-direction: column;
+}
+.optional{
+    display: inline-block;
+    color: #0f6674;
+    font-size: 15px;
 }

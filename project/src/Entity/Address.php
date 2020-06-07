@@ -6,6 +6,7 @@ use App\Repository\AddressRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=AddressRepository::class)
@@ -21,11 +22,24 @@ class Address
 
     /**
      * @ORM\Column(type="string", length=255)
+     *  @Assert\Regex(
+     *     pattern="/\d/",
+     *     match=false,
+     *     message="City Cannot Contain A Number" )
+     *
+     * @Assert\NotBlank( message = " This Field Cannot Be Empty ")
      */
     private $City;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank( message = " This Field Cannot Be Empty ")
+     * @Assert\Positive (message="Invalid Code")
+     * @Assert\Length(
+     *      min = 4,
+     *      max = 4,
+     *     exactMessage="Code Must be 4 digit long"
+     * )
      */
     private $Code;
 

@@ -15,13 +15,15 @@ class AccountType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->remove('Password')
+            ->remove('Profile_Picture')
             ->add('First_Name',TextType::class,array(
                 'label' =>'First Name :',
                 'label_attr'=>array(
                     'class'=>'label'
                 ),
                 'attr'=> array(
-                    'class' =>'organize-form '
+                    'class' =>'organize-form form-control '
                 )
             ))
             ->add('Last_Name',TextType::class,array(
@@ -29,7 +31,7 @@ class AccountType extends AbstractType
                     'class'=>'label'),
                 'label' =>'Last Name :',
                 'attr'=> array(
-                    'class' =>'organize-form '
+                    'class' =>'organize-form form-control '
                 )
             ))
             ->add('Email',TextType::class,array(
@@ -37,7 +39,7 @@ class AccountType extends AbstractType
                 'label_attr'=>array(
                     'class'=>'label'),
                 'attr'=> array(
-                    'class' =>'organize-form '
+                    'class' =>'organize-form form-control'
                 )
             ))
             ->add('Phone_Number',NumberType::class,array(
@@ -45,7 +47,7 @@ class AccountType extends AbstractType
                     'class'=>'label'),
                 'label' =>'Phone Number :',
                 'attr'=> array(
-                    'class' =>'organize-form '
+                    'class' =>'organize-form form-control'
                 )
             ))
             ->add('User_Name',TextType::class,array(
@@ -53,7 +55,7 @@ class AccountType extends AbstractType
                     'class'=>'label'),
                 'label' =>'User Name :',
                 'attr'=> array(
-                    'class' =>'organize-form '
+                    'class' =>'organize-form form-control'
                 )
             ))
             ->add('Save_Changes',SubmitType::class,array(

@@ -56,9 +56,7 @@ class User implements UserInterface
      * @Assert\NotBlank( message = " This Field Cannot Be Empty ")
      * @Assert\Length(
      *      min = 2,
-     *      max = 50,
      *     minMessage="At Least 8 Characters",
-     *     maxMessage="At Most 8 Characters"
      *     )
      */
     private $Password;
