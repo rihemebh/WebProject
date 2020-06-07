@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="937d4a38-440b-4eaf-9c53-d9bf323c9708" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/WebProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WebProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/account/account.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/account/account.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/baseFront.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/baseFront.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/webpack.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +223,10 @@
       <workItem from="1590663734422" duration="598000" />
       <workItem from="1591185801539" duration="1994000" />
       <workItem from="1591352772202" duration="1939000" />
-      <workItem from="1591359890138" duration="11862000" />
+      <workItem from="1591359890138" duration="12792000" />
+      <workItem from="1591391079174" duration="2717000" />
+      <workItem from="1591472797715" duration="936000" />
+      <workItem from="1591562709148" duration="1296000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1589405183358</created>
@@ -265,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591370241586</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="synchro mariem riheme">
+      <created>1591372270437</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1591372270437</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,7 +290,8 @@
     <MESSAGE value="..." />
     <MESSAGE value="annuler dernier push" />
     <MESSAGE value="sychro mariem riheme" />
-    <option name="LAST_COMMIT_MESSAGE" value="sychro mariem riheme" />
+    <MESSAGE value="synchro mariem riheme" />
+    <option name="LAST_COMMIT_MESSAGE" value="synchro mariem riheme" />
   </component>
   <component name="WindowStateProjectService">
     <state x="490" y="256" key="#Composer" timestamp="1588968667668">
@@ -297,10 +310,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="427" y="208" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1360.728@0.0.1360.728" timestamp="1589430285213" />
-    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1591370238266">
+    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1591372267292">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1591370238266" />
+    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1591372267292" />
     <state x="460" y="119" key="FileChooserDialogImpl" timestamp="1588979381921">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -321,10 +334,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1360.728@0.0.1360.728" timestamp="1589170306071" />
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2" timestamp="1591360143325">
+    <state x="272" y="97" key="Vcs.Push.Dialog.v2" timestamp="1591372300390">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1591360143325" />
+    <state x="272" y="97" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1591372300390" />
     <state x="489" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591356168399">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
