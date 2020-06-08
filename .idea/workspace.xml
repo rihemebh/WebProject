@@ -3,15 +3,37 @@
   <component name="AnalysisUIOptions">
     <option name="SCOPE_TYPE" value="3" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="937d4a38-440b-4eaf-9c53-d9bf323c9708" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/project/public/no-image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/Migrations/Version20200608153745.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/webpack.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/project/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/DataFixtures/LivreFixture.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/DataFixtures/LivreFixture.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Entity/Categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Entity/Categorie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Entity/Livre.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Entity/Livre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Migrations/Version20200605144023.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/baseFront.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/baseFront.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/catalogue/catalogue.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/catalogue/catalogue.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +189,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/project/src/Migrations" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -180,9 +202,12 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.general" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\WebProject\project\src\Migrations" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\WebProject\WebProject\project\public" />
       <recent name="C:\xampp\htdocs\WebProject\WebProject\project\public\catalogue" />
@@ -226,7 +251,9 @@
       <workItem from="1591359890138" duration="12792000" />
       <workItem from="1591391079174" duration="2717000" />
       <workItem from="1591472797715" duration="936000" />
-      <workItem from="1591562709148" duration="1296000" />
+      <workItem from="1591562709148" duration="1692000" />
+      <workItem from="1591571819704" duration="1377000" />
+      <workItem from="1591629447322" duration="6948000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1589405183358</created>
@@ -277,11 +304,30 @@
       <option name="project" value="LOCAL" />
       <updated>1591372270437</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="delete useless files">
+      <created>1591564122993</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1591564122993</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -291,7 +337,8 @@
     <MESSAGE value="annuler dernier push" />
     <MESSAGE value="sychro mariem riheme" />
     <MESSAGE value="synchro mariem riheme" />
-    <option name="LAST_COMMIT_MESSAGE" value="synchro mariem riheme" />
+    <MESSAGE value="delete useless files" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete useless files" />
   </component>
   <component name="WindowStateProjectService">
     <state x="490" y="256" key="#Composer" timestamp="1588968667668">
@@ -310,10 +357,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="427" y="208" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1360.728@0.0.1360.728" timestamp="1589430285213" />
-    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1591372267292">
+    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1591564117776">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1591372267292" />
+    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1591564117776" />
     <state x="460" y="119" key="FileChooserDialogImpl" timestamp="1588979381921">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -326,22 +373,22 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="514" y="287" key="NewPhpFileDialog/0.0.1360.728@0.0.1360.728" timestamp="1589445906619" />
-    <state x="181" y="11" width="998" height="708" key="SettingsEditor" timestamp="1591368403217">
+    <state x="181" y="11" width="998" height="708" key="SettingsEditor" timestamp="1591635089276">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="181" y="11" width="998" height="708" key="SettingsEditor/0.0.1360.728@0.0.1360.728" timestamp="1591368403217" />
+    <state x="181" y="11" width="998" height="708" key="SettingsEditor/0.0.1360.728@0.0.1360.728" timestamp="1591635089276" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1589170306071">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1360.728@0.0.1360.728" timestamp="1589170306071" />
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2" timestamp="1591372300390">
+    <state x="272" y="97" key="Vcs.Push.Dialog.v2" timestamp="1591564267932">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1591372300390" />
-    <state x="489" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591356168399">
+    <state x="272" y="97" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1591564267932" />
+    <state x="489" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591629464049">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="489" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1360.728@0.0.1360.728" timestamp="1591356168399" />
+    <state x="489" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1360.728@0.0.1360.728" timestamp="1591629464049" />
     <state x="0" y="0" width="1119" height="540" maximized="true" key="dock-window-1" timestamp="1589763476078">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -354,18 +401,18 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="387" y="0" width="585" height="728" key="find.popup/0.0.1360.728@0.0.1360.728" timestamp="1588998157531" />
-    <state x="399" y="152" key="git4idea.merge.GitPullDialog" timestamp="1591356024685">
+    <state x="399" y="152" key="git4idea.merge.GitPullDialog" timestamp="1591629494414">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="399" y="152" key="git4idea.merge.GitPullDialog/0.0.1360.728@0.0.1360.728" timestamp="1591356024685" />
+    <state x="399" y="152" key="git4idea.merge.GitPullDialog/0.0.1360.728@0.0.1360.728" timestamp="1591629494414" />
     <state x="453" y="238" width="611" height="281" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1589155587021">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="453" y="238" width="611" height="281" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1360.728@0.0.1360.728" timestamp="1589155587021" />
-    <state x="336" y="162" key="run.anything.popup" timestamp="1590505946045">
+    <state x="336" y="162" key="run.anything.popup" timestamp="1591633128580">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="336" y="162" key="run.anything.popup/0.0.1360.728@0.0.1360.728" timestamp="1590505946045" />
+    <state x="336" y="162" key="run.anything.popup/0.0.1360.728@0.0.1360.728" timestamp="1591633128580" />
     <state x="343" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1591368784903">
       <screen x="0" y="0" width="1360" height="728" />
     </state>

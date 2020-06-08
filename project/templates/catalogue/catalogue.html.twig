@@ -6,7 +6,6 @@
 {% endblock %}
 {% block style %}
     <style>
-        @import "../style.css";
         .details{
             padding: 0.5rem 1.0rem;
             border-radius: 25px ;
@@ -18,12 +17,12 @@
         }
 
         .love{
-            padding: 0.5rem 1.0rem;
+            padding: 1rem 1.5rem;
             border-radius: 25px ;
             color:black;
             opacity:1;
             position: absolute;
-            margin:3rem;
+            margin:3.5rem;
         }
 
         .form{
@@ -179,16 +178,16 @@
     <br>
     <!--style="color:#6d2e3e"-->
     <br>
-    <div class="container-fluid col-container">
+    <div class="container-fluid ">
         <div class="row">
 
 
             {% for livre in filtre %}
                 <div class="col card-col">
-                    <div class="card " id="{{ livre.id }}" style="width: 10rem; ">
+                    <div class="card " id="{{ livre.id }}" style="width: 11.5rem; ">
                         {#                        <button class="details btn" style="font-size:70%" >details</button>#}
-                        <i style="font-size:70% " class="fas fa-heart disabled love"><small> 2</small></i>
-                        <a href="/livre/{{ livre.id }}"> <img src="{{ livre.path }}" class="book-img  card-img-top"
+                        <i style="font-size:70% " class="fas fa-heart disabled love"><small> {{ livre.likes }}</small></i>
+                        <a href="/livre/{{ livre.id }}"> <img src="{{  livre.path }}" class="book-img  card-img-top"
                                                               alt="..." style="width:100%"></a>
 
                         <div class="card-body">

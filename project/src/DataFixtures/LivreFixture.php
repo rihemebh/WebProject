@@ -21,6 +21,7 @@ class LivreFixture extends Fixture
             $livre->setDatePub($faker->dateTime($max = 'now', $timezone = null));
             $livre->setAuteur($faker->name);
             $livre->setPath($faker->imageUrl($width = 640, $height = 480));
+            $livre->setLikes($faker->numberBetween(0,15));
             $manager->persist($livre);
         }
 
