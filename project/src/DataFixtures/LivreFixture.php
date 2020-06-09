@@ -15,16 +15,15 @@ class LivreFixture extends Fixture implements DependentFixtureInterface
     {
 
         $faker = Factory::create();
-        for( $i=0;$i<10;$i++) {
+        for ($i = 0; $i < 20; $i++) {
             $livre = new Livre();
             $livre->setNomLivre($faker->streetName);
             $livre->setPrix($faker->numberBetween(10, 100));
-            $livre->setLangage($faker->text($maxNbChars = 10));
+            $livre->setLanguage($this->getReference(LanguageFixture::LANGUAGE_REFERENCE));
             $livre->setDescription($faker->sentence);
             $livre->setDatePub($faker->dateTime($max = 'now', $timezone = null));
             $livre->setAuteur($faker->name);
             $livre->setPath($faker->imageUrl($width = 640, $height = 480));
-            $livre->setLikes($faker->numberBetween(0, 15));
             $livre->addCategory($this->getReference(CategoryFixtures::CATEGORY_REFERENCE));
             $manager->persist($livre);
         }
@@ -38,6 +37,7 @@ class LivreFixture extends Fixture implements DependentFixtureInterface
     {
         return array(
             CategoryFixtures::class,
+            LanguageFixture::class,
         );
     }
 }

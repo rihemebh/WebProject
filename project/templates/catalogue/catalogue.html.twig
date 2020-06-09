@@ -274,6 +274,7 @@
                                 </div>
                                 <div class="col-4">
                                     <label class="float-left small">Language :</label><br>
+                                    {{ form_row(form.languages) }}
                                 </div>
                             </div>
 
@@ -321,7 +322,7 @@
                 <div class="col card-col">
                     <div class="card " id="{{ livre.id }}" style="width: 11rem; ">
                         {#                        <button class="details btn" style="font-size:70%" >details</button>#}
-                        <i style="font-size:70% " class="fas fa-heart disabled love"><small> {{ livre.likes }}</small></i>
+                        <i style="font-size:70% " class="fas fa-heart disabled love"><small> 10</small></i>
                         <a href="/livre/{{ livre.id }}"> <img src="{{  livre.path }}" class="book-img  card-img-top"
                                                               alt="..." style="width:100%"></a>
 

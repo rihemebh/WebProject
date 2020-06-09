@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Categorie;
+use App\Entity\Language;
 use App\Entity\PropertySearch;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -38,16 +39,23 @@ class PropertySearchType extends AbstractType
                 'attr'=>[
                    ' value'=>"200",
                     'class'=>"custom-range bg-black" ,
-                    'min'=>"0",
-                    'max'=>"200"
+                    'min' => "0",
+                    'max' => "200"
                 ]
-                ])
-            ->add('categories', EntityType::class,[
-                'required'=>false,
-                'label'=>false,
-                'class'=> Categorie::class,
-                'expanded'=>true,
-                'multiple'=>true
+            ])
+            ->add('categories', EntityType::class, [
+                'required' => false,
+                'label' => false,
+                'class' => Categorie::class,
+                'expanded' => true,
+                'multiple' => true
+
+            ])->add('languages', EntityType::class, [
+                'required' => false,
+                'label' => false,
+                'class' => Language::class,
+                'expanded' => true,
+                'multiple' => true
 
             ])
         ;

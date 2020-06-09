@@ -96,9 +96,12 @@ class PropertySearch{
 //     */
 //    public $q ="";
     /**
-     * @var Categorie[]     */
-    public $categories =[];
-
-
+     * @var Categorie[]
+     */
+    public $categories = [];
+    /**
+     * @var Language[]
+     */
+    public $languages = [];
 
 }

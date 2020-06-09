@@ -33,10 +33,6 @@ class Livre
      */
     private $type;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $langage;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -73,6 +69,7 @@ class Livre
      * @ORM\ManyToOne(targetEntity=Language::class, inversedBy="book")
      */
     private $language;
+
 
     public function __construct()
     {
@@ -121,17 +118,6 @@ class Livre
         return $this;
     }
 
-    public function getLangage(): ?string
-    {
-        return $this->langage;
-    }
-
-    public function setLangage(string $langage): self
-    {
-        $this->langage = $langage;
-
-        return $this;
-    }
 
     public function getDescription(): ?string
     {
@@ -180,7 +166,6 @@ class Livre
 
         return $this;
     }
-
 
 
     /**
@@ -251,4 +236,5 @@ class Livre
 
         return $this;
     }
+
 }

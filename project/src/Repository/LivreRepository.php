@@ -29,8 +29,9 @@ class LivreRepository extends ServiceEntityRepository
     public function findAllVisibleQuery(PropertySearch $search=null): Query
     {
         $query= $this->createQueryBuilder('p')
-        ->select('c','p')
-            ->join('p.categories','c')
+            ->select('c', 'p', 'l')
+            ->join('p.categories', 'c')
+            ->join('p.language', 'l')
         ;
 
 
@@ -39,27 +40,25 @@ class LivreRepository extends ServiceEntityRepository
             ->setParameter('author','%'.$search->getAuthor().'%');
         }
 
-        if($search->getMaxPrice()){
-            $query =$query->andWhere('p.prix <= :price')
-                ->setParameter('price',$search->getMaxPrice());
+        if ($search->getMaxPrice()) {
+            $query = $query->andWhere('p.prix <= :price')
+                ->setParameter('price', $search->getMaxPrice());
         }
-        if(!empty($search->categories)){
-            $query=$query->andWhere('c.id IN (:categories)')
-                ->setParameter('categories',$search->categories);
+        if (!empty($search->categories)) {
+            $query = $query->andWhere('c.id IN (:categories)')
+                ->setParameter('categories', $search->categories);
+        }
+        if (!empty($search->languages)) {
+            $query = $query->andWhere('l.id IN (:languages)')
+                ->setParameter('languages', $search->languages);
         }
 
-      return $query->getQuery();
+        return $query->getQuery();
     }
 
     /**
     //  * @return Livre[] Returns an array of Livre objects
     //  */
-
-    public function findSearch(){
-        $query =$this->createQueryBuilder('p');
-        return $this->findAll();
-}
-
 
 
     // /**
