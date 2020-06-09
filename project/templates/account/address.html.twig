@@ -4,11 +4,24 @@
 {% block link_purchase %}""{% endblock %}
 {% block header %} Address Update {% endblock %}
 {% block form %}
+
+    {% if address is not empty %}
+        <div><p> Your current address is {{ address }} .Would You Like T o Change It ? </p></div>
+    {% else %}
+        <div><p> You haven't entered an address yet. </p></div>
+    {% endif %}
     <hr>
-    {{ form_start(form, {'attr': {'autocomplete':'off'}})}}
-    {{ form_row(form.House_address_number)}} <p class="optional" > *optional</p>
-    {{ form_row(form.Street)}} <p class="optional" > *optional</p>
-    {{ form_row(form.City) }}
-    {{ form_row(form.Code)}}
+    <div class="address">
+        {{ form_start(form, {'attr': {'autocomplete':'off'}}) }}
+        <div style="display:flex;"> {{ form_row(form.House_address_number) }} <p class="optional"> *optional</p></div>
+        <div style="display:flex;">  {{ form_row(form.Street) }} <p class="optional"> *optional</p></div>
+        {{ form_row(form.City) }}
+        {{ form_row(form.Code) }}
+        {{ form_row(form.Save) }}
+    </div>
+
+    {% if address is not empty %}
+       <a class="btn save " href="{{ path('deleteAddress') }}"> Delete </a>
+    {% endif %}
     {{ form_end(form) }}
 {% endblock %}

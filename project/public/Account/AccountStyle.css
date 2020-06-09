@@ -342,11 +342,23 @@ ul.CTAs a {
 }
 
 .optional {
-    display: inline-block;
     color: #0f6674;
     font-size: 15px;
+    margin-left: 20px;
 }
 
 .erreur {
     margin-left: 20px;
+}
+.address{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.save1{
+    width: 100px;
+    margin-left: 45%;
 }

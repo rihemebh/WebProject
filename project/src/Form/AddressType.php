@@ -15,6 +15,24 @@ class AddressType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('House_address_number',TextType::class,array(
+                'label'=>'House Number :',
+                'label_attr'=>array(
+                    'class'=>'ad'
+                ),
+                'attr'=>array(
+                    'class'=> 'organize-form'
+                )
+            ))
+            ->add('Street',TextType::class,array(
+                'label'=>'Street :',
+                'label_attr'=>array(
+                    'class'=>'ad'
+                ),
+                'attr'=>array(
+                    'class'=> 'organize-form'
+                )
+            ))
 
             ->add('City',TextType::class,array(
                 'label'=>'City :',
@@ -34,28 +52,9 @@ class AddressType extends AbstractType
                     'class'=> 'organize-form'
                 )
             ))
-            ->add('Street',TextType::class,array(
-                'label'=>'Street :',
-                'label_attr'=>array(
-                    'class'=>'ad'
-                ),
-                'attr'=>array(
-                    'class'=> 'organize-form'
-                )
-            ))
-            ->add('House_address_number',TextType::class,array(
-                'label'=>'House Number :',
-                'label_attr'=>array(
-                    'class'=>'ad'
-                ),
-                'attr'=>array(
-                    'class'=> 'organize-form'
-                )
-            ))
-
             ->add('Save',SubmitType::class,array(
                 'attr'=>array(
-                    'class'=>'btn save '
+                    'class'=>'btn save1 '
                 )
             ))
         ;

@@ -2,7 +2,6 @@
 
 {% block link %}<link rel="stylesheet" href={{ asset('form.css') }}>{% endblock %}
     {% block Title %}Register{% endblock %}
-{% block nav %} {% endblock %}
 
 {% block body %}
 <div class="signup">
@@ -18,7 +17,7 @@
 
             <div class="input-icons">
                 <i class="fa fa-address-card icon"> </i>
-                {{ form_widget(signup.First_Name)}}
+                {{ form_widget(signup.First_Name,{'attr':{'placeholder':''}} ) }}
             </div>
 
             <div>{{ form_errors(signup.Last_Name) }}</div>
