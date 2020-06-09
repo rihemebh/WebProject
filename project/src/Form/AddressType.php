@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\Address;
+
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -15,6 +15,7 @@ class AddressType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+
             ->add('City',TextType::class,array(
                 'label'=>'City :',
                 'label_attr'=>array(
@@ -51,9 +52,10 @@ class AddressType extends AbstractType
                     'class'=> 'organize-form'
                 )
             ))
+
             ->add('Save',SubmitType::class,array(
                 'attr'=>array(
-                    'class'=>'btn save1 '
+                    'class'=>'btn save '
                 )
             ))
         ;
@@ -62,7 +64,6 @@ class AddressType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Address::class,
         ]);
     }
 }
