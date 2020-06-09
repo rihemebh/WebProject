@@ -13,7 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.4.1",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "nouislider": "^14.5.0"
   },
   "devDependencies": {
     "@symfony/webpack-encore": "^0.30.2",

@@ -58,19 +58,26 @@ class Livre
      */
     private $path;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $likes;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Categorie::class, inversedBy="livres")
+     * @ORM\ManyToMany(targetEntity=Categorie::class, inversedBy="livres",cascade={"persist"})
      */
     private $categories;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Like::class, mappedBy="book")
+     */
+    private $Likes;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Language::class, inversedBy="book")
+     */
+    private $language;
 
     public function __construct()
     {
         $this->categories = new ArrayCollection();
+        $this->Likes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -174,17 +181,7 @@ class Livre
         return $this;
     }
 
-    public function getLikes(): ?int
-    {
-        return $this->likes;
-    }
 
-    public function setLikes(?int $likes): self
-    {
-        $this->likes = $likes;
-
-        return $this;
-    }
 
     /**
      * @return Collection|Categorie[]
@@ -208,6 +205,49 @@ class Livre
         if ($this->categories->contains($category)) {
             $this->categories->removeElement($category);
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Like[]
+     */
+    public function getLikes(): Collection
+    {
+        return $this->Likes;
+    }
+
+    public function addLike(Like $like): self
+    {
+        if (!$this->Likes->contains($like)) {
+            $this->Likes[] = $like;
+            $like->setBook($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLike(Like $like): self
+    {
+        if ($this->Likes->contains($like)) {
+            $this->Likes->removeElement($like);
+            // set the owning side to null (unless already changed)
+            if ($like->getBook() === $this) {
+                $like->setBook(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getLanguage(): ?Language
+    {
+        return $this->language;
+    }
+
+    public function setLanguage(?Language $language): self
+    {
+        $this->language = $language;
 
         return $this;
     }

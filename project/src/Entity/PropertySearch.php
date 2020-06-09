@@ -55,5 +55,50 @@ class PropertySearch{
         return $this;
     }
 
+//    /**
+//     * @return string
+//     */
+//    public function getQ(): string
+//    {
+//        return $this->q;
+//    }
+//
+//    /**
+//     * @param string $q
+//     * @return PropertySearch
+//     */
+//    public function setQ(string $q): PropertySearch
+//    {
+//        $this->q = $q;
+//        return $this;
+//    }
+
+    /**
+     * @return Categorie[]
+     */
+    public function getCategories(): array
+    {
+        return $this->categories;
+    }
+
+    /**
+     * @param Categorie[] $categories
+     * @return PropertySearch
+     */
+    public function setCategories(array $categories): PropertySearch
+    {
+        $this->categories = $categories;
+        return $this;
+    }
+
+//    /**
+//     * @var string
+//     */
+//    public $q ="";
+    /**
+     * @var Categorie[]     */
+    public $categories =[];
+
+
 
 }

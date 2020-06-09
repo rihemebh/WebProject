@@ -8,7 +8,7 @@
 /var/
 /vendor/
 /public/node-modules/
-/public/bootstrap/
+/public/programData
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###

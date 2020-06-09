@@ -86,9 +86,9 @@ class User implements UserInterface
     private $User_Name;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Address::class, inversedBy="users")
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $address;
+    private $Address;
 
     public function getId(): ?int
     {
@@ -185,16 +185,17 @@ class User implements UserInterface
         return array('ROLE_USER');
     }
 
-    public function getAddress(): ?Address
+    public function getAddress(): ?string
     {
-        return $this->address;
+        return $this->Address;
     }
 
-    public function setAddress(?Address $address): self
+    public function setAddress(?string $Address): self
     {
-        $this->address = $address;
+        $this->Address = $Address;
 
         return $this;
     }
+
 }
 ?>

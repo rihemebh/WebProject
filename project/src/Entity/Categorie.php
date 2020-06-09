@@ -24,7 +24,8 @@ class Categorie
     private $nom;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Livre::class, mappedBy="categories")
+     * @ORM\ManyToMany(targetEntity=Livre::class, mappedBy="categories" , cascade={"persist"})
+     *  @ORM\JoinTable(name="livre_categorie")
      */
     private $livres;
 
@@ -76,5 +77,10 @@ class Categorie
         }
 
         return $this;
+    }
+
+    public function __toString()
+    {
+       return $this->nom;
     }
 }

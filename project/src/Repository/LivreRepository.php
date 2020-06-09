@@ -28,7 +28,11 @@ class LivreRepository extends ServiceEntityRepository
      */
     public function findAllVisibleQuery(PropertySearch $search=null): Query
     {
-        $query= $this->createQueryBuilder('p');
+        $query= $this->createQueryBuilder('p')
+        ->select('c','p')
+            ->join('p.categories','c')
+        ;
+
 
         if($search->getAuthor()){
             $query=$query->andWhere('p.auteur LIKE :author')
@@ -39,15 +43,24 @@ class LivreRepository extends ServiceEntityRepository
             $query =$query->andWhere('p.prix <= :price')
                 ->setParameter('price',$search->getMaxPrice());
         }
-//
-//        if($categories->getCategories()->count()>0){
-//            foreach ( $categories->getCategories() as  $category){
-//                $query =$query->andWhere(':category MEMBER OF p.categories')
-//                    ->setParameter('category',$category);
-//
-//            }  }
+        if(!empty($search->categories)){
+            $query=$query->andWhere('c.id IN (:categories)')
+                ->setParameter('categories',$search->categories);
+        }
+
       return $query->getQuery();
     }
+
+    /**
+    //  * @return Livre[] Returns an array of Livre objects
+    //  */
+
+    public function findSearch(){
+        $query =$this->createQueryBuilder('p');
+        return $this->findAll();
+}
+
+
 
     // /**
     //  * @return Livre[] Returns an array of Livre objects

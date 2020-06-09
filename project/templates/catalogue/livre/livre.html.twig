@@ -54,6 +54,8 @@
                         <br>
                         <br>
                         <img src="{{ livre.path }}" class="shadow rounded mx-auto d-block" style="max-width: 100%; height: auto;">
+                        <small> <i class="far fa-calendar-alt"></i> Added on {{ livre.datePub | format_datetime() }}</small>
+
 
 
                     </div>
@@ -64,7 +66,11 @@
                             <div class="col-md-12">
                                 <h2>{{ livre.nomLivre }}</h2>
                                 <p class="badge badge-primary" style="font-size: 12px">type{{ livre.type }}</p>
-                                <p class="badge badge-primary" style="font-size: 12px">category</p>
+                                {% for cat in livre.categories %}
+                                <p class="badge badge-primary" style="font-size: 12px">{{ cat }}</p>
+                                {% endfor %}
+                                <p class="badge badge-primary" style="font-size: 12px">{{ livre.langage }}</p>
+
                             </div>
                         </div>
 
@@ -92,14 +98,17 @@
 
 <br>
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-3">
+                            </div>
+                            <div class="col-md-6">
                                 <button class="btn btn-lg btn-block shadow-sm page-link btn-secondary font-weight-light"
 
                                         data-id="{{ livre.id }}">Add to Cart <i
                                             class="fas fa-shopping-cart  icon"> </i></button>
 
-                                <small> <i class="far fa-calendar-alt"></i> Added on {{ livre.datePub | format_datetime() }}</small>
-
+<br>
+                            </div>
+                            <div class="col-md-3">
                             </div>
 
                         </div>

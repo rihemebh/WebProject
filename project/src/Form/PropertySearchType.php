@@ -2,7 +2,9 @@
 
 namespace App\Form;
 
+use App\Entity\Categorie;
 use App\Entity\PropertySearch;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\RangeType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -14,6 +16,13 @@ class PropertySearchType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+//            ->add('q', TextType::class, [
+//                'label'=> false,
+//                'required'=>false,
+//                'attr' =>[
+//                    'placeholder' => 'Search'
+//                ]
+//            ] )
             ->add('author',TextType::Class, [
                 'required'=>false,
                 'label'=>false,
@@ -27,12 +36,20 @@ class PropertySearchType extends AbstractType
                 'required'=>false,
                 'label'=>false,
                 'attr'=>[
-                    'class'=>"custom-range smaller" ,
-                    'id'=>"MyRange",
+                   ' value'=>"200",
+                    'class'=>"custom-range bg-black" ,
                     'min'=>"0",
                     'max'=>"200"
                 ]
                 ])
+            ->add('categories', EntityType::class,[
+                'required'=>false,
+                'label'=>false,
+                'class'=> Categorie::class,
+                'expanded'=>true,
+                'multiple'=>true
+
+            ])
         ;
     }
 
@@ -40,8 +57,9 @@ class PropertySearchType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => PropertySearch::class,
-            "method"=>'get',
-            'cerf_protection'=>false
+            "method"=>'GET',
+            'cerf_protection'=>false,
+            'validation_groups' => false
         ]);
     }
     public function getBlockPrefix()

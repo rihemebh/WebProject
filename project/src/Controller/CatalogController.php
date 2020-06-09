@@ -38,10 +38,14 @@ private $request;
             $request->query->getInt('page',1),20
         );
 
-
+         $livres_filte_categ=$paginator->paginate(
+             $this->repository->findSearch(),
+             $request->query->getInt('page',1),20
+         );
 
         return $this->render('catalogue/catalogue.html.twig',[
 
+            'fitre_categ'=>$livres_filte_categ,
             'filtre'=> $livres_filtre,
             'form'=>$form->createView(),
             ]);
@@ -59,3 +63,4 @@ private $request;
             'livre'=>$livre]);
     }
 }
+

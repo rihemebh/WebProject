@@ -1,5 +1,5 @@
 body{
-    background: url("cover1(2).jpg") rgba(0,0,0,0.7);
+    background: url("cover.jpg") rgba(0,0,0,0.7);
 
 }
 #forgot{
@@ -40,7 +40,7 @@ h5.modal-title p{
     margin-left: -50px;
     background: none;
     padding-left: 40px;
-    color: whitesmoke;
+    color:black;
 
 }
 .form-control:focus{
@@ -111,15 +111,3 @@ p{
     color: whitesmoke;
 }
 
-::placeholder {
-    color: whitesmoke;
-    opacity: 1; /* Firefox */
-}
-
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: whitesmoke;
-}
-
-::-ms-input-placeholder { /* Microsoft Edge */
-    color: whitesmoke;
-}

@@ -5,43 +5,79 @@
 {% block header %} Personal Information {% endblock %}
 {% block form %}
 
-    {{ form_start( form , {'attr': {'novalidate': 'novalidate','autocomplete':'off'}}) }}
+    {{ form_start( form , {'attr': {'autocomplete':'off'}}) }}
     <hr>
     <p class="message"><i class="fad fa-user"></i>General Settings</p>
     <div class="row">
-                            <div class="box">
-                                {{ form_label(form.First_Name) }}
-                                 {{ form_errors(form.First_Name) }}
-                                {{ form_widget(form.First_Name)}}
-                            </div>
-                            <div class="box">
-                                {{ form_label(form.Last_Name) }}
-                                {{ form_widget(form.Last_Name) }}
-                            </div>
-                            <div class="box">
-                                {{ form_label(form.User_Name) }}
-                                {{ form_errors(form.User_Name) }}
-                                {{ form_widget(form.User_Name) }}
-                            </div>
-                        </div>
+        <div class="box">
+            <p class="label">First Name :</p>
+            {{ form_widget(form.First_Name) }}
+            <div class="erreur">  {{ form_errors(form.First_Name) }}</div>
+        </div>
+        <div class="box">
+            <p class="label">Last Name :</p>
+            {{ form_widget(form.Last_Name) }}
+            <div class="erreur"> {{ form_errors(form.Last_Name) }}</div>
+        </div>
+        <div class="box">
+            <p class="label">User Name :</p>
+            {{ form_widget(form.User_Name) }}
+            <div class="erreur"> {{ form_errors(form.User_Name) }}</div>
+        </div>
+    </div>
     <hr>
     <p class="message"><i class="fad fa-phone"></i>Contacts</p>
     <div class="row">
-                            <div class="box">
-                                {{ form_label(form.Phone_Number) }}
-                                {{ form_errors(form.Phone_Number) }}
-                                {{ form_widget(form.Phone_Number) }}
-                            </div>
-                            <div class="box">
-                                {{ form_label(form.Email) }}
-                                {{ form_errors(form.Email) }}
-                                {{ form_widget(form.Email) }}
+        <div class="box">
+            <p class="label">Phone Number :</p>
+            {{ form_widget(form.Phone_Number) }}
+            <div class="erreur">{{ form_errors(form.Phone_Number) }}</div>
 
-                            </div>
-                            <hr>
-                        </div>
+        </div>
+        <div class="box">
+            <p class="label">Email Address :</p>
+            {{ form_widget(form.Email) }}
+            <div class="erreur"> {{ form_errors(form.Email) }}</div>
+
+        </div>
+
+    </div>
     <div class="row">
-                            {{ form_widget(form.Save_Changes) }}
-                        </div>
+        {{ form_widget(form.Save_Changes) }}
+    </div>
+
+    <hr>
+    <p class="message"><i class="fad fa-shield"></i>Security :</p>
+
     {{ form_end(form) }}
+    {{ form_start(reset) }}
+    <div class="row">
+        <div class="box">
+            <div class="in">
+                <p class="label">Current Password :</p>
+                {{ form_widget(reset.oldPassword) }}
+                <div class="erreur"> {{ form_errors(reset.oldPassword) }} </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="in">
+                <p class="label">New Password :</p>
+                {{ form_widget(reset.Password.New) }}
+                <div class="erreur"> {{ form_errors(reset.Password.New) }} </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="in">
+                <p class="label">Confirm Password :</p>
+                {{ form_widget(reset.Password.confirm) }}
+                <div class="erreur" > {{ form_errors(reset.Password.confirm) }} </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" >
+        {{ form_row(reset.Change_Password) }}
+    </div>
+    {{ form_end(reset) }}
+
+
 {% endblock %}
