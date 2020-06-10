@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Form\AccountType;
 use App\Form\AddressType;
 use App\Form\ResetType;
+use App\Form\UserType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormError;
@@ -20,7 +21,9 @@ class AccountController extends AbstractController
     public function index1(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder)
     {
         $user = $this->getUser();
-        $form = $this->createForm(AccountType::class, $user);
+        $form = $this->createForm(UserType::class, $user);
+        $form->remove('Register');
+        $form->remove('Password');
         $reset = $this->createForm(ResetType::class, $user);
         $reset->handleRequest($request);
         $form->handleRequest($request);
@@ -62,14 +65,6 @@ class AccountController extends AbstractController
         $form = $this->createForm(AddressType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted()) {
-            //making sure that the user types the city and code correctly
-            // AssressType is not related to an entity so i made a simple manual validator
-            if ($form->get('City')->isEmpty())
-                $form->get('City')->addError(new FormError('This Field Cannot be Empty !'));
-            if ($form->get('Code')->isEmpty())
-                $form->get('Code')->addError(new FormError('This Field Cannot be Empty !'));
-            if (strlen($form->get('Code')->getData()) !== 4)
-                $form->get('Code')->addError(new FormError('Code Must Be 4 digit Long !'));
             $data = $form->getData();
             $ad = '';
             foreach ($data as $key => $value) {
