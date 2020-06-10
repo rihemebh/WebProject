@@ -5,23 +5,50 @@
 {% block header %} Address Update {% endblock %}
 {% block form %}
 
-    {% if address is not empty %}
-        <div><p> Your current address is {{ address }} .Would You Like T o Change It ? </p></div>
-    {% else %}
-        <div><p> You haven't entered an address yet. </p></div>
-    {% endif %}
     <hr>
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            <i class="fa fa-check-circle approve"></i>
+            {{ message }}
+
+        </div>
+    {% endfor %}
+    {% if address is not empty %}
+        <div><p> Your current address is "<strong> {{ address }}</strong>" .Would You Like T o Change It ? </p></div>
+    {% else %}
+        <div><p> You Haven't Entered An Address Yet. </p></div>
+    {% endif %}
     <div class="address">
-        {{ form_start(form, {'attr': {'autocomplete':'off'}}) }}
-        <div style="display:flex;"> {{ form_row(form.House_address_number) }} <p class="optional"> *optional</p></div>
-        <div style="display:flex;">  {{ form_row(form.Street) }} <p class="optional"> *optional</p></div>
-        {{ form_row(form.City) }}
-        {{ form_row(form.Code) }}
+        {{ form_start(form, {'attr': {'autocomplete':'off','novalidate':'novalidate'}}) }}
+    <div class="box2 row">
+        <p class="ad">House Address :<small class="optional"> (optional)</small></p>
+        {{ form_widget(form.House_address_number) }}
+        <div class="erreur1">  {{ form_errors(form.House_address_number) }}</div>
+    </div>
+        <div class="box2 row">
+            <p class="ad">Street : <small class="optional"> (optional)</small> </p>
+            {{ form_widget(form.Street) }}
+            <div class="erreur1">  {{ form_errors(form.Street) }}</div>
+        </div>
+        <div class="box2 row">
+            <div> <p class="ad">City :</p>
+                <div class="erreur1">   {{ form_errors(form.City) }}</div>
+            </div>
+            {{ form_widget(form.City) }}
+        </div>
+        <div class="box2 row">
+           <div> <p class="ad">Code :</p>
+            <div class="erreur1">   {{ form_errors(form.Code) }}</div>
+           </div>
+               {{ form_widget(form.Code) }}
+        </div>
         {{ form_row(form.Save) }}
     </div>
+    <hr>
+    <p></p>
 
     {% if address is not empty %}
-       <a class="btn save " href="{{ path('deleteAddress') }}"> Delete </a>
+        <p>You Can Delete Your Address Here <a class="trash" href="{{ path('deleteAddress') }}"><i class="fad fa-trash-alt"></i> </a> </p>
     {% endif %}
     {{ form_end(form) }}
 {% endblock %}

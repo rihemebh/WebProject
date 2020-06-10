@@ -8,6 +8,12 @@
     {{ form_start( form , {'attr': {'autocomplete':'off'}}) }}
     <hr>
     <p class="message"><i class="fad fa-user"></i>General Settings</p>
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            <i class="fa fa-check-circle approve"></i>
+            {{ message }}
+        </div>
+    {% endfor %}
     <div class="row">
         <div class="box">
             <p class="label">First Name :</p>
@@ -48,6 +54,7 @@
 
     <hr>
     <p class="message"><i class="fad fa-shield"></i>Security :</p>
+
 
     {{ form_end(form) }}
     {{ form_start(reset) }}
