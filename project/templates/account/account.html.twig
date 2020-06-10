@@ -4,16 +4,15 @@
 {% block link_purchase %}""{% endblock %}
 {% block header %} Personal Information {% endblock %}
 {% block form %}
-
-    {{ form_start( form , {'attr': {'autocomplete':'off','novalidate':'novalidate'}}) }}
-    <hr>
-    <p class="message"><i class="fad fa-user"></i>General Settings</p>
     {% for message in app.flashes('success') %}
         <div class="alert alert-success">
             <i class="fa fa-check-circle approve"></i>
             {{ message }}
         </div>
     {% endfor %}
+    {{ form_start( form , {'attr': {'autocomplete':'off','novalidate':'novalidate'}}) }}
+    <hr>
+    <p class="message"><i class="fad fa-user"></i>General Settings</p>
     <div class="row">
         <div class="box">
             <p class="label">First Name :</p>
@@ -57,34 +56,33 @@
 
 
     {{ form_end(form) }}
-    {{ form_start(reset, {'attr': {'autocomplete':'off','novalidate':'novalidate'}}) }}
+
+    <form action="{{ path('change') }}"  autocomplete="off" method="post">
     <div class="row">
         <div class="box">
             <div class="in">
                 <p class="label">Current Password :</p>
-                {{ form_widget(reset.oldPassword) }}
-                <div class="erreur"> {{ form_errors(reset.oldPassword) }} </div>
+                <input type="password" class="organize-form form-control" name="old">
+                <div class="erreur"> </div>
             </div>
         </div>
         <div class="box">
             <div class="in">
                 <p class="label">New Password :</p>
-                {{ form_widget(reset.Password.New) }}
-                <div class="erreur"> {{ form_errors(reset.Password.New) }} </div>
+                <input type="password" class="organize-form form-control" name="new">
+                <div class="erreur">  </div>
             </div>
         </div>
         <div class="box">
             <div class="in">
                 <p class="label">Confirm Password :</p>
-                {{ form_widget(reset.Password.confirm) }}
-                <div class="erreur" > {{ form_errors(reset.Password.confirm) }} </div>
+               <input type="password" class="organize-form form-control" name="confirm">
+                <div class="erreur" >  </div>
             </div>
         </div>
     </div>
     <div class="row" >
-        {{ form_row(reset.Change_Password) }}
+        <button type="submit" class=" save btn " >Save Changes </button>
     </div>
-    {{ form_end(reset) }}
-
-
+    </form>
 {% endblock %}
