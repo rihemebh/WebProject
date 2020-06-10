@@ -1,11 +1,15 @@
-
 .love {
-    padding: 1rem 1.2rem;
-    /*border-radius: 25px ;*/
+    padding: 0.5rem 1.0rem;
     color: black;
     opacity: 1;
     position: absolute;
-    margin: 3.5rem;
+    margin: 3.8rem;
+    /*margin-top: -10px;*/
+}
+
+.page-link {
+    background-color: white !important;
+    color: var(--nav_color) !important;
 }
 
 .form {
@@ -37,10 +41,7 @@
     font-size: smaller;
 }
 
-#buttonfiltre {
-    color: var(--nav_color);
-    border-color: lightgrey
-}
+
 
 .sc {
     color: var(--nav_color);
@@ -58,20 +59,24 @@
     color: lightgrey;
 }
 
-a {
-    font-size: small;
+.sortable {
+    font-size: smaller;
     color: black;
+    background-color: transparent;
 }
 
-a:hover {
-    font-size: medium;
 
+.sortable:hover {
+    font-size: medium;
     color: var(--nav_backcolor);
 }
 
 .hearticon:hover {
+
     color: #e60000;
 }
+
+
 
 .cardbutton {
     font-size: smaller;
@@ -219,4 +224,3 @@ input[type="range"]:focus::-ms-fill-lower {
 .card {
     margin-bottom: 18px;
 }
-
