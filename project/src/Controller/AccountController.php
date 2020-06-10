@@ -2,14 +2,16 @@
 
 namespace App\Controller;
 
-use App\Form\AccountType;
+
 use App\Form\AddressType;
 use App\Form\ResetType;
 use App\Form\UserType;
+use App\ServiceValidate\address;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
@@ -17,33 +19,19 @@ class AccountController extends AbstractController
 {
     /**
      * @Route("/account/editInfo", name="account")
+     * @param Request $request
+     * @param EntityManagerInterface $manager
+     * @param UserPasswordEncoderInterface $encoder
+     * @return Response
      */
-    public function index1(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder)
+    public function index1( Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder)
     {
         $user = $this->getUser();
         $form = $this->createForm(UserType::class, $user);
         $form->remove('Register');
         $form->remove('Password');
-        $reset = $this->createForm(ResetType::class, $user);
-        $reset->handleRequest($request);
         $form->handleRequest($request);
-        if ($reset->isSubmitted()) {
-            $old_pwd = $reset->get('oldPassword')->getData();
-            $new_pwd = $reset->get('Password')->get('New')->getData();
-            $checkPass = $encoder->isPasswordValid($user, $old_pwd);
-            if ($checkPass === true) {
-                $hash = $encoder->encodePassword($user, $new_pwd);
-                $user->setPassword($hash);
-                $manager->persist($user);
-                $manager->flush();
-                $this->addFlash('success', 'Password Successfully Updated !');
-
-            } else {
-                $reset->get('oldPassword')->addError(new FormError('Incorrect Password'));
-            }
-        }
-
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()  ) {
             {
                 $this->addFlash('success', 'Changes Saved !');
                 $manager->persist($user);
@@ -52,26 +40,46 @@ class AccountController extends AbstractController
         }
         return $this->render('account/account.html.twig', [
             'form' => $form->createView(),
-            'reset' => $reset->createView()
         ]);
     }
+
+
+/**
+ * @Route("/account/change", name="change")
+ */
+public function index2(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder)
+{
+
+    $user=$this->getUser();
+    $reset=$request->request;
+    $checkPass = $encoder->isPasswordValid($user, $reset->get('old'));
+
+    if ($checkPass === true) {
+        if($reset->get('new')===$reset->get('confirm'))
+        $hash = $encoder->encodePassword($user, $reset->get('new'));
+        $user->setPassword($hash);
+        $manager->persist($user);
+        $manager->flush();
+        $this->addFlash('success', 'Password Successfully Updated !');
+
+    } else {
+        $reset->get('oldPassword')->addError(new FormError('Incorrect Password'));
+    }
+    return $this->redirectToRoute('account');
+
+}
+
 
     /**
      * @Route("/account/address", name="address")
      */
-    public function index2(Request $request, EntityManagerInterface $manager)
+    public function index5(address $make,Request $request, EntityManagerInterface $manager)
     {
         $user = $this->getUser();
         $form = $this->createForm(AddressType::class);
         $form->handleRequest($request);
-        if ($form->isSubmitted()) {
-            $data = $form->getData();
-            $ad = '';
-            foreach ($data as $key => $value) {
-                $ad = $ad . $value . ' ';
-            }
-            $ad = trim($ad);
-            $user->setAddress($ad);
+        if ($form->isSubmitted() ) {
+            $user->setAddress($make->create($form));
             $manager->persist($user);
             $manager->flush();
             $this->addFlash('success', 'Address Updated  !');
