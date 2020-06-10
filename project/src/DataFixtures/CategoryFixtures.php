@@ -17,9 +17,9 @@ class CategoryFixtures extends Fixture
     {
 
         $faker = Factory::create();
-
-            $categorie= new Categorie();
-            $categorie->setNom($faker->text($maxNbChars=10));
+        $cat = ['Novels', 'Graphic novels', 'Comic', 'Biographies', 'self-Help', 'CookBooks', 'for children', 'Others'];
+        $categorie = new Categorie();
+        $categorie->setNom($faker->randomElement($cat));
         $this->addReference(self::CATEGORY_REFERENCE, $categorie);
             $manager->persist($categorie);
 

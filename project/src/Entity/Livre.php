@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\User;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\LivreRepository")
@@ -60,21 +61,23 @@ class Livre
      */
     private $categories;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Like::class, mappedBy="book")
-     */
-    private $Likes;
 
     /**
      * @ORM\ManyToOne(targetEntity=Language::class, inversedBy="book")
      */
     private $language;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=User::class, inversedBy="BooksLiked")
+     */
+    private $Likes;
+
 
     public function __construct()
     {
         $this->categories = new ArrayCollection();
         $this->Likes = new ArrayCollection();
+
     }
 
     public function getId(): ?int
@@ -194,36 +197,6 @@ class Livre
         return $this;
     }
 
-    /**
-     * @return Collection|Like[]
-     */
-    public function getLikes(): Collection
-    {
-        return $this->Likes;
-    }
-
-    public function addLike(Like $like): self
-    {
-        if (!$this->Likes->contains($like)) {
-            $this->Likes[] = $like;
-            $like->setBook($this);
-        }
-
-        return $this;
-    }
-
-    public function removeLike(Like $like): self
-    {
-        if ($this->Likes->contains($like)) {
-            $this->Likes->removeElement($like);
-            // set the owning side to null (unless already changed)
-            if ($like->getBook() === $this) {
-                $like->setBook(null);
-            }
-        }
-
-        return $this;
-    }
 
     public function getLanguage(): ?Language
     {
@@ -233,6 +206,48 @@ class Livre
     public function setLanguage(?Language $language): self
     {
         $this->language = $language;
+
+        return $this;
+    }
+
+    /**
+     * @param User $user
+     * @return bool
+     */
+
+    public function isLiked(\App\Entity\User $user): bool
+    {
+        foreach ($user->getBooksLiked() as $like) {
+            {
+                if ($like === $this) return true;
+            }
+
+        }
+        return false;
+    }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getLikes(): Collection
+    {
+        return $this->Likes;
+    }
+
+    public function addLike(User $like): self
+    {
+        if (!$this->Likes->contains($like)) {
+            $this->Likes[] = $like;
+        }
+
+        return $this;
+    }
+
+    public function removeLike(User $like): self
+    {
+        if ($this->Likes->contains($like)) {
+            $this->Likes->removeElement($like);
+        }
 
         return $this;
     }

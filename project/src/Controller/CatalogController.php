@@ -5,21 +5,29 @@ namespace App\Controller;
 use App\Entity\Livre;
 use App\Entity\PropertySearch;
 use App\Entity\SearchCategory;
+use App\Entity\User;
 use App\Form\PropertySearchType;
 use App\Repository\LivreRepository;
+use App\Repository\UserRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\Persistence\ObjectManager;
 
-class CatalogController extends AbstractController{
 
-private $repository;
-private $request;
+class CatalogController extends AbstractController
+{
 
- public function __construct(LivreRepository $repository)
-{   $this->repository=$repository;}
+    private $repository;
+    private $request;
+
+    public function __construct(LivreRepository $repository)
+    {
+        $this->repository = $repository;
+    }
 
 
 
@@ -49,12 +57,46 @@ private $request;
      * @Route("/livre/{id}",name="livre.name")
      */
 
-    public function afficherlivre($id) {
+    public function afficherlivre($id)
+    {
 
         $livre = $this->getDoctrine()->getRepository(Livre::class)->find($id);
 
         return $this->render('catalogue/livre/livre.html.twig', [
-            'livre'=>$livre]);
+            'livre' => $livre]);
+    }
+
+    /**
+     * @Route("/livre/{id}/like", name="booklike")
+     * @param Livre $livre
+     * @param UserRepository $userRep
+     * @param LivreRepository $bookRep
+     */
+
+    public function like(Livre $livre, EntityManagerInterface $manager, UserRepository $userRep, LivreRepository $bookRep)
+    {
+        $user = $this->getUser();
+
+        if (!$user) return $this->json([
+            'code' => 403,
+            'message' => "desole il faut etre conn"
+        ], 403);
+
+        if ($livre->isLiked($user)) {
+            $livre->removeLike($user);
+            $manager->persist($livre);
+            $manager->flush();
+            return $this->json(['code' => 200, 'message' => 'like bien supp', 'likes' => $livre->getLikes()->count()], 200);
+
+        } else {
+            $livre->addLike($user);
+            $manager->persist($livre);
+            $manager->flush();
+
+
+            return $this->json(['code' => 200, 'message' => 'like bien ajouté', 'likes' => $livre->getLikes()->count()], 200);
+
+        }
     }
 }
 

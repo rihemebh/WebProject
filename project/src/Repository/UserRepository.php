@@ -2,8 +2,10 @@
 
 namespace App\Repository;
 
+use App\Entity\Livre;
 use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -18,6 +20,26 @@ class UserRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, User::class);
     }
+
+    /**
+     * @param Livre $livre
+     * @param User $user
+     */
+//    public function findLike (Livre $livre , User $user) {
+//
+//        $query= $this->createQueryBuilder('p')
+//            ->select( 'p', 'b')
+//            ->join('p.BooksLiked', 'b')
+//
+//        ;
+//
+//        $query=$query->andWhere('p.id = :id and b.id  = :livre')
+//            ->setParameter('id',$user->getId())
+//            ->setParameter('livre',$livre->getId());
+//
+//        return $query->getQuery()->getSingleResult();
+//
+//    }
 
     // /**
     //  * @return User[] Returns an array of User objects

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -89,6 +91,16 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $Address;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Livre::class, mappedBy="Likes")
+     */
+    private $BooksLiked;
+
+    public function __construct()
+    {
+        $this->BooksLiked = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -193,6 +205,34 @@ class User implements UserInterface
     public function setAddress(?string $Address): self
     {
         $this->Address = $Address;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Livre[]
+     */
+    public function getBooksLiked(): Collection
+    {
+        return $this->BooksLiked;
+    }
+
+    public function addBooksLiked(Livre $booksLiked): self
+    {
+        if (!$this->BooksLiked->contains($booksLiked)) {
+            $this->BooksLiked[] = $booksLiked;
+            $booksLiked->addLike($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBooksLiked(Livre $booksLiked): self
+    {
+        if ($this->BooksLiked->contains($booksLiked)) {
+            $this->BooksLiked->removeElement($booksLiked);
+            $booksLiked->removeLike($this);
+        }
 
         return $this;
     }

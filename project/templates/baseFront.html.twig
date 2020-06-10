@@ -21,17 +21,21 @@
     {% block style %}{% endblock %}
     <style>
 
-        :root{
-            --price_color:#ffa15e;
-            --nav_color:#7FCDCD;
-            --nav_backcolor:#05212F ;
-            --cardbutton_color:#b5e3d9;
-            --cheikh:'El Messiri', sans-serif;
+        :root {
+            --price_color: #ffa15e;
+            --nav_color: #7FCDCD;
+            --nav_backcolor: #05212F;
+            --cardbutton_color: #b5e3d9;
+            --cheikh: 'El Messiri', sans-serif;
         }
 
-        #header2{
-            background-color:#05212F;
-            height:90px ;
+        .register {
+            background-color: var(--nav_color);
+        }
+
+        #header2 {
+            background-color: #05212F;
+            height: 90px;
         }
 
     </style>
@@ -104,7 +108,8 @@
                         {% endblock %}
                         {% block liItem3 %}
                             <li class="nav-item" style="width: 50px; ">
-                                <a class="nav-link  text-secondary small " href="#" data-toggle="tooltip" data-placement="bottom" title="log in"  >
+                                <a class="nav-link  text-secondary small " href="/login" data-toggle="tooltip"
+                                   data-placement="bottom" title="log in">
                                     <i class="far fa-user-alt"></i></a>
                             </li>
                         {% endblock %}
@@ -139,17 +144,22 @@
                         </td>
 
 
-                        <td><a href="https://www.instagrasymfony servem.com/cheikhbooks.tn/"  ><i class="fab fa-instagram" style="color:white">
+                        <td><a href="https://www.instagrasymfony servem.com/cheikhbooks.tn/"><i class="fab fa-instagram"
+                                                                                                style="color:white">
                                     <span class=" small" style="color:lightgrey"> cheikhbooks.tn   </span></i></a></td>
-                        <td> <i class="fas fa-phone" style="color:white"> <span class=" small" style="color:lightgrey"> +216 54053754  </span></i></td>
-                        <td><i class="fas fa-at"style="color:white"><span class="small" style="color:lightgrey"> cheikhbooks@gmail.com </span></i></td>
+                        <td><i class="fas fa-phone" style="color:white"> <span class=" small" style="color:lightgrey"> +216 54053754  </span></i>
+                        </td>
+                        <td><i class="fas fa-at" style="color:white"><span class="small" style="color:lightgrey"> cheikhbooks@gmail.com </span></i>
+                        </td>
                     </tr>
                     </tbody>
                 </table>
 
 
-                <h6 class="text-center text-white">You can register for free <button class="btn btn-sm"
-                                                                          style="background-color:#457485; font-size: 0.75em; border-radius: 25px ;"> Sign up</button>
+                <h6 class="text-center text-white">You can register for free <a href="/register"
+                                                                                class="btn btn-sm register"
+                                                                                style=" font-size: 0.75em; border-radius: 25px ;">
+                        Sign up</a>
                 </h6>
                 <div class="text-center">
                     <img src="{{ asset('jeune.png') }}" width="50" height="30">
@@ -164,30 +174,28 @@
                 <p class="text-center smaller" style="color:lightgrey">&copy; Copyright 2020 .</p>
             </div>
 
-        </div>
+            </div>
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
             integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
             crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
+
     <script>
-        $(window).scroll(function(e){
+        $(window).scroll(function (e) {
             var $el = $('.navbar');
             var isPositionFixed = ($el.css('position') == 'fixed');
-            if ($(this).scrollTop() > 150 && !isPositionFixed){
-                $el.css({'position': 'fixed', 'top': '0px', 'width' : '100%'});
+            if ($(this).scrollTop() > 150 && !isPositionFixed) {
+                $el.css({'position': 'fixed', 'top': '0px', 'width': '100%'});
             }
-            if ($(this).scrollTop() < 150 && isPositionFixed){
-                $el.css({'position': 'static', 'top': '0px', 'width' : '100%'});
+            if ($(this).scrollTop() < 150 && isPositionFixed) {
+                $el.css({'position': 'static', 'top': '0px', 'width': '100%'});
             }
         });
     </script>

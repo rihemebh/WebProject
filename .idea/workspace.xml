@@ -22,25 +22,24 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="937d4a38-440b-4eaf-9c53-d9bf323c9708" name="Default Changelist" comment="filter languages">
-      <change afterPath="$PROJECT_DIR$/project/src/DataFixtures/LanguageFixture.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/DataFixtures/LikeFixture.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/DataFixtures/UserFixture.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/Migrations/Version20200609214751.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/Migrations/Version20200609220942.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/Migrations/Version20200609221256.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="937d4a38-440b-4eaf-9c53-d9bf323c9708" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/project/src/Migrations/Version20200609232236.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/Migrations/Version20200610102055.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/templates/catalogue/carousel.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/WebProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WebProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/Controller/CatalogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Controller/CatalogController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/DataFixtures/CategoryFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/DataFixtures/CategoryFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/DataFixtures/LanguageFixture.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/DataFixtures/LanguageFixture.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/DataFixtures/LikeFixture.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/DataFixtures/LivreFixture.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/DataFixtures/LivreFixture.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Entity/Language.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Entity/Language.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Entity/Like.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/Entity/Livre.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Entity/Livre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Entity/PropertySearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Entity/PropertySearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Entity/SearchCategory.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Form/PropertySearchType.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Form/PropertySearchType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Repository/LivreRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Repository/LivreRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Repository/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/baseFront.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/baseFront.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/templates/catalogue/catalogue.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/catalogue/catalogue.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/catalogue/livre/livre.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/catalogue/livre/livre.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +195,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/project/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/project/src/Migrations" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -212,16 +211,16 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\WebProject\project\public" />
-      <recent name="C:\xampp\htdocs\WebProject\project\src\Migrations" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\WebProject\project\src\DataFixtures" />
       <recent name="C:\xampp\htdocs\WebProject\project\src\Controller" />
       <recent name="C:\xampp\htdocs\WebProject\project\public\bootstrap" />
       <recent name="C:\xampp\htdocs\WebProject\WebProject\project\public" />
       <recent name="C:\xampp\htdocs\WebProject\WebProject\project\public\catalogue" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\WebProject\project\src\Migrations" />
+      <recent name="C:\xampp\htdocs\WebProject\project\public" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -269,7 +268,9 @@
       <workItem from="1591700290445" duration="23348000" />
       <workItem from="1591727660795" duration="6573000" />
       <workItem from="1591735598300" duration="1332000" />
-      <workItem from="1591737915024" duration="5638000" />
+      <workItem from="1591737915024" duration="9402000" />
+      <workItem from="1591779144728" duration="9600000" />
+      <workItem from="1591794584054" duration="13991000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1589405183358</created>
@@ -362,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591735882022</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="filter for languages">
+      <created>1591743959365</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1591743959365</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -395,7 +403,8 @@
     <MESSAGE value="filter categories + slider style" />
     <MESSAGE value="delete" />
     <MESSAGE value="filter" />
-    <option name="LAST_COMMIT_MESSAGE" value="filter" />
+    <MESSAGE value="filter for languages" />
+    <option name="LAST_COMMIT_MESSAGE" value="filter for languages" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -423,10 +432,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="427" y="208" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1360.728@0.0.1360.728" timestamp="1589430285213" />
-    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1591743594659">
+    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1591743952977">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1591743594659" />
+    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1591743952977" />
     <state x="218" y="55" key="DiffContextDialog" timestamp="1591735838579">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -435,14 +444,14 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="460" y="119" key="FileChooserDialogImpl/0.0.1360.728@0.0.1360.728" timestamp="1588979381921" />
-    <state x="780" y="87" key="NewPhpClassDialog" timestamp="1591711842007">
+    <state x="780" y="87" key="NewPhpClassDialog" timestamp="1591744730612">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="780" y="87" key="NewPhpClassDialog/0.0.1360.728@0.0.1360.728" timestamp="1591711842007" />
-    <state x="514" y="287" key="NewPhpFileDialog" timestamp="1589445906619">
+    <state x="780" y="87" key="NewPhpClassDialog/0.0.1360.728@0.0.1360.728" timestamp="1591744730612" />
+    <state x="514" y="287" key="NewPhpFileDialog" timestamp="1591744574425">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="514" y="287" key="NewPhpFileDialog/0.0.1360.728@0.0.1360.728" timestamp="1589445906619" />
+    <state x="514" y="287" key="NewPhpFileDialog/0.0.1360.728@0.0.1360.728" timestamp="1591744574425" />
     <state x="181" y="11" width="998" height="708" key="SettingsEditor" timestamp="1591651350561">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -451,10 +460,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1360.728@0.0.1360.728" timestamp="1591731207035" />
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2" timestamp="1591728510846">
+    <state x="272" y="97" key="Vcs.Push.Dialog.v2" timestamp="1591743972514">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1591728510846" />
+    <state x="272" y="97" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1591743972514" />
     <state x="489" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591731205464">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -471,18 +480,18 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="387" y="0" width="585" height="728" key="find.popup/0.0.1360.728@0.0.1360.728" timestamp="1588998157531" />
-    <state x="399" y="152" key="git4idea.merge.GitPullDialog" timestamp="1591728473639">
+    <state x="399" y="152" key="git4idea.merge.GitPullDialog" timestamp="1591785243667">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="399" y="152" key="git4idea.merge.GitPullDialog/0.0.1360.728@0.0.1360.728" timestamp="1591728473639" />
+    <state x="399" y="152" key="git4idea.merge.GitPullDialog/0.0.1360.728@0.0.1360.728" timestamp="1591785243667" />
     <state x="453" y="238" width="611" height="281" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1589155587021">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="453" y="238" width="611" height="281" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1360.728@0.0.1360.728" timestamp="1589155587021" />
-    <state x="336" y="162" key="run.anything.popup" timestamp="1591725053741">
+    <state x="336" y="162" key="run.anything.popup" timestamp="1591806303824">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="336" y="162" key="run.anything.popup/0.0.1360.728@0.0.1360.728" timestamp="1591725053741" />
+    <state x="336" y="162" key="run.anything.popup/0.0.1360.728@0.0.1360.728" timestamp="1591806303824" />
     <state x="343" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1591368784903">
       <screen x="0" y="0" width="1360" height="728" />
     </state>

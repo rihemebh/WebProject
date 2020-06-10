@@ -14,8 +14,9 @@ class LanguageFixture extends Fixture
     public function load(ObjectManager $manager)
     {
         $faker = Factory::create();
+        $lang = ['arab', 'francais', 'anglais'];
         $language = new Language();
-        $language->setName($faker->languageCode);
+        $language->setName($faker->randomElement($lang));
         $manager->persist($language);
         $this->addReference(self::LANGUAGE_REFERENCE, $language);
 
