@@ -2,7 +2,9 @@
 
 {% block Title %}catalog{% endblock %}
 {% block link %}
-    <link rel="stylesheet" type="text/css" href="{{ asset('catalogue\style.css') }}">
+    {#    <link rel="stylesheet" type="text/css" href="{{ asset('catalogue/style.css') }}">#}
+
+
 {% endblock %}
 
 
@@ -10,23 +12,15 @@
 
 {% block style %}
     <style>
-        .details {
-            padding: 0.5rem 1.0rem;
-            border-radius: 25px;
-            color: black;
-            background-color: var(--nav_color);
-            opacity: 1;
-            position: absolute;
-            margin: 3rem;
-        }
+
 
         .love {
-            padding: 1.2rem 1.2rem;
-            /*border-radius: 25px ;*/
+            padding: 0.5rem 1.0rem;
             color: black;
             opacity: 1;
             position: absolute;
-            margin: 3.5rem;
+            margin: 3.8rem;
+            /*margin-top: -10px;*/
         }
 
         .form {
@@ -58,9 +52,17 @@
             font-size: smaller;
         }
 
-        #buttonfiltre {
-            color: var(--nav_color);
-            border-color: lightgrey
+        .page-link {
+            background-color: transparent;
+        }
+
+        .page-link:active {
+            background-color: red;
+
+        }
+
+        .page-item:active {
+            background-color: red;
         }
 
         .sc {
@@ -79,19 +81,25 @@
             color: lightgrey;
         }
 
-        a {
-            font-size: small;
+        .sortable {
+            font-size: smaller;
             color: black;
+            background-color: transparent;
         }
 
-        a:hover {
-            font-size: medium;
 
+        .sortable:hover {
+            font-size: medium;
             color: var(--nav_backcolor);
         }
 
         .hearticon:hover {
+
             color: #e60000;
+        }
+
+        a.js-link {
+            font-size: medium;
         }
 
         .cardbutton {
@@ -245,6 +253,7 @@
     </style>
 {% endblock %}
 {% block body %}
+
 
     <div style="height: 40px;"></div>
     <div class="container">
@@ -415,6 +424,14 @@
 
 
     </script>
+    <script>
+        $(document).ready(function (e) {
+            $('.active').css('background-color', 'lightgrey');
+            $('.active').removeClass('active');
+
+        });
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         function onClickBtnLike(event) {
@@ -434,26 +451,7 @@
         document.querySelectorAll('.js-like').forEach(function (link) {
             link.addEventListener('click', onClickBtnLike);
         })</script>
+
+
+
 {% endblock %}
-{#wishlist#}
-{#{% block liItem1 %}#}
-{#     <li class="nav-item dropdown dropleft" >#}
-{#         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">#}
-{#             <i class="fas fa-heart" id="icon1" style="font-size:25px; color:#ffb3b3"> </i>#}
-{#         </a>#}
-{#         <div class="dropdown-menu" >#}
-{#             <a class="dropdown-item" href="#" style="color:#6d2e3e;border-color: #a6a6a6;">My wish list</a>#}
-{#             <a class="dropdown-item" href="#"><img src="#" middle></a>#}
-{#             <div class="dropdown-divider"></div>#}
-{#             <a class="dropdown-item" href="#" ><img src="#"></a>#}
-{#             <div class="dropdown-divider"></div>#}
-{#             <a class="dropdown-item" href="#"><img src="#"></a>#}
-{#         </div>#}
-{#     </li>#}
-{# {% endblock %}#}
-{#{% block liItem3 %}#}
-{#    <li  class="nav-item ">#}
-{#    <a   class="nav-link text-white bg-light" href="#">#}
-{#        <img src="{{ asset('logo.jpg') }}" class="rounded-circle" style="height:30px; width:30px;"> </a>#}
-{#</li>#}
-{#{% endblock %}#}
