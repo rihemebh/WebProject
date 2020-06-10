@@ -5,7 +5,7 @@
 {% block header %} Personal Information {% endblock %}
 {% block form %}
 
-    {{ form_start( form , {'attr': {'autocomplete':'off'}}) }}
+    {{ form_start( form , {'attr': {'autocomplete':'off','novalidate':'novalidate'}}) }}
     <hr>
     <p class="message"><i class="fad fa-user"></i>General Settings</p>
     {% for message in app.flashes('success') %}
@@ -17,17 +17,17 @@
     <div class="row">
         <div class="box">
             <p class="label">First Name :</p>
-            {{ form_widget(form.First_Name) }}
+            {{ form_widget(form.First_Name,{'attr':{'class':'organize-form'}}) }}
             <div class="erreur">  {{ form_errors(form.First_Name) }}</div>
         </div>
         <div class="box">
             <p class="label">Last Name :</p>
-            {{ form_widget(form.Last_Name) }}
+            {{ form_widget(form.Last_Name,{'attr':{'class':'organize-form'}}) }}
             <div class="erreur"> {{ form_errors(form.Last_Name) }}</div>
         </div>
         <div class="box">
             <p class="label">User Name :</p>
-            {{ form_widget(form.User_Name) }}
+            {{ form_widget(form.User_Name,{'attr':{'class':'organize-form'}}) }}
             <div class="erreur"> {{ form_errors(form.User_Name) }}</div>
         </div>
     </div>
@@ -36,13 +36,13 @@
     <div class="row">
         <div class="box">
             <p class="label">Phone Number :</p>
-            {{ form_widget(form.Phone_Number) }}
+            {{ form_widget(form.Phone_Number,{'attr':{'class':'organize-form'}}) }}
             <div class="erreur">{{ form_errors(form.Phone_Number) }}</div>
 
         </div>
         <div class="box">
             <p class="label">Email Address :</p>
-            {{ form_widget(form.Email) }}
+            {{ form_widget(form.Email,{'attr':{'class':'organize-form'}}) }}
             <div class="erreur"> {{ form_errors(form.Email) }}</div>
 
         </div>
@@ -57,7 +57,7 @@
 
 
     {{ form_end(form) }}
-    {{ form_start(reset) }}
+    {{ form_start(reset, {'attr': {'autocomplete':'off','novalidate':'novalidate'}}) }}
     <div class="row">
         <div class="box">
             <div class="in">

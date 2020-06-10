@@ -71,6 +71,9 @@ class UserType extends AbstractType
                     'class' => 'btn',
                 )
             ))
+            ->add('Save_Changes', SubmitType::class, array(
+                'attr' => array('class' => ' btn save')
+            ))
         ;
     }
 
