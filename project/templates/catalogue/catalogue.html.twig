@@ -10,80 +10,94 @@
 
 {% block style %}
     <style>
-        .details{
+        .details {
             padding: 0.5rem 1.0rem;
-            border-radius: 25px ;
-            color:black;
-            background-color:var(--nav_color);
-            opacity:1;
+            border-radius: 25px;
+            color: black;
+            background-color: var(--nav_color);
+            opacity: 1;
             position: absolute;
-            margin:3rem;
+            margin: 3rem;
         }
 
-        .love{
+        .love {
             padding: 1.2rem 1.2rem;
             /*border-radius: 25px ;*/
-            color:black;
-            opacity:1;
+            color: black;
+            opacity: 1;
             position: absolute;
-            margin:3.5rem;
+            margin: 3.5rem;
         }
 
-        .form{
-            width:800px;
+        .form {
+            width: 800px;
         }
+
         @media only screen and (max-width: 950px) {
-            .form{
+            .form {
                 float: none;
                 width: 100%;
             }
         }
 
         @media only screen and (max-width: 950px) {
-            .card-col{
+            .card-col {
                 float: none;
                 font-size: small;
             }
         }
+
         .book-img {
-            position:relative;
-            padding:0em;
-            margin:auto;
+            position: relative;
+            padding: 0em;
+            margin: auto;
         }
 
-        .price{
+        .price {
             color: var(--price_color);
             font-size: smaller;
         }
 
-        #buttonfiltre{
-            color:var(--nav_color);
-            border-color: lightgrey
-        }
-        .sc{
-            color:var(--nav_color);
+        #buttonfiltre {
+            color: var(--nav_color);
             border-color: lightgrey
         }
 
-        .card_text{
+        .sc {
+            color: var(--nav_color);
+            border-color: lightgrey
+        }
+
+        .card_text {
             font-size: 15px;
-            color:grey;
+            color: grey;
         }
 
 
-        .hearticon{
-            font-size:18px;
-            color:lightgrey;
+        .hearticon {
+            font-size: 18px;
+            color: lightgrey;
         }
 
-        .hearticon:hover{
-            color:#e60000;
+        a {
+            font-size: small;
+            color: black;
         }
 
-        .cardbutton{
+        a:hover {
+            font-size: medium;
+
+            color: var(--nav_backcolor);
+        }
+
+        .hearticon:hover {
+            color: #e60000;
+        }
+
+        .cardbutton {
             font-size: smaller;
             background-color: var(--cardbutton_color);
-            width:90%;
+            width: 90%;
         }
 
         .col .card .book-img:hover {
@@ -115,7 +129,7 @@
 
         input[type="range"]::-webkit-slider-thumb {
             -webkit-appearance: none;
-            background: linear-gradient(to bottom, #71c6b2 20%, #83bed0 80%);/*thumbColor*/
+            background: linear-gradient(to bottom, #71c6b2 20%, #83bed0 80%); /*thumbColor*/
             width: 20px;
             height: 20px;
             border-radius: 50%;
@@ -127,7 +141,7 @@
 
         input[type="range"]:hover::-webkit-slider-thumb,
         input[type="range"]:focus::-webkit-slider-thumb {
-            background:  #b6e2e2; /*activeThumbColor*/
+            background: #b6e2e2; /*activeThumbColor*/
         }
 
         /*firefox*/
@@ -215,13 +229,15 @@
             background: #b6e2e2; /*activeThumbColor*/
         }
 
-        .form-control::placeholder{
+        .form-control::placeholder {
             font-size: 15px;
         }
-        .form-control{
+
+        .form-control {
             font-size: 17px;
         }
-        .card{
+
+        .card {
             margin-bottom: 18px;
         }
 
@@ -232,7 +248,7 @@
 
     <div style="height: 40px;"></div>
     <div class="container">
-        <div class="row" >
+        <div class="row">
 
             <div class="col-6 panel-group ">
                 <div class="panel panel-default">
@@ -246,7 +262,7 @@
                     </div>
                     <div id="collapse1" class="panel-collapse  collapse ">
 
-                        <form  class="form">
+                        <form class="form">
                             {{ form_start(form) }}
                             <div class="row">
                                 <div class="col-md-6">
@@ -270,7 +286,7 @@
                             <div class="row">
                                 <div class="col-4">
                                     <label class="float-left small">Categories :</label><br>
-                                    {{ form_row(form.categories)}}
+                                    {{ form_row(form.categories) }}
                                 </div>
                                 <div class="col-4">
                                     <label class="float-left small">Language :</label><br>
@@ -293,18 +309,19 @@
             </div>
 
 
-
-
-
             <div class="col-6">
                 <div class="dropdown float-right">
-                    <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Sort By
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item small" href="#">price <i class="fas fa-sort-amount-up small "></i></a>
-                        <a class="dropdown-item small " href="#">price <i class="fas fa-sort-amount-down small "></i></a>
-                        <a class="dropdown-item small " href="#">newest</a>
+                        <p class="container">{{ knp_pagination_sortable(filtre , "price" , "p.prix") }} <i
+                                    class="fas fa-sort-amount-up small "></i></p>
+                        <p class="container">{{ knp_pagination_sortable(filtre , "price" , "p.prix", ['desc']) }}<i
+                                    class="fas fa-sort-amount-down small "></i></p>
+                        <p class="container"> {{ knp_pagination_sortable(filtre , "Newest" , "p.date_pub" , ['desc'] ) }}</p>
+
                     </div>
                 </div>
             </div>
@@ -317,62 +334,62 @@
     <br>
     <div class="container-fluid ">
         <div class="row">
-{% if filtre is empty %}
-    <div class="container" style="height:80px">
-        <div class="row">
-            <div class="col-12">
-                <p class="text-center"> Sorry we don't have books with this features <i class="far fa-frown"></i></p>
-            </div>
-        </div>
-    </div>
-{% else %}
-    {% for livre in filtre %}
-        <div class="col card-col">
-            <div class="card " id="{{ livre.id }}" style="width: 11rem; ">
-                {#                        <button class="details btn" style="font-size:70%" >details</button>#}
+            {% if filtre is empty %}
+                <div class="container" style="height:80px">
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="text-center"> Sorry we don't have books with this features <i
+                                        class="far fa-frown"></i></p>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                {% for livre in filtre %}
+                    <div class="col card-col">
+                        <div class="card " id="{{ livre.id }}" style="width: 11rem; ">
+                            <i style="font-size:70% " class="fas fa-heart disabled love"><span
+                                        class="js-like small"> {{ livre.Likes | length }}</span></i>
+                            <a href="/livre/{{ livre.id }}"> <img src="{{ livre.path }}" class="book-img  card-img-top"
+                                                                  alt="..." style="width:100%"></a>
 
+                            <div class="card-body">
+                                <p class="card-title" style="font-size:75%">{{ livre.nomLivre }}
+                                    <a class="js-like " href="/livre/{{ livre.id }}/like">
+                                        {% if app.user and livre.isLiked(app.user) %}
+                                            <i style="font-size:70%;  " class="fas fa-heart text-danger hearticon"
+                                               data-toggle="tooltip" data-placement="bottom" title="Unlove this book">
+                                            </i>
 
-                <i style="font-size:70% " class="fas fa-heart disabled love"><span
-                            class="js-like small"> {{ livre.Likes | length }}</span></i>
-                <a href="/livre/{{ livre.id }}"> <img src="{{ livre.path }}" class="book-img  card-img-top"
-                                                      alt="..." style="width:100%"></a>
+                                        {% else %}
+                                            <i style="font-size:70%" class="fas fa-heart hearticon"
+                                               data-toggle="tooltip"
+                                               data-placement="bottom" title="love this book">
+                                            </i>
 
-                <div class="card-body">
-                    <p class="card-title" style="font-size:75%">{{ livre.nomLivre }}
-                        <a class="js-like " href="/livre/{{ livre.id }}/like">
-                            {% if app.user and livre.isLiked(app.user) %}
-                                <i style="font-size:70%;  " class="fas fa-heart text-danger hearticon"
-                                   data-toggle="tooltip" data-placement="bottom" title="Unlove this book">
-                                </i>
+                                        {% endif %}
+                                    </a>
+                                </p>
+                                <p class="card-text price" style="font-size:70%"><b>{{ livre.prix }} Dt</b>
+                                <p class="card-text card_text" style="font-size:60%">By {{ livre.auteur }} </p>
+                                <button class="btn shadow-sm cardbutton" data-id="{{ livre.id }}" style="font-size:70%">
+                                    Add to Cart
+                                    <i
+                                            class="fas fa-shopping-cart  icon"
+                                            style="font-size:11px;"> </i></button>
+                            </div><!--ffb84d-->
+                        </div>
 
-                            {% else %}
-                                <i style="font-size:70%" class="fas fa-heart hearticon" data-toggle="tooltip"
-                                   data-placement="bottom" title="love this book">
-                                </i>
+                    </div>
 
-                            {% endif %}
-                        </a>
-                    </p>
-                    <p class="card-text price" style="font-size:70%"><b>{{ livre.prix }} Dt</b>
-                    <p class="card-text card_text" style="font-size:60%">By {{ livre.auteur }} </p>
-                    <button class="btn shadow-sm cardbutton" data-id="{{ livre.id }}" style="font-size:70%">Add to Cart
-                        <i
-                                class="fas fa-shopping-cart  icon"
-                                style="font-size:11px;"> </i></button>
-                </div><!--ffb84d-->
-            </div>
-
-        </div>
-
-    {% endfor %}
-{% endif %}
+                {% endfor %}
+            {% endif %}
         </div>
         <br>
         <div class="container">
             <div class="row">
                 <div class="col-7">
-                    <nav class="float-right" aria-label=" shadow Page navigation example">
-                        {{ knp_pagination_render(filtre)}}
+                    <nav class="float-right " aria-label=" shadow Page">
+                        {{ knp_pagination_render(filtre) }}
 
                     </nav>
                 </div>
@@ -386,8 +403,8 @@
 
 {% endblock %}
 {% block javascripts %}
-    <script >
-        $(document).ready(function() {
+    <script>
+        $(document).ready(function () {
             const $valueSpan = $('.valuespan');
             const $value = $('#maxPrice');
             $valueSpan.html("0-" + $value.val() + "dt");

@@ -23,21 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="937d4a38-440b-4eaf-9c53-d9bf323c9708" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/project/src/Migrations/Version20200609232236.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/Migrations/Version20200610102055.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/templates/catalogue/carousel.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/WebProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WebProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Controller/CatalogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Controller/CatalogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/DataFixtures/CategoryFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/DataFixtures/CategoryFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/DataFixtures/LanguageFixture.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/DataFixtures/LanguageFixture.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/DataFixtures/LikeFixture.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/DataFixtures/LivreFixture.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/DataFixtures/LivreFixture.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Entity/Like.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Entity/Livre.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Entity/Livre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Repository/UserRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/templates/baseFront.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/baseFront.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/templates/catalogue/catalogue.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/catalogue/catalogue.html.twig" afterDir="false" />
     </list>
@@ -270,7 +256,7 @@
       <workItem from="1591735598300" duration="1332000" />
       <workItem from="1591737915024" duration="9402000" />
       <workItem from="1591779144728" duration="9600000" />
-      <workItem from="1591794584054" duration="13991000" />
+      <workItem from="1591794584054" duration="16996000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1589405183358</created>
@@ -370,7 +356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591743959365</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="add likes (bd+ajax)">
+      <created>1591812267458</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1591812267458</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,7 +397,8 @@
     <MESSAGE value="delete" />
     <MESSAGE value="filter" />
     <MESSAGE value="filter for languages" />
-    <option name="LAST_COMMIT_MESSAGE" value="filter for languages" />
+    <MESSAGE value="add likes (bd+ajax)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add likes (bd+ajax)" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -432,10 +426,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="427" y="208" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1360.728@0.0.1360.728" timestamp="1589430285213" />
-    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1591743952977">
+    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1591812261293">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1591743952977" />
+    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1591812261293" />
     <state x="218" y="55" key="DiffContextDialog" timestamp="1591735838579">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
