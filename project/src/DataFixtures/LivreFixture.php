@@ -24,6 +24,7 @@ class LivreFixture extends Fixture implements DependentFixtureInterface
             $livre->setDatePub($faker->dateTime($max = 'now', $timezone = null));
             $livre->setAuteur($faker->name);
             $livre->setPath($faker->imageUrl($width = 640, $height = 480));
+            $livre->addLike($this->getReference(UserFixture::USER_REFERENCE));
             $livre->addCategory($this->getReference(CategoryFixtures::CATEGORY_REFERENCE));
             $manager->persist($livre);
         }
@@ -38,6 +39,7 @@ class LivreFixture extends Fixture implements DependentFixtureInterface
         return array(
             CategoryFixtures::class,
             LanguageFixture::class,
+            UserFixture::class,
         );
     }
 }
