@@ -14,29 +14,38 @@
 {% block style %}
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&display=swap');
-        .love{
-            padding: 0.5rem 1.0rem;
-            border-radius: 25px ;
-            color:black;
-            opacity:1;
+
+        .love {
+            padding: 0.5rem 0.5rem;
+            border-radius: 25px;
+            color: black;
+            opacity: 1;
             position: absolute;
-            margin:3rem;
-        }
-        .book-img {
-            position:relative;
-            padding:0em;
-            margin:auto;
-        }
-        .hearticon{
-            font-size:18px;
-            color:lightgrey;
+            margin: 2rem;
         }
 
-        .hearticon:hover{
-            color:#e60000;
+        .book-img {
+            position: relative;
+            padding: 0em;
+            margin: auto;
         }
+
+        .hearticon {
+            font-size: 18px;
+            color: lightgrey;
+        }
+
+        .hearticon:hover {
+            color: #e60000;
+        }
+
         .col .card .book-img:hover {
             opacity: 0.15;
+
+        }
+
+        .card {
+            margin-bottom: 18px;
         }
     </style>
 {% endblock %}
@@ -45,15 +54,15 @@
     <div style="height: 70px"></div>
 
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col shadow">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-5">
-                        <br>
-                        <br>
-                        <img src="{{ livre.path }}" class="shadow rounded mx-auto d-block" style="max-width: 100%; height: auto;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <br>
+                            <br>
+                            <img src="{{ livre.path }}" class="shadow rounded mx-auto d-block" style="max-width: 100%; height: auto;">
                         <small> <i class="far fa-calendar-alt"></i> Added on {{ livre.datePub | format_datetime() }}</small>
 
 
@@ -116,48 +125,81 @@
 
                     </div>
 
+                    </div>
+
                 </div>
 
             </div>
 
         </div>
 
-</div>
+    </div>
+    <br><br>
 
-
-<br>
-    <div class="container-fluid">
-        <div  class="row">
-            <h3> related books</h3>
+    <div class="container-fluid shadow">
+        <div class="row">
+            <div class="container-fluid"><h3> related books</h3></div>
         </div>
         <div class="row">
-   {% for i in 1..5 %}
-    <div class="col card-col">
-                <div class="card " id="{{ livre.id }}">
-                    {#                        <button class="details btn" style="font-size:70%" >details</button>#}
-                    <i style="font-size:70% " class="fas fa-heart disabled love"><small> 2</small></i>
-                    <a href="/livre/{{ livre.id }}"> <img src="{{ livre.path }}" class="book-img  card-img-top"
-                                                          alt="..." style="width:100%"></a>
+            {% for book in filtre %}
+                <div style="font-size:50px" class="col-2 card-col">
+                    <div class="card" style="font-size:50px" id="{{ book.id }}">
 
-                    <div class="card-body">
-                        <p class="card-title" style="font-size:75%"><b>{{ livre.nomLivre }}</b>
-                            <i style="font-size:70%" class="fas fa-heart disabled hearticon" data-toggle="tooltip" data-placement="bottom" title="love this book"> </i>
-                        </p>
+                        <i style="font-size:70% " class="fas fa-heart disabled love"><small> 2</small></i>
+                        <a href="/livre/{{ book.id }}"> <img src="{{ book.path }}" style="font-size:50px"
+                                                             class="book-img  card-img-top"
+                                                             alt="..." style="width:100%"></a>
 
-                    </div><!--ffb84d-->
+                        <div class="card-body">
+                            <p class="card-title" style="font-size:40%"><b>{{ book.nomLivre }}</b>
+                                <a class="js-like " href="/livre/{{ livre.id }}/like">
+                                    {% if app.user and livre.isLiked(app.user) %}
+                                        <i style="font-size:70%;  " class="fas fa-heart text-danger hearticon"
+                                           data-toggle="tooltip" data-placement="bottom" title="Unlove this book">
+                                        </i>
+
+                                    {% else %}
+                                        <i style="font-size:70%" class="fas fa-heart hearticon"
+                                           data-toggle="tooltip"
+                                           data-placement="bottom" title="love this book">
+                                        </i>
+
+                                    {% endif %}
+                                </a>
+                            </p>
+
+                        </div><!--ffb84d-->
+                    </div>
+
                 </div>
-
-            </div>
             {% endfor %}
         </div>
     </div>
-    <br>
 
-{#    <div style="height: 100px" class="bg-light"></div>#}
-
-{#related product#}
 
 {% endblock %}
 
 
 
+{% block javascripts %}
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        function onClickBtnLike(event) {
+            event.preventDefault();
+            const url = this.href;
+            const like = document.querySelector('span.js-like');
+            const icon = this.querySelector('i.hearticon')
+            console.log(like);
+            axios.get(url).then(function (response) {
+                like.textContent = response.data.likes;
+                console.log(like);
+                if (icon.classList.contains('text-danger')) icon.classList.remove('text-danger');
+                else icon.classList.add('text-danger');
+            });
+        }
+
+        document.querySelectorAll('.js-like').forEach(function (link) {
+            link.addEventListener('click', onClickBtnLike);
+        })</script>
+
+{% endblock %}

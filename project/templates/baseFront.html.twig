@@ -23,10 +23,22 @@
 
         :root {
             --price_color: #ffa15e;
+            /*#FE840E; orange fluochwaya*/
+            /*#FF6F61;*/
+            /*#BC243C; rouge*/
+            /*#E15D44; orange*/
+            /*#ffa15e; orange feteh*/
             --nav_color: #7FCDCD;
             --nav_backcolor: #05212F;
             --cardbutton_color: #b5e3d9;
             --cheikh: 'El Messiri', sans-serif;
+        }
+
+        a.nav-link:hover {
+
+            font-size: medium;
+            color: var(--nav_backcolor);
+
         }
 
         .register {
@@ -63,11 +75,12 @@
              style="background-color:  white ;
         border-color:#333333; z-index: 30;">
           {% block navitem %}
-            <a class="navbar-brand " href="/acceuil" style=" font-size:medium; color:black;">
-                <i class="fas fa-home"  style=" color: black;"> </i>
-                Home </a>
+              <a class="navbar-brand " href="/" style=" font-size:medium; color:black;">
+                  <i class="fas fa-home" style=" color: black;"> </i>
+                  Home </a>
           {% endblock %}
-            <button class="navbar-toggler bg-red" type="button" data-toggle="collapse" data-target="#navbarNav "  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarNav "
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -75,7 +88,7 @@
             <div class="collapse navbar-collapse  " id="navbarNav">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item  ">
-                        {% block navitem1 %}{% endblock %}
+                        {% block navitem1 %} {% endblock %}
 
                     </li>
                     <li class="nav-item">
@@ -99,11 +112,12 @@
                         {% endblock %}
 
                         {% block liItem2 %}
-                            <li  class="nav-item " style="width: 50px; " >
-                                <a class="nav-link text-secondary small " href="#" data-toggle="tooltip" data-placement="bottom" title="visit your Cart" >
-                                <i class="fas fa-shopping-cart "> </i>
+                            <li class="nav-item " style="width: 50px; ">
+                                <a class="nav-link text-secondary small " href="#" data-toggle="tooltip"
+                                   data-placement="bottom" title="visit your Cart">
+                                    <i class="far fa-shopping-cart "> </i>
                                 </a>
-                           </li>
+                            </li>
                         {% endblock %}
                         {% block liItem3 %}
                             <li class="nav-item" style="width: 50px; ">
@@ -138,17 +152,20 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td><a href="https://www.facebook.com/cheikhbooks/?epa=SEARCH_BOX" style="color:black" ><i class="fab fa-facebook"style="color:white">
-                                    <span class=" small" style="color:lightgrey"> @cheikhbooks</span></i></a>
+                        <td><a href="https://www.facebook.com/cheikhbooks/?epa=SEARCH_BOX" style="color:black"><i
+                                        class="fab fa-facebook" style="color:white">
+                                    <span style="color:lightgrey"> @cheikhbooks</span></i></a>
                         </td>
 
 
                         <td><a href="https://www.instagrasymfony servem.com/cheikhbooks.tn/"><i class="fab fa-instagram"
                                                                                                 style="color:white">
-                                    <span class=" small" style="color:lightgrey"> cheikhbooks.tn   </span></i></a></td>
-                        <td><i class="fas fa-phone" style="color:white"> <span class=" small" style="color:lightgrey"> +216 54053754  </span></i>
+                                    <span style="color:lightgrey"> cheikhbooks.tn   </span></i></a>
                         </td>
-                        <td><i class="fas fa-at" style="color:white"><span class="small" style="color:lightgrey"> cheikhbooks@gmail.com </span></i>
+                        <td><i class="fas fa-phone" style="color:white"> <span
+                                        style="color:lightgrey"> +216 54053754  </span></i>
+                        </td>
+                        <td><i class="fas fa-at" style="color:white"><span style="color:lightgrey"> cheikhbooks@gmail.com </span></i>
                         </td>
                     </tr>
                     </tbody>
@@ -169,8 +186,7 @@
                 </div>
 
 
-
-                <p class="text-center smaller" style="color:lightgrey">&copy; Copyright 2020 .</p>
+                <p class="text-center smaller" style="color:lightgrey; font-size: smaller">&copy; Copyright 2020 .</p>
             </div>
 
             </div>

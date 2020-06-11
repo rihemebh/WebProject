@@ -38,8 +38,6 @@ class CatalogController extends AbstractController
     {   $search=new PropertySearch();
         $form=$this->createForm(PropertySearchType::class,$search);
         $form->handleRequest($request);
-
-
          $livres_filtre=$paginator->paginate(
             $this->repository->findAllVisibleQuery($search),
             $request->query->getInt('page',1),20
@@ -61,8 +59,11 @@ class CatalogController extends AbstractController
     {
 
         $livre = $this->getDoctrine()->getRepository(Livre::class)->find($id);
-
+        $filtre = $this->getDoctrine()->getRepository(livre::class)->findBy([
+            'auteur' => $livre->getAuteur(),
+        ]);
         return $this->render('catalogue/livre/livre.html.twig', [
+            'filtre' => $filtre,
             'livre' => $livre]);
     }
 
