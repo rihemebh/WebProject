@@ -172,10 +172,10 @@
                 </table>
 
 
-                <h6 class="text-center text-white">You can register for free <a href="/register"
+               {% block signupbutton%} <h6 class="text-center text-white">You can register for free <a href="/register"
                                                                                 class="btn btn-sm register"
                                                                                 style=" font-size: 0.75em; border-radius: 25px ;">
-                        Sign up</a>
+                        Sign up</a>{% endblock %}
                 </h6>
                 <div class="text-center">
                     <img src="{{ asset('jeune.png') }}" width="50" height="30">
