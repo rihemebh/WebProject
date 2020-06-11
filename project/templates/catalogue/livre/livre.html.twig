@@ -2,8 +2,8 @@
 {% block Title %}
     {{ livre.nomLivre }}
 {% endblock %}
-{% block navitem1 %}  <a class="nav-link bg-light  " href="/catalogue" id="a1"
-                         style=" font-size:medium;color: #a6a6a6;">catalog </a> {% endblock %}
+{% block navitem1 %}  <a class="nav-link small text-secondary " href="/catalogue" id="a1"
+>catalog </a> {% endblock %}
 {% block navitem2 %} {% endblock %}
 {% block navitem3 %} {% endblock %}
 
@@ -15,13 +15,17 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&display=swap');
 
+        a.nav-link:hover {
+            font-size: x-large;
+        }
+
         .love {
-            padding: 0.5rem 0.5rem;
+            padding: 0.5rem 1.4rem;
             border-radius: 25px;
             color: black;
             opacity: 1;
             position: absolute;
-            margin: 2rem;
+            margin: 28%;
         }
 
         .book-img {
@@ -39,7 +43,7 @@
             color: #e60000;
         }
 
-        .col .card .book-img:hover {
+        img.book-img:hover {
             opacity: 0.15;
 
         }
@@ -138,14 +142,15 @@
 
     <div class="container-fluid shadow">
         <div class="row">
-            <div class="container-fluid"><h3> related books</h3></div>
+            <div class="container-fluid"><h4 class="text-shadow"> related books</h4></div>
         </div>
         <div class="row">
             {% for book in filtre %}
                 <div style="font-size:50px" class="col-2 card-col">
                     <div class="card" style="font-size:50px" id="{{ book.id }}">
 
-                        <i style="font-size:70% " class="fas fa-heart disabled love"><small> 2</small></i>
+                        <i style="font-size:30% " class="fas fa-heart disabled love"><span
+                                    class="js-like small">  {{ livre.Likes | length }}</span></i>
                         <a href="/livre/{{ book.id }}"> <img src="{{ book.path }}" style="font-size:50px"
                                                              class="book-img  card-img-top"
                                                              alt="..." style="width:100%"></a>
@@ -167,6 +172,7 @@
                                     {% endif %}
                                 </a>
                             </p>
+                            <p class="card-text card_text " style="font-size:25%; color:grey">By {{ livre.auteur }} </p>
 
                         </div><!--ffb84d-->
                     </div>

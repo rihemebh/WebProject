@@ -22,10 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="937d4a38-440b-4eaf-9c53-d9bf323c9708" name="Default Changelist" comment="">
+    <list default="true" id="937d4a38-440b-4eaf-9c53-d9bf323c9708" name="Default Changelist" comment="catalogue style + book page">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/catalogue/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/public/catalogue/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Controller/CatalogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Controller/CatalogController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/templates/baseFront.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/baseFront.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/templates/catalogue/catalogue.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/catalogue/catalogue.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/templates/catalogue/livre/livre.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/catalogue/livre/livre.html.twig" afterDir="false" />
@@ -261,7 +260,8 @@
       <workItem from="1591779144728" duration="9600000" />
       <workItem from="1591794584054" duration="18481000" />
       <workItem from="1591819112846" duration="8929000" />
-      <workItem from="1591828162719" duration="2615000" />
+      <workItem from="1591828162719" duration="2947000" />
+      <workItem from="1591872669150" duration="3650000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1589405183358</created>
@@ -382,7 +382,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591824336102</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="catalogue style + book page">
+      <created>1591831169211</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1591831169211</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -419,7 +426,8 @@
     <MESSAGE value="add likes (bd+ajax)" />
     <MESSAGE value="sort" />
     <MESSAGE value="paginator style" />
-    <option name="LAST_COMMIT_MESSAGE" value="paginator style" />
+    <MESSAGE value="catalogue style + book page" />
+    <option name="LAST_COMMIT_MESSAGE" value="catalogue style + book page" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -447,10 +455,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="427" y="208" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1360.728@0.0.1360.728" timestamp="1589430285213" />
-    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1591824331998">
+    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1591831208303">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1591824331998" />
+    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1591831208303" />
     <state x="218" y="55" key="DiffContextDialog" timestamp="1591735838579">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -467,18 +475,18 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="514" y="287" key="NewPhpFileDialog/0.0.1360.728@0.0.1360.728" timestamp="1591744574425" />
-    <state x="181" y="11" width="998" height="708" key="SettingsEditor" timestamp="1591651350561">
+    <state x="181" y="11" width="998" height="708" key="SettingsEditor" timestamp="1591872879998">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="181" y="11" width="998" height="708" key="SettingsEditor/0.0.1360.728@0.0.1360.728" timestamp="1591651350561" />
+    <state x="181" y="11" width="998" height="708" key="SettingsEditor/0.0.1360.728@0.0.1360.728" timestamp="1591872879998" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1591731207035">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1360.728@0.0.1360.728" timestamp="1591731207035" />
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2" timestamp="1591815947002">
+    <state x="272" y="97" key="Vcs.Push.Dialog.v2" timestamp="1591831317225">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1591815947002" />
+    <state x="272" y="97" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1591831317225" />
     <state x="489" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591731205464">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -495,10 +503,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="387" y="0" width="585" height="728" key="find.popup/0.0.1360.728@0.0.1360.728" timestamp="1588998157531" />
-    <state x="399" y="152" key="git4idea.merge.GitPullDialog" timestamp="1591815924868">
+    <state x="399" y="152" key="git4idea.merge.GitPullDialog" timestamp="1591875684485">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="399" y="152" key="git4idea.merge.GitPullDialog/0.0.1360.728@0.0.1360.728" timestamp="1591815924868" />
+    <state x="399" y="152" key="git4idea.merge.GitPullDialog/0.0.1360.728@0.0.1360.728" timestamp="1591875684485" />
     <state x="453" y="238" width="611" height="281" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1589155587021">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
