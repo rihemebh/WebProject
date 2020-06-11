@@ -40,7 +40,7 @@ class CatalogController extends AbstractController
         $form->handleRequest($request);
          $livres_filtre=$paginator->paginate(
             $this->repository->findAllVisibleQuery($search),
-            $request->query->getInt('page',1),20
+             $request->query->getInt('page', 1), 18
         );
 
 
@@ -59,9 +59,8 @@ class CatalogController extends AbstractController
     {
 
         $livre = $this->getDoctrine()->getRepository(Livre::class)->find($id);
-        $filtre = $this->getDoctrine()->getRepository(livre::class)->findBy([
-            'auteur' => $livre->getAuteur(),
-        ]);
+        $filtre = $this->getDoctrine()->getRepository(livre::class)
+            ->findBookBy($livre->getCategories(), $id);
         return $this->render('catalogue/livre/livre.html.twig', [
             'filtre' => $filtre,
             'livre' => $livre]);

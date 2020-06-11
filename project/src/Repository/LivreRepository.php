@@ -8,6 +8,7 @@ use App\Entity\SearchCategory;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\DBAL\Query\QueryBuilder;
 use Doctrine\ORM\Query;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -56,37 +57,33 @@ class LivreRepository extends ServiceEntityRepository
         return $query->getQuery();
     }
 
+
     /**
-    //  * @return Livre[] Returns an array of Livre objects
-    //  */
-
-
-    // /**
-    //  * @return Livre[] Returns an array of Livre objects
-    //  */
-    /*
-    public function findByExampleField($value)
+     * @param Collection $value
+     * @return Livre[] Returns an array of Livre objects
+     */
+    public function findBookBy(Collection $value, $id)
     {
         return $this->createQueryBuilder('l')
-            ->andWhere('l.exampleField = :val')
+            ->join('l.categories', 'c')
+            ->andWhere('c.id IN (:val)')
+            ->andWhere('l.id != :id')
             ->setParameter('val', $value)
-            ->orderBy('l.id', 'ASC')
-            ->setMaxResults(10)
+            ->setParameter('id', $id)
+            ->setMaxResults(12)
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult();
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Livre
-    {
-        return $this->createQueryBuilder('l')
-            ->andWhere('l.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
+
+//    public function findOneBySomeField($value): ?Livre
+//    {
+//        return $this->createQueryBuilder('l')
+//            ->andWhere('l.exampleField = :val')
+//            ->setParameter('val', $value)
+//            ->getQuery()
+//            ->getOneOrNullResult()
+//        ;
+//    }
+//    */
 }

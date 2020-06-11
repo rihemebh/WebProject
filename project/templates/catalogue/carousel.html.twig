@@ -1,179 +1,140 @@
-<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+<!------ Include the above in your HEAD tag ---------->
 
-    <!--Controls-->
-    <div class="controls-top">
-        <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
-        <a class="btn-floating" href="#multi-item-example" data-slide="next"><i
-                    class="fas fa-chevron-right"></i></a>
+
+<div class="container text-center my-3">
+    <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+        <div class="carousel-inner w-100" role="listbox">
+            <div class="carousel-item row card-deck no-gutters active">
+                {% for livre in filtre %}
+                    {% if loop.index <= 4 %}
+                        <div class="col-3 float-left card-col">
+                            <div class="card " id="{{ livre.id }}" style="width: 11.5rem; ">
+                                <i style="font-size:70% " class="fas fa-heart disabled love"><span
+                                            class="js-like small"> {{ livre.Likes | length }}</span></i>
+                                <a href="/livre/{{ livre.id }}"> <img src="{{ livre.path }}"
+                                                                      class="book-img  card-img-top"
+                                                                      alt="..." style="width:100%"></a>
+
+                                <div class="card-body">
+                                    <p class="card-title" style="font-size:75%"><b>{{ livre.nomLivre }}</b>
+                                        <a class="js-like " href="/livre/{{ livre.id }}/like">
+                                            {% if app.user and livre.isLiked(app.user) %}
+                                                <i style="font-size:70%;  " class="fas fa-heart text-danger hearticon"
+                                                   data-toggle="tooltip" data-placement="bottom"
+                                                   title="Unlove this book">
+                                                </i>
+
+                                            {% else %}
+                                                <i style="font-size:70%" class="fas fa-heart hearticon"
+                                                   data-toggle="tooltip"
+                                                   data-placement="bottom" title="love this book">
+                                                </i>
+
+                                            {% endif %}
+                                        </a>
+                                    </p>
+                                    <p class="card-text card_text" style="font-size:60%">By {{ livre.auteur }} </p>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    {% endif %}
+                {% endfor %}
+
+            </div>
+            <div class="carousel-item row no-gutters">
+                {% for livre in filtre %}
+                    {% if loop.index > 4 and loop.index <=8 %}
+
+                        <div class="col-3 float-left card-col">
+                            <div class="card " id="{{ livre.id }}" style="width: 11.5rem; ">
+                                <i style="font-size:70% " class="fas fa-heart disabled love"><span
+                                            class="js-like small"> {{ livre.Likes | length }}</span></i>
+                                <a href="/livre/{{ livre.id }}"> <img src="{{ livre.path }}"
+                                                                      class="book-img  card-img-top"
+                                                                      alt="..." style="width:100%"></a>
+
+                                <div class="card-body">
+                                    <p class="card-title" style="font-size:75%"><b>{{ livre.nomLivre }}</b>
+                                        <a class="js-like " href="/livre/{{ livre.id }}/like">
+                                            {% if app.user and livre.isLiked(app.user) %}
+                                                <i style="font-size:70%;  " class="fas fa-heart text-danger hearticon"
+                                                   data-toggle="tooltip" data-placement="bottom"
+                                                   title="Unlove this book">
+                                                </i>
+
+                                            {% else %}
+                                                <i style="font-size:70%" class="fas fa-heart hearticon"
+                                                   data-toggle="tooltip"
+                                                   data-placement="bottom" title="love this book">
+                                                </i>
+
+                                            {% endif %}
+                                        </a>
+                                    </p>
+                                    <p class="card-text card_text" style="font-size:60%">By {{ livre.auteur }} </p>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="carousel-item row no-gutters">
+                {% for livre in filtre %}
+                    {% if loop.index > 8 %}
+                        <div class="col-3 float-left card-col">
+                            <div class="card " id="{{ livre.id }}" style="width: 11.5rem; ">
+                                <i style="font-size:70% " class="fas fa-heart disabled love"><span
+                                            class="js-like small"> {{ livre.Likes | length }}</span></i>
+                                <a href="/livre/{{ livre.id }}"> <img src="{{ livre.path }}"
+                                                                      class="book-img  card-img-top"
+                                                                      alt="..." style="width:100%"></a>
+
+                                <div class="card-body">
+                                    <p class="card-title" style="font-size:75%"><b>{{ livre.nomLivre }}</b>
+                                        <a class="js-like " href="/livre/{{ livre.id }}/like">
+                                            {% if app.user and livre.isLiked(app.user) %}
+                                                <i style="font-size:70%;  " class="fas fa-heart text-danger hearticon"
+                                                   data-toggle="tooltip" data-placement="bottom"
+                                                   title="Unlove this book">
+                                                </i>
+
+                                            {% else %}
+                                                <i style="font-size:70%" class="fas fa-heart hearticon"
+                                                   data-toggle="tooltip"
+                                                   data-placement="bottom" title="love this book">
+                                                </i>
+
+                                            {% endif %}
+                                        </a>
+                                    </p>
+                                    <p class="card-text card_text" style="font-size:60%">By {{ livre.auteur }} </p>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+        </div>
+        <a class="carousel-control-prev " href="#recipeCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon rounded-circle" style=" background-color: var(--nav_backcolor);"
+                  aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#recipeCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon shadow-lg rounded-circle "
+                  style=" background-color: var(--nav_backcolor);opacity:1 !important;" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
-    <!--/.Controls-->
 
-    <!--Indicators-->
-    <ol class="carousel-indicators">
-        <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
-        <li data-target="#multi-item-example" data-slide-to="1"></li>
-        <li data-target="#multi-item-example" data-slide-to="2"></li>
-    </ol>
-    <!--/.Indicators-->
-
-    <!--Slides-->
-    <div class="carousel-inner" role="listbox">
-
-        <!--First slide-->
-        <div class="carousel-item active">
-
-            <div class="col-md-4">
-                <div class="card mb-2">
-                    <img class="card-img-top"
-                         src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg"
-                         alt="Card image cap">
-                    <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                        <a class="btn btn-primary">Button</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card mb-2">
-                    <img class="card-img-top"
-                         src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
-                         alt="Card image cap">
-                    <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                        <a class="btn btn-primary">Button</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card mb-2">
-                    <img class="card-img-top"
-                         src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg"
-                         alt="Card image cap">
-                    <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                        <a class="btn btn-primary">Button</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!--/.First slide-->
-
-        <!--Second slide-->
-        <div class="carousel-item">
-
-            <div class="col-md-4">
-                <div class="card mb-2">
-                    <img class="card-img-top"
-                         src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg"
-                         alt="Card image cap">
-                    <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                        <a class="btn btn-primary">Button</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card mb-2">
-                    <img class="card-img-top"
-                         src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg"
-                         alt="Card image cap">
-                    <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                        <a class="btn btn-primary">Button</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card mb-2">
-                    <img class="card-img-top"
-                         src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg"
-                         alt="Card image cap">
-                    <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                        <a class="btn btn-primary">Button</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!--/.Second slide-->
-
-        <!--Third slide-->
-        <div class="carousel-item">
-
-            <div class="col-md-4">
-                <div class="card mb-2">
-                    <img class="card-img-top"
-                         src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg"
-                         alt="Card image cap">
-                    <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                        <a class="btn btn-primary">Button</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card mb-2">
-                    <img class="card-img-top"
-                         src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg"
-                         alt="Card image cap">
-                    <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                        <a class="btn btn-primary">Button</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card mb-2">
-                    <img class="card-img-top"
-                         src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(51).jpg"
-                         alt="Card image cap">
-                    <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                        <a class="btn btn-primary">Button</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!--/.Third slide-->
-
-    </div>
-    <!--/.Slides-->
 
 </div>
-<!--/.Carousel Wrapper-->
+<br>

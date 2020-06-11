@@ -15,6 +15,36 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&display=swap');
 
+        .row-equal > div[class*='col-'] {
+            display: flex;
+            flex: 1 0 auto;
+        }
+
+        .row-equal .card {
+            width: 100%;
+        }
+
+        /* ensure equal card height inside carousel */
+        .carousel-inner > .row-equal.active,
+        .carousel-inner > .row-equal.next,
+        .carousel-inner > .row-equal.prev {
+            display: flex;
+        }
+
+        /* prevent flicker during transition */
+        .carousel-inner > .row-equal.active.left,
+        .carousel-inner > .row-equal.active.right {
+            opacity: 0.5;
+            display: flex;
+        }
+
+
+        /* control image height */
+        .card-img-top-250 {
+            max-height: 250px;
+            overflow: hidden;
+        }
+
         a.nav-link:hover {
             font-size: x-large;
         }
@@ -25,7 +55,7 @@
             color: black;
             opacity: 1;
             position: absolute;
-            margin: 28%;
+            margin: 32%;
         }
 
         .book-img {
@@ -144,42 +174,10 @@
         <div class="row">
             <div class="container-fluid"><h4 class="text-shadow"> related books</h4></div>
         </div>
-        <div class="row">
-            {% for book in filtre %}
-                <div style="font-size:50px" class="col-2 card-col">
-                    <div class="card" style="font-size:50px" id="{{ book.id }}">
 
-                        <i style="font-size:30% " class="fas fa-heart disabled love"><span
-                                    class="js-like small">  {{ livre.Likes | length }}</span></i>
-                        <a href="/livre/{{ book.id }}"> <img src="{{ book.path }}" style="font-size:50px"
-                                                             class="book-img  card-img-top"
-                                                             alt="..." style="width:100%"></a>
+        <br>
+        {% include 'catalogue/carousel.html.twig' %}
 
-                        <div class="card-body">
-                            <p class="card-title" style="font-size:40%"><b>{{ book.nomLivre }}</b>
-                                <a class="js-like " href="/livre/{{ livre.id }}/like">
-                                    {% if app.user and livre.isLiked(app.user) %}
-                                        <i style="font-size:70%;  " class="fas fa-heart text-danger hearticon"
-                                           data-toggle="tooltip" data-placement="bottom" title="Unlove this book">
-                                        </i>
-
-                                    {% else %}
-                                        <i style="font-size:70%" class="fas fa-heart hearticon"
-                                           data-toggle="tooltip"
-                                           data-placement="bottom" title="love this book">
-                                        </i>
-
-                                    {% endif %}
-                                </a>
-                            </p>
-                            <p class="card-text card_text " style="font-size:25%; color:grey">By {{ livre.auteur }} </p>
-
-                        </div><!--ffb84d-->
-                    </div>
-
-                </div>
-            {% endfor %}
-        </div>
     </div>
 
 
