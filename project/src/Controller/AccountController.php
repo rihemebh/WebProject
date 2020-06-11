@@ -8,6 +8,7 @@ use App\Form\ResetType;
 use App\Form\UserType;
 use App\ServiceValidate\address;
 use App\ServiceValidate\newValidator;
+use Couchbase\Document;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormError;
@@ -27,6 +28,7 @@ class AccountController extends AbstractController
      */
     public function index1( Request $request, EntityManagerInterface $manager,newValidator $validator)
     {
+        //$document=new Document();
         $user = $this->getUser();
         $form = $this->createForm(UserType::class, $user);
         $form->remove('Register');
@@ -35,7 +37,7 @@ class AccountController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()  ) {
             {
-                dd($form->isValid());
+                //dd($form->isValid());
                 $this->addFlash('success', 'Changes Saved !');
                 $manager->persist($user);
                 $manager->flush();

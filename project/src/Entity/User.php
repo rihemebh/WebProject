@@ -16,6 +16,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     fields = {"Email"},
  *     message = "Email Already Used"
  * )
+ *
  */
 class User implements UserInterface
 {
@@ -75,10 +76,7 @@ class User implements UserInterface
      */
     private $Phone_Number;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $Profile_Picture;
+
 
 
     /**
@@ -96,6 +94,7 @@ class User implements UserInterface
      * @ORM\ManyToMany(targetEntity=Livre::class, mappedBy="Likes")
      */
     private $BooksLiked;
+
 
     public function __construct()
     {
@@ -167,17 +166,6 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getProfilePicture(): ?string
-    {
-        return $this->Profile_Picture;
-    }
-
-    public function setProfilePicture(string $Profile_Picture): self
-    {
-        $this->Profile_Picture = $Profile_Picture;
-
-        return $this;
-    }
 
 
     public function getUserName(): ?string
@@ -236,6 +224,7 @@ class User implements UserInterface
 
         return $this;
     }
+
 
 }
 ?>

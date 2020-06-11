@@ -7,6 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/project/tests" isTestSource="true" packagePrefix="App\Tests\" />
       <excludeFolder url="file://$MODULE_DIR$/conception" />
+      <excludeFolder url="file://$MODULE_DIR$/project/vendor/behat/transliterator" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/doctrine/annotations" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/doctrine/cache" />
@@ -29,8 +30,12 @@
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/egulias/email-validator" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/friendsofsymfony/jsrouting-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/fzaninotto/faker" />
+      <excludeFolder url="file://$MODULE_DIR$/project/vendor/gedmo/doctrine-extensions" />
+      <excludeFolder url="file://$MODULE_DIR$/project/vendor/imagine/imagine" />
+      <excludeFolder url="file://$MODULE_DIR$/project/vendor/jms/metadata" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/knplabs/knp-components" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/knplabs/knp-paginator-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/project/vendor/liip/imagine-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/nikic/php-parser" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/ocramius/package-versions" />
@@ -44,6 +49,7 @@
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/psr/link" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/psr/log" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/sensio/framework-extra-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/project/vendor/stof/doctrine-extensions-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/symfony/asset" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/symfony/browser-kit" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/symfony/cache" />
@@ -103,6 +109,7 @@
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/symfony/service-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/symfony/stopwatch" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/symfony/string" />
+      <excludeFolder url="file://$MODULE_DIR$/project/vendor/symfony/templating" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/symfony/test-pack" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/symfony/translation" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/symfony/translation-contracts" />
@@ -119,6 +126,7 @@
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/twig/extra-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/twig/intl-extra" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/twig/twig" />
+      <excludeFolder url="file://$MODULE_DIR$/project/vendor/vich/uploader-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/willdurand/jsonp-callback-validator" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/zendframework/zend-code" />

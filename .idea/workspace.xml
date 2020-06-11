@@ -23,8 +23,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="937d4a38-440b-4eaf-9c53-d9bf323c9708" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/project/config/packages/liip_imagine.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/packages/stof_doctrine_extensions.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/packages/vich_uploader.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/config/routes/liip_imagine.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/public/images/users/icons8-circled-c-50 (5).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/Migrations/Version20200611221943.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/Migrations/Version20200611223908.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/Migrations/Version20200611232026.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/WebProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WebProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/account/BaseAccount.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/account/BaseAccount.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/project/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/project/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Controller/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Controller/AccountController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Form/UserType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/project/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +51,9 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/project/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable path="composer" />
+    </execution>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -163,6 +183,14 @@
       <path value="$PROJECT_DIR$/project/vendor/symfony/polyfill-php80" />
       <path value="$PROJECT_DIR$/project/vendor/symfony/mailer" />
       <path value="$PROJECT_DIR$/project/vendor/doctrine/sql-formatter" />
+      <path value="$PROJECT_DIR$/project/vendor/behat/transliterator" />
+      <path value="$PROJECT_DIR$/project/vendor/stof/doctrine-extensions-bundle" />
+      <path value="$PROJECT_DIR$/project/vendor/gedmo/doctrine-extensions" />
+      <path value="$PROJECT_DIR$/project/vendor/liip/imagine-bundle" />
+      <path value="$PROJECT_DIR$/project/vendor/symfony/templating" />
+      <path value="$PROJECT_DIR$/project/vendor/imagine/imagine" />
+      <path value="$PROJECT_DIR$/project/vendor/vich/uploader-bundle" />
+      <path value="$PROJECT_DIR$/project/vendor/jms/metadata" />
     </include_path>
   </component>
   <component name="ProjectId" id="1bMyhbNcHeQ1jivC3H9gjudzrbn" />
@@ -192,6 +220,7 @@
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
@@ -258,7 +287,7 @@
       <workItem from="1591794584054" duration="18481000" />
       <workItem from="1591819112846" duration="8929000" />
       <workItem from="1591828162719" duration="2947000" />
-      <workItem from="1591872669150" duration="11964000" />
+      <workItem from="1591872669150" duration="24670000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1589405183358</created>
@@ -407,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591885977668</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary=".">
+      <created>1591886759142</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1591886759142</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,7 +464,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="." />
     <MESSAGE value=".." />
     <MESSAGE value="..." />
     <MESSAGE value="annuler dernier push" />
@@ -448,7 +483,8 @@
     <MESSAGE value="navbar_base update" />
     <MESSAGE value="related book (carousel)" />
     <MESSAGE value="icon" />
-    <option name="LAST_COMMIT_MESSAGE" value="icon" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -460,10 +496,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="490" y="256" key="#Composer/0.0.1360.728@0.0.1360.728" timestamp="1588968667668" />
-    <state x="473" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1591722195789">
+    <state x="473" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1591916066570">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="473" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1360.728@0.0.1360.728" timestamp="1591722195789" />
+    <state x="473" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1360.728@0.0.1360.728" timestamp="1591916066570" />
     <state x="329" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1591742870150">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -476,10 +512,14 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="427" y="208" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1360.728@0.0.1360.728" timestamp="1589430285213" />
-    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1591885974260">
+    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1591886755797">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1591885974260" />
+    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1591886755797" />
+    <state x="456" y="276" key="ComposerInitDialogKey" timestamp="1591916304100">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="456" y="276" key="ComposerInitDialogKey/0.0.1360.728@0.0.1360.728" timestamp="1591916304100" />
     <state x="218" y="55" key="DiffContextDialog" timestamp="1591735838579">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -532,13 +572,24 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="453" y="238" width="611" height="281" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1360.728@0.0.1360.728" timestamp="1589155587021" />
-    <state x="336" y="162" key="run.anything.popup" timestamp="1591806303824">
+    <state x="336" y="162" key="run.anything.popup" timestamp="1591894468531">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="336" y="162" key="run.anything.popup/0.0.1360.728@0.0.1360.728" timestamp="1591806303824" />
+    <state x="336" y="162" key="run.anything.popup/0.0.1360.728@0.0.1360.728" timestamp="1591894468531" />
     <state x="343" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1591368784903">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="343" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1591368784903" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/project/templates/registration/SignUp.html.twig</url>
+          <line>18</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

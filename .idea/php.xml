@@ -118,7 +118,20 @@
       <path value="$PROJECT_DIR$/project/vendor/symfony/polyfill-php80" />
       <path value="$PROJECT_DIR$/project/vendor/symfony/mailer" />
       <path value="$PROJECT_DIR$/project/vendor/doctrine/sql-formatter" />
+      <path value="$PROJECT_DIR$/project/vendor/behat/transliterator" />
+      <path value="$PROJECT_DIR$/project/vendor/stof/doctrine-extensions-bundle" />
+      <path value="$PROJECT_DIR$/project/vendor/gedmo/doctrine-extensions" />
+      <path value="$PROJECT_DIR$/project/vendor/liip/imagine-bundle" />
+      <path value="$PROJECT_DIR$/project/vendor/symfony/templating" />
+      <path value="$PROJECT_DIR$/project/vendor/imagine/imagine" />
+      <path value="$PROJECT_DIR$/project/vendor/vich/uploader-bundle" />
+      <path value="$PROJECT_DIR$/project/vendor/jms/metadata" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/project/vendor/autoload.php" />
+    </phpunit_settings>
+  </component>
 </project>
