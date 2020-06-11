@@ -1,6 +1,6 @@
 body{
-    background: url("cover.jpg") rgba(0,0,0,0.7);
-
+    background: url("cover.jpg") no-repeat center center;
+  background-size:100% ;
 }
 #forgot{
     color: #004041;
@@ -30,8 +30,7 @@ h5.modal-title p{
     justify-content: center;
     margin-top:25px;
     margin-bottom: 25px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(60px);
+
 }
 
 .form-control{

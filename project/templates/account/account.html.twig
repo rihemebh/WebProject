@@ -50,8 +50,14 @@
     <div class="row">
         {{ form_widget(form.Save_Changes) }}
     </div>
-
     <hr>
+
+    {% for message in app.flashes('alert') %}
+<div class="alert alert-danger">
+    <i class="fad fa-engine-warning"></i>
+    {{ message }}
+</div>
+{% endfor %}
     <p class="message"><i class="fad fa-shield"></i>Security :</p>
 
 

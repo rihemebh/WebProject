@@ -25,6 +25,7 @@ class RegistrationController extends AbstractController
 
         $user=new User();
         $SignUp=$this->createForm(UserType::class,$user);
+        $SignUp->remove('Save_Changes');
         try {
             $SignUp->handleRequest($request);
         } catch (\Exception $e) {

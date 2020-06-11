@@ -7,6 +7,7 @@ use App\Form\AddressType;
 use App\Form\ResetType;
 use App\Form\UserType;
 use App\ServiceValidate\address;
+use App\ServiceValidate\newValidator;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormError;
@@ -24,15 +25,17 @@ class AccountController extends AbstractController
      * @param UserPasswordEncoderInterface $encoder
      * @return Response
      */
-    public function index1( Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder)
+    public function index1( Request $request, EntityManagerInterface $manager,newValidator $validator)
     {
         $user = $this->getUser();
         $form = $this->createForm(UserType::class, $user);
         $form->remove('Register');
         $form->remove('Password');
+        $validator->validform($form);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()  ) {
             {
+                dd($form->isValid());
                 $this->addFlash('success', 'Changes Saved !');
                 $manager->persist($user);
                 $manager->flush();
@@ -55,15 +58,20 @@ public function index2(Request $request, EntityManagerInterface $manager, UserPa
     $checkPass = $encoder->isPasswordValid($user, $reset->get('old'));
 
     if ($checkPass === true) {
-        if($reset->get('new')===$reset->get('confirm'))
-        $hash = $encoder->encodePassword($user, $reset->get('new'));
-        $user->setPassword($hash);
-        $manager->persist($user);
-        $manager->flush();
-        $this->addFlash('success', 'Password Successfully Updated !');
-
+        if($reset->get('new')=== $reset->get('confirm'))
+            if($reset->get('new')>=8){
+            $hash = $encoder->encodePassword($user, $reset->get('new'));
+            $user->setPassword($hash);
+            $manager->persist($user);
+            $manager->flush();
+            $this->addFlash('success', 'Password Successfully Updated !');
+        }
+        else{
+            $this->addFlash('alert', 'Password Too Short  !');
+        }
+        else{ $this->addFlash('alert', 'Passwords Do Not Match  !');}
     } else {
-        $reset->get('oldPassword')->addError(new FormError('Incorrect Password'));
+        $this->addFlash('alert', 'Password Incorrect !');
     }
     return $this->redirectToRoute('account');
 
@@ -79,10 +87,16 @@ public function index2(Request $request, EntityManagerInterface $manager, UserPa
         $form = $this->createForm(AddressType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() ) {
-            $user->setAddress($make->create($form));
-            $manager->persist($user);
-            $manager->flush();
-            $this->addFlash('success', 'Address Updated  !');
+            if (!$make->create($form) === "")
+             {
+                $user->setAddress($make->create($form));
+                $manager->persist($user);
+                $manager->flush();
+                $this->addFlash('success', 'Address Updated  !');
+            }
+            else{
+                $this->addFlash('warning', 'Please Enter An Address Before Saving !');
+            }
         }
         $address = $user->getAddress();
 
