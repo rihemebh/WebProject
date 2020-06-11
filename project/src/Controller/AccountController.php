@@ -87,15 +87,13 @@ public function index2(Request $request, EntityManagerInterface $manager, UserPa
         $form = $this->createForm(AddressType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() ) {
-            if (!$make->create($form) === "")
-             {
+            if ($make->create($form) === "")
+                 $this->addFlash('warning', 'Please Enter An Address Before Saving !');
+            else{
                 $user->setAddress($make->create($form));
                 $manager->persist($user);
                 $manager->flush();
                 $this->addFlash('success', 'Address Updated  !');
-            }
-            else{
-                $this->addFlash('warning', 'Please Enter An Address Before Saving !');
             }
         }
         $address = $user->getAddress();

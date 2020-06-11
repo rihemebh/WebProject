@@ -10,6 +10,7 @@
         <div class="alert alert-success">
             <i class="fa fa-check-circle approve"></i>
             {{ message }}
+        </div>
     {% endfor %}
     {% for message in app.flashes('warning') %}
         <div class="alert alert-warning">

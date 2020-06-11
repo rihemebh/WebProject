@@ -10,23 +10,26 @@
             {{ message }}
         </div>
     {% endfor %}
-    {{ form_start( form , {'attr': {'autocomplete':'off','novalidate':'novalidate'}}) }}
+    {{ form_start( form , {'attr': {'autocomplete':'off'}}) }}
     <hr>
     <p class="message"><i class="fad fa-user"></i>General Settings</p>
     <div class="row">
         <div class="box">
             <p class="label">First Name :</p>
-            {{ form_widget(form.First_Name,{'attr':{'class':'organize-form'}}) }}
+            {{ form_widget(form.First_Name,{'attr':{'class':'organize-form','oninvalid':"this.setCustomValidity('Please Fill This Field')",
+                'oninput':"setCustomValidity('')"}}) }}
             <div class="erreur">  {{ form_errors(form.First_Name) }}</div>
         </div>
         <div class="box">
             <p class="label">Last Name :</p>
-            {{ form_widget(form.Last_Name,{'attr':{'class':'organize-form'}}) }}
+            {{ form_widget(form.Last_Name,{'attr':{'class':'organize-form','oninvalid':"this.setCustomValidity('Please Fill This Field')",
+                'oninput':"setCustomValidity('')"}}) }}
             <div class="erreur"> {{ form_errors(form.Last_Name) }}</div>
         </div>
         <div class="box">
             <p class="label">User Name :</p>
-            {{ form_widget(form.User_Name,{'attr':{'class':'organize-form'}}) }}
+            {{ form_widget(form.User_Name,{'attr':{'class':'organize-form','oninvalid':"this.setCustomValidity('Please Fill This Field')",
+                'oninput':"setCustomValidity('')"}}) }}
             <div class="erreur"> {{ form_errors(form.User_Name) }}</div>
         </div>
     </div>
@@ -35,13 +38,15 @@
     <div class="row">
         <div class="box">
             <p class="label">Phone Number :</p>
-            {{ form_widget(form.Phone_Number,{'attr':{'class':'organize-form'}}) }}
+            {{ form_widget(form.Phone_Number,{'attr':{'class':'organize-form','oninvalid':"this.setCustomValidity('Please Fill This Field')",
+                'oninput':"setCustomValidity('')"}}) }}
             <div class="erreur">{{ form_errors(form.Phone_Number) }}</div>
 
         </div>
         <div class="box">
             <p class="label">Email Address :</p>
-            {{ form_widget(form.Email,{'attr':{'class':'organize-form'}}) }}
+            {{ form_widget(form.Email,{'attr':{'class':'organize-form','oninvalid':"this.setCustomValidity('Please Fill This Field')",
+                'oninput':"setCustomValidity('')"}}) }}
             <div class="erreur"> {{ form_errors(form.Email) }}</div>
 
         </div>
@@ -68,21 +73,24 @@
         <div class="box">
             <div class="in">
                 <p class="label">Current Password :</p>
-                <input type="password" class="organize-form form-control" name="old">
+                <input type="password" class="organize-form form-control" name="old" required oninvalid="this.setCustomValidity('Please Fill This Field')"
+                       oninput="setCustomValidity('')">
                 <div class="erreur"> </div>
             </div>
         </div>
         <div class="box">
             <div class="in">
                 <p class="label">New Password :</p>
-                <input type="password" class="organize-form form-control" name="new">
+                <input type="password" class="organize-form form-control" name="new" required oninvalid="this.setCustomValidity('Please Fill This Field')"
+                       oninput="setCustomValidity('')">
                 <div class="erreur">  </div>
             </div>
         </div>
         <div class="box">
             <div class="in">
                 <p class="label">Confirm Password :</p>
-               <input type="password" class="organize-form form-control" name="confirm">
+               <input type="password" class="organize-form form-control" name="confirm" required oninvalid="this.setCustomValidity('Please Fill This Field')"
+                      oninput="setCustomValidity('')">
                 <div class="erreur" >  </div>
             </div>
         </div>
