@@ -23,10 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="937d4a38-440b-4eaf-9c53-d9bf323c9708" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/project/public/ico.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/baseFront.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/baseFront.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/catalogue/catalogue.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/catalogue/catalogue.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/account/BaseAccount.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/account/BaseAccount.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,7 +258,7 @@
       <workItem from="1591794584054" duration="18481000" />
       <workItem from="1591819112846" duration="8929000" />
       <workItem from="1591828162719" duration="2947000" />
-      <workItem from="1591872669150" duration="10978000" />
+      <workItem from="1591872669150" duration="11964000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1589405183358</created>
@@ -402,7 +400,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591884314444</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="icon">
+      <created>1591885977668</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1591885977668</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -442,7 +447,8 @@
     <MESSAGE value="catalogue style + book page" />
     <MESSAGE value="navbar_base update" />
     <MESSAGE value="related book (carousel)" />
-    <option name="LAST_COMMIT_MESSAGE" value="related book (carousel)" />
+    <MESSAGE value="icon" />
+    <option name="LAST_COMMIT_MESSAGE" value="icon" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -470,10 +476,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="427" y="208" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1360.728@0.0.1360.728" timestamp="1589430285213" />
-    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1591884309625">
+    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1591885974260">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1591884309625" />
+    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1591885974260" />
     <state x="218" y="55" key="DiffContextDialog" timestamp="1591735838579">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
