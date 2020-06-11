@@ -99,7 +99,44 @@
     <br>
     <div class="container-fluid ">
         <div class="row">
-            {% if filtre is empty %}
+
+            {% for livre in filtre %}
+                <div class="col card-col">
+                    <div class="card " id="{{ livre.id }}" style="width: 11.5rem; ">
+                        <i style="font-size:70% " class="fas fa-heart disabled love"><span
+                                    class="js-like small"> {{ livre.Likes | length }}</span></i>
+                        <a href="/livre/{{ livre.id }}"> <img src="{{ livre.path }}" class="book-img  card-img-top"
+                                                              alt="..." style="width:100%"></a>
+
+                        <div class="card-body">
+                            <p class="card-title" style="font-size:75%">{{ livre.nomLivre }}
+                                <a class="js-like " href="/livre/{{ livre.id }}/like">
+                                    {% if app.user and livre.isLiked(app.user) %}
+                                        <i style="font-size:70%;  " class="fas fa-heart text-danger hearticon"
+                                           data-toggle="tooltip" data-placement="bottom" title="Unlove this book">
+                                        </i>
+
+                                    {% else %}
+                                        <i style="font-size:70%" class="fas fa-heart hearticon"
+                                           data-toggle="tooltip"
+                                           data-placement="bottom" title="love this book">
+                                        </i>
+
+                                    {% endif %}
+                                </a>
+                            </p>
+                            <p class="card-text price" style="font-size:70%"><b>{{ livre.prix }} Dt</b>
+                            <p class="card-text card_text" style="font-size:60%">By {{ livre.auteur }} </p>
+                            <button class="btn shadow-sm cardbutton" data-id="{{ livre.id }}" style="font-size:70%">
+                                Add to Cart
+                                <i
+                                        class="fas fa-shopping-cart  icon"
+                                        style="font-size:11px;"> </i></button>
+                        </div>
+                    </div>
+
+                </div>
+            {% else %}
                 <div class="container" style="height:80px">
                     <div class="row">
                         <div class="col-12">
@@ -108,46 +145,8 @@
                         </div>
                     </div>
                 </div>
-            {% else %}
-                {% for livre in filtre %}
-                    <div class="col card-col">
-                        <div class="card " id="{{ livre.id }}" style="width: 11.5rem; ">
-                            <i style="font-size:70% " class="fas fa-heart disabled love"><span
-                                        class="js-like small"> {{ livre.Likes | length }}</span></i>
-                            <a href="/livre/{{ livre.id }}"> <img src="{{ livre.path }}" class="book-img  card-img-top"
-                                                                  alt="..." style="width:100%"></a>
+            {% endfor %}
 
-                            <div class="card-body">
-                                <p class="card-title" style="font-size:75%">{{ livre.nomLivre }}
-                                    <a class="js-like " href="/livre/{{ livre.id }}/like">
-                                        {% if app.user and livre.isLiked(app.user) %}
-                                            <i style="font-size:70%;  " class="fas fa-heart text-danger hearticon"
-                                               data-toggle="tooltip" data-placement="bottom" title="Unlove this book">
-                                            </i>
-
-                                        {% else %}
-                                            <i style="font-size:70%" class="fas fa-heart hearticon"
-                                               data-toggle="tooltip"
-                                               data-placement="bottom" title="love this book">
-                                            </i>
-
-                                        {% endif %}
-                                    </a>
-                                </p>
-                                <p class="card-text price" style="font-size:70%"><b>{{ livre.prix }} Dt</b>
-                                <p class="card-text card_text" style="font-size:60%">By {{ livre.auteur }} </p>
-                                <button class="btn shadow-sm cardbutton" data-id="{{ livre.id }}" style="font-size:70%">
-                                    Add to Cart
-                                    <i
-                                            class="fas fa-shopping-cart  icon"
-                                            style="font-size:11px;"> </i></button>
-                            </div>
-                        </div>
-
-                    </div>
-
-                {% endfor %}
-            {% endif %}
         </div>
         <br>
         <div class="container">
