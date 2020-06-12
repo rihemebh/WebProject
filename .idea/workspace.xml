@@ -22,28 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="937d4a38-440b-4eaf-9c53-d9bf323c9708" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/project/config/packages/liip_imagine.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/config/packages/stof_doctrine_extensions.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/config/packages/vich_uploader.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/config/routes/liip_imagine.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/public/images/users/icons8-circled-c-50 (5).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/Migrations/Version20200611221943.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/Migrations/Version20200611223908.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/Migrations/Version20200611232026.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/WebProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WebProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/project/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/project/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Controller/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Controller/AccountController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Form/UserType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/project/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/security/login.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="2abdafbf-2741-446c-bf37-202c749e15bd" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -208,7 +187,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/project/src/Migrations" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/project" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -524,10 +503,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="218" y="55" key="DiffContextDialog/0.0.1360.728@0.0.1360.728" timestamp="1591735838579" />
-    <state x="460" y="119" key="FileChooserDialogImpl" timestamp="1588979381921">
+    <state x="460" y="119" key="FileChooserDialogImpl" timestamp="1591961858188">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="460" y="119" key="FileChooserDialogImpl/0.0.1360.728@0.0.1360.728" timestamp="1588979381921" />
+    <state x="460" y="119" key="FileChooserDialogImpl/0.0.1360.728@0.0.1360.728" timestamp="1591961858188" />
     <state x="780" y="87" key="NewPhpClassDialog" timestamp="1591744730612">
       <screen x="0" y="0" width="1360" height="728" />
     </state>

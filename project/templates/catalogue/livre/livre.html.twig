@@ -15,47 +15,22 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&display=swap');
 
-        .row-equal > div[class*='col-'] {
-            display: flex;
-            flex: 1 0 auto;
-        }
-
-        .row-equal .card {
-            width: 100%;
-        }
-
-        /* ensure equal card height inside carousel */
-        .carousel-inner > .row-equal.active,
-        .carousel-inner > .row-equal.next,
-        .carousel-inner > .row-equal.prev {
-            display: flex;
-        }
-
-        /* prevent flicker during transition */
-        .carousel-inner > .row-equal.active.left,
-        .carousel-inner > .row-equal.active.right {
-            opacity: 0.5;
-            display: flex;
-        }
-
-
-        /* control image height */
-        .card-img-top-250 {
-            max-height: 250px;
-            overflow: hidden;
-        }
 
         a.nav-link:hover {
             font-size: x-large;
         }
 
         .love {
-            padding: 0.5rem 1.4rem;
+            margin:24.5%;
+
+            /*margin: 6.3rem;*/
+            padding: 1.5rem 4.5rem;
             border-radius: 25px;
             color: black;
             opacity: 1;
             position: absolute;
-            margin: 32%;
+
+            font-size:80%;
         }
 
         .book-img {
@@ -169,10 +144,10 @@
 
     </div>
     <br><br>
-
-    <div class="container-fluid shadow">
+<hr class="shadow">
+    <div class="container-fluid">
         <div class="row">
-            <div class="container-fluid"><h4 class="text-shadow"> related books</h4></div>
+            <div class="container-fluid"><h3 style="text-shadow:  1px 1px 3px lightgrey;"> <i>Related books</i></h3></div>
         </div>
 
         <br>
