@@ -46,7 +46,7 @@ class RegistrationController extends AbstractController
             ->setFrom('cheikh@gmail.com')
                 ->setTo($user->getEmail())
                 ->setBody(
-                    $this->renderView('registration/activate.html.twig',['token'=>$user->getActivationToken()]),
+                    $this->renderView('registration/activate.html.twig',['token'=>$user->getActivationToken(),'username'=>$user->getUserName()]),
                 'text/html'
                 );
             $mailer->send($message);

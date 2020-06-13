@@ -1,9 +1,44 @@
-{% extends 'baseFront.html.twig' %}
-{% block Title %}Activate Your Account{% endblock %}
-  {% block style %}{% endblock %}
- {% block body %}
-     <h3>Welcome To Cheikh Books !</h3>
- <p>You Are Almosts There. To Access Your Account </p>
-     <a href="{{ absolute_url(path('activation',{'token':token })) }}">Activate</a>
- {% endblock %}
-{% block signupbutton%}{% endblock %}
+
+{% apply inline_css %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style  >
+            body{
+                border-top: #52ACB4 8px solid;
+                padding-top: 30px;
+                padding-bottom: 30px;
+                box-shadow: gray 1px 1px 10px;
+                width: 650px;
+                background-color:white;
+                margin-top:20px;
+            }
+            a ,a:hover{
+                color:#52ACB4;
+                font-weight: bold;
+                margin-top: 20px;
+               padding-left:250px;
+            }
+        h2,p{
+            text-align: center;
+        }
+
+
+    </style>
+    <title>Confirm</title>
+
+</head>
+<body>
+    <h2>Welcome To Cheikh Books {{username}} ! </h2> <br>
+    <p>   To access your account, click the link below and start shopping for books </p>
+    <hr>
+    <a href="{{ absolute_url(path('activation',{'token':token })) }}" class="btn save">Activate My Account</a>
+</body>
+</html>
+
+{% endapply %}
