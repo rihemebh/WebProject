@@ -4,7 +4,7 @@
 namespace App\Entity;
 
 
-class PropertySearch{
+class PropertySearch  {
 
     /**
      * @var String|null

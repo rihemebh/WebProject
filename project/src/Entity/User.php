@@ -95,6 +95,11 @@ class User implements UserInterface
      */
     private $BooksLiked;
 
+    /**
+     * @ORM\Column(type="string", length=50, nullable=true)
+     */
+    private $activation_token;
+
 
     public function __construct()
     {
@@ -221,6 +226,18 @@ class User implements UserInterface
             $this->BooksLiked->removeElement($booksLiked);
             $booksLiked->removeLike($this);
         }
+
+        return $this;
+    }
+
+    public function getActivationToken(): ?string
+    {
+        return $this->activation_token;
+    }
+
+    public function setActivationToken(?string $activation_token): self
+    {
+        $this->activation_token = $activation_token;
 
         return $this;
     }

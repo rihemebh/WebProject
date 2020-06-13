@@ -27,3 +27,4 @@ yarn-error.log
 ###> liip/imagine-bundle ###
 /public/media/cache/
 ###< liip/imagine-bundle ###
+/src/Migrations/Version20200612085413.php

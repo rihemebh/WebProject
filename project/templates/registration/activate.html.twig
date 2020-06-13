@@ -1,0 +1,9 @@
+{% extends 'baseFront.html.twig' %}
+{% block Title %}Activate Your Account{% endblock %}
+  {% block style %}{% endblock %}
+ {% block body %}
+     <h3>Welcome To Cheikh Books !</h3>
+ <p>You Are Almosts There. To Access Your Account </p>
+     <a href="{{ absolute_url(path('activation',{'token':token })) }}">Activate</a>
+ {% endblock %}
+{% block signupbutton%}{% endblock %}
