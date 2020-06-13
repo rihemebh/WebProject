@@ -1,0 +1,26 @@
+body{
+    background-color: rgba(0,0,0,0.3);
+    background-blend-mode: overlay;
+}
+
+p.confirm{
+    font-size: 24px;
+}
+
+.greet{
+    text-align: center;
+    margin-bottom:-15px ;
+}
+img{
+    width:60px;
+}
+.modal-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h5{
+    color:#52ACB4;
+    font-weight: bold;
+}

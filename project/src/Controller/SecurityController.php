@@ -19,7 +19,9 @@ class SecurityController extends AbstractController
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         if ($this->getUser()) {
+            if(!$this->getUser()->getActivationToken())
             return $this->redirectToRoute('account');
+            else $this->redirectToRoute('confirm');
         }
 
         // get the login error if there is one
@@ -37,55 +39,4 @@ class SecurityController extends AbstractController
     {
     }
 
-    /**
-     * @Route("/forgottenPassword", name="app_forgotten_password")
-     */
-   /* public function forgottenPassword(
-        Request $request,
-        UserPasswordEncoderInterface $encoder,
-        \Swift_Mailer $mailer,
-        TokenGeneratorInterface $tokenGenerator
-    ): Response
-    {
-
-        if ($request->isMethod('POST')) {
-
-            $email = $request->request->get('email');
-
-            $entityManager = $this->getDoctrine()->getManager();
-            $user = $entityManager->getRepository(User::class)->findOneByEmail($email);
-
-            if ($user === null) {
-                $this->addFlash('danger', 'Email Inconnu');
-                return $this->redirectToRoute('homepage');
-            }
-            $token = $tokenGenerator->generateToken();
-
-            try{
-                $user->setResetToken($token);
-                $entityManager->flush();
-            } catch (\Exception $e) {
-                $this->addFlash('warning', $e->getMessage());
-                return $this->redirectToRoute('homepage');
-            }
-
-            $url = $this->generateUrl('app_reset_password', array('token' => $token), UrlGeneratorInterface::ABSOLUTE_URL);
-
-            $message = (new \Swift_Message('Forgot Password'))
-                ->setFrom('g.ponty@dev-web.io')
-                ->setTo($user->getEmail())
-                ->setBody(
-                    "blablabla voici le token pour reseter votre mot de passe : " . $url,
-                    'text/html'
-                );
-
-            $mailer->send($message);
-
-            $this->addFlash('notice', 'Mail envoyé');
-
-            return $this->redirectToRoute('homepage');
-        }
-
-        return $this->render('security/forgotten_password.html.twig');
-    }*/
 }

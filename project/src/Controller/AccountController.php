@@ -26,26 +26,27 @@ class AccountController extends AbstractController
      * @param UserPasswordEncoderInterface $encoder
      * @return Response
      */
-    public function index1( Request $request, EntityManagerInterface $manager,newValidator $validator)
+    public function index1( Request $request, EntityManagerInterface $manager)
     {
-        //$document=new Document();
+
         $user = $this->getUser();
-        $form = $this->createForm(UserType::class, $user);
-        $form->remove('Register');
-        $form->remove('Password');
-        $validator->validform($form);
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()  ) {
-            {
-                //dd($form->isValid());
-                $this->addFlash('success', 'Changes Saved !');
-                $manager->persist($user);
-                $manager->flush();
+        if ($user->getActivationToken()) return $this->redirectToRoute('confirm');
+        else {
+            $form = $this->createForm(UserType::class, $user);
+            $form->remove('Register');
+            $form->remove('Password');
+            $form->handleRequest($request);
+            if ($form->isSubmitted() && $form->isValid()) {
+                {
+                    $this->addFlash('success', 'Changes Saved !');
+                    $manager->persist($user);
+                    $manager->flush();
+                }
             }
+            return $this->render('account/account.html.twig', [
+                'form' => $form->createView(),
+            ]);
         }
-        return $this->render('account/account.html.twig', [
-            'form' => $form->createView(),
-        ]);
     }
 
 
@@ -56,42 +57,44 @@ public function index2(Request $request, EntityManagerInterface $manager, UserPa
 {
 
     $user=$this->getUser();
-    $reset=$request->request;
-    $checkPass = $encoder->isPasswordValid($user, $reset->get('old'));
+    if ($user->getActivationToken())  return $this->redirectToRoute('confirm');
+        $reset = $request->request;
+        $checkPass = $encoder->isPasswordValid($user, $reset->get('old'));
 
-    if ($checkPass === true) {
-        if($reset->get('new')=== $reset->get('confirm'))
-            if($reset->get('new')>=8){
-            $hash = $encoder->encodePassword($user, $reset->get('new'));
-            $user->setPassword($hash);
-            $manager->persist($user);
-            $manager->flush();
-            $this->addFlash('success', 'Password Successfully Updated !');
+        if ($checkPass === true) {
+            if ($reset->get('new') === $reset->get('confirm'))
+                if ($reset->get('new') >= 8) {
+                    $hash = $encoder->encodePassword($user, $reset->get('new'));
+                    $user->setPassword($hash);
+                    $manager->persist($user);
+                    $manager->flush();
+                    $this->addFlash('success', 'Password Successfully Updated !');
+                } else {
+                    $this->addFlash('alert', 'Password Too Short  !');
+                }
+            else {
+                $this->addFlash('alert', 'Passwords Do Not Match  !');
+            }
+        } else {
+            $this->addFlash('alert', 'Password Incorrect !');
         }
-        else{
-            $this->addFlash('alert', 'Password Too Short  !');
-        }
-        else{ $this->addFlash('alert', 'Passwords Do Not Match  !');}
-    } else {
-        $this->addFlash('alert', 'Password Incorrect !');
-    }
-    return $this->redirectToRoute('account');
-
+        return $this->redirectToRoute('account');
 }
 
 
     /**
      * @Route("/account/address", name="address")
      */
-    public function index5(address $make,Request $request, EntityManagerInterface $manager)
+    public function index5(address $make,Request $request, EntityManagerInterface $manager,address $ad)
     {
         $user = $this->getUser();
+        if ($user->getActivationToken())  return $this->redirectToRoute('confirm');
         $form = $this->createForm(AddressType::class);
         $form->handleRequest($request);
-        if ($form->isSubmitted() ) {
-            if ($make->create($form) === "")
-                 $this->addFlash('warning', 'Please Enter An Address Before Saving !');
-            else{
+        if ($form->isSubmitted()) {
+            if ($ad->confirmaddress($form) !== "")
+            $this->addFlash('alert', $ad->confirmaddress($form));
+            else {
                 $user->setAddress($make->create($form));
                 $manager->persist($user);
                 $manager->flush();
@@ -106,22 +109,14 @@ public function index2(Request $request, EntityManagerInterface $manager, UserPa
         ]);
     }
 
-    /**
-     * @Route("/account/purchases", name="purchases")
-     */
-    public function index3()
-    {
-        $user = $this->getUser();
-        return $this->render('account/myPurchases.html.twig');
-    }
-
 
     /**
-     * @Route("/deleteAddress", name="deleteAddress")
+     * @Route("/account/deleteAddress", name="deleteAddress")
      */
     public function deleteAddress(EntityManagerInterface $manager)
     {
         $user = $this->getUser();
+        if ($user->getActivationToken())  return $this->redirectToRoute('confirm');
         $user->setAddress(null);
         $manager->persist($user);
         $manager->flush();

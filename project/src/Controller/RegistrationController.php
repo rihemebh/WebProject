@@ -70,10 +70,10 @@ class RegistrationController extends AbstractController
      */
     public function activation ($token,UserRepository $rep){
 
-        //on verifie si l utilisateur a le token
+        //check if the user has the token
         $user=$rep->findOneBy(['activation_token' => $token]);
 
-        if(!$user) throw $this->createNotFoundException("cet Utilisateur n'existe pas");
+        if(!$user) throw $this->createNotFoundException("User not Found");
 
 
             $user->setActivationToken(null);
@@ -82,6 +82,18 @@ class RegistrationController extends AbstractController
             $em->flush();
             $this->addFlash('success','Account Activated !');
            return  $this->redirectToRoute('account');
+    }
+
+    /**
+     * @Route("/confirm", name="confirm")
+     */
+    public function confirmAccount()
+    {
+        if(!$this->getUser()) return $this->redirectToRoute('register');
+        elseif(!$this->getUser()->getActivationToken() )
+            return $this->redirectToRoute('account');
+        else return $this->render('registration/confirm.html.twig');
+
     }
 }
 ?>

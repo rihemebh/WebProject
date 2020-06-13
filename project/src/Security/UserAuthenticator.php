@@ -99,7 +99,7 @@ class UserAuthenticator extends AbstractFormLoginAuthenticator implements Passwo
             return new RedirectResponse($targetPath);
         }
 
-        return new RedirectResponse('login');
+        return new RedirectResponse('confirm');
     }
 
     protected function getLoginUrl()
