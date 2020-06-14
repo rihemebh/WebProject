@@ -9,7 +9,7 @@
             {{ message }}
         </div>
     {% endfor %}
-    {{ form_start( form , {'attr': {'autocomplete':'off'}}) }}
+    {{ form_start( form , {'attr': {'autocomplete':'off','action':'editInfo'}}) }}
     <hr>
     <p class="message"><i class="fad fa-user"></i>General Settings</p>
     <div class="row">
@@ -55,7 +55,7 @@
         {{ form_widget(form.Save_Changes) }}
     </div>
     <hr>
-
+    {{ form_end(form) }}
     {% for message in app.flashes('alert') %}
 <div class="alert alert-danger">
     <i class="fad fa-engine-warning"></i>
@@ -64,39 +64,30 @@
 {% endfor %}
     <p class="message"><i class="fad fa-shield"></i>Security :</p>
 
-
-    {{ form_end(form) }}
-
-    <form action="{{ path('change') }}"  autocomplete="off" method="post">
+    {{ form_start( reset , {'attr': {'autocomplete':'off','novalidate':'novalidate','action':'change'}}) }}
     <div class="row">
-        <div class="box">
-            <div class="in">
-                <p class="label">Current Password :</p>
-                <input type="password" class="organize-form form-control" name="old" required oninvalid="this.setCustomValidity('Please Fill This Field')"
-                       oninput="setCustomValidity('')">
-                <div class="erreur"> </div>
-            </div>
-        </div>
-        <div class="box">
-            <div class="in">
-                <p class="label">New Password :</p>
-                <input type="password" class="organize-form form-control" name="new" required oninvalid="this.setCustomValidity('Please Fill This Field')"
-                       oninput="setCustomValidity('')">
-                <div class="erreur">  </div>
-            </div>
-        </div>
-        <div class="box">
-            <div class="in">
-                <p class="label">Confirm Password :</p>
-               <input type="password" class="organize-form form-control" name="confirm" required oninvalid="this.setCustomValidity('Please Fill This Field')"
-                      oninput="setCustomValidity('')">
-                <div class="erreur" >  </div>
-            </div>
-        </div>
+    <div class="box">
+        <p class="label">Current Password :</p>
+        {{ form_widget(reset.oldPass) }}
+        <div class="erreur"> {{ form_errors(reset.oldPass) }}</div>
+
     </div>
-    <div class="row" >
-        <button type="submit" class=" save btn " >Save Changes </button>
+    <div class="box">
+        <p class="label"> New Password :</p>
+        {{ form_widget(reset.newPassword.new) }}
+        <div class="erreur"> {{ form_errors(reset.newPassword.new) }}</div>
+
     </div>
-    </form>
+    <div class="box">
+        <p class="label">Retype New Password :</p>
+        {{ form_widget(reset.newPassword.confirm) }}
+        <div class="erreur"> {{form_errors(reset.newPassword.confirm) }}</div>
+
+    </div>
+
+    </div>
+    <div class="row"> {{ form_widget(reset.Save_Password ) }}</div>
+    {{ form_end(reset) }}
+
 {% endblock %}
 

@@ -9,6 +9,8 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class AddressType extends AbstractType
 {
@@ -26,15 +28,28 @@ class AddressType extends AbstractType
                 )
             ))
 
-            ->add('City',TextType::class,array(
-                'attr'=>array(
-                    'class'=> 'organize-form'
-                )
+            ->add('City', TextType::class, array(
+                'attr' => array(
+                    'class' => 'organize-form'
+                ),
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'This Field is Required',
+                    ])]
             ))
-            ->add('Code',IntegerType::class,array(
-                'attr'=>array(
-                    'class'=> 'organize-form'
-                )
+            ->add('Code', IntegerType::class, array(
+                'attr' => array(
+                    'class' => 'organize-form'
+                ),
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'This Field is Required',
+                    ]),
+                    new Length([
+                        'min' => 4,
+                        'exactMessage'=>"Code Must be 4 digit long",
+                        'max' => 4,
+                    ])]
             ))
             ->add('Save',SubmitType::class,array(
                 'attr'=>array(

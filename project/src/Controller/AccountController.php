@@ -7,7 +7,6 @@ use App\Form\AddressType;
 use App\Form\ResetType;
 use App\Form\UserType;
 use App\ServiceValidate\address;
-use App\ServiceValidate\newValidator;
 use Couchbase\Document;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -32,6 +31,7 @@ class AccountController extends AbstractController
         $user = $this->getUser();
         if ($user->getActivationToken()) return $this->redirectToRoute('confirm');
         else {
+            $reset=$this->createForm(ResetType::class);
             $form = $this->createForm(UserType::class, $user);
             $form->remove('Register');
             $form->remove('Password');
@@ -45,6 +45,7 @@ class AccountController extends AbstractController
             }
             return $this->render('account/account.html.twig', [
                 'form' => $form->createView(),
+                'reset' => $reset->createView()
             ]);
         }
     }
@@ -57,28 +58,33 @@ public function index2(Request $request, EntityManagerInterface $manager, UserPa
 {
 
     $user=$this->getUser();
+    if(!$user) return $this->redirectToRoute('app_login');
     if ($user->getActivationToken())  return $this->redirectToRoute('confirm');
-        $reset = $request->request;
-        $checkPass = $encoder->isPasswordValid($user, $reset->get('old'));
+        $reset = $this->createForm(ResetType::class);
+    $form = $this->createForm(UserType::class, $user);
+    $form->remove('Register');
+    $form->remove('Password');
+    $reset->handleRequest($request);
+    // pour pouvoir montrer l erreur Incorrect Password on doit le traiter en de hors du isValid puisqu'il n'y pas de contraintes
+    //equalTo à l'interieur de ResetType
+    // Aussi ce bloc de cide sert à rendre l 'affichage des erreurs plus comprehensible
+    if( $reset->get('oldPass')->getData())
+    {
+        $checkPass = $encoder->isPasswordValid($user, $reset->get('oldPass')->getData());
+    if(!$checkPass)   $reset->get('oldPass')->addError(new FormError("Incorrect Password"));
+    }
 
-        if ($checkPass === true) {
-            if ($reset->get('new') === $reset->get('confirm'))
-                if ($reset->get('new') >= 8) {
-                    $hash = $encoder->encodePassword($user, $reset->get('new'));
-                    $user->setPassword($hash);
-                    $manager->persist($user);
-                    $manager->flush();
-                    $this->addFlash('success', 'Password Successfully Updated !');
-                } else {
-                    $this->addFlash('alert', 'Password Too Short  !');
-                }
-            else {
-                $this->addFlash('alert', 'Passwords Do Not Match  !');
-            }
-        } else {
-            $this->addFlash('alert', 'Password Incorrect !');
+    if ($reset->isValid()) {
+                $hash = $encoder->encodePassword($user, $reset->get('newPassword')->get('new')->getData());
+                $user->setPassword($hash);
+                $manager->persist($user);
+                $manager->flush();
+                $this->addFlash('success', 'Password Successfully Updated !');
         }
-        return $this->redirectToRoute('account');
+        return $this->render('account/account.html.twig', [
+        'form' => $form->createView(),
+        'reset' => $reset->createView()
+    ]);
 }
 
 
@@ -91,15 +97,11 @@ public function index2(Request $request, EntityManagerInterface $manager, UserPa
         if ($user->getActivationToken())  return $this->redirectToRoute('confirm');
         $form = $this->createForm(AddressType::class);
         $form->handleRequest($request);
-        if ($form->isSubmitted()) {
-            if ($ad->confirmaddress($form) !== "")
-            $this->addFlash('alert', $ad->confirmaddress($form));
-            else {
+        if ($form->isSubmitted() && $form->isValid()) {
                 $user->setAddress($make->create($form));
                 $manager->persist($user);
                 $manager->flush();
                 $this->addFlash('success', 'Address Updated  !');
-            }
         }
         $address = $user->getAddress();
 
@@ -116,6 +118,7 @@ public function index2(Request $request, EntityManagerInterface $manager, UserPa
     public function deleteAddress(EntityManagerInterface $manager)
     {
         $user = $this->getUser();
+        if(!$user) return $this->redirectToRoute('app_login');
         if ($user->getActivationToken())  return $this->redirectToRoute('confirm');
         $user->setAddress(null);
         $manager->persist($user);

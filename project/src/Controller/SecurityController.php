@@ -21,7 +21,7 @@ class SecurityController extends AbstractController
         if ($this->getUser()) {
             if(!$this->getUser()->getActivationToken())
             return $this->redirectToRoute('account');
-            else $this->redirectToRoute('confirm');
+            else return $this->redirectToRoute('confirm');
         }
 
         // get the login error if there is one
