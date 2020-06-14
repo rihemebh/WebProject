@@ -91,15 +91,11 @@ public function index2(Request $request, EntityManagerInterface $manager, UserPa
         if ($user->getActivationToken())  return $this->redirectToRoute('confirm');
         $form = $this->createForm(AddressType::class);
         $form->handleRequest($request);
-        if ($form->isSubmitted()) {
-            if ($ad->confirmaddress($form) !== "")
-            $this->addFlash('alert', $ad->confirmaddress($form));
-            else {
+        if ($form->isSubmitted() && $form->isValid()) {
                 $user->setAddress($make->create($form));
                 $manager->persist($user);
                 $manager->flush();
                 $this->addFlash('success', 'Address Updated  !');
-            }
         }
         $address = $user->getAddress();
 

@@ -349,11 +349,6 @@ ul.CTAs a {
     margin-left: 20px;
 }
 
-.erreur1 {
-    margin-left: 20px;
-    margin-top: -20px;
-}
-
 .erreur {
     margin-left: 20px;
 }
@@ -380,4 +375,8 @@ ul.CTAs a {
 
 #confirm{
     color: white;
+}
+.erreur1{
+    margin-top: 10px;
+    margin-left: -40px;
 }

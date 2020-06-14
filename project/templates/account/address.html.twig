@@ -24,21 +24,22 @@
     {% endif %}
     <div class="address">
         {{ form_start(form, {'attr': {'autocomplete':'off','novalidate':'novalidate'}}) }}
-    <div class="box2 row">
-        <p class="ad">House Address :<small class="optional"> (optional)</small></p>
-        {{ form_widget(form.House_address_number) }}
-        <div class="erreur1">  {{ form_errors(form.House_address_number) }}</div>
-    </div>
-        <div class="box2 row">
+        <div class=" row">
+            <p class="ad">House Address :<small class="optional"> (optional)</small></p>
+            {{ form_widget(form.House_address_number) }}
+        </div>
+        <div class=" row">
             <p class="ad">Street : <small class="optional"> (optional)</small> </p>
             {{ form_widget(form.Street) }}
         </div>
-        <div class="box2 row"><p class="ad">City :<small class="optional" style="color: darkred">* required </small></p>
+        <div class=" row"><p class="ad">City :</p>
+            <div  style="   margin-left: -170px;">  {{ form_errors(form.City) }} </div>
             {{ form_widget(form.City) }}
         </div>
-        <div class="box2 row">
-          <p class="ad">Code :  <small class="optional" style="color: darkred">* required </small></p>
-               {{ form_widget(form.Code) }}
+        <div class=" row">
+            <p class="ad">Code :  </p>
+            <div style="   margin-left: -170px;">  {{ form_errors(form.Code) }} </div>
+            {{ form_widget(form.Code) }}
         </div>
         {{ form_row(form.Save) }}
     </div>
