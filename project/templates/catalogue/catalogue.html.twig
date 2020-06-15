@@ -10,7 +10,6 @@
 
 {% block body %}
 
-
     <div style="height: 40px;"></div>
     <div class="container">
         <div class="row">
@@ -101,6 +100,7 @@
         <div class="row">
 
             {% for livre in filtre %}
+                {% set idd = livre.id %}
                 <div class="col card-col">
                     <div class="card " id="{{ livre.id }}" style="width: 11.5rem; ">
                         <i style="font-size:70% " class="fas fa-heart disabled love"><span
@@ -127,11 +127,17 @@
                             </p>
                             <p class="card-text price" style="font-size:70%"><b>{{ livre.prix }} Dt</b>
                             <p class="card-text card_text" style="font-size:60%">By {{ livre.auteur }} </p>
-                            <button class="btn shadow-sm cardbutton" data-id="{{ livre.id }}" style="font-size:70%">
+                            <button onclick=" window.location.href='{{ path('add.panier', {'id' : idd}) }}'" class="btn shadow-sm cardbutton" data-id="{{ livre.id }}" style="font-size:70%">
                                 Add to Cart
                                 <i
                                         class="fas fa-shopping-cart  icon"
                                         style="font-size:11px;"> </i></button>
+{#                            <a {% if app.session.get('panier').idd is defined %}disabled{% endif %} href="{{ path('add.panier', {'id' : idd}) }}" class="btn shadow-sm cardbutton" data-id="{{ livre.id }}" style="font-size:70%">#}
+{#                                Add to Cart#}
+{#                                <i#}
+{#                                        class="fas fa-shopping-cart  icon"#}
+{#                                        style="font-size:11px;"> </i>#}
+{#                            </a>#}
                         </div>
                     </div>
 
