@@ -67,7 +67,7 @@ public function index2(Request $request, EntityManagerInterface $manager, UserPa
     $reset->handleRequest($request);
     // pour pouvoir montrer l erreur Incorrect Password on doit le traiter en de hors du isValid puisqu'il n'y pas de contraintes
     //equalTo à l'interieur de ResetType
-    // Aussi ce bloc de cide sert à rendre l 'affichage des erreurs plus comprehensible
+    // Aussi ce bloc de code sert à rendre l 'affichage des erreurs plus comprehensible
     if( $reset->get('oldPass')->getData())
     {
         $checkPass = $encoder->isPasswordValid($user, $reset->get('oldPass')->getData());

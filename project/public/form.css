@@ -1,5 +1,6 @@
 body{
-    background: url("cover.jpg") no-repeat center center;
+    background: rgba(0,0,0,0.3) url("cover.jpg") no-repeat center center;
+    background-blend-mode: overlay;
 }
 #forgot{
     color: #004041;
@@ -13,11 +14,11 @@ small{
 h5.modal-title{
     font-weight: bold;
     text-align: center;
-    color:whitesmoke;
+    color:Black;
 }
 
 h5.modal-title p{
-    color:whitesmoke;
+    color:black;
 }
 
 .register{
@@ -38,7 +39,7 @@ h5.modal-title p{
     margin-left: -50px;
     background: none;
     padding-left: 40px;
-    color:white;
+    color:Black;
 
 }
 .form-control:focus{
@@ -52,9 +53,9 @@ h5.modal-title p{
     margin-left:-45px;
 }
 
-.register i{
+i{
     padding:20px ;
-    color: white;
+    color: #52ACB4;
     float: left;
 }
 
@@ -106,6 +107,5 @@ p{
 }
 
 .modal-footer p{
-    color: whitesmoke;
+    color:black;
 }
-
