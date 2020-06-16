@@ -73,7 +73,7 @@
                 </div>
             </div>
 
-
+²
             <div class="col-6">
                 <div class="dropdown float-right">
                     <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton"
@@ -103,8 +103,8 @@
             {% for livre in filtre %}
                 <div class="col card-col">
                     <div class="card " id="{{ livre.id }}" style="width: 11.5rem; ">
-                        <i style="font-size:70% " class="fas fa-heart disabled love"><span
-                                    class="js-like small"> {{ livre.Likes | length }}</span></i>
+                        <i style="font-size:70% " class="fas fa-heart disabled love">
+                            <span class="js-like small"> {{ livre.Likes | length }}</span></i>
                         <a href="/livre/{{ livre.id }}"> <img src="{{ livre.path }}" class="book-img  card-img-top"
                                                               alt="..." style="width:100%"></a>
 
