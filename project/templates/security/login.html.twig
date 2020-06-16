@@ -3,15 +3,24 @@
 {% block Title %}Sign Up{% endblock %}
 {% block body %}
     <div class="signup" style ="margin-top: 5%; margin-bottom:5%;">
-        <div class="register" style=" background: none;backdrop-filter: blur(80px);">
+        <div class="register" style=" background-color: white;backdrop-filter: blur(80px);">
             <div class="modal-header">
                 <h5 class="modal-title">Welcome Back !</h5>
             </div>
             <div class="modal-body">
                 <form method ="post" autocomplete="off"  action={{ path('app_login') }}>
                     {% if error %}
-                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        <div class="alert alert-danger"> <i class="fad fa-engine-warning" style="color: red"></i>
+                            <div style="margin-top: 15px">  {{ error.messageKey|trans(error.messageData, 'security') }}
+                            </div>
+                        </div>
                     {% endif %}
+                    {% for message in app.flashes('alert') %}
+                    <div class="alert alert-danger">
+                        <i class="fad fa-engine-warning" style="color: red"></i>
+                        <div style="margin-top: 15px">   {{ message }}</div>
+                    </div>
+                        {% endfor %}
                     <div class="input-icons">
                         <i class="fa fa-envelope icon">
                         </i>
@@ -22,7 +31,7 @@
                         </i>
                         <input type="password" placeholder="Password" class="form-control" name="password">
                     </div>
-                    <a href="#" id="forgot" style="margin-left: 90px;"> Password Forgotten?</a>
+                    <a href="{{ path('app_forgot') }}" id="forgot" style="margin-left: 90px;"> Password Forgotten?</a>
                     <input type="hidden" name="_csrf_token"
                            value="{{ csrf_token('authenticate') }}"
                     >

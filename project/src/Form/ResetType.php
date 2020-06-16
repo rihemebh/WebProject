@@ -21,6 +21,7 @@ class ResetType extends AbstractType
                 'first_options' => array(
                     'attr' => array(
                         'class' => 'form-control organize-form',
+                        'placeholder'=>'New Password'
                     ),
                 ),
                 'second_options' => array(
@@ -30,6 +31,7 @@ class ResetType extends AbstractType
                         ])],
                     'attr' => array(
                         'class' => 'form-control  organize-form',
+                        'placeholder'=>'Confirm New Password'
                     )
                 ),
                 'invalid_message' => 'Passwords Do Not Match',
@@ -47,6 +49,7 @@ class ResetType extends AbstractType
             ->add('oldPass', PasswordType::class, array(
                 'attr' => array(
                     'class' => 'form-control  organize-form',
+                    'placeholder'=>'Current Password'
                 ),
                 'constraints' => [
                     new NotBlank([
