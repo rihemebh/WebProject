@@ -136,5 +136,5 @@
       <path value="$PROJECT_DIR$/vendor/symfony/security-guard" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
 </project>
