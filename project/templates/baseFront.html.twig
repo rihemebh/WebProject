@@ -10,11 +10,12 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
               integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
               crossorigin="anonymous">
+        {% block link %}{% endblock %}
         <link rel="stylesheet" type="text/css" href="{{ asset('style.css') }}">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
               integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
               crossorigin="anonymous"/>
-        {% block link %}{% endblock %}
+
 
         <title>{% block Title %}base{% endblock %}</title>
         <link rel="icon" class="rounded-circle" href="{{ asset('icon.png') }}"
@@ -118,17 +119,29 @@
                         {% block liItem2 %}
                             <li class="nav-item " style="width: 50px; ">
                                 <a class="nav-link text-secondary small " href="{{ path('panier') }}" data-toggle="tooltip"
-                                   data-placement="bottom" title="visit your Cart">
+                                   data-placement="bottom" title="My Cart">
                                     <i class="far fa-shopping-cart "> </i>
                                 </a>
                             </li>
                         {% endblock %}
                         {% block liItem3 %}
+
                             <li class="nav-item" style="width: 50px; ">
+                                {% if app.user %}
+                                <a class="nav-link  text-secondary small " href="/account/editInfo" data-toggle="tooltip"
+                                   data-placement="bottom" title="My account">
+                                    <i class="fas fa-user-alt"></i>
+                                    {% else %}
                                 <a class="nav-link  text-secondary small " href="/login" data-toggle="tooltip"
                                    data-placement="bottom" title="log in">
-                                    <i class="far fa-user-alt"></i></a>
+                                    <i class="far fa-user-alt"></i>
+
+                                        {% endif  %}
+
+
+                                </a>
                             </li>
+
                         {% endblock %}
 
                     </ul>

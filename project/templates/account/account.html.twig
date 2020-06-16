@@ -67,26 +67,26 @@
     {{ form_start( reset , {'attr': {'autocomplete':'off','novalidate':'novalidate','action':'change'}}) }}
     <div class="row">
     <div class="box">
-        <p class="label">Current Password :</p>
+        <p class="label">Current Password:</p>
         {{ form_widget(reset.oldPass) }}
         <div class="erreur"> {{ form_errors(reset.oldPass) }}</div>
 
     </div>
     <div class="box">
-        <p class="label"> New Password :</p>
+        <p class="label">New Password:</p>
         {{ form_widget(reset.newPassword.new) }}
         <div class="erreur"> {{ form_errors(reset.newPassword.new) }}</div>
 
     </div>
     <div class="box">
-        <p class="label">Confirm New Password :</p>
+        <p class="label">Confirm Password :</p>
         {{ form_widget(reset.newPassword.confirm) }}
         <div class="erreur"> {{form_errors(reset.newPassword.confirm) }}</div>
 
     </div>
 
     </div>
-    <div class="row"> {{ form_widget(reset.Save_Password ) }}</div>
+    <div class="row"> {{ form_widget(reset.Save ) }}</div>
     {{ form_end(reset) }}
 
 {% endblock %}

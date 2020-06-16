@@ -56,7 +56,7 @@ class ResetType extends AbstractType
                         'message' => 'This Field is Required',
                     ])]
             ))
-            ->add('Save_Password', SubmitType::class, array(
+            ->add('Save', SubmitType::class, array(
                 'attr' => array('class' => ' btn save')
             ));;
     }

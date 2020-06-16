@@ -123,7 +123,7 @@ p > i {
     margin-top: -40px;
     min-width: 250px;
     max-width: 250px;
-    background: #073850;
+    background: var(--nav_backcolor);
     color: #fff;
     transition: all 0.3s;
 }
@@ -172,7 +172,7 @@ p > i {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #073850;
+    background: var(--nav_backcolor);
 }
 
 

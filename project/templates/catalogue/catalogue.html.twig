@@ -72,7 +72,7 @@
                 </div>
             </div>
 
-²
+
             <div class="col-6">
                 <div class="dropdown float-right">
                     <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton"
@@ -192,7 +192,8 @@
         function onClickBtnLike(event) {
             event.preventDefault();
             const url = this.href;
-            const like = document.querySelector('span.js-like');
+            const like = this.parentElement.parentElement
+                .previousElementSibling.previousElementSibling.firstElementChild;
             const icon = this.querySelector('i.hearticon')
             console.log(like);
             axios.get(url).then(function (response) {
