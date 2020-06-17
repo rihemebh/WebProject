@@ -119,10 +119,23 @@
                             <div class="col-md-3">
                             </div>
                             <div class="col-md-6">
-                                <button class="btn btn-lg btn-block shadow-sm page-link btn-secondary font-weight-light"
 
-                                        data-id="{{ livre.id }}">Add to Cart <i
-                                            class="fas fa-shopping-cart  icon"> </i></button>
+                                {% if app.session.get('panier')[livre.id] is defined %}
+                                    <button  class="btn btn-lg btn-block shadow-sm  cardbutton font-weight-light disabled"
+                                             data-id="{{ livre.id }}" >
+                                        Added to Cart
+                                        <i class="fas fa-shopping-cart  icon"
+                                                style="font-size:70%;"> </i></button>
+
+
+                                {% else %}
+                                    <button onclick=" window.location.href=window.location.href='{{ path('add.panier', {'id' : livre.id}) }}'"
+                                            class="btn btn-lg btn-block shadow-sm cardbutton page-link font-weight-light" data-id="{{ livre.id }}" >
+                                        Add to Cart
+                                        <i
+                                                class="fas fa-shopping-cart  icon"
+                                                style="font-size:70%;"> </i></button>
+                                {% endif %}
 
 <br>
                             </div>
@@ -166,7 +179,8 @@
         function onClickBtnLike(event) {
             event.preventDefault();
             const url = this.href;
-            const like = document.querySelector('span.js-like');
+            const like = this.parentElement.parentElement
+                .previousElementSibling.previousElementSibling.firstElementChild;
             const icon = this.querySelector('i.hearticon')
             console.log(like);
             axios.get(url).then(function (response) {
@@ -180,5 +194,17 @@
         document.querySelectorAll('.js-like').forEach(function (link) {
             link.addEventListener('click', onClickBtnLike);
         })</script>
+
+    <script>
+        function onClickBtnCart(event){
+            event.preventDefault();
+            console.log(this);
+            this.classList.add('disabled');
+            this.innerHTML="Added to Cart  <i class='fas fa-shopping-cart  icon' style='font-size:70%;'> </i>";
+        }
+        document.querySelectorAll('.cardbutton').forEach(function (link) {
+            link.addEventListener('click',onClickBtnCart);
+        })
+    </script>
 
 {% endblock %}

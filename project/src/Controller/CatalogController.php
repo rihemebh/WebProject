@@ -69,12 +69,10 @@ class CatalogController extends AbstractController
 
 
 
-
-
-
     /**
      * @Route("/livre/{id}/like", name="booklike")
      * @param Livre $livre
+     * @param EntityManagerInterface $manager
      */
 
     public function like(Livre $livre, EntityManagerInterface $manager)
@@ -98,7 +96,7 @@ class CatalogController extends AbstractController
             $manager->flush();
 
 
-//            return $this->json(['code' => 200, 'message' => 'like bien ajouté', 'likes' => $livre->getLikes()->count()], 200);
+          return $this->json(['code' => 200, 'message' => 'like bien ajouté', 'likes' => $livre->getLikes()->count()], 200);
 
         }
     }

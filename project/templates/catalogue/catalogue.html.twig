@@ -128,27 +128,22 @@
                             <p class="card-text price" style="font-size:70%"><b>{{ livre.prix }} Dt</b>
                             <p class="card-text card_text" style="font-size:60%">By {{ livre.auteur }} </p>
 
-                            {% if app.session.get('panier') %}
-                            <button onclick=" window.location.href='{{ path('add.panier', {'id' : idd}) }}'" class="btn shadow-sm cardbutton" data-id="{{ livre.id }}" style="font-size:70%">
-                                Add to Cart
-                                <i
-                                        class="fas fa-shopping-cart  icon"
-                                        style="font-size:11px;"> </i></button>
-                            {% else %}
+                            {% if app.session.get('panier')[livre.id] is defined %}
                                 <button  class="btn shadow-sm disabled cardbutton" data-id="{{ livre.id }}" style="font-size:70%">
                                     Added to Cart
                                     <i
                                             class="fas fa-shopping-cart  icon"
                                             style="font-size:11px;"> </i></button>
+
+
+                            {% else %}
+                                <button onclick=" window.location.href=window.location.href='{{ path('add.panier', {'id' : idd}) }}'" class="btn shadow-sm cardbutton" data-id="{{ livre.id }}" style="font-size:70%">
+                                    Add to Cart
+                                    <i
+                                            class="fas fa-shopping-cart  icon"
+                                            style="font-size:11px;"> </i></button>
                             {% endif %}
 
-
-                            {#                            <a {% if app.session.get('panier').idd is defined %}disabled{% endif %} href="{{ path('add.panier', {'id' : idd}) }}" class="btn shadow-sm cardbutton" data-id="{{ livre.id }}" style="font-size:70%">#}
-{#                                Add to Cart#}
-{#                                <i#}
-{#                                        class="fas fa-shopping-cart  icon"#}
-{#                                        style="font-size:11px;"> </i>#}
-{#                            </a>#}
                         </div>
                     </div>
 
@@ -199,13 +194,14 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
         function onClickBtnLike(event) {
             event.preventDefault();
             const url = this.href;
             const like = this.parentElement.parentElement
                 .previousElementSibling.previousElementSibling.firstElementChild;
-            const icon = this.querySelector('i.hearticon')
+            const icon = this.querySelector('i.hearticon');
             console.log(like);
             axios.get(url).then(function (response) {
                 like.textContent = response.data.likes;
@@ -224,7 +220,7 @@
         event.preventDefault();
         console.log(this);
         this.classList.add('disabled');
-        this.textContent="Added to Cart";
+        this.innerHTML="Added to Cart  <i class='fas fa-shopping-cart  icon' style='font-size:70%;'> </i>";
     }
     document.querySelectorAll('.cardbutton').forEach(function (link) {
         link.addEventListener('click',onClickBtnCart);
