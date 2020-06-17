@@ -126,9 +126,13 @@
       <path value="$PROJECT_DIR$/project/vendor/imagine/imagine" />
       <path value="$PROJECT_DIR$/project/vendor/vich/uploader-bundle" />
       <path value="$PROJECT_DIR$/project/vendor/jms/metadata" />
+      <path value="$PROJECT_DIR$/project/vendor/twig/cssinliner-extra" />
+      <path value="$PROJECT_DIR$/project/vendor/symfony/swiftmailer-bundle" />
+      <path value="$PROJECT_DIR$/project/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/project/vendor/tijsverkoyen/css-to-inline-styles" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
   <component name="PhpUnit">
     <phpunit_settings>
       <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/project/vendor/autoload.php" />

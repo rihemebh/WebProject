@@ -128,7 +128,7 @@
                             <p class="card-text price" style="font-size:70%"><b>{{ livre.prix }} Dt</b>
                             <p class="card-text card_text" style="font-size:60%">By {{ livre.auteur }} </p>
 
-                            {% if app.session.get('panier') %} 
+                            {% if app.session.get('panier') %}
                             <button onclick=" window.location.href='{{ path('add.panier', {'id' : idd}) }}'" class="btn shadow-sm cardbutton" data-id="{{ livre.id }}" style="font-size:70%">
                                 Add to Cart
                                 <i
