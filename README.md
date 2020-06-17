@@ -1,8 +1,8 @@
 # Introduction
-###### it is a website for buying used books titled "cheikhbooks"
-###### coded with the framework symfony 4 
+###### It is a website for buying used books titled "cheikhbooks" using symfony 4.
 ## Prerequisite:
-###### you need to install a local server such as xampp / wampp (php 7.4.6) on your computer 
+###### You need to install a local server such as xampp / wampp (php 7.4.6) on your computer 
+###### and an IDE for php (we recommend PhpStorm)
 ## Test:
 in order to to test it you should follow this steps:
 ###### 1/ clone this repo using https://github.com/rihemebh/WebProject.git
