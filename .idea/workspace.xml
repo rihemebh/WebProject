@@ -170,6 +170,10 @@
       <path value="$PROJECT_DIR$/project/vendor/imagine/imagine" />
       <path value="$PROJECT_DIR$/project/vendor/vich/uploader-bundle" />
       <path value="$PROJECT_DIR$/project/vendor/jms/metadata" />
+      <path value="$PROJECT_DIR$/project/vendor/twig/cssinliner-extra" />
+      <path value="$PROJECT_DIR$/project/vendor/symfony/swiftmailer-bundle" />
+      <path value="$PROJECT_DIR$/project/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/project/vendor/tijsverkoyen/css-to-inline-styles" />
     </include_path>
   </component>
   <component name="ProjectId" id="1bMyhbNcHeQ1jivC3H9gjudzrbn" />
@@ -187,7 +191,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -221,7 +225,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="937d4a38-440b-4eaf-9c53-d9bf323c9708" name="Default Changelist" comment="" />
+      <changelist id="2abdafbf-2741-446c-bf37-202c749e15bd" name="Default Changelist" comment="" />
       <created>1588456376526</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -267,6 +271,7 @@
       <workItem from="1591819112846" duration="8929000" />
       <workItem from="1591828162719" duration="2947000" />
       <workItem from="1591872669150" duration="24670000" />
+      <workItem from="1592386291438" duration="252000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1589405183358</created>
@@ -422,7 +427,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591886759142</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="delete useless files">
+      <created>1592386366572</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1592386366572</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -448,7 +460,6 @@
     <MESSAGE value="annuler dernier push" />
     <MESSAGE value="sychro mariem riheme" />
     <MESSAGE value="synchro mariem riheme" />
-    <MESSAGE value="delete useless files" />
     <MESSAGE value="add relation and a property to &quot;livre&quot;" />
     <MESSAGE value="range with ajax" />
     <MESSAGE value="filter categories + slider style" />
@@ -463,7 +474,8 @@
     <MESSAGE value="related book (carousel)" />
     <MESSAGE value="icon" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="delete useless files" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete useless files" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -491,10 +503,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="427" y="208" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1360.728@0.0.1360.728" timestamp="1589430285213" />
-    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1591886755797">
+    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1592386360700">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1591886755797" />
+    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1592386360700" />
     <state x="456" y="276" key="ComposerInitDialogKey" timestamp="1591916304100">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -523,10 +535,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1360.728@0.0.1360.728" timestamp="1591731207035" />
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2" timestamp="1591884344713">
+    <state x="272" y="97" key="Vcs.Push.Dialog.v2" timestamp="1592386420732">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1591884344713" />
+    <state x="272" y="97" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1592386420732" />
     <state x="489" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591731205464">
       <screen x="0" y="0" width="1360" height="728" />
     </state>

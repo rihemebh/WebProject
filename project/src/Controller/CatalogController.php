@@ -66,6 +66,12 @@ class CatalogController extends AbstractController
             'livre' => $livre]);
     }
 
+
+
+
+
+
+
     /**
      * @Route("/livre/{id}/like", name="booklike")
      * @param Livre $livre
