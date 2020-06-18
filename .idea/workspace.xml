@@ -22,7 +22,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2abdafbf-2741-446c-bf37-202c749e15bd" name="Default Changelist" comment="" />
+    <list default="true" id="2abdafbf-2741-446c-bf37-202c749e15bd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/project/public/cover4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/public/cover.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/public/cover1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/project/public/cover1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/public/cover2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/project/public/cover2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/public/logo1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/public/logo2.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/public/logo4.heic" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/public/no-image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/acceuil/acceuil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/acceuil/acceuil.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -272,6 +282,7 @@
       <workItem from="1591828162719" duration="2947000" />
       <workItem from="1591872669150" duration="24670000" />
       <workItem from="1592386291438" duration="252000" />
+      <workItem from="1592504725145" duration="69000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1589405183358</created>
@@ -527,10 +538,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="514" y="287" key="NewPhpFileDialog/0.0.1360.728@0.0.1360.728" timestamp="1591744574425" />
-    <state x="181" y="11" width="998" height="708" key="SettingsEditor" timestamp="1591872879998">
+    <state x="181" y="11" width="998" height="708" key="SettingsEditor" timestamp="1592504800621">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="181" y="11" width="998" height="708" key="SettingsEditor/0.0.1360.728@0.0.1360.728" timestamp="1591872879998" />
+    <state x="181" y="11" width="998" height="708" key="SettingsEditor/0.0.1360.728@0.0.1360.728" timestamp="1592504800621" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1591731207035">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
