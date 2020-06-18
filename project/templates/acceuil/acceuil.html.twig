@@ -22,14 +22,17 @@
 
     /*hedha lkol bch yethat f fichier style.css just fama probleme ki nhotou ghady
     yok3od barsha bch yestaw3eb ki naaml modification  */
-    body {
-        background-image: url("{{ asset('logo3.ico') }}"), url("{{ asset('cover2.jpg') }}");
+    -webbody {
+        background-image: url("{{ asset('logo3.ico') }}"), url("{{ asset('cover11.jpg') }}");
         background-repeat: no-repeat;
         background-attachment: fixed;
-        background-size: 300px, cover;
-        background-position: center, center;
-        left: 30px;
-        background-color: rgba(0, 0, 0, 0.2);
+        background-size: 18%, 100%;
+
+        background-position-y: 51.5%;
+        background-position-x: 50%;
+
+
+        /*background-color: rgba(255, 255, 255, 0);*/
 
     }
 
@@ -37,7 +40,7 @@
         border-color: #333333;
         z-index: 30;
         margin: 0 auto;
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: rgba(255, 255, 255, 0.4);
     }
 
     :root {
@@ -45,6 +48,10 @@
         --nav_color: #769e9e;
     }
 
+
+    .text:hover {
+        font-size: large;
+    }
 
 </style>
 
@@ -60,12 +67,12 @@
 
     <div class="collapse navbar-collapse  " id="navbarNav">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item  small">
-                <a class="nav-link small " href="/catalogue" id="a1" style=" font-size:1.25em;">Books<span
+            <li class="nav-item text ">
+                <a class=" nav-link text-white small " href="/catalogue" id="a1" style=" font-size:1.25em;"><b>B</b>ooks<span
                             class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item small">
-                <a class="nav-link small" style="font-size:1.25em; " href="#">Categories</a>
+            <li class="nav-item text ">
+                <a class="nav-link text-white small" style="font-size:1.25em; " href="#"><b>C</b>ategories</a>
             </li>
 
 
@@ -73,19 +80,21 @@
 
         <form class="form-inline my-2 my-lg-0">
             <ul class="navbar-nav">
-                <li class="nav-item small " style="width: 60px; ">
-                    <a class="nav-link  small" href="#" style=" font-size:1.25em;"> <i class="fas fa-search"></i></a>
+                <li class="nav-item text small " style="width: 60px; ">
+                    <a class="nav-link text-white small" href="#" style=" font-size:1.25em;"> <i
+                                class="fas fa-search"></i></a>
                     {# ki tenzel aaliha tokhrej input taa recherche lawj aal ahaja esmha "search modal" kn theb tekhdemha akeka sinon
                     kima theb (ki tekhdemha zidha zeda f baseFront.html.twig #}
                 </li>
 
-                <li class="nav-item  small " style="width: 60px; ">
-                    <a class="nav-link  small" href="#" style=" font-size:1.25em;"><i class="far fa-user"></i></a>
+                <li class="nav-item text  small " style="width: 60px; ">
+                    <a class="nav-link text-white small" href="#" style=" font-size:1.25em;"><i class="far fa-user"></i></a>
                     {#                         log in#}
                 </li>
 
-                <li class="nav-item small " style="width: 60px; ">
-                    <a class="nav-link  small" href="#" style=" font-size:1.25em;"><i class="fas fa-user-plus"></i></a>
+                <li class="nav-item text small " style="width: 60px; ">
+                    <a class="nav-link text-white small" href="#" style=" font-size:1.25em;"><i
+                                class="fas fa-user-plus"></i></a>
                     {#                        sign up#}
                 </li>
 

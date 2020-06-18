@@ -23,14 +23,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2abdafbf-2741-446c-bf37-202c749e15bd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/project/public/cover4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/cover.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/cover1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/project/public/cover1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/cover2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/project/public/cover2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/logo1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/logo2.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/logo4.heic" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/no-image.png" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/public/cov1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/public/cov2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/public/cover11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/public/cover6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/public/cover7.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/public/logo1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/public/logo2.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/public/cover1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/public/cover3.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project/templates/acceuil/acceuil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/acceuil/acceuil.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -282,7 +285,8 @@
       <workItem from="1591828162719" duration="2947000" />
       <workItem from="1591872669150" duration="24670000" />
       <workItem from="1592386291438" duration="252000" />
-      <workItem from="1592504725145" duration="69000" />
+      <workItem from="1592504725145" duration="452000" />
+      <workItem from="1592505226464" duration="10717000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1589405183358</created>
@@ -445,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592386366572</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary=".">
+      <created>1592504933740</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1592504933740</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -484,9 +495,9 @@
     <MESSAGE value="navbar_base update" />
     <MESSAGE value="related book (carousel)" />
     <MESSAGE value="icon" />
-    <MESSAGE value="." />
     <MESSAGE value="delete useless files" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete useless files" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -514,10 +525,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="427" y="208" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1360.728@0.0.1360.728" timestamp="1589430285213" />
-    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1592386360700">
+    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1592504926240">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1592386360700" />
+    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1592504926240" />
     <state x="456" y="276" key="ComposerInitDialogKey" timestamp="1591916304100">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -566,18 +577,18 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="387" y="0" width="585" height="728" key="find.popup/0.0.1360.728@0.0.1360.728" timestamp="1588998157531" />
-    <state x="399" y="152" key="git4idea.merge.GitPullDialog" timestamp="1591875684485">
+    <state x="399" y="152" key="git4idea.merge.GitPullDialog" timestamp="1592504948015">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="399" y="152" key="git4idea.merge.GitPullDialog/0.0.1360.728@0.0.1360.728" timestamp="1591875684485" />
+    <state x="399" y="152" key="git4idea.merge.GitPullDialog/0.0.1360.728@0.0.1360.728" timestamp="1592504948015" />
     <state x="453" y="238" width="611" height="281" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1589155587021">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="453" y="238" width="611" height="281" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1360.728@0.0.1360.728" timestamp="1589155587021" />
-    <state x="336" y="162" key="run.anything.popup" timestamp="1591894468531">
+    <state x="336" y="162" key="run.anything.popup" timestamp="1592509702750">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="336" y="162" key="run.anything.popup/0.0.1360.728@0.0.1360.728" timestamp="1591894468531" />
+    <state x="336" y="162" key="run.anything.popup/0.0.1360.728@0.0.1360.728" timestamp="1592509702750" />
     <state x="343" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1591368784903">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
