@@ -23,17 +23,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2abdafbf-2741-446c-bf37-202c749e15bd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/project/public/cov1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/public/cov2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/public/cover11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/public/cover6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/public/cover7.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/public/logo1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/public/logo2.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/public/cover (1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/public/cover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/public/cover1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/public/cover2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/public/coverr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/public/coverrr.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/cover1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/cover3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/public/cov1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/public/cov2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/public/cover11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/public/cover2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/public/cover4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/public/cover6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/public/cover7.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/public/ico.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project/templates/acceuil/acceuil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/acceuil/acceuil.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -286,7 +290,8 @@
       <workItem from="1591872669150" duration="24670000" />
       <workItem from="1592386291438" duration="252000" />
       <workItem from="1592504725145" duration="452000" />
-      <workItem from="1592505226464" duration="10717000" />
+      <workItem from="1592505226464" duration="11307000" />
+      <workItem from="1592593652394" duration="2597000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1589405183358</created>
@@ -456,7 +461,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592504933740</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="background">
+      <created>1592516633214</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1592516633214</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,7 +509,8 @@
     <MESSAGE value="icon" />
     <MESSAGE value="delete useless files" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="background" />
+    <option name="LAST_COMMIT_MESSAGE" value="background" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -525,10 +538,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="427" y="208" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1360.728@0.0.1360.728" timestamp="1589430285213" />
-    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1592504926240">
+    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1592516627325">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1592504926240" />
+    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1592516627325" />
     <state x="456" y="276" key="ComposerInitDialogKey" timestamp="1591916304100">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -557,10 +570,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1360.728@0.0.1360.728" timestamp="1591731207035" />
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2" timestamp="1592386420732">
+    <state x="272" y="97" key="Vcs.Push.Dialog.v2" timestamp="1592516638869">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1592386420732" />
+    <state x="272" y="97" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1592516638869" />
     <state x="489" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591731205464">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
