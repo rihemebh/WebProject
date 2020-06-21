@@ -137,7 +137,8 @@
 
 
                             {% else %}
-                                <button onclick=" window.location.href=window.location.href='{{ path('add.panier', {'id' : idd}) }}'" class="btn shadow-sm cardbutton" data-id="{{ livre.id }}" style="font-size:70%">
+                                <button onclick=" window.location.href='{{ path('add.panier', {'id' : idd}) }}'"
+                                        class="btn shadow-sm cardbutton" data-id="{{ livre.id }}" style="font-size:70%">
                                     Add to Cart
                                     <i
                                             class="fas fa-shopping-cart  icon"
@@ -163,7 +164,7 @@
         <br>
         <div class="container">
             <div class="row">
-                <div class="col-7">
+                <div class="col-8">
                     <nav class="float-right " aria-label=" shadow Page">
                         {{ knp_pagination_render(filtre) }}
 

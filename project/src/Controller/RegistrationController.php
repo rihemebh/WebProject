@@ -5,6 +5,8 @@ use App\Form\UserType;
 use App\Repository\UserRepository;
 use App\Security\UserAuthenticator;
 use Doctrine\ORM\EntityManagerInterface;
+use Swift_Attachment;
+use Swift_Image;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -33,7 +35,7 @@ class RegistrationController extends AbstractController
             echo "failed : " . $e->getMessage();
         }
 
-        if($SignUp->isSubmitted() && $SignUp->isValid()){
+        if($SignUp->isSubmitted() && $SignUp->isValid()) {
 
             //generation du token d'activation
             $user->setActivationToken(md5(uniqid()));
@@ -42,13 +44,20 @@ class RegistrationController extends AbstractController
             $manager->persist($user);
             $manager->flush();
 
-            $message=(new \Swift_Message('Confirm Your Account'))
-            ->setFrom('cheikh@gmail.com')
+            $message = (new \Swift_Message('Confirm Your Account'));
+            $message->setFrom('cheikh@gmail.com')
                 ->setTo($user->getEmail())
                 ->setBody(
-                    $this->renderView('registration/activate.html.twig',['token'=>$user->getActivationToken(),'username'=>$user->getUserName()]),
-                'text/html'
+                    $this->renderView('registration/activate.html.twig',
+                        [
+                            'token' => $user->getActivationToken(),
+                            'username' => $user->getUserName(),
+                            'image_src' => $message->embed(Swift_Image::fromPath('C:\xampp\htdocs\WebProject\project\public\mail3.jpg'))
+
+                        ]),
+                    'text/html'
                 );
+
             $mailer->send($message);
 
 

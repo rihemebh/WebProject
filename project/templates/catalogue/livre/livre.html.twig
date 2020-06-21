@@ -2,8 +2,7 @@
 {% block Title %}
     {{ livre.nomLivre }}
 {% endblock %}
-{% block navitem1 %}  <a class="nav-link small text-secondary " href="/catalogue" id="a1"
->catalog </a> {% endblock %}
+
 {% block navitem2 %} {% endblock %}
 {% block navitem3 %} {% endblock %}
 
@@ -22,8 +21,6 @@
 
         .love {
             margin:24.5%;
-
-            /*margin: 6.3rem;*/
             padding: 1.5rem 4.5rem;
             border-radius: 25px;
             color: black;
@@ -129,8 +126,9 @@
 
 
                                 {% else %}
-                                    <button onclick=" window.location.href=window.location.href='{{ path('add.panier', {'id' : livre.id}) }}'"
-                                            class="btn btn-lg btn-block shadow-sm cardbutton page-link font-weight-light" data-id="{{ livre.id }}" >
+                                    <button onclick=" window.location.href='{{ path('add.panier', {'id' : livre.id}) }}'"
+                                            class="btn btn-lg btn-block shadow-sm cardbutton page-link font-weight-light"
+                                            data-id="{{ livre.id }}">
                                         Add to Cart
                                         <i
                                                 class="fas fa-shopping-cart  icon"

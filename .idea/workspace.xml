@@ -23,22 +23,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2abdafbf-2741-446c-bf37-202c749e15bd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/project/public/cover (1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/public/cover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/public/cover1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/public/cover2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/public/coverr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/public/coverrr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/public/mail.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/public/mail1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/public/mail3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/WebProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WebProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/cov1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/cov2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/cover11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/cover2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/cover4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/cover6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/cover7.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/ico.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/acceuil/acceuil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/acceuil/acceuil.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/project/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/project/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Controller/CatalogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Controller/CatalogController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Controller/RegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Form/CategoryType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Form/PropertySearchType.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Form/PropertySearchType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/project/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/catalogue/catalogue.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/catalogue/catalogue.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/catalogue/livre/livre.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/catalogue/livre/livre.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/registration/activate.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/registration/activate.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,6 +192,7 @@
       <path value="$PROJECT_DIR$/project/vendor/symfony/swiftmailer-bundle" />
       <path value="$PROJECT_DIR$/project/vendor/swiftmailer/swiftmailer" />
       <path value="$PROJECT_DIR$/project/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/project/vendor/thereddot/swiftmailer-image-embed" />
     </include_path>
   </component>
   <component name="ProjectId" id="1bMyhbNcHeQ1jivC3H9gjudzrbn" />
@@ -208,7 +210,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../exam" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -291,7 +293,13 @@
       <workItem from="1592386291438" duration="252000" />
       <workItem from="1592504725145" duration="452000" />
       <workItem from="1592505226464" duration="11307000" />
-      <workItem from="1592593652394" duration="2597000" />
+      <workItem from="1592593652394" duration="3612000" />
+      <workItem from="1592598947552" duration="1883000" />
+      <workItem from="1592675119861" duration="879000" />
+      <workItem from="1592676903764" duration="33000" />
+      <workItem from="1592676995623" duration="3759000" />
+      <workItem from="1592684042331" duration="9820000" />
+      <workItem from="1592737825933" duration="6501000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1589405183358</created>
@@ -468,7 +476,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592516633214</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="backgroung image">
+      <created>1592596667736</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1592596667736</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -510,7 +525,8 @@
     <MESSAGE value="delete useless files" />
     <MESSAGE value="." />
     <MESSAGE value="background" />
-    <option name="LAST_COMMIT_MESSAGE" value="background" />
+    <MESSAGE value="backgroung image" />
+    <option name="LAST_COMMIT_MESSAGE" value="backgroung image" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -526,6 +542,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="473" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1360.728@0.0.1360.728" timestamp="1591916066570" />
+    <state x="360" y="100" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1592683162956">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="360" y="100" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1360.728@0.0.1360.728" timestamp="1592683162956" />
     <state x="329" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1591742870150">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -538,10 +558,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="427" y="208" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1360.728@0.0.1360.728" timestamp="1589430285213" />
-    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1592516627325">
+    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1592596662883">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1592516627325" />
+    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1592596662883" />
     <state x="456" y="276" key="ComposerInitDialogKey" timestamp="1591916304100">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -550,10 +570,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="218" y="55" key="DiffContextDialog/0.0.1360.728@0.0.1360.728" timestamp="1591735838579" />
-    <state x="460" y="119" key="FileChooserDialogImpl" timestamp="1591961858188">
+    <state x="460" y="119" key="FileChooserDialogImpl" timestamp="1592599642671">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="460" y="119" key="FileChooserDialogImpl/0.0.1360.728@0.0.1360.728" timestamp="1591961858188" />
+    <state x="460" y="119" key="FileChooserDialogImpl/0.0.1360.728@0.0.1360.728" timestamp="1592599642671" />
     <state x="780" y="87" key="NewPhpClassDialog" timestamp="1591744730612">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -570,14 +590,14 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1360.728@0.0.1360.728" timestamp="1591731207035" />
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2" timestamp="1592516638869">
+    <state x="272" y="97" key="Vcs.Push.Dialog.v2" timestamp="1592596732706">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1592516638869" />
-    <state x="489" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591731205464">
+    <state x="272" y="97" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1592596732706" />
+    <state x="489" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592596703597">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="489" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1360.728@0.0.1360.728" timestamp="1591731205464" />
+    <state x="489" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1360.728@0.0.1360.728" timestamp="1592596703597" />
     <state x="0" y="0" width="1119" height="540" maximized="true" key="dock-window-1" timestamp="1589763476078">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -611,9 +631,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/project/templates/registration/SignUp.html.twig</url>
-          <line>18</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/project/src/ServiceValidate/address.php</url>
+          <line>21</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -22,7 +22,6 @@ class CatalogController extends AbstractController
 {
 
     private $repository;
-    private $request;
 
     public function __construct(LivreRepository $repository)
     {
@@ -81,7 +80,7 @@ class CatalogController extends AbstractController
 
         if (!$user) return $this->json([
             'code' => 403,
-            'message' => "desole il faut etre conn"
+            'message' => "you have to be connected"
         ], 403);
 
         if ($livre->isLiked($user)) {
