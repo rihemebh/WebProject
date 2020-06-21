@@ -111,7 +111,7 @@
                         {% block liItem1 %}
                             <li class="nav-item" style="width: 50px; ">
                                 <a class="nav-link  text-secondary small" href="#" >
-                          <i class="fas fa-search"></i>
+                          <i class="fas fa-search fa-2x"></i>
                                 </a>
                             </li>
                         {% endblock %}
@@ -120,7 +120,7 @@
                             <li class="nav-item " style="width: 50px; ">
                                 <a class="nav-link text-secondary small " href="{{ path('panier') }}" data-toggle="tooltip"
                                    data-placement="bottom" title="My Cart">
-                                    <i class="far fa-shopping-cart "> </i>
+                                    <i class="far fa-shopping-cart fa-2x "> </i>
                                 </a>
                             </li>
                         {% endblock %}
@@ -130,11 +130,11 @@
                                 {% if app.user %}
                                 <a class="nav-link  text-secondary small " href="/account/editInfo" data-toggle="tooltip"
                                    data-placement="bottom" title="My account">
-                                    <i class="fas fa-user-alt"></i></a>
+                                    <i class="fas fa-user-alt fa-2x"></i></a>
                                     {% else %}
                                 <a class="nav-link  text-secondary small " href="/login" data-toggle="tooltip"
                                    data-placement="bottom" title="log in">
-                                    <i class="far fa-user-alt"></i>
+                                    <i class="far fa-user-alt fa-2x"></i>
                                 </a>
                                         {% endif  %}
 
