@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Form\PayementType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -20,4 +21,16 @@ class PayementController extends AbstractController
         }
 
     }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @Route("/meeting",name="aafat")
+     */
+    public function timePicking(){
+        $form = $this->createForm(PayementType::class);
+        $view = $form->createView();
+        return $this->render('payement/meeting.html.twig' , [
+            'formview' => $view
+            ]);
+}
 }

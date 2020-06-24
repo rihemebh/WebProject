@@ -1,0 +1,123 @@
+{% extends 'baseFront.html.twig' %}
+
+{% block Title %}
+    Arrange a Meeting with US
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('Datepicker/jquery.datetimepicker.css') }}">
+    <style>
+
+
+        .meeting-jumbotron{
+            position: relative;
+            padding: 2rem 1rem;
+            height: 300px;
+            width: 100%;
+            margin-bottom: 2rem;
+            color: rgba(0,0,0,0);
+        }
+        .meeting-jumbotron:hover{
+            color: rgba(0,0,0,1);
+        }
+        .meeting-jumbotron::before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            background-image: url("{{ asset('shake2.jpg') }}");
+            background-position: center;
+            background-size: cover;
+
+        }
+        .meeting-jumbotron:hover:before{
+            opacity: 0.6;
+        }
+        .meeting-jumbotron h1{
+            position: relative;
+        }
+        .meeting-jumbotron p{
+            position: relative;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <section class="meeting-jumbotron text-center mt-1">
+        <div class="container">
+            <h1>ONE LAST STEP</h1>
+        </div>
+        <div class="container mt-5">
+            <div class="col-sm-7">
+                <p>
+                    Decide based on our timing the best moments to get your books
+                </p>
+            </div>
+        </div>
+    </section>
+
+{#    <div class="col-sm-6 container my-5">#}
+{#        <div style="display: block">#}
+{#            <h3 style="display: inline">Chose the date</h3>#}
+{#            <small>(Remember to make it as soon as possible)</small>#}
+{#        </div>#}
+{#        <input type="text" id="datetimepicker" class="form-control">#}
+{#    </div>#}
+
+    <div class="container">
+        {{ form_start(formview , {'attr' : {'class' : 'form-group' }}) }}
+        <div class="row">
+            <div class="col">{{ form_row(formview.datePayement) }}</div>
+            <div class="col">{{ form_row(formview.timePayement) }}</div>
+        </div>
+        {{ form_rest(formview) }}
+        {{ form_end(formview) }}
+    </div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js">
+    </script>
+
+    <script>
+       $(document).ready(function(){
+           var firstDay = new Date();
+           var nextWeek = new Date(firstDay.getTime() + 3 * 7 * 24 * 60 * 60 * 1000);
+           $('.datetimepicker').datetimepicker({
+               datepicker: true,
+               timepicker: false,
+               minDate: firstDay,
+               maxDate: nextWeek,
+               format: 'd/m/Y',
+               closeOnDateSelect : true,
+               scrollMonth : false,
+               scrollInput : false,
+               disableEntry: true
+           });
+           $('.datetimepicker').onkeydown="return false"
+
+           $('.datetimepicker2').datetimepicker({
+               datepicker: false,
+               timepicker: true,
+               minTime: '10:30',
+               maxTime: '17:31',
+               format: 'H:i',
+               closeOnTimeSelect : true,
+               step: 15
+           });
+       })
+
+
+    </script>
+{% endblock %}

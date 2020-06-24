@@ -110,10 +110,16 @@ class User implements UserInterface
      */
     private $Roles = ["ROLE_USER"];
 
+    /**
+     * @ORM\OneToMany(targetEntity=Payement::class, mappedBy="forUser", orphanRemoval=true)
+     */
+    private $payements;
+
 
     public function __construct()
     {
         $this->BooksLiked = new ArrayCollection();
+        $this->payements = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -267,6 +273,37 @@ class User implements UserInterface
     public function setRoles(): self
     {
         $this->Roles = ["ROLE_USER"];
+        return $this;
+    }
+
+    /**
+     * @return Collection|Payement[]
+     */
+    public function getPayements(): Collection
+    {
+        return $this->payements;
+    }
+
+    public function addPayement(Payement $payement): self
+    {
+        if (!$this->payements->contains($payement)) {
+            $this->payements[] = $payement;
+            $payement->setForUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removePayement(Payement $payement): self
+    {
+        if ($this->payements->contains($payement)) {
+            $this->payements->removeElement($payement);
+            // set the owning side to null (unless already changed)
+            if ($payement->getForUser() === $this) {
+                $payement->setForUser(null);
+            }
+        }
+
         return $this;
     }
 
