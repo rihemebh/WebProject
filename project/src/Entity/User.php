@@ -105,6 +105,11 @@ class User implements UserInterface
      */
     private $reset_token;
 
+    /**
+     * @ORM\Column(type="json")
+     */
+    private $Roles = ["ROLE_USER"];
+
 
     public function __construct()
     {
@@ -256,6 +261,12 @@ class User implements UserInterface
     {
         $this->reset_token = $reset_token;
 
+        return $this;
+    }
+
+    public function setRoles(): self
+    {
+        $this->Roles = ["ROLE_USER"];
         return $this;
     }
 
