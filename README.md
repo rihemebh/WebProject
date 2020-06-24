@@ -4,7 +4,7 @@
 ###### You need to install a local server such as xampp / wampp (php 7.4.6) on your computer 
 ###### and an IDE for php (we recommend PhpStorm)
 ## Test:
-in order to to test it you should follow this steps:
+in order to test it you should follow this steps:
 ###### 1/ clone this repo using https://github.com/rihemebh/WebProject.git
 ###### 2/ run this command "composer install" on your cmd
 ###### 3/ create the database than migrate
