@@ -75,8 +75,12 @@
             <div class="col">{{ form_row(formview.datePayement) }}</div>
             <div class="col">{{ form_row(formview.timePayement) }}</div>
         </div>
-        {{ form_rest(formview) }}
-        {{ form_end(formview) }}
+        <div class="my-5"></div>
+        <div class="row justify-content-center">
+            <div class="col-6 col-center">
+                {{ form_row(formview.Submit) }}
+            </div>
+        </div>
     </div>
 
 
@@ -103,7 +107,7 @@
                closeOnDateSelect : true,
                scrollMonth : false,
                scrollInput : false,
-               disableEntry: true
+               scrolling: false
            });
            $('.datetimepicker').onkeydown="return false"
 
@@ -114,6 +118,7 @@
                maxTime: '17:31',
                format: 'H:i',
                closeOnTimeSelect : true,
+               scrollInput : false,
                step: 15
            });
        })

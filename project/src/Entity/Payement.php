@@ -48,6 +48,11 @@ class Payement
      */
     private $forUser;
 
+    /**
+     * @ORM\Column(type="array")
+     */
+    private $books = [];
+
 
     public function getId(): ?int
     {
@@ -122,6 +127,18 @@ class Payement
     public function setForUser(?User $forUser): self
     {
         $this->forUser = $forUser;
+
+        return $this;
+    }
+
+    public function getBooks(): ?array
+    {
+        return $this->books;
+    }
+
+    public function setBooks(array $books): self
+    {
+        $this->books = $books;
 
         return $this;
     }

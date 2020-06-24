@@ -27,8 +27,14 @@ class PayementController extends AbstractController
      * @Route("/meeting",name="aafat")
      */
     public function timePicking(){
-        $form = $this->createForm(PayementType::class);
-        $view = $form->createView();
+        $user = $this->getUser();
+        if($user){
+            $form = $this->createForm(PayementType::class);
+            $view = $form->createView();
+        } else {
+            $this->addFlash('erreur', 'You should be loged into an account');
+            return $this->redirectToRoute('app_login');
+        }
         return $this->render('payement/meeting.html.twig' , [
             'formview' => $view
             ]);

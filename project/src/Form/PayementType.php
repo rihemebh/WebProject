@@ -18,12 +18,14 @@ class PayementType extends AbstractType
             ->add('cardId')
             ->add('cardPass')
             ->add('datePayement',DateType::class, [
+                'label' => 'Chose a Day',
                 'attr' => ['class' =>'form-contol datetimepicker'],
                 'html5' => false,
                 'widget' => 'single_text',
                 'format' => 'd/m/Y'
             ])
             ->add('timePayement', TimeType::class, [
+                'label' => 'Chose a Time',
                 'attr' => ['class' => 'form-control datetimepicker2'],
                 'html5' => false,
                 'widget' => 'single_text',
@@ -31,7 +33,7 @@ class PayementType extends AbstractType
             ])
             ->add('Submit', SubmitType::class, [
                 'attr' => [
-                    'classe'=>'brn btn-primary'
+                    'class'=>'btn btn-primary btn-lg btn-block'
                 ]
                 ])
         ;
