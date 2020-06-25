@@ -23,38 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2abdafbf-2741-446c-bf37-202c749e15bd" name="Default Changelist" comment="">
-<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_19_2020_20_58__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_19_2020_20_58__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-=======
-      <change afterPath="$PROJECT_DIR$/project/src/Migrations/Version20200624122838.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/Migrations/Version20200624123212.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/Migrations/Version20200624130324.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/WebProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WebProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/project/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/public/form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Controller/RegistrationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Migrations/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Migrations/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Migrations/Version20200608202511.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Migrations/stuff/Version20200608202511.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Migrations/Version20200609202448.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Migrations/stuff/Version20200609202448.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Migrations/Version20200609214751.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Migrations/stuff/Version20200609214751.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Migrations/Version20200609220942.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Migrations/stuff/Version20200609220942.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Migrations/Version20200609221256.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Migrations/stuff/Version20200609221256.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Migrations/Version20200609232236.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Migrations/stuff/Version20200609232236.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Migrations/Version20200610102055.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Migrations/stuff/Version20200610102055.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Migrations/Version20200611221943.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Migrations/stuff/Version20200611221943.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Migrations/Version20200611223908.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Migrations/stuff/Version20200611223908.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Migrations/Version20200611232026.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Migrations/stuff/Version20200611232026.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Migrations/Version20200612140945.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Migrations/stuff/Version20200612140945.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Migrations/Version20200613193545.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Migrations/Version20200615151531.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Migrations/stuff/Version20200615151531.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Migrations/Version20200615195654.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Migrations/stuff/Version20200615195654.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Migrations/Version20200616104707.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Migrations/stuff/Version20200616104707.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/registration/activate.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/registration/activate.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/security/EmailResetPassword.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/security/EmailResetPassword.html.twig" afterDir="false" />
->>>>>>> b4ca9be0c0b29330591f860224131850a8e14e5e
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,20 +215,16 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\WebProject\project\src\Migrations" />
+      <recent name="C:\xampp\htdocs\WebProject\project\public" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\WebProject\WebProject\project\templates\account" />
       <recent name="D:\xampp\htdocs\WebProject\WebProject\project\src\Migrations" />
       <recent name="D:\xampp\htdocs\WebProject\WebProject\project\src\stuff" />
       <recent name="C:\xampp\htdocs\WebProject\project\src\DataFixtures" />
       <recent name="C:\xampp\htdocs\WebProject\project\src\Controller" />
-      <recent name="C:\xampp\htdocs\WebProject\project\public\bootstrap" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\WebProject\project\src\Migrations" />
-      <recent name="C:\xampp\htdocs\WebProject\project\public" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\WebProject\project\src\Migrations" />
-      <recent name="C:\xampp\htdocs\WebProject\project\public" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -321,22 +287,15 @@
       <workItem from="1592676903764" duration="33000" />
       <workItem from="1592676995623" duration="3759000" />
       <workItem from="1592684042331" duration="9820000" />
-<<<<<<< HEAD
-      <workItem from="1592737825933" duration="6637000" />
-      <workItem from="1592746644790" duration="10005000" />
-      <workItem from="1592915470255" duration="6302000" />
-      <workItem from="1592940165469" duration="979000" />
-      <workItem from="1592941201392" duration="2125000" />
-      <workItem from="1592995884765" duration="5001000" />
-      <workItem from="1593086381564" duration="2299000" />
-=======
       <workItem from="1592737825933" duration="6501000" />
       <workItem from="1592772724033" duration="2238000" />
       <workItem from="1592833355004" duration="2211000" />
       <workItem from="1592866200622" duration="960000" />
       <workItem from="1592940783383" duration="875000" />
       <workItem from="1592996784085" duration="8041000" />
->>>>>>> b4ca9be0c0b29330591f860224131850a8e14e5e
+      <workItem from="1593110912509" duration="16000" />
+      <workItem from="1593114030173" duration="3000" />
+      <workItem from="1593115103117" duration="4138000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1589405183358</created>
@@ -520,14 +479,7 @@
       <option name="project" value="LOCAL" />
       <updated>1592596667736</updated>
     </task>
-    <task id="LOCAL-00027" summary="image in swiftmailer">
-      <created>1592744433330</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1592744433330</updated>
-    </task>
-    <option name="localTasksCounter" value="28" />
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -570,8 +522,7 @@
     <MESSAGE value="." />
     <MESSAGE value="background" />
     <MESSAGE value="backgroung image" />
-    <MESSAGE value="image in swiftmailer" />
-    <option name="LAST_COMMIT_MESSAGE" value="image in swiftmailer" />
+    <option name="LAST_COMMIT_MESSAGE" value="backgroung image" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -603,10 +554,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="427" y="208" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1360.728@0.0.1360.728" timestamp="1589430285213" />
-    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1592744423765">
+    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1592596662883">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1592744423765" />
+    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1592596662883" />
     <state x="456" y="276" key="ComposerInitDialogKey" timestamp="1591916304100">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -615,14 +566,14 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="218" y="55" key="DiffContextDialog/0.0.1360.728@0.0.1360.728" timestamp="1591735838579" />
-    <state x="460" y="119" key="FileChooserDialogImpl" timestamp="1592747683784">
+    <state x="460" y="119" key="FileChooserDialogImpl" timestamp="1592599642671">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="460" y="119" key="FileChooserDialogImpl/0.0.1360.728@0.0.1360.728" timestamp="1592747683784" />
-    <state x="780" y="87" key="NewPhpClassDialog" timestamp="1592941450893">
+    <state x="460" y="119" key="FileChooserDialogImpl/0.0.1360.728@0.0.1360.728" timestamp="1592599642671" />
+    <state x="780" y="87" key="NewPhpClassDialog" timestamp="1591744730612">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="780" y="87" key="NewPhpClassDialog/0.0.1360.728@0.0.1360.728" timestamp="1592941450893" />
+    <state x="780" y="87" key="NewPhpClassDialog/0.0.1360.728@0.0.1360.728" timestamp="1591744730612" />
     <state x="514" y="287" key="NewPhpFileDialog" timestamp="1591744574425">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -635,21 +586,15 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1360.728@0.0.1360.728" timestamp="1591731207035" />
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2" timestamp="1592744461184">
+    <state x="272" y="97" key="Vcs.Push.Dialog.v2" timestamp="1592596732706">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-<<<<<<< HEAD
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1592744461184" />
-    <state x="489" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592596703597">
-      <screen x="0" y="0" width="1360" height="728" />
-=======
     <state x="272" y="97" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1592596732706" />
-    <state x="552" y="315" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593000649624">
+    <state x="552" y="315" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593119246300">
       <screen x="0" y="0" width="1536" height="824" />
->>>>>>> b4ca9be0c0b29330591f860224131850a8e14e5e
     </state>
     <state x="489" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1360.728@0.0.1360.728" timestamp="1592596703597" />
-    <state x="552" y="315" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1593000649624" />
+    <state x="552" y="315" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1593119246300" />
     <state x="0" y="0" width="1119" height="540" maximized="true" key="dock-window-1" timestamp="1589763476078">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -662,22 +607,22 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="387" y="0" width="585" height="728" key="find.popup/0.0.1360.728@0.0.1360.728" timestamp="1588998157531" />
-    <state x="399" y="152" key="git4idea.merge.GitPullDialog" timestamp="1592919653179">
+    <state x="399" y="152" key="git4idea.merge.GitPullDialog" timestamp="1592504948015">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="399" y="152" key="git4idea.merge.GitPullDialog/0.0.1360.728@0.0.1360.728" timestamp="1592919653179" />
+    <state x="399" y="152" key="git4idea.merge.GitPullDialog/0.0.1360.728@0.0.1360.728" timestamp="1592504948015" />
     <state x="453" y="238" width="611" height="281" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1589155587021">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="453" y="238" width="611" height="281" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1360.728@0.0.1360.728" timestamp="1589155587021" />
-    <state x="336" y="162" key="run.anything.popup" timestamp="1592941539956">
+    <state x="336" y="162" key="run.anything.popup" timestamp="1592509702750">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="336" y="162" key="run.anything.popup/0.0.1360.728@0.0.1360.728" timestamp="1592941539956" />
-    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1592941083081">
+    <state x="336" y="162" key="run.anything.popup/0.0.1360.728@0.0.1360.728" timestamp="1592509702750" />
+    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1591368784903">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1592941083081" />
+    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1591368784903" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
