@@ -23,12 +23,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2abdafbf-2741-446c-bf37-202c749e15bd" name="Default Changelist" comment="wishlist integration">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_06_2020_17_43_[Default_Changelist]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_06_2020_17_43__Default_Changelist_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_06_2020_21_59_[Default_Changelist]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_06_2020_21_59__Default_Changelist_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_06_2020_23_03_[Default_Changelist]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_06_2020_23_03__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -300,7 +294,7 @@
       <workItem from="1592996784085" duration="8041000" />
       <workItem from="1593110912509" duration="16000" />
       <workItem from="1593114030173" duration="3000" />
-      <workItem from="1593115103117" duration="5142000" />
+      <workItem from="1593115103117" duration="9719000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1589405183358</created>
