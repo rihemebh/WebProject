@@ -48,7 +48,8 @@ class PayementController extends AbstractController
                 $view = $form->createView();
                 $form->handleRequest($req);
                 if ($form->isSubmitted() and $form->isValid()){
-                    $ident = "xyz";
+                    $ident = md5(uniqid());
+                    dd($ident);
                     $pay->setNumPayement($ident);
                     $pay->setForUser($user);
                     $books = [];
