@@ -79,7 +79,7 @@ class CatalogController extends AbstractController
      */
     public function wishlist (){
         $books=$this->getDoctrine()->getRepository(Livre::class)->findAll();
-        return $this->render('wishlist.html.twig', [
+        return $this->render('account/wishlist.html.twig', [
             'books'=>$books,
         ]);
     }

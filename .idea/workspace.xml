@@ -22,8 +22,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2abdafbf-2741-446c-bf37-202c749e15bd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_19_2020_20_58__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_19_2020_20_58__Default_Changelist_.xml" afterDir="false" />
+    <list default="true" id="2abdafbf-2741-446c-bf37-202c749e15bd" name="Default Changelist" comment="wishlist integration">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_06_2020_17_43_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_06_2020_17_43__Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_06_2020_21_59_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_06_2020_21_59__Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_06_2020_23_03_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_06_2020_23_03__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -295,7 +300,7 @@
       <workItem from="1592996784085" duration="8041000" />
       <workItem from="1593110912509" duration="16000" />
       <workItem from="1593114030173" duration="3000" />
-      <workItem from="1593115103117" duration="4138000" />
+      <workItem from="1593115103117" duration="5142000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1589405183358</created>
@@ -479,7 +484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592596667736</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="wishlist integration">
+      <created>1593119331013</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1593119331013</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -522,7 +534,8 @@
     <MESSAGE value="." />
     <MESSAGE value="background" />
     <MESSAGE value="backgroung image" />
-    <option name="LAST_COMMIT_MESSAGE" value="backgroung image" />
+    <MESSAGE value="wishlist integration" />
+    <option name="LAST_COMMIT_MESSAGE" value="wishlist integration" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -586,15 +599,16 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1360.728@0.0.1360.728" timestamp="1591731207035" />
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2" timestamp="1592596732706">
-      <screen x="0" y="0" width="1360" height="728" />
+    <state x="307" y="110" key="Vcs.Push.Dialog.v2" timestamp="1593119344370">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="272" y="97" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1592596732706" />
-    <state x="552" y="315" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593119246300">
+    <state x="307" y="110" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1593119344370" />
+    <state x="552" y="315" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593119819595">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="489" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1360.728@0.0.1360.728" timestamp="1592596703597" />
-    <state x="552" y="315" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1593119246300" />
+    <state x="552" y="315" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1593119819595" />
     <state x="0" y="0" width="1119" height="540" maximized="true" key="dock-window-1" timestamp="1589763476078">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
