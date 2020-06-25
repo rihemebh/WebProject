@@ -23,23 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2abdafbf-2741-446c-bf37-202c749e15bd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/project/public/mail.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/public/mail1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/public/mail3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/WebProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WebProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/project/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/project/config/packages/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Controller/CatalogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Controller/CatalogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Controller/RegistrationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Form/CategoryType.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Form/PropertySearchType.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Form/PropertySearchType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/project/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/catalogue/catalogue.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/catalogue/catalogue.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/catalogue/livre/livre.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/catalogue/livre/livre.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/registration/activate.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/registration/activate.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,16 +211,16 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\WebProject\project\src\Migrations" />
-      <recent name="C:\xampp\htdocs\WebProject\project\public" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\WebProject\project\src\DataFixtures" />
       <recent name="C:\xampp\htdocs\WebProject\project\src\Controller" />
       <recent name="C:\xampp\htdocs\WebProject\project\public\bootstrap" />
       <recent name="C:\xampp\htdocs\WebProject\WebProject\project\public" />
       <recent name="C:\xampp\htdocs\WebProject\WebProject\project\public\catalogue" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\WebProject\project\src\Migrations" />
+      <recent name="C:\xampp\htdocs\WebProject\project\public" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -299,7 +283,13 @@
       <workItem from="1592676903764" duration="33000" />
       <workItem from="1592676995623" duration="3759000" />
       <workItem from="1592684042331" duration="9820000" />
-      <workItem from="1592737825933" duration="6501000" />
+      <workItem from="1592737825933" duration="6637000" />
+      <workItem from="1592746644790" duration="10005000" />
+      <workItem from="1592915470255" duration="6302000" />
+      <workItem from="1592940165469" duration="979000" />
+      <workItem from="1592941201392" duration="2125000" />
+      <workItem from="1592995884765" duration="5001000" />
+      <workItem from="1593086381564" duration="2299000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1589405183358</created>
@@ -483,7 +473,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592596667736</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="image in swiftmailer">
+      <created>1592744433330</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1592744433330</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -526,7 +523,8 @@
     <MESSAGE value="." />
     <MESSAGE value="background" />
     <MESSAGE value="backgroung image" />
-    <option name="LAST_COMMIT_MESSAGE" value="backgroung image" />
+    <MESSAGE value="image in swiftmailer" />
+    <option name="LAST_COMMIT_MESSAGE" value="image in swiftmailer" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -558,10 +556,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="427" y="208" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1360.728@0.0.1360.728" timestamp="1589430285213" />
-    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1592596662883">
+    <state x="305" y="0" key="CommitChangelistDialog2" timestamp="1592744423765">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1592596662883" />
+    <state x="305" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1592744423765" />
     <state x="456" y="276" key="ComposerInitDialogKey" timestamp="1591916304100">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -570,14 +568,14 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="218" y="55" key="DiffContextDialog/0.0.1360.728@0.0.1360.728" timestamp="1591735838579" />
-    <state x="460" y="119" key="FileChooserDialogImpl" timestamp="1592599642671">
+    <state x="460" y="119" key="FileChooserDialogImpl" timestamp="1592747683784">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="460" y="119" key="FileChooserDialogImpl/0.0.1360.728@0.0.1360.728" timestamp="1592599642671" />
-    <state x="780" y="87" key="NewPhpClassDialog" timestamp="1591744730612">
+    <state x="460" y="119" key="FileChooserDialogImpl/0.0.1360.728@0.0.1360.728" timestamp="1592747683784" />
+    <state x="780" y="87" key="NewPhpClassDialog" timestamp="1592941450893">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="780" y="87" key="NewPhpClassDialog/0.0.1360.728@0.0.1360.728" timestamp="1591744730612" />
+    <state x="780" y="87" key="NewPhpClassDialog/0.0.1360.728@0.0.1360.728" timestamp="1592941450893" />
     <state x="514" y="287" key="NewPhpFileDialog" timestamp="1591744574425">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -590,10 +588,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1360.728@0.0.1360.728" timestamp="1591731207035" />
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2" timestamp="1592596732706">
+    <state x="272" y="97" key="Vcs.Push.Dialog.v2" timestamp="1592744461184">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1592596732706" />
+    <state x="272" y="97" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1592744461184" />
     <state x="489" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592596703597">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -610,22 +608,22 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="387" y="0" width="585" height="728" key="find.popup/0.0.1360.728@0.0.1360.728" timestamp="1588998157531" />
-    <state x="399" y="152" key="git4idea.merge.GitPullDialog" timestamp="1592504948015">
+    <state x="399" y="152" key="git4idea.merge.GitPullDialog" timestamp="1592919653179">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="399" y="152" key="git4idea.merge.GitPullDialog/0.0.1360.728@0.0.1360.728" timestamp="1592504948015" />
+    <state x="399" y="152" key="git4idea.merge.GitPullDialog/0.0.1360.728@0.0.1360.728" timestamp="1592919653179" />
     <state x="453" y="238" width="611" height="281" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1589155587021">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="453" y="238" width="611" height="281" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1360.728@0.0.1360.728" timestamp="1589155587021" />
-    <state x="336" y="162" key="run.anything.popup" timestamp="1592509702750">
+    <state x="336" y="162" key="run.anything.popup" timestamp="1592941539956">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="336" y="162" key="run.anything.popup/0.0.1360.728@0.0.1360.728" timestamp="1592509702750" />
-    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1591368784903">
+    <state x="336" y="162" key="run.anything.popup/0.0.1360.728@0.0.1360.728" timestamp="1592941539956" />
+    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1592941083081">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1591368784903" />
+    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1592941083081" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
