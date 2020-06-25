@@ -42,29 +42,30 @@
 </style>
 {% endblock %}
 {% block navitem1 %} {% endblock %}
-  {% block liItem1 %}
-      {% if app.user %}
-          <li class="dropdown float-right" style="width:80px">
-              <a class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="far fa-heart"></i>
-              </a>
-              <div class="dropdown-menu text-center" style="width:70%" aria-labelledby="dropdownMenuButton">
-                  <h5> My WishList </h5>
-                    {% for book in books %}
-                            {% if book.isLiked(app.user) %}
-                    <a  href="/livre/{{ book.id }}" > <img src="{{ book.path }}" style="width:27%; height:auto" >
+{#{% use "wishlist.html.twig"  %}#}
+{#  {% block liItem1 %}#}
+{#      {% if app.user %}#}
+{#          <li class="dropdown float-right" style="width:80px">#}
+{#              <a class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton"#}
+{#                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+{#                  <i class="far fa-heart"></i>#}
+{#              </a>#}
+{#              <div class="dropdown-menu text-center" style="width:70%" aria-labelledby="dropdownMenuButton">#}
+{#                  <h5> My WishList </h5>#}
+{#                    {% for book in books %}#}
+{#                            {% if book.isLiked(app.user) %}#}
+{#                    <a  href="/livre/{{ book.id }}" > <img src="{{ book.path }}" style="width:27%; height:auto" >#}
 
-                        <small class=" text-dark">{{ book.nomLivre }}</small>
+{#                        <small class=" text-dark">{{ book.nomLivre }}</small>#}
 
-                     </a>
-                        <hr>
-                        {% endif %}
-                     {% endfor %}
-              </div>
-          </li>
-      {% endif %}
-  {% endblock %}
+{#                     </a>#}
+{#                        <hr>#}
+{#                        {% endif %}#}
+{#                     {% endfor %}#}
+{#              </div>#}
+{#          </li>#}
+{#      {% endif %}#}
+{#  {% endblock %}#}
 {% block body %}
 
     <div style="height: 40px;"></div>
@@ -194,11 +195,11 @@
 
 
                             {% else %}
-                                <button onclick=" window.location.href='{{ path('add.panier', {'id' : idd}) }}'"
+                                <a href="{{ path('add.panier', {'id' : idd}) }}"
                                         class="btn shadow-sm cardbutton" data-id="{{ livre.id }}" style="font-size:70%">
                                     Add to Cart
                                     <i class="fas fa-shopping-cart  icon"
-                                            style="font-size:11px;"> </i></button>
+                                            style="font-size:11px;"> </i></a>
                             {% endif %}
 
                         </div>
@@ -220,7 +221,7 @@
         <br>
         <div class="container">
             <div class="row">
-                <div class="col-8">
+                <div class="col-7">
                     <nav class="float-right " aria-label=" shadow Page">
                         {{ knp_pagination_render(filtre) }}
 
@@ -278,8 +279,16 @@
     function onClickBtnCart(event){
         event.preventDefault();
         console.log(this);
-        this.classList.add('disabled');
-        this.innerHTML="Added to Cart  <i class='fas fa-shopping-cart  icon' style='font-size:70%;'> </i>";
+        const url = this.href;
+        const obj= this;
+
+        axios.get(url).then(function (response) {
+            console.log(response.data.message);
+            obj.classList.add('disabled');
+            obj.innerHTML="Added to Cart  <i class='fas fa-shopping-cart  icon' style='font-size:70%;'> </i>";
+        });
+
+
     }
     document.querySelectorAll('.cardbutton').forEach(function (link) {
         link.addEventListener('click',onClickBtnCart);

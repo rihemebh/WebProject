@@ -62,15 +62,45 @@ class CatalogController extends AbstractController
 
     public function afficherlivre($id)
     {
-
+        $books=$this->getDoctrine()->getRepository(Livre::class)->findAll();
         $livre = $this->getDoctrine()->getRepository(Livre::class)->find($id);
         $filtre = $this->getDoctrine()->getRepository(livre::class)
             ->findBookBy($livre->getCategories(), $id);
         return $this->render('catalogue/livre/livre.html.twig', [
             'filtre' => $filtre,
-            'livre' => $livre]);
+            'livre' => $livre,
+            'books'=>$books,
+            ]);
     }
 
+    /**
+     * @Route("/wishlist")
+     * @return Response
+     */
+    public function wishlist (){
+        $books=$this->getDoctrine()->getRepository(Livre::class)->findAll();
+        return $this->render('wishlist.html.twig', [
+            'books'=>$books,
+        ]);
+    }
+
+    /**
+     * @param Livre $livre
+     * @param EntityManagerInterface $manager
+     * @route("/wishlist/remove/{id}")
+     * @return JsonResponse
+     */
+public function RemoveWishList (Livre $livre, EntityManagerInterface $manager){
+
+    $user = $this->getUser();
+
+    $livre->removeLike($user);
+    $manager->persist($livre);
+    $manager->flush();
+
+    return $this->json(['code' => 200, "message" => "card deleted"], 200);
+
+}
 
     /**
      * @Route("/livre/{id}/like", name="booklike")
@@ -104,5 +134,7 @@ class CatalogController extends AbstractController
 
         }
     }
+
+
 }
 

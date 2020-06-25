@@ -5,14 +5,17 @@ namespace App\Controller;
 use App\Entity\Livre;
 use App\Services\ServicesPanier\ServicesPanier;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class PanierController extends AbstractController
 {
     /**
-     * @param ServicesPanier $pan
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @param ServicesPanier $service
+     * @return Response
      * @Route("/panier", name="panier")
      */
     public function index(ServicesPanier $service)
@@ -24,25 +27,26 @@ class PanierController extends AbstractController
     /**
      * @param ServicesPanier $service
      * @param Request $request
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      * @Route("/addpanier", name="add.panier")
+     * @return JsonResponse
      */
     public function addToPanier(ServicesPanier $service, Request $request)
     {
         $id = $request->get('id');
         $bol = $service->updateCart($id);
         if($bol){
-            $this->addFlash('success', 'Book successfully added to cart. Go check it out ');
+           // $this->addFlash('success', 'Book successfully added to cart. Go check it out ');
+            return $this->json(['code' => 200, 'message' => "book successfully added to cart"], 200);
         } else {
-            $this->addFlash('erreur', 'This is not the id of an existing book');
+            return $this->json(['code' => 200, 'message' => "This is not the id of an existing book"], 200);
         }
-        return $this->redirectToRoute('catalogue');
+
     }
 
     /**
      * @param ServicesPanier $service
      * @param Request $request
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @return RedirectResponse
      * @Route("/deletepanier", name="delete.panier")
      */
     public function deleteFromPanier(ServicesPanier $service, Request $request)
