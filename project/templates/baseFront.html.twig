@@ -155,6 +155,18 @@
         {% endblock %}
     </header>
 
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            <i class="fa fa-check-circle approve"></i>
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('alert') %}
+        <div class="alert alert-danger">
+            <i class="fad fa-engine-warning"></i>
+            {{ message }}
+        </div>
+    {% endfor %}
 
         {% block body %}{% endblock %}
 

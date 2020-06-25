@@ -15,24 +15,26 @@
         background-color: transparent;
     }
 
-    .asc,.sortable,.desc:link{
+
+
+    .asc:link,.sortable:link,.desc:link{
         font-size: small;
         color: black;
         background-color: transparent;
     }
 
-    .asc,.sortable,.desc:hover {
+    .asc:hover,.sortable:hover,.desc:hover{
         font-size: medium;
         color: black;
         background-color: transparent;
     }
 
-    .asc,.sortable,.desc:visited{
+    .asc:visited,.sortable:visited,.desc:visited{
         font-size: small;
         color: black;
         background-color: transparent;
     }
-    .asc,.sortable,.desc:active{
+    .asc:active,.sortable:active,.desc:active{
         font-size: small;
         color: black;
         background-color: transparent;
@@ -42,30 +44,7 @@
 </style>
 {% endblock %}
 {% block navitem1 %} {% endblock %}
-{#{% use "wishlist.html.twig"  %}#}
-{#  {% block liItem1 %}#}
-{#      {% if app.user %}#}
-{#          <li class="dropdown float-right" style="width:80px">#}
-{#              <a class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton"#}
-{#                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
-{#                  <i class="far fa-heart"></i>#}
-{#              </a>#}
-{#              <div class="dropdown-menu text-center" style="width:70%" aria-labelledby="dropdownMenuButton">#}
-{#                  <h5> My WishList </h5>#}
-{#                    {% for book in books %}#}
-{#                            {% if book.isLiked(app.user) %}#}
-{#                    <a  href="/livre/{{ book.id }}" > <img src="{{ book.path }}" style="width:27%; height:auto" >#}
 
-{#                        <small class=" text-dark">{{ book.nomLivre }}</small>#}
-
-{#                     </a>#}
-{#                        <hr>#}
-{#                        {% endif %}#}
-{#                     {% endfor %}#}
-{#              </div>#}
-{#          </li>#}
-{#      {% endif %}#}
-{#  {% endblock %}#}
 {% block body %}
 
     <div style="height: 40px;"></div>
