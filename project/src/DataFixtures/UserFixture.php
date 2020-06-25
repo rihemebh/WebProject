@@ -20,7 +20,7 @@ class UserFixture extends Fixture
         $user->setFirstName($faker->firstName);
         $user->setLastName($faker->lastName);
         $user->setEmail($faker->email);
-        $user->setPhoneNumber($faker->numberBetween(200000000, 29999999));
+        $user->setPhoneNumber($faker->numberBetween(20000000, 29999999));
         $user->setPassword('kfjlerjfe');
         $user->setUserName($faker->userName);
         $manager->persist($user);

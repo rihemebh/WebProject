@@ -108,15 +108,17 @@
 
                 <form class="form-inline my-2 my-lg-0">
                     <ul  class="navbar-nav">
-                        {% block liItem1 %}
+                        {% block liItem0 %}
                             <li class="nav-item" style="width: 50px; ">
                                 <a class="nav-link  text-secondary small" href="#" >
                           <i class="fas fa-search fa-2x"></i>
                                 </a>
                             </li>
                         {% endblock %}
+                        {% block liItem1 %}{% endblock %}
 
                         {% block liItem2 %}
+
                             <li class="nav-item " style="width: 50px; ">
                                 <a class="nav-link text-secondary small " href="{{ path('panier') }}" data-toggle="tooltip"
                                    data-placement="bottom" title="My Cart">
@@ -143,6 +145,9 @@
                             </li>
 
                         {% endblock %}
+
+
+
 
                     </ul>
                 </form></div>

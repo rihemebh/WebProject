@@ -6,8 +6,65 @@
 
 
 {% endblock %}
-{% block navitem1 %} {% endblock %}
 
+{% block style %}
+<style>
+    .asc,.sortable,.desc{
+        font-size: small;
+        color: black;
+        background-color: transparent;
+    }
+
+    .asc,.sortable,.desc:link{
+        font-size: small;
+        color: black;
+        background-color: transparent;
+    }
+
+    .asc,.sortable,.desc:hover {
+        font-size: medium;
+        color: black;
+        background-color: transparent;
+    }
+
+    .asc,.sortable,.desc:visited{
+        font-size: small;
+        color: black;
+        background-color: transparent;
+    }
+    .asc,.sortable,.desc:active{
+        font-size: small;
+        color: black;
+        background-color: transparent;
+    }
+
+
+</style>
+{% endblock %}
+{% block navitem1 %} {% endblock %}
+  {% block liItem1 %}
+      {% if app.user %}
+          <li class="dropdown float-right" style="width:80px">
+              <a class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="far fa-heart"></i>
+              </a>
+              <div class="dropdown-menu text-center" style="width:70%" aria-labelledby="dropdownMenuButton">
+                  <h5> My WishList </h5>
+                    {% for book in books %}
+                            {% if book.isLiked(app.user) %}
+                    <a  href="/livre/{{ book.id }}" > <img src="{{ book.path }}" style="width:27%; height:auto" >
+
+                        <small class=" text-dark">{{ book.nomLivre }}</small>
+
+                     </a>
+                        <hr>
+                        {% endif %}
+                     {% endfor %}
+              </div>
+          </li>
+      {% endif %}
+  {% endblock %}
 {% block body %}
 
     <div style="height: 40px;"></div>
@@ -80,11 +137,12 @@
                         Sort By
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <p class="container">{{ knp_pagination_sortable(filtre , "price" , "p.prix") }} <i
-                                    class="fas fa-sort-amount-up small "></i></p>
-                        <p class="container">{{ knp_pagination_sortable(filtre , "price" , "p.prix", ['desc']) }}<i
-                                    class="fas fa-sort-amount-down small "></i></p>
-                        <p class="container"> {{ knp_pagination_sortable(filtre , "Newest" , "p.date_pub" , ['desc'] ) }}</p>
+                        <p class="container"> {{ knp_pagination_sortable(filtre , "Newest (default) " , "p.date_pub" , ['desc'] ) }}</p>
+                        <p class="container"> {{ knp_pagination_sortable(filtre , "Oldest" , "p.date_pub" ) }}</p>
+                        <p class="container">{{ knp_pagination_sortable(filtre , "price" , "p.prix") }}
+                            <i class="fas fa-sort-amount-down small "></i> </p>
+                        <p class="container">{{ knp_pagination_sortable(filtre , "price" , "p.prix", ['desc']) }}
+                            <i class="fas fa-sort-amount-up small "></i></p>
 
                     </div>
                 </div>
@@ -96,7 +154,7 @@
 
     <!--style="color:#6d2e3e"-->
     <br>
-    <div class="container-fluid ">
+    <div class="container">
         <div class="row">
 
             {% for livre in filtre %}
@@ -131,8 +189,7 @@
                             {% if app.session.get('panier')[livre.id] is defined %}
                                 <button  class="btn shadow-sm disabled cardbutton" data-id="{{ livre.id }}" style="font-size:70%">
                                     Added to Cart
-                                    <i
-                                            class="fas fa-shopping-cart  icon"
+                                    <i class="fas fa-shopping-cart  icon"
                                             style="font-size:11px;"> </i></button>
 
 
@@ -140,8 +197,7 @@
                                 <button onclick=" window.location.href='{{ path('add.panier', {'id' : idd}) }}'"
                                         class="btn shadow-sm cardbutton" data-id="{{ livre.id }}" style="font-size:70%">
                                     Add to Cart
-                                    <i
-                                            class="fas fa-shopping-cart  icon"
+                                    <i class="fas fa-shopping-cart  icon"
                                             style="font-size:11px;"> </i></button>
                             {% endif %}
 
@@ -203,10 +259,12 @@
             const like = this.parentElement.parentElement
                 .previousElementSibling.previousElementSibling.firstElementChild;
             const icon = this.querySelector('i.hearticon');
-            console.log(like);
+           // console.log(like);
+            // get request
+           // console.log(axios.get(url));
             axios.get(url).then(function (response) {
                 like.textContent = response.data.likes;
-                console.log(like);
+                //console.log(like);
                 if (icon.classList.contains('text-danger')) icon.classList.remove('text-danger');
                 else icon.classList.add('text-danger');
             });
