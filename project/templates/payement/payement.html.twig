@@ -1,1 +1,38 @@
 {% extends 'baseFront.html.twig' %}
+{% block Title %}
+        Payement
+{% endblock %}
+
+{% block body %}
+    <section class="jumbotron text-center mt-1">
+        <div class="container">
+            <h1>PICK AWAY A PAYEMENT PROCESS</h1>
+        </div>
+    </section>
+
+   <div class="container">
+       <div class="row my-5 justify-content-center">
+           <div class="col-2">
+               <i class="far fa-credit-card fa-2x" ></i>
+           </div>
+           <div class="col-7">
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, blanditiis.</p>
+           </div>
+           <div class="col-3">
+               <a href="#" class="btn btn-primary">Credit Card</a>
+           </div>
+       </div>
+       <hr>
+       <div class="row my-5">
+           <div class="col-2">
+               <i class="far fa-calendar fa-2x"></i>
+           </div>
+           <div class="col-7">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, voluptatum!</p>
+           </div>
+           <div class="col-3">
+               <a href="{{ path('set_meeting') }}" class="btn btn-primary">Set a Meeting</a>
+           </div>
+       </div>
+   </div>
+{% endblock %}

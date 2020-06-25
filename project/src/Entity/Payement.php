@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\PayementRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=PayementRepository::class)
@@ -21,16 +22,6 @@ class Payement
      * @ORM\Column(type="string", length=255)
      */
     private $numPayement;
-
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $cardId;
-
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $cardPass;
 
     /**
      * @ORM\Column(type="date")
