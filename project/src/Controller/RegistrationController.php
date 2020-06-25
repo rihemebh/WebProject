@@ -52,7 +52,7 @@ class RegistrationController extends AbstractController
                         [
                             'token' => $user->getActivationToken(),
                             'username' => $user->getUserName(),
-                            'image_src' => $message->embed(Swift_Image::fromPath('C:\xampp\htdocs\WebProject\project\public\mail3.jpg'))
+                            'image_src' => $message->embed(Swift_Image::fromPath('D:\xampp\htdocs\WebProject\WebProject\project\public\mail3.jpg'))
 
                         ]),
                     'text/html'

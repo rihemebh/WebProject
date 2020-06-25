@@ -1,5 +1,5 @@
 body{
-    background: rgba(0,0,0,0.3) url("cover.jpg") no-repeat center center;
+    background: rgba(0, 0, 0, 0.3) url("bookcover.jpg") no-repeat center center;
     background-blend-mode: overlay;
 }
 #forgot{

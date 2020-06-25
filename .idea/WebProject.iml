@@ -7,6 +7,9 @@
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/project/tests" isTestSource="true" packagePrefix="App\Tests\" />
       <excludeFolder url="file://$MODULE_DIR$/conception" />
+      <excludeFolder url="file://$MODULE_DIR$/project/vendor/laminas/laminas-code" />
+      <excludeFolder url="file://$MODULE_DIR$/project/vendor/laminas/laminas-eventmanager" />
+      <excludeFolder url="file://$MODULE_DIR$/project/vendor/laminas/laminas-zendframework-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/swiftmailer/swiftmailer" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/symfony/swiftmailer-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/thereddot/swiftmailer-image-embed" />

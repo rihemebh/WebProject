@@ -87,7 +87,7 @@ class CatalogController extends AbstractController
             'code' => 403,
             'message' => "you have to be connected"
         ], 403);
- 
+
         if ($livre->isLiked($user)) {
             $livre->removeLike($user);
             $manager->persist($livre);
