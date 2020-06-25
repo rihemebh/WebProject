@@ -2,75 +2,30 @@
 {% block Title %}Cart{% endblock %}
 
 {% block style %}
-    <style>
-        /*
-** Style Simple Ecommerce Theme for Bootstrap 4
-** Created by T-PHP https://t-php.fr/43-theme-ecommerce-bootstrap-4.html
-*/
-        .bloc_left_price {
-            color: #c01508;
-            text-align: center;
-            font-weight: bold;
-            font-size: 150%;
-        }
-        .category_block li:hover {
-            background-color: #007bff;
-        }
-        .category_block li:hover a {
-            color: #ffffff;
-        }
-        .category_block li a {
-            color: #343a40;
-        }
-        .add_to_cart_block .price {
-            color: #c01508;
-            text-align: center;
-            font-weight: bold;
-            font-size: 200%;
-            margin-bottom: 0;
-        }
-        .add_to_cart_block .price_discounted {
-            color: #343a40;
-            text-align: center;
-            text-decoration: line-through;
-            font-size: 140%;
-        }
-        .product_rassurance {
-            padding: 10px;
-            margin-top: 15px;
-            background: #ffffff;
-            border: 1px solid #6c757d;
-            color: #6c757d;
-        }
-        .product_rassurance .list-inline {
-            margin-bottom: 0;
-            text-transform: uppercase;
-            text-align: center;
-        }
-        .product_rassurance .list-inline li:hover {
-            color: #343a40;
-        }
-        .reviews_product .fa-star {
-            color: gold;
-        }
-        .pagination {
-            margin-top: 20px;}
-
-    </style>
-
+    <link rel="stylesheet" href="{{ asset('Panier/jomb.css') }}">
 {% endblock %}
 
 {% block body%}
-    <section class="jumbotron text-center mt-1">
-        <div class="container">
-            {% if app.session.get('panier') is not empty %}
-                <h1 class="jumbotron-heading">Verifier votre panier ICI</h1>
-            {% else %}
-                <h1 class="jumbotron-heading">Votre panier est actuellement vide </h1>
-            {% endif %}
-        </div>
-    </section>
     {% if app.session.get('panier') is not empty %}
+        <section class="full-jumbotron text-center mt-1 container">
+            <div class="container">
+                <h1>Check your cart. If it's done Start payement</h1>
+            </div>
+        </section>
+        {% else %}
+            <section class="empty-jumbotron text-center mt-1 container">
+                <div class="container mt-5">
+                    <h1>Empty cart</h1>
+                </div>
+            </section>
+        {% endif %}
+
+    {% if app.session.get('panier') is not empty %}
+        <div class="container mb-4">
+            <div>
+                <a href="{{ path('catalogue') }}" style="color: black"> <i class="fas fa-arrow-left"></i> Continue Shopping</a>
+            </div>
+        </div>
         <div class="container mb-4">
             <div class="row">
                 <div class="col-12">
@@ -103,21 +58,21 @@
                         </table>
                     </div>
                 </div>
-                <div class="col mb-2">
+                <div class="container-fluid">
                     <div class="row">
-                        <div class="col-sm-12  col-md-6">
-                            <a href="{{ path('catalogue') }}" class="btn btn-block btn-light">Continue Shopping</a>
-                        </div>
+                        <div class="col-6"></div>
                         <div class="col-sm-12 col-md-6 text-right">
-                            <a href="{{ path('payement') }}" class="btn btn-lg btn-block btn-success text-uppercase">Payement</a>
+                            <a href="{{ path('payement') }}" class="btn  btn-success text-uppercase">Payement</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     {% else %}
-        <div class="container">
-            <a class="btn btn-block btn-light my-3" href="{{ path('catalogue') }}">Go back to catalogue</a>
+        <div class="container mb-4">
+            <div>
+                <a href="{{ path('catalogue') }}" style="color: black"> <i class="fas fa-arrow-left"></i> Continue Shopping</a>
+            </div>
         </div>
     {% endif %}
 {% endblock %}

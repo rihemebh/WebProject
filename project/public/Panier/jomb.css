@@ -1,0 +1,101 @@
+.meeting-jumbotron{
+    position: relative;
+    padding: 2rem 1rem;
+    height: 300px;
+    width: 100%;
+    margin-bottom: 2rem;
+    color: rgba(0,0,0,0);
+}
+.meeting-jumbotron:hover{
+    color: rgba(0,0,0,1);
+}
+.meeting-jumbotron::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: url("./../shake2.jpg");
+    background-position: center;
+    background-size: cover;
+
+}
+.meeting-jumbotron:hover:before{
+    opacity: 0.6;
+}
+.meeting-jumbotron h1{
+    position: relative;
+}
+.meeting-jumbotron p{
+    position: relative;
+}
+
+/***************/
+
+.empty-jumbotron{
+    position: relative;
+    padding: 2rem 1rem;
+    height: 300px;
+    width: 100%;
+    margin-bottom: 2rem;
+    color: rgba(0,0,0,0);
+}
+.empty-jumbotron:hover{
+    color: rgba(0,0,0,1);
+}
+.empty-jumbotron::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: url("./../emptylib.jpg");
+    background-position: center;
+    background-size: cover;
+
+}
+.empty-jumbotron:hover:before{
+    opacity: 0.6;
+}
+.empty-jumbotron h1{
+    position: relative;
+}
+.empty-jumbotron p{
+    position: relative;
+}
+/***************************/
+
+.full-jumbotron{
+    position: relative;
+    padding: 2rem 1rem;
+    height: 300px;
+    width: 100%;
+    margin-bottom: 2rem;
+    color: rgba(0,0,0,0);
+}
+.full-jumbotron:hover{
+    color: rgba(0,0,0,1);
+}
+.full-jumbotron::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: url("./../fulllib.jpg");
+    background-position: center;
+    background-size: cover;
+
+}
+.full-jumbotron:hover:before{
+    opacity: 0.6;
+}
+.full-jumbotron h1{
+    position: relative;
+}
+.full-jumbotron p{
+    position: relative;
+}

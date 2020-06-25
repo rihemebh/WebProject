@@ -15,14 +15,12 @@ class PayementType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('cardId')
-            ->add('cardPass')
             ->add('datePayement',DateType::class, [
                 'label' => 'Chose a Day',
                 'attr' => ['class' =>'form-contol datetimepicker'],
                 'html5' => false,
                 'widget' => 'single_text',
-                'format' => 'd/m/Y'
+                'format' => 'd/m/y'
             ])
             ->add('timePayement', TimeType::class, [
                 'label' => 'Chose a Time',
