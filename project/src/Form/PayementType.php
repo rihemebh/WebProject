@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Payement;
+use Doctrine\DBAL\Types\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -15,19 +16,14 @@ class PayementType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('datePayement',DateType::class, [
+            ->add('datePayement',\Symfony\Component\Form\Extension\Core\Type\TextType::class, [
                 'label' => 'Chose a Day',
                 'attr' => ['class' =>'form-contol datetimepicker'],
-                'html5' => false,
-                'widget' => 'single_text',
-                'format' => 'd/m/y'
+
             ])
-            ->add('timePayement', TimeType::class, [
+            ->add('timePayement', \Symfony\Component\Form\Extension\Core\Type\TextType::class, [
                 'label' => 'Chose a Time',
                 'attr' => ['class' => 'form-control datetimepicker2'],
-                'html5' => false,
-                'widget' => 'single_text',
-                'input_format' => 'H:i'
             ])
             ->add('Submit', SubmitType::class, [
                 'attr' => [

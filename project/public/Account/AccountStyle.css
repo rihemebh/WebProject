@@ -24,15 +24,6 @@ body {
     width: 150px;
 }
 
-.picture {
-    left: -50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-top: -50px;
-    align-items: center;
-}
-
 .organize-form {
     display: inline-block;
     margin-left: 20px;

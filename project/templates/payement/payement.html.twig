@@ -4,34 +4,36 @@
 {% endblock %}
 
 {% block body %}
-    <section class="jumbotron text-center mt-1">
+    <section class="jumbotron container text-center mt-1">
         <div class="container">
             <h1>PICK AWAY A PAYEMENT PROCESS</h1>
         </div>
     </section>
 
    <div class="container">
-       <div class="row my-5 justify-content-center">
+       <div class="row my-5 justify-content-center align-items-center">
            <div class="col-2">
                <i class="far fa-credit-card fa-2x" ></i>
            </div>
            <div class="col-7">
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, blanditiis.</p>
+               <h3>Get it with Post</h3>
+               <p>Based on the Adresse you entered we will send you the list of books</p>
            </div>
            <div class="col-3">
-               <a href="#" class="btn btn-primary">Credit Card</a>
+               <a href="{{ path('confirmad') }}" style="width: 150px" class="btn btn-primary">Confirm Adress</a>
            </div>
        </div>
        <hr>
-       <div class="row my-5">
+       <div class="row my-5 align-items-center align-items-center">
            <div class="col-2">
                <i class="far fa-calendar fa-2x"></i>
            </div>
            <div class="col-7">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, voluptatum!</p>
+               <h3>SET MEETING</h3>
+                <p>Chose a date and a time when you can visit us at megrine to recieve your books</p>
            </div>
            <div class="col-3">
-               <a href="{{ path('set_meeting') }}" class="btn btn-primary">Set a Meeting</a>
+               <a href="{{ path('set_meeting') }}" style="width: 150px" class="btn btn-primary">Set a Meeting</a>
            </div>
        </div>
    </div>

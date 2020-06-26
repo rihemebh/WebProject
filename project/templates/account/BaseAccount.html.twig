@@ -10,8 +10,8 @@
             <!-- Sidebar  -->
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <h3 style="margin-left: 20px;">My Account</h3>
-                    <img style="width: 120px;" class="img-thumbnail rounded-circle" src={{asset('Account/avatar.png') }} alt="profile_picture">
+                    <h3 >My Account</h3>
+                    <img style="width: 120px; " class="img-thumbnail rounded-circle" src={{asset('Account/avatar.png') }} alt="profile_picture">
                 </div>
 
                 <ul class="list-unstyled components" >
@@ -30,8 +30,13 @@
                             <i class="fad fa-shopping-cart"></i>My Cart
                         </a>
                     </li>
+<<<<<<< HEAD
                     <li >
-                        <a href="/wishlist/{{ app.user.id }}">
+                        <a href="/wishlist">
+=======
+                    <li class={% block link_wish %}"" {% endblock %}  >
+                        <a href="/wishlist">
+>>>>>>> 541b21871f6e3c0020440098b032e91fc4ed5c47
                             <i class="far fa-heart"></i>My WishList
                         </a>
                     </li>
@@ -73,4 +78,3 @@
 
     </script>
 {% endblock %}
-{% block signupbutton%}{% endblock %}

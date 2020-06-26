@@ -111,7 +111,7 @@
                         {% block liItem0 %}
                             <li class="nav-item" style="width: 50px; ">
                                 <a class="nav-link  text-secondary small" href="#" >
-                          <i class="fas fa-search fa-2x"></i>
+                          <i class="fas fa-search "></i>
                                 </a>
                             </li>
                         {% endblock %}
@@ -121,7 +121,7 @@
                             <li class="nav-item " style="width: 50px; ">
                                 <a class="nav-link text-secondary small " href="{{ path('panier') }}" data-toggle="tooltip"
                                    data-placement="bottom" title="My Cart">
-                                    <i class="far fa-shopping-cart fa-2x "> </i>
+                                    <i class="far fa-shopping-cart "> </i>
                                 </a>
                             </li>
                         {% endblock %}
@@ -129,13 +129,26 @@
 
                             <li class="nav-item" style="width: 50px; ">
                                 {% if app.user %}
-                                <a class="nav-link  text-secondary small " href="/account/editInfo" data-toggle="tooltip"
-                                   data-placement="bottom" title="My account">
-                                    <i class="fas fa-user-alt fa-2x"></i></a>
+
+                                    <div class="dropdown">
+                                        <button class="nav-link btn text-secondary small dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"href="/account/editInfo"
+                                           data-placement="bottom" style="background:none;" >
+                                            <i class="fas fa-user-alt "></i></button>
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item "  href={{ path('account') }}>
+                                                <i class="fad fa-cog" style=" color: #52ACB4; padding-right: 10px" ></i>Account
+                                            </a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item"  href="{{ path('app_logout') }}">
+                                                <i class="fad fa-sign-out-alt" style=" color: #52ACB4; "></i> <strong style="margin-left: 5px;"> Sign Out</strong>
+                                            </a>
+                                        </div>
+                                    </div>
+
                                     {% else %}
                                 <a class="nav-link  text-secondary small " href="/login" data-toggle="tooltip"
                                    data-placement="bottom" title="log in">
-                                    <i class="far fa-user-alt fa-2x"></i>
+                                    <i class="far fa-user-alt"></i>
                                 </a>
                                         {% endif  %}
 
@@ -203,13 +216,15 @@
                     </tr>
                     </tbody>
                 </table>
-
-
-               {% block signupbutton%} <h6 class="text-center text-white">You can register for free <a href="/register"
+                {% block button %}
+                {% if app.user is empty %}
+                <h6 class="text-center text-white">You can register for free <a href="/register"
                                                                                 class="btn btn-sm register"
                                                                                 style=" font-size: 0.75em; border-radius: 25px ;">
-                        Sign up</a>{% endblock %}
+                        Sign up</a>
                 </h6>
+                {% endif %}
+                {% endblock %}
                 <div class="text-center">
                     <img src="{{ asset('jeune.png') }}" width="50" height="30">
 
