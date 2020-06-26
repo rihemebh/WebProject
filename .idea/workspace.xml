@@ -23,7 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2abdafbf-2741-446c-bf37-202c749e15bd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_19_2020_20_58__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_19_2020_20_58__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -184,7 +184,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1bMyhbNcHeQ1jivC3H9gjudzrbn" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -296,6 +296,7 @@
       <workItem from="1593110912509" duration="16000" />
       <workItem from="1593114030173" duration="3000" />
       <workItem from="1593115103117" duration="4138000" />
+      <workItem from="1593197509757" duration="8175000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1589405183358</created>
@@ -534,6 +535,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="490" y="256" key="#Composer/0.0.1360.728@0.0.1360.728" timestamp="1588968667668" />
+    <state x="134" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593203055874">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="134" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1360.728@0.0.1360.728" timestamp="1593203055874" />
     <state x="473" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1591916066570">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -607,18 +612,18 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="387" y="0" width="585" height="728" key="find.popup/0.0.1360.728@0.0.1360.728" timestamp="1588998157531" />
-    <state x="399" y="152" key="git4idea.merge.GitPullDialog" timestamp="1592504948015">
+    <state x="399" y="152" key="git4idea.merge.GitPullDialog" timestamp="1593210315985">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="399" y="152" key="git4idea.merge.GitPullDialog/0.0.1360.728@0.0.1360.728" timestamp="1592504948015" />
+    <state x="399" y="152" key="git4idea.merge.GitPullDialog/0.0.1360.728@0.0.1360.728" timestamp="1593210315985" />
     <state x="453" y="238" width="611" height="281" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1589155587021">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="453" y="238" width="611" height="281" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1360.728@0.0.1360.728" timestamp="1589155587021" />
-    <state x="336" y="162" key="run.anything.popup" timestamp="1592509702750">
+    <state x="336" y="162" key="run.anything.popup" timestamp="1593198321612">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="336" y="162" key="run.anything.popup/0.0.1360.728@0.0.1360.728" timestamp="1592509702750" />
+    <state x="336" y="162" key="run.anything.popup/0.0.1360.728@0.0.1360.728" timestamp="1593198321612" />
     <state x="343" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1591368784903">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
