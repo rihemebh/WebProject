@@ -1,0 +1,77 @@
+
+{% apply inline_css %}
+
+    <!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+              integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+              crossorigin="anonymous"/>
+        <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+        <style>
+            body {
+                border-top: #52ACB4 8px solid;
+                padding-top: 30px;
+                padding-bottom: 30px;
+                box-shadow: gray 1px 1px 10px;
+                width: 650px;
+                background-color: white;
+                margin-top: 20px;
+            }
+
+            a, a:hover {
+                color: #52ACB4;
+                font-weight: bold;
+                margin-left: 250px;
+
+            }
+
+            h2, p, span {
+                text-align: center;
+
+            }
+
+            p {
+                size: 20px;
+            }
+
+            /*img{*/
+            /*    width:22%;*/
+            /*    height:auto;*/
+            /*    max-width: 30%;*/
+            /*    font-size: 20%;*/
+
+            /*}*/
+
+            small {
+                font-family: 'Sriracha', cursive;
+                color: lightgrey;
+                float: right;
+
+            }
+        </style>
+        <title></title>
+
+    </head>
+    <body>
+    <h2 style="font-family: Georgia, serif"><img alt="img" src="{{ image_src }}"> <br> Hello {{ username }} ! </h2> <br>
+    <p style="font-family: Georgia, serif">
+        This mail is a confirmation and remainder for your meeting with us to recieve your Books in Megrine ... <br>
+        Thanks you so much for Buying from us... <br>
+        Keep Checking our site you might find sthing you might like
+        Remember Reading is the most precious value you can obtain. NEVER LOSE IT
+    </p>
+    <hr>
+    <br>
+
+    <small style="margin-bottom: 0"><i>Made with love from <b>CheikhBooks</b></i></small>
+
+
+    </body>
+    </html>
+
+{% endapply %}

@@ -27,17 +27,33 @@
     </section>
 
     <div class="container">
-        {{ form_start(formview , {'attr' : {'class' : 'form-group' }}) }}
+        {{ form_start(formview , {'attr' : {'class' : 'form-group', 'novalidate': 'novalidate','autocomplete':'off' }}) }}
         <div class="row">
-            <div class="col">{{ form_row(formview.datePayement) }}</div>
-            <div class="col">{{ form_row(formview.timePayement) }}</div>
+            <div class="col">
+                {{ form_label(formview.datePayement) }}
+                <div class="form-group">
+                    <div class='input-group date'>
+                        {{ form_widget(formview.datePayement) }}
+                        <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                    </div>
+                </div>
+                {{ form_errors(formview.datePayement) }}
+
+            </div>
+            <div class="col">
+                {{ form_label(formview.timePayement) }}
+                {{ form_widget(formview.timePayement) }}
+                {{ form_errors(formview.timePayement) }}
+            </div>
         </div>
         <div class="my-5"></div>
         <div class="row justify-content-center">
             <div class="col-6 col-center">
                 {{ form_row(formview.Submit) }}
-                {{ form_end(formview) }}
             </div>
+            {{ form_end(formview) }}
         </div>
     </div>
 
