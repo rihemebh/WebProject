@@ -60,12 +60,11 @@ class CatalogController extends AbstractController
      * @Route("/livre/{id}",name="livre.name")
      */
 
-    public function afficherlivre($id)
+    public function afficherlivre (Livre $livre)
     {
         $books=$this->getDoctrine()->getRepository(Livre::class)->findAll();
-        $livre = $this->getDoctrine()->getRepository(Livre::class)->find($id);
         $filtre = $this->getDoctrine()->getRepository(livre::class)
-            ->findBookBy($livre->getCategories(), $id);
+            ->findBookBy($livre->getCategories(), $livre->getId());
         return $this->render('catalogue/livre/livre.html.twig', [
             'filtre' => $filtre,
             'livre' => $livre,
@@ -74,16 +73,20 @@ class CatalogController extends AbstractController
     }
 
     /**
-     * @Route("/wishlist")
+     * @Route("/wishlist/{id}")
+     * @param User $user
      * @return Response
      */
-    public function wishlist (){
+    public function wishlist (User $user){
         $books=$this->getDoctrine()->getRepository(Livre::class)->findAll();
+        //$user1=$this->getUser()->getUsername();
+        //$user=$this->getDoctrine()->getRepository(User::class)->findOneBy(["User_Name"=>$user1]);
         return $this->render('wishlist.html.twig', [
             'books'=>$books,
-        ]);
-    }
+            'user'=>$user,
 
+        ]);
+}
     /**
      * @param Livre $livre
      * @param EntityManagerInterface $manager

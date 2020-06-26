@@ -35,7 +35,6 @@ class PanierController extends AbstractController
         $id = $request->get('id');
         $bol = $service->updateCart($id);
         if($bol){
-           // $this->addFlash('success', 'Book successfully added to cart. Go check it out ');
             return $this->json(['code' => 200, 'message' => "book successfully added to cart"], 200);
         } else {
             return $this->json(['code' => 200, 'message' => "This is not the id of an existing book"], 200);
