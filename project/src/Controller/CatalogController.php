@@ -58,6 +58,8 @@ class CatalogController extends AbstractController
 
     /**
      * @Route("/livre/{id}",name="livre.name")
+     * @param Livre $livre
+     * @return Response
      */
 
     public function afficherlivre (Livre $livre)
@@ -79,13 +81,10 @@ class CatalogController extends AbstractController
      */
     public function wishlist (User $user){
         $books=$this->getDoctrine()->getRepository(Livre::class)->findAll();
-<<<<<<< HEAD
-        //$user1=$this->getUser()->getUsername();
-        //$user=$this->getDoctrine()->getRepository(User::class)->findOneBy(["User_Name"=>$user1]);
-        return $this->render('wishlist.html.twig', [
-=======
+
+
         return $this->render('account/wishlist.html.twig', [
->>>>>>> 541b21871f6e3c0020440098b032e91fc4ed5c47
+
             'books'=>$books,
             'user'=>$user,
 

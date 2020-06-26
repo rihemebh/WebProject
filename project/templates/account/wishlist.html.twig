@@ -5,36 +5,42 @@
 {% block header %} My WishList {% endblock %}
 {% block form %}
 
-    <div class="container">
+<div class="container">
         <div class="row">
 
-            {% for book in books %}
-                {% if book.isLiked(app.user) %}
+                   {% for book in books %}
+                    {% if book.isLiked(app.user) %}
 
                     <div class="col card-col">
                         <div class="card " id="{{ book.id }}" style="width: 11.5rem;  margin-bottom: 18px;">
                             <a href="/book/{{ book.id }}"> <img src="{{ book.path }}" class="book-img  card-img-top"
-                                                                alt="..."></a>
+                                                                  alt="..."></a>
                             <p class="card-title text-center " style="font-size:80%; color:black">{{ book.nomLivre }}
 
                             </p>
+                                <a href="/wishlist/remove/{{ book.id }}" class="btn shadow-sm bg-light delete" >
+                                    <small class="text-black-50">Delete from wishlist <i class="fas fa-heart-broken "  style="font-size:11px;"></i></small>
+                                    </a>
 
-                            {#                            <div class="card-body">#}
-                            {#                                <p class="card-text price text-black" style="font-size:70%"><b>{{ book.prix }} Dt</b>#}
-                            {#                                <p class="card-text card_text  " style="font-size:75%">By {{ book.auteur }} </p>#}
-                            <a href="/wishlist/remove/{{ book.id }}" class="btn shadow-sm bg-light delete" >
-                                <small class="text-black-50">Delete from wishlist <i class="fas fa-heart-broken "  style="font-size:11px;"></i></small>
-                            </a>
-
-                            {#                            </div>#}
                         </div>
 
                     </div>
 
 
 
-                {% endif %}
-            {% endfor %}
+{% endif %}
+
+    {% endfor %}
+        {% if user.booksLiked | length ==0 %}
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                    <p class="text-center"> We're sorry, your Wishlist is empty <i class="far fa-frown-open"></i></p>
+                    </div>
+                </div>
+            </div>
+
+            {% endif %}
         </div>
     </div>
 
@@ -48,8 +54,8 @@
         function onClickBtnDelete(event) {
             event.preventDefault();
             const url = this.href;
-            const card = this.parentElement.parentElement
-                .parentElement;
+            const card = this.parentElement.parentElement;
+
             const row = this.parentElement.parentElement.parentElement;
             axios.get(url).then(function (response) {
                 console.log(response.data.message);
