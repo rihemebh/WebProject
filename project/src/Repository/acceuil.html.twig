@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="theme-color" content="#000000"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('acceuil/style.css') }}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<title>cheikhBooks.tn</title>
+<link rel="icon" href="{{ asset('icon.png') }}"
+      style="height: 50px; width:50px" type="image/x-icon">
+<style>
+    /*hedha lkol bch yethat f fichier style.css just fama probleme ki nhotou ghady
+    yok3od barsha bch yestaw3eb ki naaml modification  */
+    body {
+        background: url("cover.png") no-repeat center fixed;
+        background-size: cover;
+        /*background-color: rgba(255, 255, 255, 0);*/
+    }
+    .navbar {
+        border-color: #333333;
+        z-index: 30;
+        margin: 0 auto;
+        background-color: #c1c1c140;
+    }
+    :root {
+
+        --nav_color: #769e9e;
+    }
+    .text:hover {
+        font-size: large;
+    }
+</style>
+
+<body>
+    <!--NavBar-->
+    <nav class="navbar navbar-expand-lg navbar-dark  shadow-sm">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav "
+                style=" background-color: #d9d9d9;" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse  " id="navbarNav">
+            {#left side#}
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                {#books#}
+                <li class="nav-item text ">
+                    <a class=" nav-link text-white small " href="/catalogue" id="a1" style=" font-size:1.25em;">
+                        <b>Books</b>
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                {#Categories#}
+                <li class="nav-item text ">
+                <a class="nav-link text-white small" style="font-size:1.25em; " href="#carousel">
+                    <b>Categories</b>
+                </a>
+            </li>
+            </ul>
+            {#Right Side#}
+            <form class="form-inline my-2 my-lg-0">
+                <ul class="navbar-nav">
+                    {#Search Bar#}
+                    <li class="nav-item text small " style="width: 60px; ">
+                        <!-- Button trigger modal -->
+                        <a class="nav-link text-white small" href="#" style=" font-size:1.25em;"
+                           data-toggle="modal" data-target="#SearchBarModal">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </li>
+                    {#log in#}
+                    <li class="nav-item text  small " style="width: 60px; ">
+                        <a class="nav-link text-white small" href="/login" title="Log in" style=" font-size:1.25em;">
+                            <i class="far fa-user"></i>
+                        </a>
+                    </li>
+                    {#Sign up#}
+                    <li class="nav-item text small " style="width: 60px; ">
+                        <a class="nav-link text-white small" href="/register" title="Sign up" style=" font-size:1.25em;">
+                            <i class="fas fa-user-plus"></i>
+                        </a>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </nav>
+
+    <div class="view">
+        <!-- Search Modal -->
+        <div class="modal fade" id="SearchBarModal" tabindex="-1" role="dialog" >
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content modal-popup">
+                    <div class="modal-body">
+                        {# Close Button#}
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        {# Search Bar#}
+                        <div class="main">
+                            <div class="input-group search-bar">
+                                <form method="post">
+                                    <input class="search-input" type="text" placeholder="Search for book's or author's name" name="search_input">
+                                    <input class="search-submit" type="submit" value="Search">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .main {
+                    width: 50%;
+                    margin: 50px auto;
+                }
+                .search-input{
+                    width: 180%;
+                    float: left;
+                    position: relative;
+                }
+                .search-submit{
+                    float: right;
+                    position: absolute;
+                }
+                @media screen and (max-width: 510px){
+                    .search-input{
+                        width: 160%;
+                        float: left;
+                        position: relative;
+                    }
+                }
+                @media screen and (max-width: 460px){
+                    .search-input{
+                        width: 140%;
+                        float: left;
+                        position: relative;
+                    }
+                }
+                @media screen and (max-width: 400px){
+                    .main{
+                    width: 90%;
+                    margin: 0 10% 0 0;
+                    left: 30%;
+                    position: relative;
+                    }
+                }
+                @media screen and (max-width: 400px){
+                    .search-input, .search-submit{
+                        font-size: small;
+                    }
+                }
+                @media screen and (max-width: 335px){
+                    .search-input, .search-submit{
+                        font-size: x-small;
+                    }
+                }
+                @media screen and (max-width: 290px){
+                    .search-input, .search-submit{
+                        font-size: xx-small;
+                    }
+                }
+                @media screen and (max-width: 260px){
+                    .search-input{
+                        width: 100%;
+                        float: unset;
+                        height: 55%;
+                        padding: 10%;
+                    }
+                    .search-submit{
+                        float: unset;
+                        position: unset;
+                        width: 100%;
+                    }
+                }
+                @media screen and (max-width: 230px){
+                    .search-input{
+                        padding: 0%;
+                    }
+                }
+                .search-bar{
+                    width: 170%;
+                    right: 35%;
+                }
+
+                .form-control {
+                    padding-left: 2.375rem;
+                }
+                .modal-popup{
+                    background-color: #f5f5f563;
+                }
+                .search-button{
+                    background-color: darkgrey;
+                    color: white;
+                    font-size: large;
+                }
+            </style>
+        </div>
+
+        <!--Search Result-->
+        {% if book is defined %}{#if there is search#}
+            <h1 class="result-header">Your search results for " {{ input }} "</h1>
+
+            {% if book is empty %}{#if there are no books#}
+                <div class="result failure-result">
+                    {% if input is defined %}
+                    <h3>Sorry there are no matching books for "{{ input }}" <i class="fas fa-sad-cry"></i> </h3>
+                    {% endif %}
+                        <style>
+                        .failure-result{
+                            color: #c1dada;
+                            text-align: center;
+                        }
+                    </style>
+                </div>
+            {% endif %}
+
+            {% if book is not empty %}{#if there are books#}
+                <div class="card-columns result">
+                    {% for b in book %}
+                        <a href="#">
+                            <div class="card mycard rounded">
+                                <div class="card-body text-center">
+                                    <img src="{{ b.path }}" alt="image" width="100%">
+                                    <h6>{{ b.nomLivre }}</h6>
+                                    <h5>{{ b.auteur }}</h5>
+                                </div>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        <style>
+            .result-header{
+                color: whitesmoke;
+                text-align: center;
+                padding: 2%;
+            }
+            .result{
+                background-color: #17a2b857;
+                margin: 2% 10% 10% 10%;
+                padding: 5%;
+            }
+        </style>
+        {% endif %}
+
+        <!-- Carousel Categories -->
+        <div class="before-carousel" ></div>
+
+        <div id="carousel"></div>
+        <br>
+        <style>
+            .before-carousel{
+                margin: 50% 0 0 0;
+            }
+            .my-carousel{
+                margin: 5% 5% 10% 5%;
+            }
+            @media screen and (max-width: 700px){
+                .my-carousel{
+                    margin: 5% 1% 10% 1%;
+                }
+            }
+            @media screen and (max-width: 700px){
+                .my-carousel{
+                    margin: 5% 1% 10% 1%;
+                }
+                .my-image{
+                    height: 400px;
+                }
+            }
+            .my-image{
+                height: 400px;
+            }
+            .link-to-category{
+                color: white;
+            }
+            .link-to-category:hover{
+                color: white;
+                text-decoration: none;
+            }
+        </style>
+        <div class="my-carousel">
+            <div id="carouselIndicators" class="carousel slide " data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+                    {% for c in 1..nbrCategories %}
+                        <li data-target="#carouselIndicators" data-slide-to="{{ c }}"></li>
+                    {% endfor %}
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100 rounded my-image" src="{{ asset('acceuil/book.jpg') }}" alt="First Category">
+                    </div>
+                    {% for cat in catogory %}
+                        <div class="carousel-item ">
+                            <img class="d-block w-100 rounded my-image" src="{{ cat.image }}" alt="Category">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5><a href="#" class="link-to-category">{{ cat.nom }}</a></h5>
+                                <p>{{ cat.description }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+
+
+
+        <!-- Steps tips -->
+        <div class="steps">
+            <div class="display-3">Step By Step</div>
+            <div class="list-group">
+                <div class="list-group-item list-group-item-action flex-column align-items-start step">
+                    <div class="d-flex w-100 justify-content-between">
+                        <img class="img-fluid step-image" src="{{ asset('acceuil/signup.jpg') }}" alt="sign up">
+                        <h1 class="step-activity">Create An account</h1>
+                    </div>
+                </div>
+
+                <div class="list-group-item list-group-item-action flex-column align-items-start step">
+                    <div class="d-flex w-100 justify-content-between">
+                        <img class="img-fluid step-image" src="{{ asset('acceuil/catalogue.jpg') }}" alt="catalogue">
+                        <h1 class="step-activity">Visit Our Catalogue</h1>
+                    </div>
+                </div>
+
+                <div class="list-group-item list-group-item-action flex-column align-items-start step">
+                    <div class="d-flex w-100 justify-content-between">
+                        <img class="img-fluid step-image" src="{{ asset('acceuil/addtopanier.jpg') }}" alt="panier">
+                        <h1 class="step-activity">Add Some Books To Your Personal Basket</h1>
+                    </div>
+                </div>
+
+                <div class="list-group-item list-group-item-action flex-column align-items-start step">
+                    <div class="d-flex w-100 justify-content-between">
+                        <img class="img-fluid step-image" src="{{ asset('acceuil/validate.png') }}" alt="validate">
+                        <h1 class="step-activity">Validate The Purchase</h1>
+                    </div>
+                </div>
+
+                <div class="list-group-item list-group-item-action flex-column align-items-start step">
+                    <div class="d-flex w-100 justify-content-between">
+                        <img class="img-fluid step-image" src="{{ asset('acceuil/recieveBook.jpg') }}" alt="recieve">
+                        <h1 class="step-activity">Recieve Your Book</h1>
+                    </div>
+                </div>
+            </div>
+                <style>
+                    .step-image{
+                        width: 100px;
+                        height: 100px;
+                        padding: 1%;
+                        float: left;
+                        position: absolute;
+                    }
+                    .step-activity{
+                        left: 110px;
+                        position: relative;
+                        bottom: -25px;
+                        padding: 0 100px 0 0;
+                    }
+                    .step{
+                        height: 110px;
+                    }
+                    @media screen and (max-width: 1000px)
+                    {
+                        .step {
+                            height: 140px;
+                        }
+                    }
+
+                    @media screen and (max-width: 580px)
+                    {
+                        .step-activity {
+                            font-size: 200%;
+                        }
+                    }
+
+                    @media screen and (max-width: 492px)
+                    {
+                        .step {
+                            height: 170px;
+                        }
+                    }
+
+                    @media screen and (max-width: 410px){
+                        .step-activity {
+                            font-size: 170%;
+                        }
+                    }
+                    @media screen and (max-width: 372px){
+                        .step-activity {
+                            font-size: 140%;
+                        }
+                        .step {
+                            height: 135px;
+                        }
+                    }
+                    @media screen and (max-width: 335px){
+                        .step-activity {
+                            font-size: 120%;
+                        }
+                        .step {
+                            height: 150px;
+                        }
+                    }
+                    @media screen and (max-width: 290px){
+                        .step-activity {
+                            font-size: 110%;
+                            bottom: -10px;
+                        }
+                        .step-image {
+                            width: 80px;
+                            height: 80px;
+                        }
+                    }
+                    @media screen and (max-width: 250px){
+                        .step-activity {
+                            left: 80px;
+                            font-size: 100%;
+                            bottom: -10px;
+                        }
+
+                        .step-image {
+                            width: 70px;
+                            height: 70px;
+                        }
+                    }
+                    @media screen and (max-width: 200px){
+                        .step-activity {
+                            left: 80px;
+                            font-size: 80%;
+                            bottom: 0px;
+                        }
+
+                        .step-image {
+                            width: 50px;
+                            height: 50px;
+                        }
+                    }
+                </style>
+
+            </div>
+            <style>
+                .steps{
+                    padding: 5%;
+                    background-color: whitesmoke;
+                    margin: 0;
+                }
+                .step-icon{
+                    color: #3b777d;
+                }
+            </style>
+        </div>
+
+        <!-- Why CheikhBooks -->
+        <div class="why">
+            <div class="display-3">Why CheikhBooks</div>
+            <div class="card-deck">
+                <div class="card">
+                    <h5 class="card-title">
+                        <i class="fa fa-smile" aria-hidden="true"></i>
+                        Convenience
+                    </h5>
+                    <p class="card-text">
+                        Save a lot of timewhich you would have wasted wandering from one store to another if you were to shop at the conventional bookstore.
+                    </p>
+                </div>
+                <div class="card">
+                    <h5 class="card-title">
+                        <i class="fa fa-truck" aria-hidden="true"></i>
+                        Delivery
+                    </h5>
+                    <p class="card-text">
+                        You can shop anytime. This is a huge plus to the homebound people or in a situation where the weather is hostile outside.
+                    </p>
+                </div>
+                <div class="card">
+                    <h5 class="card-title">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                        Security and Privacy
+                    </h5>
+                    <p class="card-text">
+                        All your credentials and personal information are protected.
+                    </p>
+                </div>
+            </div>
+            <style>
+                .why{
+                    background-color: #b5e3d9;
+                    margin: 0;
+                }
+                .card{
+                    padding: 3%;
+                    margin: 3%;
+                }
+                .card:hover{
+                    box-shadow: 4px 4px #80808036;
+                    transform: translate(0, -15px);
+                }
+                .card-deck{
+                    margin: 1%;
+                    padding: 2%;
+                    padding-bottom: 10%;
+                }
+            </style>
+        </div>
+
+        <!-- FEEDBACK -->
+        <div class="comment">
+            <div class="display-3">Because your opinion matters</div>
+            <div class=" mt-5 mb-5">
+                <div class="d-flex justify-content-center row">
+                    <div class="col-md-8">
+                        {#ADD COMMENT#}
+                        <div class="d-flex flex-row align-items-center add-comment p-2 bg-white rounded">
+                            {% if form is defined %}
+                                {{ form_start(form) }}
+                                {{ form_widget(form.message) }}
+                                {{ form_rest(form) }}
+                                <script>
+                                    document.getElementById("comment_message").placeholder="Comment..."
+                                    btn=document.querySelector("form .btn");
+                                    btn.onclick=document.getElementById('comment_message').value = '';
+                                </script>
+                            {% endif%}
+                        </div>
+                        {#FIRST COMMENT#}
+                        <div class="p-3 bg-white mt-2 rounded">
+                            {#Reacter#}
+                            <div class="d-flex justify-content-between">
+                                {#reacter name#}
+                                <div class="d-flex flex-row user">
+                                    <img class="rounded-circle img-fluid img-responsive" src="https://i.imgur.com/Yxje2El.jpg" width="40">
+                                    <div class="d-flex flex-column ml-2">
+                                        <span class="font-weight-bold">@PUBLISHER</span>
+                                        <span class="day">published in</span>
+                                    </div>
+                                </div>
+                            </div>
+                            {#React message#}
+                            <div class="comment-text text-justify mt-2">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                            </div>
+                            <i class="fa fa-heart heart-icon"></i>
+                        </div>
+                        {#COMMENTS FROM DATABASE#}
+                        {% if msg is defined %}
+                            {% for pers in msg %}
+                                <div class="p-3 bg-white mt-2 rounded">
+                                    {#Publisher#}
+                                    <div class="d-flex justify-content-between">
+                                        {#Publisher name#}
+                                        <div class="d-flex flex-row user">
+                                            {#                            {{ pers.avatar }}#}
+                                            <img class="rounded-circle img-fluid img-responsive" src="https://i.imgur.com/Yxje2El.jpg" width="40">
+                                            <div class="d-flex flex-column ml-2">
+                                                <span class="font-weight-bold">@{{ pers.publisher }}</span>
+                                                <span class="day">{{ pers.date|date("F jS \\a\\t g:ia")}} </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {#message#}
+                                    <div class="comment-text text-justify mt-2">
+                                        <p>{{ pers.message }}</p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {%endif %}
+                    </div>
+                </div>
+                <style>
+                    .form-control{
+                        width: 370%;
+                        margin: 10%;
+                    }
+                    #comment_Publish{
+                        position: relative;
+                        left: 334%;
+                        background-color: grey;
+                        border: #484545;
+                    }
+                    #comment_message:focus{
+                        box-shadow: none;
+                    }
+                    @media screen and (max-width: 1320px){
+                        .form-control{
+                            width: 340%;
+                            margin: 10%;
+                        }
+                    }
+
+                    @media screen and (max-width: 1270px){
+                        .form-control{
+                            width: 320%;
+                            margin: 10%;
+                        }
+                        #comment_Publish{
+                            position: relative;
+                            left: 300%;
+                        }
+                    }
+
+                    @media screen and (max-width: 1160px){
+                        .form-control{
+                            width: 290%;
+                            margin: 10%;
+                        }
+                        #comment_Publish{
+                            position: relative;
+                            left: 270%;
+                        }
+                    }
+
+                    @media screen and (max-width: 1060px){
+                        .form-control{
+                            width: 270%;
+                            margin: 10%;
+                        }
+                        #comment_Publish{
+                            position: relative;
+                            left: 245%;
+                        }
+                    }
+                    @media screen and (max-width: 970px){
+                        .form-control{
+                            width: 240%;
+                            margin: 10%;
+                        }
+                        #comment_Publish{
+                            position: relative;
+                            left: 210%;
+                        }
+                    }
+                    @media screen and (max-width: 870px){
+                        .form-control{
+                            width: 220%;
+                            margin: 10%;
+                        }
+                        #comment_Publish{
+                            position: relative;
+                            left: 190%;
+                        }
+                    }
+
+                    @media screen and (max-width: 800px){
+                        .form-control{
+                            width: 200%;
+                            margin: 10%;
+                        }
+                        #comment_Publish{
+                            position: relative;
+                            left: 170%;
+                        }
+                    }
+
+                    @media screen and (max-width: 767px){
+                        .form-control{
+                            width: 300%;
+                            margin: 10%;
+                        }
+                        #comment_Publish{
+                            position: relative;
+                            left: 275%;
+                        }
+                    }
+                    @media screen and (max-width: 710px){
+                        .form-control{
+                            width: 260%;
+                            margin: 10%;
+                        }
+                        #comment_Publish{
+                            position: relative;
+                            left: 245%;
+                        }
+                    }
+
+                    @media screen and (max-width: 635px){
+                        .form-control{
+                            width: 223%;
+                            margin: 4%;
+                        }
+                        #comment_Publish{
+                            position: relative;
+                            left: 220%;
+                        }
+                    }
+                    @media screen and (max-width: 580px){
+                        .form-control{
+                            width: 205%;
+                            margin: 4%;
+                        }
+                        #comment_Publish{
+                            position: relative;
+                            left: 200%;
+                        }
+                    }
+
+                    @media screen and (max-width: 540px){
+                        .form-control{
+                            width: 190%;
+                            margin: 4%;
+                        }
+                        .display-3{
+                            font-size: 200%;
+                        }
+
+                        #comment_Publish{
+                            position: relative;
+                            left: 155%;
+                        }
+                    }
+
+                    @media screen and (max-width: 475px){
+                        .form-control{
+                            width: 172%;
+                            margin: 4%;
+                        }
+                        #comment_Publish{
+                            position: relative;
+                            left: 145%;
+                        }
+                    }
+
+                    @media screen and (max-width: 420px){
+                        .form-control{
+                            width: 155%;
+                            margin: 4%;
+                        }
+                        #comment_Publish{
+                            position: relative;
+                            left: 125%;
+                        }
+                    }
+
+                    @media screen and (max-width: 380px){
+                        .form-control{
+                            width: 135%;
+                            margin: 4%;
+                        }
+                        #comment_Publish{
+                            position: relative;
+                            left: 110%;
+                        }
+                    }
+                    @media screen and (max-width: 345px){
+                        .form-control{
+                            width: 135%;
+                            margin: 4%;
+                        }
+                        #comment_Publish{
+                            position: relative;
+                            left: 100%;
+                        }
+                    }
+
+                    @media screen and (max-width: 320px){
+                        .form-control{
+                            width: 125%;
+                            margin: 4%;
+                        }
+                        #comment_Publish{
+                            position: relative;
+                            left: 90%;
+                        }
+                    }
+
+                    @media screen and (max-width: 315px){
+                        .form-control{
+                            width: 160%;
+                            margin: 0%;
+                            padding: 0;
+                        }
+                        #comment_Publish{
+                            position: relative;
+                            left: 115%;
+                        }
+                    }
+
+                    @media screen and (max-width: 280px){
+                        .form-control{
+                            width: 160%;
+                            margin: 0%;
+                            padding: 0;
+                        }
+                        #comment_Publish{
+                            position: relative;
+                            left: 110%;
+                        }
+                    }
+
+
+                    @media screen and (max-width: 280px) {
+                        .form-control {
+                            width: 125%;
+                            margin: 0%;
+                            padding: 0;
+                        }
+
+                        #comment_Publish {
+                            position: relative;
+                            left: 95%;
+                        }
+                    }
+
+
+                    @media screen and (max-width: 255px) {
+                        .form-control {
+                            width: 137%;
+                            margin: 0%;
+                            padding: 0;
+                        }
+
+                        #comment_Publish {
+                            position: relative;
+                            left: 90%;
+                        }
+                    }
+
+                    @media screen and (max-width: 255px) {
+                        .form-control {
+                            width: 137%;
+                            margin: 0%;
+                            padding: 0;
+                        }
+
+                        #comment_Publish {
+                            position: relative;
+                            left: 90%;
+                            margin: 0%;
+                        }
+                    }
+
+
+                    @media screen and (max-width: 245px) {
+                        .form-control {
+                            width: 125%;
+                            margin: 0%;
+                            padding: 0;
+                        }
+
+                        #comment_Publish {
+                            position: relative;
+                            left: 75%;
+                            margin: 0%;
+                        }
+                    }
+
+
+                    .comment{
+                        padding: 5%;
+                        background-color: whitesmoke;
+                        margin: -1% 0;
+                    }
+
+                    .form-control:focus {
+                        color: #495057;
+                        background-color: #fff0;
+                        border-color: #80bdff00;
+                        outline: 0;
+                    }
+
+                    .no-box-shadow {
+                        box-shadow: none
+                    }
+
+                    .no-box-shadow:focus {
+                        box-shadow: none
+                    }
+
+                    .day {
+                        font-size: 9px
+                    }
+
+                    .heart {
+                        border: 1px solid green;
+                        border-color: green !important;
+                        border-radius: 22px
+                    }
+
+                    .heart-icon {
+                        color: green
+                    }
+
+                    .comment-text {
+                        font-size: 12px
+                    }
+
+                    #comment_message{
+                        border: #fff0;
+                    }
+
+                    .display-3{
+                        text-align: center;
+                        padding: 2%;
+                    }
+                </style>
+            </div>
+            <!--PAGINATION-->
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    {% for p in 1..nbPage %}
+                        <li class="page-item">
+                            <a class="page-link" href="{{ path('acceuil',{'page': p}) }}">
+                                {{ p }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+
+
+
+    </div>
+</body>
+
+<footer>
+    <div class="container-fluid  " style="background-color: #05212F">
+        <div class="container">
+            <div class="row  table-responsive">
+                <table class="table table-borderless table-sm" style="background-color: #05212F">
+                    <thead>
+                    <tr>
+                        <th class="text-center text-white">Contact Us</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <a href="https://www.facebook.com/cheikhbooks/?epa=SEARCH_BOX" style="color:black" >
+                                <i class="fab fa-facebook"style="color:white"></i>
+                                <span class=" small" style="color:lightgrey">@cheikhbooks</span>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="https://www.instagrasymfony servem.com/cheikhbooks.tn/"  style="color:black" >
+                                <i class="fab fa-instagram" style="color:white"></i>
+                                <span class=" small" style="color:lightgrey">cheikhbooks.tn</span>
+                            </a>
+                        </td>
+                        <td>
+                            <i class="fas fa-phone" style="color:white"></i>
+                            <span class=" small" style="color:lightgrey">+216 54053754</span>
+                        </td>
+                        <td>
+                            <i class="fas fa-at"style="color:white"></i>
+                            <span class="small" style="color:lightgrey">cheikhbooks@gmail.com</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h6 class="text-center text-white">You can register for free
+                    <a href="/register" class="btn btn-sm" style="background-color:#457485;color: white; font-size: 0.75em; border-radius: 25px ;">
+                        Sign up
+                    </a>
+                </h6>
+                <div class="text-center">
+                    <img src="{{ asset('jeune.png') }}" width="50" height="30">
+                    <img src="{{ asset('digicard.png') }}" width="50" height="30">
+                </div>
+                <p class="text-center smaller" style="color:lightgrey">&copy; Copyright 2020 .</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script>
+    $(window).scroll(function(e){
+        var $el = $('.navbar');
+        var isPositionFixed = ($el.css('position') == 'fixed');
+        if ($(this).scrollTop() > 150 && !isPositionFixed){
+            $el.css({'position': 'fixed', 'top': '0px', 'width' : '100%'});
+        }
+        if ($(this).scrollTop() < 150 && isPositionFixed){
+            $el.css({'position': 'static', 'top': '0px', 'width' : '100%'});
+        }
+    });
+</script>
+</html>
+

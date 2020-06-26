@@ -75,7 +75,21 @@ class LivreRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    /**
+     * @return Livre[] Returns an array of Livre objects
+     */
 
+    public function search($value)
+    {
+        return $this->createQueryBuilder('l')
+            ->andWhere('l.auteur = :val')
+            ->orWhere('l.nom_livre =:val')
+            ->setParameter('val', $value)
+            ->orderBy('l.id', 'ASC')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 //    public function findOneBySomeField($value): ?Livre
 //    {
 //        return $this->createQueryBuilder('l')

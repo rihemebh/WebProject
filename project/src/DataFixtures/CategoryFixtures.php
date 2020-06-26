@@ -17,11 +17,20 @@ class CategoryFixtures extends Fixture
     {
 
         $faker = Factory::create();
-        $cat = ['Novels', 'Graphic novels', 'Comic', 'Biographies', 'self-Help', 'CookBooks', 'for children', 'Others'];
-        $categorie = new Categorie();
-        $categorie->setNom($faker->randomElement($cat));
-        $this->addReference(self::CATEGORY_REFERENCE, $categorie);
+//        $cat = ['Novels', 'Graphic novels', 'Comic', 'Biographies', 'self-Help', 'CookBooks', 'for children', 'Others'];
+        for($i=0;$i<3;$i++)
+        {
+            $categorie = new Categorie();
+//        $categorie->setNom($faker->randomElement($cat));
+
+
+            $categorie->setNom($faker->sentence(1));
+            $categorie->setDescription($faker->sentence(4));
+            $categorie->setImage($faker->imageUrl($width = 640, $height = 480));
             $manager->persist($categorie);
+        }
+        $this->addReference(self::CATEGORY_REFERENCE, $categorie);
+
 
         $manager->flush();
 
