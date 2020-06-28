@@ -10,6 +10,7 @@
           crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('Datepicker/jquery.datetimepicker.css') }}">
     <link rel="stylesheet" href="{{ asset('Panier/jomb.css') }}">
+    <link rel="stylesheet" href={{ asset('Account/AccountStyle.css') }}>
 {% endblock %}
 
 {% block body %}
@@ -19,44 +20,40 @@
         </div>
         <div class="container mt-5">
             <div class="col-sm-7">
-                <p>
                     Decide based on our timing the best moments to get your books
-                </p>
             </div>
         </div>
     </section>
-
     <div class="container">
-        {{ form_start(formview , {'attr' : {'class' : 'form-group', 'novalidate': 'novalidate','autocomplete':'off' }}) }}
+        {{ form_start(formview , {'attr' : { 'novalidate': 'novalidate','autocomplete':'off' }}) }}
+
         <div class="row">
-            <div class="col">
-                {{ form_label(formview.datePayement) }}
-                <div class="form-group">
-                    <div class='input-group date'>
-                        {{ form_widget(formview.datePayement) }}
-                        <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                    </div>
+            <div class="box">
+                <div class="ad">
+                    Chose a Day:
                 </div>
-                {{ form_errors(formview.datePayement) }}
+                <div style="margin-top: -25px">
+                    {{ form_errors(formview.datePayement) }}
+                </div>
+            </div>
+            {{ form_widget(formview.datePayement) }}
+        </div>
 
+        <div class="row">
+            <div class="box">
+                <div class="ad">
+                    Chose a Time:
+                </div>
+                <div style="margin-top: -25px">
+                    {{ form_errors(formview.timePayement) }}
+                </div>
             </div>
-            <div class="col">
-                {{ form_label(formview.timePayement) }}
-                {{ form_widget(formview.timePayement) }}
-                {{ form_errors(formview.timePayement) }}
-            </div>
+            {{ form_widget(formview.timePayement) }}
         </div>
-        <div class="my-5"></div>
-        <div class="row justify-content-center">
-            <div class="col-6 col-center">
-                {{ form_row(formview.Submit) }}
-            </div>
-            {{ form_end(formview) }}
-        </div>
+
+        {{ form_row(formview.Submit) }}
+        {{ form_end(formview) }}
     </div>
-
 
 {% endblock %}
 

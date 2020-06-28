@@ -4,11 +4,14 @@ namespace App\Controller;
 
 use App\Entity\Livre;
 use App\Entity\Payement;
+use App\Form\AddressType;
 use App\Form\PayementType;
 use App\Repository\LivreRepository;
+use App\ServiceValidate\address;
 use Doctrine\ORM\EntityManagerInterface;
 use Swift_Image;
 use Swift_Mailer;
+use Swift_Message;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -78,7 +81,7 @@ class PayementController extends AbstractController
                     $session->remove('panier');
                     $session->remove('total');
 
-                    $message = (new \Swift_Message('Meeting Reminder'));
+                    $message = (new Swift_Message('Meeting Reminder'));
                     $message->setFrom('cheikh@gmail.com')
                         ->setTo($user->getEmail())
                         ->setBody(
@@ -115,9 +118,72 @@ class PayementController extends AbstractController
      * @return Response
      * @Route("/payement/confirm_adress", name="confirmad")
      */
-    public function confirmadress(Swift_Mailer $mailer)
+    public function confirmadress(address $make, Request $request, EntityManagerInterface $manager,
+                                  Swift_Mailer $mailer, LivreRepository $liv, SessionInterface $session)
     {
-        return $this->render('payement/mailremainder.html.twig');
+        $user = $this->getUser();
+        if(!$user){
+            $this->addFlash('erreur', 'You should be loged into an account');
+            return $this->redirectToRoute('app_login');
+        } else{
+            $form = $this->createForm(AddressType::class);
+            $form->handleRequest($request);
+            if ($form->isSubmitted() && $form->isValid()) {
+                $user->setAddress($make->create($form));
+                $manager->persist($user);
 
+                $pay = new Payement();
+
+                $ident = md5(uniqid());
+                $pay->setNumPayement($ident);
+                $pay->setForUser($user);
+                $pay->setTypePayement('Par Post');
+                $books = [];
+                foreach ($session->get('panier') as $id => $livre) {
+                    $book = $liv->find($id);
+                    $namebook = $book->getNomLivre();
+                    $prix = $book->getPrix();
+                    $books[] = [
+                        'prix' => $prix,
+                        'nom' => $namebook
+                    ];
+                    $manager->remove($book);
+                }
+                $pay->setBooks($books);
+                $date = date('d/m/Y');
+                $time = date('H:i');
+                $pay->setDatePayement($date);
+                $pay->setTimePayement($time);
+                $manager->persist($pay);
+                $this->addFlash('success', 'Address Updated  !');
+                $manager->flush();
+
+                $session->remove('panier');
+                $session->remove('total');
+
+                $message = (new Swift_Message('Meeting Reminder'));
+                $message->setFrom('cheikh@gmail.com')
+                    ->setTo($user->getEmail())
+                    ->setBody(
+                        $this->renderView('payement/mailremainder2.html.twig',
+                            [
+                                'username' => $user->getUserName(),
+                                'image_src' => $message->embed(Swift_Image::fromPath('C:\xampp\htdocs\WebProject\project\public\mail3.jpg'))
+
+                            ]),
+                        'text/html'
+                    );
+
+                $mailer->send($message);
+            }
+
+        }
+
+        $address = $user->getAddress();
+        return $this->render('payement/confirmad.html.twig', [
+            'form' => $form->createView(),
+            'address' => $address
+        ]);
     }
+
 }

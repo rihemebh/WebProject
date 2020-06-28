@@ -98,10 +98,11 @@ public function index2(Request $request, EntityManagerInterface $manager, UserPa
         $form = $this->createForm(AddressType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-                $user->setAddress($make->create($form));
-                $manager->persist($user);
-                $manager->flush();
-                $this->addFlash('success', 'Address Updated  !');
+            $user->setAddress($make->create($form));
+            $manager->persist($user);
+            $manager->flush();
+            $this->addFlash('success', 'Address Updated  !');
+
         }
         $address = $user->getAddress();
 

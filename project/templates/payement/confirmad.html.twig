@@ -1,1 +1,49 @@
 {% extends 'baseFront.html.twig' %}
+
+{% block Title %}
+    Confirm Adress
+{% endblock %}
+
+{% block link %}
+    <link rel="stylesheet" href={{ asset('Account/AccountStyle.css') }}>
+{% endblock %}
+
+{% block body %}
+    <hr>
+    <div class="container">
+        {% if address is not empty %}
+            <div><p> Your current address is "<strong> {{ address }}</strong>" .Would You Like T o Change It Before buying ? </p></div>
+        {% else %}
+            <div><p> You Haven't Entered An Address Yet. Tou must do so now</p></div>
+        {% endif %}
+        <div class="address">
+            {{ form_start(form, {'attr': {'autocomplete':'off','novalidate':'novalidate'}}) }}
+            <div class=" row">
+                <p class="ad">House Address :<small class="optional"> (optional)</small></p>
+                {{ form_widget(form.House_address_number) }}
+            </div>
+            <div class=" row">
+                <p class="ad">Street : <small class="optional"> (optional)</small> </p>
+                {{ form_widget(form.Street) }}
+            </div>
+            <div class=" row">
+                <div class="box">
+                    <p class="ad">City :</p>
+                    <div  style="   margin-top: -25px;">  {{ form_errors(form.City) }} </div>
+                </div>
+                {{ form_widget(form.City) }}
+            </div>
+            <div class=" row">
+                <div class="box">
+                    <p class="ad">Code :  </p>
+                    <div style="   margin-top: -25px;">  {{ form_errors(form.Code) }} </div>
+                </div>
+                {{ form_widget(form.Code) }}
+            </div>
+            {{ form_row(form.Save) }}
+        </div>
+    </div>
+    <hr>
+
+    {{ form_end(form) }}
+{% endblock %}
