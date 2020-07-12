@@ -1,0 +1,47 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}List of Categories{% endblock %}
+
+{% block body %}
+    <h1>List of Categories</h1>
+    <table class="table">
+        <thead>
+        <th>ID</th>
+        <th>Nom</th>
+        </thead>
+        <tbody>
+
+        {% for category in categories %}
+            <tr>
+                <td>{{ category.Id }}</td>
+                <td>{{ category.Nom }}</td>
+                <td><a href="{{ path('admin_categories_edit', {'id': category.Id}) }}" class="btn btn-warning">Edit</a></td>
+                <td><a href="{{ path('admin_categories_delete', {'id': category.Id}) }}" class="btn btn-warning">Delete</a></td>
+            </tr>
+
+        {% else %}
+            <tr>
+                <td colspan=5>There is no category left</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="container">
+        <div class="row">
+            <div class="col-7">
+                <nav class="float-right " aria-label=" shadow Page">
+                    {{ knp_pagination_render(categories) }}
+
+                </nav>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+{% block PageTitle %}
+    List
+{% endblock %}
+
+{% block mainTitle %}
+    Categories
+{% endblock %}

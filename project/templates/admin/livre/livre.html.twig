@@ -1,0 +1,63 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}List of Books{% endblock %}
+
+{% block body %}
+    <h1>List of Books</h1>
+    <table class="table">
+        <thead>
+        <th>ID</th>
+        <th>Language id </th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Date_Pub</th>
+        <th>Author</th>
+        <th>Likes</th>
+        <th>Path</th>
+        </thead>
+        <tbody>
+
+        {% for livre in livres %}
+            <tr>
+                <td>{{ livre.Id }}</td>
+                <td>{{ livre.Language }}</td>
+                <td>{{ livre.NomLivre }}</td>
+                <td>{{ livre.Prix }}</td>
+                <td>{{ livre.Type }}</td>
+                <td>{{ livre.Description }}</td>
+                <td>{{ livre.DatePub | format_datetime() }}</td>
+                <td>{{ livre.Auteur }}</td>
+                <td>{{ livre.Likes |length }}</td>
+                <td>{{ livre.Path }}</td>
+                <td><a href="{{ path('admin_livres_edit', {'id': livre.Id}) }}" class="btn btn-warning">Edit</a></td>
+                <td><a href="{{ path('admin_livres_delete', {'id': livre.Id}) }}" class="btn btn-warning">Delete</a></td>
+            </tr>
+
+        {% else %}
+            <tr>
+                <td colspan=5>There is no book left</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="container">
+        <div class="row">
+            <div class="col-7">
+                <nav class="float-right " aria-label=" shadow Page">
+                    {{ knp_pagination_render(livres) }}
+
+                </nav>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+{% block PageTitle %}
+    List
+{% endblock %}
+
+{% block mainTitle %}
+    Books
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'baseBack.html.twig' %}
+{% block link %}<link rel="stylesheet" href={{ asset('Account/AccountStyle.css') }}>{% endblock %}
+
+{% block title %}
+    Edit Category
+{% endblock %}
+{% block body %}
+    <h1>Edit Category</h1>
+    {{ form(Categoryform) }}
+{% endblock %}

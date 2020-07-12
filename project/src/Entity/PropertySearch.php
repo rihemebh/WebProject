@@ -11,6 +11,10 @@ class PropertySearch  {
      */
     private $author ;
     /**
+     * @var String|null
+     */
+    private $user_Name ;
+    /**
      * @var float|null
      */
     private $maxPrice;
@@ -18,7 +22,10 @@ class PropertySearch  {
 
 
 
-
+    /**
+     * @var String|null
+     */
+    private $User_Name ;
     /**
      * @return String|null
      */
@@ -43,6 +50,23 @@ class PropertySearch  {
     public function getMaxPrice(): ?float
     {
         return $this->maxPrice;
+    }
+    /**
+     * @return String|null
+     */
+    public function getUserName(): ?string
+    {
+        return $this->user_Name;
+    }
+
+    /**
+     * @param String|null $author
+     * @return PropertySearch
+     */
+    public function setUserName(string $user_Name): PropertySearch
+    {
+        $this->user_Name = $user_Name;
+        return $this;
     }
 
     /**

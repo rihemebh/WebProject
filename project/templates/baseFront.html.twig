@@ -33,7 +33,7 @@
             /*#E15D44; orange*/
             /*#ffa15e; orange feteh*/
             --nav_color: #7FCDCD;
-            --nav_backcolor: #05212F;
+            --nav_backcolor: #05212f;
             --cardbutton_color: #b5e3d9;
             --cheikh: 'El Messiri', sans-serif;
         }
@@ -167,7 +167,7 @@
         </nav>
         {% endblock %}
     </header>
-
+    {% block flash %}
     {% for message in app.flashes('success') %}
         <div class="alert alert-success">
             <i class="fa fa-check-circle approve"></i>
@@ -180,6 +180,7 @@
             {{ message }}
         </div>
     {% endfor %}
+    {% endblock %}
 
         {% block body %}{% endblock %}
 

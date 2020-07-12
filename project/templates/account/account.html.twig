@@ -3,12 +3,13 @@
 {% block link_address %}"" {% endblock %}
 {% block header %} Personal Information {% endblock %}
 {% block form %}
-{#    {% for message in app.flashes('success') %}#}
-{#        <div class="alert alert-success">#}
-{#            <i class="fa fa-check-circle approve"></i>#}
-{#            {{ message }}#}
-{#        </div>#}
-{#    {% endfor %}#}
+{% for message in app.flashes('success') %}
+       <div class="alert alert-success">
+           <i class="fa fa-check-circle approve"></i>
+           {{ message }}
+       </div>
+   {% endfor %}
+
     {{ form_start( form , {'attr': {'autocomplete':'off','action':'editInfo'}}) }}
     <hr>
     <p class="message"><i class="fad fa-user"></i>General Settings</p>
@@ -56,12 +57,12 @@
     </div>
     <hr>
     {{ form_end(form) }}
-{#    {% for message in app.flashes('alert') %}#}
-{#<div class="alert alert-danger">#}
-{#    <i class="fad fa-engine-warning"></i>#}
-{#    {{ message }}#}
-{#</div>#}
-{#{% endfor %}#}
+   {% for message in app.flashes('alert') %}
+<div class="alert alert-danger">
+    <i class="fad fa-engine-warning"></i>
+    {{ message }}
+</div>
+{% endfor %}
     <p class="message"><i class="fad fa-shield"></i>Security :</p>
 
     {{ form_start( reset , {'attr': {'autocomplete':'off','novalidate':'novalidate','action':'change'}}) }}
