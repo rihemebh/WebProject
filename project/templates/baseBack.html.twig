@@ -79,7 +79,7 @@
 
 
 <main>
-    <div id="layoutSidenav_content">
+    <main id="layoutSidenav_content">
         <main>
             <div class="container-fluid">
                 <h1 class="mt-4"></h1>
@@ -98,13 +98,12 @@
                         {{ message }}
                     </div>
                 {% endfor %}
-                <div class="container">
-                    <div class="row">
-                        {% block body %} {% endblock %}
-                    </div>
-                </div>
+
 
             </div>
+            {% block body %} {% endblock %}
+        </main>
+        </main>
         </main>
 
         {% block javascripts %}{% endblock %}
