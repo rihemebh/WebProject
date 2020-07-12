@@ -230,7 +230,7 @@ class AdminController extends AbstractController
 
                 try {
                     $image->move($destination,$imagePath);
-                    $category->setPath('assets/uploads/'.$imagePath);
+                    $category->setImage('assets/uploads/'.$imagePath);
                 } catch (FileException $exception) {
                     echo $exception;
                 }
