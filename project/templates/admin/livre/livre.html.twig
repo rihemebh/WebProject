@@ -4,6 +4,30 @@
 
 {% block body %}
     <h1>List of Books</h1>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-6 panel-group ">
+                <form class="form">
+                    {{ form_start(form) }}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="float-left small">Book's title:</label>
+                            {{ form_row(form) }}
+                        </div>
+                    </div>
+                    <div class="form">
+                        <div class="col">
+                            <button type="submit" class="btn sc btn-sm">Search</button>
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
+
+                </form>
+            </div>
+        </div>
+    </div>
     <table class="table">
         <thead>
         <th>ID</th>
@@ -19,7 +43,7 @@
         </thead>
         <tbody>
 
-        {% for livre in livres %}
+        {% for livre in filter %}
             <tr>
                 <td>{{ livre.Id }}</td>
                 <td>{{ livre.Language }}</td>
@@ -46,7 +70,7 @@
         <div class="row">
             <div class="col-7">
                 <nav class="float-right " aria-label=" shadow Page">
-                    {{ knp_pagination_render(livres) }}
+                    {{ knp_pagination_render(filter) }}
 
                 </nav>
             </div>

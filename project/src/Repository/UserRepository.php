@@ -23,11 +23,7 @@ class UserRepository extends ServiceEntityRepository
     }
 
     /**
-     * @param Livre $livre
-     * @param User $user
-     */
-
-    /**
+     * @param PropertySearch|null $search
      * @return Query
      */
     public function findAllVisibleQuery(PropertySearch $search=null): Query
@@ -35,10 +31,8 @@ class UserRepository extends ServiceEntityRepository
         $query= $this->createQueryBuilder('u')
             ->select('u')
         ;
-
-
         if($search->getUserName()){
-            $query=$query->andWhere('u.username LIKE :user_Name')
+            $query=$query->andWhere('u.User_Name LIKE :username')
                 ->setParameter('username','%'.$search->getUserName().'%');
         }
 

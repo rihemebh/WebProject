@@ -4,6 +4,29 @@
 
 {% block body %}
     <h1>List of Users</h1>
+<div class="container">
+    <div class="row">
+
+        <div class="col-6 panel-group ">
+        <form class="form">
+            {{ form_start(form) }}
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="float-left small">Username :</label>
+                    {{ form_row(form) }}
+                </div>
+            </div>
+            <div class="form">
+                <div class="col">
+                    <button type="submit" class="btn sc btn-sm">Search</button>
+                </div>
+            </div>
+            {{ form_end(form) }}
+
+        </form>
+        </div>
+    </div>
+</div>
     <table class="table">
         <thead>
         <th>ID</th>
@@ -16,7 +39,7 @@
         </thead>
         <tbody>
 
-        {% for user in users %}
+        {% for user in filtre %}
             <tr>
                 <td>{{ user.id }}</td>
                 <td>{{ user.FirstName }}</td>
@@ -35,27 +58,12 @@
         {% endfor %}
         </tbody>
     </table>
-    <form class="form">
-        {{ form_start(form) }}
-        <div class="row">
-            <div class="col-md-6">
-                <label class="float-left small">User :</label>
-                {{ form_row(form) }}
-            </div>
-        </div>
-        <div class="form">
-            <div class="col">
-                <button type="submit" class="btn sc btn-sm">Search</button>
-            </div>
-        </div>
-        {{ form_end(form) }}
 
-    </form>
     <div class="container">
         <div class="row">
             <div class="col-7">
                 <nav class="float-right " aria-label=" shadow Page">
-                    {{ knp_pagination_render(users) }}
+                    {{ knp_pagination_render(filtre) }}
 
                 </nav>
             </div>

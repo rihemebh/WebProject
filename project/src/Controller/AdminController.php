@@ -6,9 +6,11 @@ use App\Entity\Categorie;
 use App\Entity\Livre;
 use App\Entity\PropertySearch;
 use App\Entity\User;
+use App\Form\BookSearchType;
 use App\Form\CategoryType;
 use App\Form\LivreType;
 use App\Form\PropertySearchType;
+use App\Form\SearchType;
 use App\Form\UserType;
 use App\Repository\CategorieRepository;
 use App\Repository\UserRepository;
@@ -60,40 +62,21 @@ class AdminController extends AbstractController
 
     public function userList(PaginatorInterface $paginator,Request $request)
     {   $search=new PropertySearch();
-        $form=$this->createForm(PropertySearchType::class,$search);
+        $form=$this->createForm(SearchType::class,$search);
         $form->handleRequest($request);
         $users=$this->getDoctrine()->getRepository(User::class)->findAll();
-        $users_filtre=$paginator->paginate(
+        $users_filter=$paginator->paginate(
             $this->userRepository->findAllVisibleQuery($search),
             $request->query->getInt('page', 1), 20
         );
 
 
         return $this->render('admin/user/user.html.twig',[
-            'filtre'=> $users_filtre,
+            'filtre'=> $users_filter,
             'form'=>$form->createView(),
             'users'=>$users,
         ]);
    }
-//    /**
-//     * @route("/users", name="users")
-//     */
-//
-//    public function usersList(PaginatorInterface $paginator,Request $request)
-//    {   $search=new PropertySearch();
-//        $form=$this->createForm(PropertySearchType::class,$search);
-//        $form->handleRequest($request);
-//        $users=$paginator->paginate(
-//            $this->userRepository->findAll(),
-//            $request->query->getInt('page', 1), 20
-//        );
-//
-//
-//        return $this->render('admin/user/user.html.twig', [
-//            'users' => $users,
-//            'form'=>$form->createView(),
-//        ]);
-//    }
     /**
      * @Route("/users/edit/{id?0}", name="edit_user")
      */
@@ -137,21 +120,24 @@ class AdminController extends AbstractController
      *
      */
     public function booksList(PaginatorInterface $paginator,Request $request)
-    {   $search=new PropertySearch();
-        $form=$this->createForm(PropertySearchType::class,$search);
+    {
+
+        $search=new PropertySearch();
+        $form=$this->createForm(BookSearchType::class,$search);
         $form->handleRequest($request);
-        $livres=$paginator->paginate(
-            $this->bookRepository->findAll(),
+        $books=$this->getDoctrine()->getRepository(Livre::class)->findAll();
+        $livres_filtre=$paginator->paginate(
+            $this->bookRepository->findAllByTitle($search),
             $request->query->getInt('page', 1), 20
         );
 
 
-        return $this->render('admin/livre/livre.html.twig', [
-            'livres' => $livres,
+        return $this->render('admin/livre/livre.html.twig',[
+            'filter'=> $livres_filtre,
             'form'=>$form->createView(),
+            'books'=>$books,
         ]);
     }
-
     /**
      * @Route("/livres/edit/{id?0}", name="livres_edit")
      */

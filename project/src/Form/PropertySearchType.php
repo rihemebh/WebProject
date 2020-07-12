@@ -51,15 +51,6 @@ class PropertySearchType extends AbstractType
                 'multiple' => true
 
             ])
-            ->add('User_Name',TextType::Class, [
-                'required'=>false,
-                'label'=>false,
-                'attr'=>[
-
-                    'class'=>'form-control small',
-                    'placeholder'=>"enter user's name"
-                ]
-            ])
         ;
     }
 

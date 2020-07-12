@@ -13,6 +13,7 @@ security:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
+
         main:
             anonymous: lazy
             provider: in_database
@@ -21,7 +22,9 @@ security:
                 check_path: app_login
                 username_parameter: Email
                 password_parameter: password
-                default_target_path: account
+                always_use_default_target_path: false
+                    default_target_path: /
+                    target_path_parameter: Roles
 
             logout:
                 path: app_logout
