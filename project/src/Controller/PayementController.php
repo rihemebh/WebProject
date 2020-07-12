@@ -67,6 +67,7 @@ class PayementController extends AbstractController
                     $pay->setForUser($user);
                     $pay->setTypePayement('meeting');
                     $books = [];
+                    $totallll= 0;
                     foreach ($session->get('panier') as $id => $livre) {
                         $book = $liv->find($id);
                         $namebook = $book->getNomLivre();
@@ -79,6 +80,7 @@ class PayementController extends AbstractController
                             'prix' => $prix,
                             'nom' => $namebook
                         ];
+                        $totallll+=$prix;
                         $manager->remove($book);
                     }
                     $pay->setBooks($books);
@@ -110,7 +112,12 @@ class PayementController extends AbstractController
                     $dompdf = new Dompdf($pdfOptions);
 
                     // Retrieve the HTML generated in our twig file
-                    $html = $this->renderView('payement/facturepdf.html.twig');
+                    $html = $this->renderView('payement/facturepdf.html.twig',
+                        [
+                            'payement' => $pay,
+                            'total' => $totallll,
+                            'type' => 'By Meating'
+                        ]);
 
                     // Load HTML to Dompdf
                     $dompdf->loadHtml($html);
@@ -167,6 +174,7 @@ class PayementController extends AbstractController
                 $pay->setForUser($user);
                 $pay->setTypePayement('Par Post');
                 $books = [];
+                $totallll= 0;
                 foreach ($session->get('panier') as $id => $livre) {
                     $book = $liv->find($id);
                     $namebook = $book->getNomLivre();
@@ -179,6 +187,7 @@ class PayementController extends AbstractController
                         'prix' => $prix,
                         'nom' => $namebook
                     ];
+                    $totallll+=$prix;
                     $manager->remove($book);
                 }
                 $pay->setBooks($books);
@@ -216,7 +225,12 @@ class PayementController extends AbstractController
                 $dompdf = new Dompdf($pdfOptions);
 
                 // Retrieve the HTML generated in our twig file
-                $html = $this->renderView('payement/facturepdf.html.twig');
+                $html = $this->renderView('payement/facturepdf.html.twig',
+                [
+                    'payement' => $pay,
+                    'total' => $totallll,
+                    'type' => 'By Post'
+                ]);
 
                 // Load HTML to Dompdf
                 $dompdf->loadHtml($html);
@@ -256,9 +270,10 @@ class PayementController extends AbstractController
         $dompdf = new Dompdf($pdfOptions);
 
         // Retrieve the HTML generated in our twig file
-        $html = '<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-              crossorigin="anonymous"> '.$this->renderView('payement/facturepdf.html.twig');
+        $html =$this->renderView('payement/facturepdf.html.twig',
+            ['field' =>'field1',
+                'books'=>[1,2]]
+        );
 
 
         // Load HTML to Dompdf
