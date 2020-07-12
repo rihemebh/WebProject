@@ -15,10 +15,14 @@
 
 {% block body %}
 
-    <div>
-        <a href="{{ path('payement') }}" style="color: black"> <i class="fas fa-arrow-left"></i> Continue Shopping</a>
+    <div >
+        <a href="{{ path('payement') }}" style="color: #577C85;margin-left: 50px;"> <i class="fas fa-arrow-left"></i> Back To Payement</a>
     </div>
+    <hr style="width:100% ; margin-left: 20px;">
+    <div style="margin-top:100px;margin-bottom: 100px">
+
     <div class="container" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+
         {{ form_start(formview , {'attr' : { 'novalidate': 'novalidate','autocomplete':'off' }}) }}
         <div class="row">
             <div class="box">
@@ -47,7 +51,7 @@
         </div>
         {{ form_end(formview) }}
     </div>
-
+    </div>
 {% endblock %}
 
 {% block javascripts %}
