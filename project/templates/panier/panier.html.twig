@@ -1,18 +1,14 @@
 {% extends 'baseFront.html.twig' %}
 {% block Title %}Cart{% endblock %}
 
-{% block style %}
-    <link rel="stylesheet" href="{{ asset('Panier/jomb.css') }}">
-{% endblock %}
-
 {% block body%}
 
 
 
     {% if app.session.get('total') != 0 %}
-        <div class="container mb-4">
-            <div>
-                <a href="{{ path('catalogue') }}" style="color: black"> <i class="fas fa-arrow-left"></i> Continue Shopping</a>
+        <div class="container my-4">
+            <div style="">
+                <a href="{{ path('catalogue') }}" style="color: #577C85 "> <i class="fad fa-arrow-left"></i> Continue Shopping</a>
             </div>
         </div>
         <div class="container mb-4">
@@ -47,15 +43,12 @@
                         </table>
                     </div>
                 </div>
-                <div class="container-fluid">
-                    <div class="row mb-5 mt-3">
-                        <div class="col-6"></div>
-                        <div class="col-sm-12 col-md-6 text-right">
-                            <a href="#" class="btn" style="background-color: #52ACB4;color: white;"> Drop Cart</a>
-                            <a href="{{ path('payement') }}" class="btn save text-uppercase" style="background-color: #52ACB4;color: white; ">Payement</a>
+                <div class="container">
+                        <div class="row mb-5 mt-3" style="float: right">
+                           <div style="margin-right: 20px"><a href="#" class="btn" style="background-color: #52ACB4;color: white;"> Drop Cart</a></div>
+                           <div> <a href="{{ path('payement') }}" class="btn save " style="background-color: #52ACB4;color: white; ">Payement</a></div>
                         </div>
-                    </div>
-                </div>
+            </div>
             </div>
         </div>
     {% else %}
