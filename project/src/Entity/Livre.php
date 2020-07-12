@@ -77,6 +77,7 @@ class Livre
     {
         $this->categories = new ArrayCollection();
         $this->Likes = new ArrayCollection();
+        $this->date_pub = new \DateTime();
 
     }
 

@@ -32,7 +32,7 @@ class UserRepository extends ServiceEntityRepository
             ->select('u')
         ;
         if($search->getUserName()){
-            $query=$query->andWhere('u.User_Name LIKE :username')
+            $query=$query->andWhere('u.User_Name LIKE :username' AND 'u.User_Name <> CheikhBooks')
                 ->setParameter('username','%'.$search->getUserName().'%');
         }
 

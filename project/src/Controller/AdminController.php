@@ -158,11 +158,10 @@ class AdminController extends AbstractController
            $image =$form['image']->getData();
            if($form['image']){
                $imagePath = md5(uniqid()).$image->getClientOriginalName();
-               $destination = __DIR__.'/../../../public/assets/uploads';
-               $image->move($destination,$imagePath);
+               $destination = __DIR__.'/../../public/assets/uploads';
                try {
                    $image->move($destination,$imagePath);
-                   $livre->setPath('public/assets/uploads/'.$imagePath);
+                   $livre->setPath('assets/uploads/'.$imagePath);
                } catch (FileException $exception) {
                    echo $exception;
                }
@@ -277,10 +276,10 @@ class AdminController extends AbstractController
 //            'form'=>$form->createView(),
 //        ]);
 //    }
-    /**
-    //     * @route("/orders", name="orders")
-    //     *
-    //     */
+         /**
+         * @route("/orders", name="orders")
+         *
+         */
     public function ordersList(PaginatorInterface $paginator,Request $request)
     {
         $search=new PropertySearch();
@@ -299,11 +298,32 @@ class AdminController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+    /**
+     * @route("/orders/details/{id}", name="orders_details")
+     *
+     */
+    public function showDetails(Payement $orders)
+    {
 
+        $total=0;
+        $i=0;
+
+            $books=$orders->getBooks();
+            foreach ($books as $book){
+                $total += $book["prix"];
+            }
+
+
+        return $this->render('admin/order/books.html.twig', [
+            'orders'=>$orders,
+            'total'=>$total,
+
+        ]);
+    }
     /**
      * @Route("orders/delete/{id}", name="orders_delete")
      */
-    public function deleteBill(Bill $order = null)
+    public function deleteOrders(Payement $order = null)
     {
         if (!$order) {
             $this->addFlash('error', "this order doesn't exist");

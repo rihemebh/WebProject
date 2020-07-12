@@ -6,18 +6,21 @@
     <h1>List of Orders</h1>
     <table class="table">
         <thead>
+        <th>User</th>
+        <th>Num</th>
         <th>Type</th>
         <th>Date </th>
-        <th>Num</th>
+
         </thead>
         <tbody>
 
         {% for order in orders %}
             <tr>
+                <td>{{ order.ForUser.UserName }}</td>
+                <td>{{ order.numPayement }}</td>
                 <td>{{ order.typePayement}}</td>
                 <td>{{ order.datePayement }}</td>
-                <td>{{ order.numPayement }}</td>
-
+                <td><a href="{{ path('admin_orders_details', {'id': order.Id}) }}" class="btn btn-warning">Books</a></td>
                 <td><a href="{{ path('admin_orders_delete', {'id': order.Id}) }}" class="btn btn-warning">Delete</a></td>
             </tr>
 
