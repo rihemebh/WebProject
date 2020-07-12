@@ -64,20 +64,25 @@ class PayementController extends AbstractController
                     $pay->setTypePayement('meeting');
                     $books = [];
                     $totallll= 0;
-                    foreach ($session->get('panier') as $id => $livre) {
-                        $book = $liv->find($id);
-                        $namebook = $book->getNomLivre();
-                        $prix = $book->getPrix();
-                        $pathBook= $book->getPath();
-                        $authorBook = $book->getAuteur();
-                        $books[] = [
-                            'author' => $authorBook,
-                            'path'=> $pathBook,
-                            'prix' => $prix,
-                            'nom' => $namebook
-                        ];
-                        $totallll+=$prix;
-                        $manager->remove($book);
+                    if($session->get('panier') != null){
+                        foreach ($session->get('panier') as $id => $livre) {
+                            $book = $liv->find($id);
+                            $namebook = $book->getNomLivre();
+                            $prix = $book->getPrix();
+                            $pathBook= $book->getPath();
+                            $authorBook = $book->getAuteur();
+                            $books[] = [
+                                'author' => $authorBook,
+                                'path'=> $pathBook,
+                                'prix' => $prix,
+                                'nom' => $namebook
+                            ];
+                            $totallll+=$prix;
+                            $manager->remove($book);
+                        }
+                    }
+                    else{
+                        $this->redirectToRoute("panier");
                     }
                     $pay->setBooks($books);
                     $manager->persist($pay);
@@ -128,7 +133,7 @@ class PayementController extends AbstractController
                     $dompdf->stream("facture.pdf", [
                         "Attachment" => true
                     ]);
-                    return $this->redirectToRoute('/accueil');
+                    return $this->redirectToRoute('acceuil');
                 }
 
             } else {
@@ -171,21 +176,27 @@ class PayementController extends AbstractController
                 $pay->setTypePayement('Par Post');
                 $books = [];
                 $totallll= 0;
-                foreach ($session->get('panier') as $id => $livre) {
-                    $book = $liv->find($id);
-                    $namebook = $book->getNomLivre();
-                    $prix = $book->getPrix();
-                    $pathBook= $book->getPath();
-                    $authorBook = $book->getAuteur();
-                    $books[] = [
-                        'author' => $authorBook,
-                        'path'=> $pathBook,
-                        'prix' => $prix,
-                        'nom' => $namebook
-                    ];
-                    $totallll+=$prix;
-                    $manager->remove($book);
+                if($session->get('panier') != null){
+                    foreach ($session->get('panier') as $id => $livre) {
+                        $book = $liv->find($id);
+                        $namebook = $book->getNomLivre();
+                        $prix = $book->getPrix();
+                        $pathBook= $book->getPath();
+                        $authorBook = $book->getAuteur();
+                        $books[] = [
+                            'author' => $authorBook,
+                            'path'=> $pathBook,
+                            'prix' => $prix,
+                            'nom' => $namebook
+                        ];
+                        $totallll+=$prix;
+                        $manager->remove($book);
+                    }
                 }
+                else{
+                    $this->redirectToRoute("panier");
+                }
+
                 $pay->setBooks($books);
                 $date = date('d/m/Y');
                 $time = date('H:i');
@@ -241,7 +252,8 @@ class PayementController extends AbstractController
                 $dompdf->stream("facture.pdf", [
                     "Attachment" => true
                 ]);
-                return $this->redirectToRoute('/accueil');
+
+                return $this->redirectToRoute('acceuil');
             }
 
         }

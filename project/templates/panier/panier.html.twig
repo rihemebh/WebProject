@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block body%}
-    {% if app.session.get('panier') is not empty %}
+    {% if app.session.get('total') != 0 %}
         <section class="full-jumbotron text-center mt-1 container">
             <div class="container">
                 <h1>Check your cart. If it's done Start payement</h1>
@@ -20,7 +20,7 @@
             </section>
         {% endif %}
 
-    {% if app.session.get('panier') is not empty %}
+    {% if app.session.get('total') != 0 %}
         <div class="container mb-4">
             <div>
                 <a href="{{ path('catalogue') }}" style="color: black"> <i class="fas fa-arrow-left"></i> Continue Shopping</a>
@@ -92,7 +92,7 @@
 
             axios.get(url).then(function (response) {
                 table.removeChild(row)
-                total.innerHTML="<strong>response.data.total</strong>"
+                total.firstElementChild.innerText= response.data.total;
             });
         }
         document.querySelectorAll('.selector').forEach(function (link) {
