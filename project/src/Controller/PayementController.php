@@ -71,7 +71,11 @@ class PayementController extends AbstractController
                         $book = $liv->find($id);
                         $namebook = $book->getNomLivre();
                         $prix = $book->getPrix();
+                        $pathBook= $book->getPath();
+                        $authorBook = $book->getAuteur();
                         $books[] = [
+                            'author' => $authorBook,
+                            'path'=> $pathBook,
                             'prix' => $prix,
                             'nom' => $namebook
                         ];
@@ -167,7 +171,11 @@ class PayementController extends AbstractController
                     $book = $liv->find($id);
                     $namebook = $book->getNomLivre();
                     $prix = $book->getPrix();
+                    $pathBook= $book->getPath();
+                    $authorBook = $book->getAuteur();
                     $books[] = [
+                        'author' => $authorBook,
+                        'path'=> $pathBook,
                         'prix' => $prix,
                         'nom' => $namebook
                     ];
