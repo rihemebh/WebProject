@@ -20,6 +20,597 @@
       style="height: 50px; width:50px" type="image/x-icon">
 
 <style>
+    .card:hover {
+        /* box-shadow: 4px 4px #80808036; */
+        transform: translate(0,0);
+    }
+
+    body {
+        background: url("cover.png") no-repeat center fixed;
+        background-size: cover;
+    }
+    .navbar {
+        border-color: #333333;
+        z-index: 30;
+        margin: 0 auto;
+        background-color: #c1c1c140;
+    }
+    :root {
+
+        --nav_color: #769e9e;
+    }
+    .text:hover {
+        font-size: large;
+    }
+    .main {
+        width: 50%;
+        margin: 50px auto;
+    }
+    .search-input{
+        width: 180%;
+        float: left;
+        position: relative;
+    }
+    .search-submit{
+        background-color: unset;
+        border: unset;
+        float: right;
+        position: absolute;
+    }
+    .search-submit:focus{
+        border: #9fcdff;
+    }
+    @media screen and (max-width: 510px){
+        .search-input{
+            width: 160%;
+            float: left;
+            position: relative;
+        }
+    }
+    @media screen and (max-width: 460px){
+        .search-input{
+            width: 140%;
+            float: left;
+            position: relative;
+        }
+    }
+    @media screen and (max-width: 400px){
+        .main{
+            width: 90%;
+            margin: 0 10% 0 0;
+            left: 30%;
+            position: relative;
+        }
+    }
+    @media screen and (max-width: 400px){
+        .search-input, .search-submit{
+            font-size: small;
+        }
+    }
+    @media screen and (max-width: 335px){
+        .search-input, .search-submit{
+            font-size: x-small;
+        }
+    }
+    @media screen and (max-width: 290px){
+        .search-input, .search-submit{
+            font-size: xx-small;
+        }
+    }
+    @media screen and (max-width: 260px){
+        .search-input{
+            width: 100%;
+            float: unset;
+            height: 55%;
+            padding: 10%;
+        }
+        .search-submit{
+            float: unset;
+            position: unset;
+            width: 100%;
+        }
+    }
+    @media screen and (max-width: 230px){
+        .search-input{
+            padding: 0%;
+        }
+    }
+    .search-bar{
+        width: 170%;
+        right: 35%;
+    }
+
+    .form-control {
+        padding-left: 2.375rem;
+    }
+    .modal-popup{
+        background-color: #f5f5f563;
+    }
+    .search-button{
+        background-color: darkgrey;
+        color: white;
+        font-size: large;
+    }
+
+    .failure-result{
+        color: #c1dada;
+        text-align: center;
+    }
+
+    .result-header{
+        color: whitesmoke;
+        text-align: center;
+        padding: 2%;
+    }
+    .result{
+        background-color: #17a2b857;
+        margin: 2% 10% 10% 10%;
+        padding: 5%;
+    }
+    .before-carousel{
+        margin: 50% 0 0 0;
+    }
+    .my-carousel{
+        margin: 5% 5% 10% 5%;
+    }
+    @media screen and (max-width: 700px){
+        .my-carousel{
+            margin: 5% 1% 10% 1%;
+        }
+    }
+    @media screen and (max-width: 700px){
+        .my-carousel{
+            margin: 5% 1% 10% 1%;
+        }
+        .my-image{
+            height: 400px;
+        }
+    }
+
+    .my-image{
+        height: 400px;
+    }
+    .link-to-category{
+        color: white;
+    }
+    .link-to-category:hover{
+        color: white;
+        text-decoration: none;
+    }
+
+    .step{
+        height: 90px;
+        margin: 1px 0;
+    }
+    @media screen and (max-width: 1000px)
+    {
+        .step {
+            height: 140px;
+        }
+    }
+
+    @media screen and (max-width: 580px)
+    {
+        .step-activity {
+            font-size: 200%;
+        }
+    }
+
+    @media screen and (max-width: 492px)
+    {
+        .step {
+            height: 170px;
+        }
+    }
+
+    @media screen and (max-width: 410px){
+        .step-activity {
+            font-size: 170%;
+        }
+    }
+    @media screen and (max-width: 372px){
+        .step-activity {
+            font-size: 140%;
+        }
+        .step {
+            height: 135px;
+        }
+    }
+    @media screen and (max-width: 335px){
+        .step-activity {
+            font-size: 120%;
+        }
+        .step {
+            height: 150px;
+        }
+    }
+    @media screen and (max-width: 290px){
+        .step-activity {
+            font-size: 110%;
+            bottom: -10px;
+        }
+        .step-image {
+            width: 80px;
+            height: 80px;
+        }
+    }
+    @media screen and (max-width: 250px){
+        .step-activity {
+            left: 80px;
+            font-size: 100%;
+            bottom: -10px;
+        }
+
+        .step-image {
+            width: 70px;
+            height: 70px;
+        }
+    }
+    @media screen and (max-width: 200px){
+        .step-activity {
+            left: 80px;
+            font-size: 80%;
+            bottom: 0px;
+        }
+
+        .step-image {
+            width: 50px;
+            height: 50px;
+        }
+    }
+    .steps{
+        padding: 5%;
+        background-color: whitesmoke;
+        margin: -1%;
+    }
+    .step-icon{
+        color: #3b777d;
+    }
+
+    .why{
+        background-color: #b5e3d9;
+        margin: 0;
+    }
+    .card{
+        padding: 3%;
+        margin: 3%;
+    }
+
+    .whycard:hover{
+        box-shadow: 4px 4px #80808036;
+        transform: translate(0, -15px);
+    }
+    .card-deck{
+        margin: 1%;
+        padding: 2%;
+        padding-bottom: 10%;
+    }
+
+    .form-control{
+        width: 370%;
+        margin: 10%;
+    }
+    #comment_Publish{
+        position: relative;
+        left: 334%;
+        background-color: var(--cardbutton_color);
+        border: #484545;
+    }
+    #comment_message:focus{
+        box-shadow: none;
+    }
+    @media screen and (max-width: 1320px){
+        .form-control{
+            width: 340%;
+            margin: 10%;
+        }
+    }
+
+    @media screen and (max-width: 1270px){
+        .form-control{
+            width: 320%;
+            margin: 10%;
+        }
+        #comment_Publish{
+            position: relative;
+            left: 300%;
+        }
+    }
+
+    @media screen and (max-width: 1160px){
+        .form-control{
+            width: 290%;
+            margin: 10%;
+        }
+        #comment_Publish{
+            position: relative;
+            left: 270%;
+        }
+    }
+
+    @media screen and (max-width: 1060px){
+        .form-control{
+            width: 270%;
+            margin: 10%;
+        }
+        #comment_Publish{
+            position: relative;
+            left: 245%;
+        }
+    }
+    @media screen and (max-width: 970px){
+        .form-control{
+            width: 240%;
+            margin: 10%;
+        }
+        #comment_Publish{
+            position: relative;
+            left: 210%;
+        }
+    }
+    @media screen and (max-width: 870px){
+        .form-control{
+            width: 220%;
+            margin: 10%;
+        }
+        #comment_Publish{
+            position: relative;
+            left: 190%;
+        }
+    }
+
+    @media screen and (max-width: 800px){
+        .form-control{
+            width: 200%;
+            margin: 10%;
+        }
+        #comment_Publish{
+            position: relative;
+            left: 170%;
+        }
+    }
+
+    @media screen and (max-width: 767px){
+        .form-control{
+            width: 300%;
+            margin: 10%;
+        }
+        #comment_Publish{
+            position: relative;
+            left: 275%;
+        }
+    }
+    @media screen and (max-width: 710px){
+        .form-control{
+            width: 260%;
+            margin: 10%;
+        }
+        #comment_Publish{
+            position: relative;
+            left: 245%;
+        }
+    }
+
+    @media screen and (max-width: 635px){
+        .form-control{
+            width: 223%;
+            margin: 4%;
+        }
+        #comment_Publish{
+            position: relative;
+            left: 220%;
+        }
+    }
+    @media screen and (max-width: 580px){
+        .form-control{
+            width: 205%;
+            margin: 4%;
+        }
+        #comment_Publish{
+            position: relative;
+            left: 200%;
+        }
+    }
+
+    @media screen and (max-width: 540px){
+        .form-control{
+            width: 190%;
+            margin: 4%;
+        }
+        .display-3{
+            font-size: 200%;
+        }
+
+        #comment_Publish{
+            position: relative;
+            left: 155%;
+        }
+    }
+
+    @media screen and (max-width: 475px){
+        .form-control{
+            width: 172%;
+            margin: 4%;
+        }
+        #comment_Publish{
+            position: relative;
+            left: 145%;
+        }
+    }
+
+    @media screen and (max-width: 420px){
+        .form-control{
+            width: 155%;
+            margin: 4%;
+        }
+        #comment_Publish{
+            position: relative;
+            left: 125%;
+        }
+    }
+
+    @media screen and (max-width: 380px){
+        .form-control{
+            width: 135%;
+            margin: 4%;
+        }
+        #comment_Publish{
+            position: relative;
+            left: 110%;
+        }
+    }
+    @media screen and (max-width: 345px){
+        .form-control{
+            width: 135%;
+            margin: 4%;
+        }
+        #comment_Publish{
+            position: relative;
+            left: 100%;
+        }
+    }
+
+    @media screen and (max-width: 320px){
+        .form-control{
+            width: 125%;
+            margin: 4%;
+        }
+        #comment_Publish{
+            position: relative;
+            left: 90%;
+        }
+    }
+
+    @media screen and (max-width: 315px){
+        .form-control{
+            width: 160%;
+            margin: 0%;
+            padding: 0;
+        }
+        #comment_Publish{
+            position: relative;
+            left: 115%;
+        }
+    }
+
+    @media screen and (max-width: 280px){
+        .form-control{
+            width: 160%;
+            margin: 0%;
+            padding: 0;
+        }
+        #comment_Publish{
+            position: relative;
+            left: 110%;
+        }
+    }
+
+
+    @media screen and (max-width: 280px) {
+        .form-control {
+            width: 125%;
+            margin: 0%;
+            padding: 0;
+        }
+
+        #comment_Publish {
+            position: relative;
+            left: 95%;
+        }
+    }
+
+
+    @media screen and (max-width: 255px) {
+        .form-control {
+            width: 137%;
+            margin: 0%;
+            padding: 0;
+        }
+
+        #comment_Publish {
+            position: relative;
+            left: 90%;
+        }
+    }
+
+    @media screen and (max-width: 255px) {
+        .form-control {
+            width: 137%;
+            margin: 0%;
+            padding: 0;
+        }
+
+        #comment_Publish {
+            position: relative;
+            left: 90%;
+            margin: 0%;
+        }
+    }
+
+
+    @media screen and (max-width: 245px) {
+        .form-control {
+            width: 125%;
+            margin: 0%;
+            padding: 0;
+        }
+
+        #comment_Publish {
+            position: relative;
+            left: 75%;
+            margin: 0%;
+        }
+    }
+
+
+    .comment{
+        padding: 5%;
+        background-color: #b5e3d9;
+        margin: -3% 0;
+    }
+
+    .form-control:focus {
+        color: #495057;
+        background-color: #fff0;
+        border-color: #80bdff00;
+        outline: 0;
+    }
+
+    .no-box-shadow {
+        box-shadow: none
+    }
+
+    .no-box-shadow:focus {
+        box-shadow: none
+    }
+
+    .day {
+        font-size: 9px
+    }
+
+    .heart {
+        border: 1px solid green;
+        border-color: green !important;
+        border-radius: 22px
+    }
+
+    .heart-icon {
+        color: green
+    }
+
+    .comment-text {
+        font-size: 12px
+    }
+
+    #comment_message{
+        border: #fff0;
+    }
+
+    .display-3{
+        text-align: center;
+        padding: 2%;
+    }
+
     .page-link {
         background-color: white !important;
         color: var(--nav_color) !important;
@@ -27,12 +618,12 @@
 
 </style>
 <body>
-    <style>
-        body {
-            background: url("cover.png") no-repeat center fixed;
-            background-size: cover;
-        }
-    </style>
+<style>
+    body {
+        background: url("cover.png") no-repeat center fixed;
+        background-size: cover;
+    }
+</style>
 <!--NavBar-->
 <nav class="navbar navbar-expand-lg navbar-dark  shadow-sm">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav "
@@ -71,56 +662,56 @@
                 </li>
                 {#log in#}
                 {% if app.user %}
-                <div class="dropdown">
-                    <button class="nav-link btn text-secondary small dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"href="/account/editInfo"
-                            data-placement="bottom" style="background:none;" >
-                        <i class="fas fa-user-alt " style="color: white"></i></button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item "  href={{ path('account') }}>
-                            <i class="fad fa-cog" style=" color: #52ACB4; padding-right: 10px" ></i>Account
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item"  href="{{ path('app_logout') }}">
-                            <i class="fad fa-sign-out-alt" style=" color: #52ACB4; "></i>
-                            <strong style="margin-left: 5px;"> Sign Out</strong>
-                        </a>
+                    <div class="dropdown">
+                        <button class="nav-link btn text-secondary small dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"href="/account/editInfo"
+                                data-placement="bottom" style="background:none;" >
+                            <i class="fas fa-user-alt " style="color: white"></i></button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item "  href={{ path('account') }}>
+                                <i class="fad fa-cog" style=" color: #52ACB4; padding-right: 10px" ></i>Account
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item"  href="{{ path('app_logout') }}">
+                                <i class="fad fa-sign-out-alt" style=" color: #52ACB4; "></i>
+                                <strong style="margin-left: 5px;"> Sign Out</strong>
+                            </a>
+                        </div>
                     </div>
-                </div>
                 {% else %}
-                <li class="nav-item text  small " style="width: 60px; ">
-                    <a class="nav-link text-white small" href="/login" title="Log in" style=" font-size:1.25em;">
-                        <i class="far fa-user"></i>
-                    </a>
-                </li>
-                {#Sign up#}
-                <li class="nav-item text small " style="width: 60px; ">
-                    <a class="nav-link text-white small" href="/register" title="Sign up" style=" font-size:1.25em;">
-                        <i class="fas fa-user-plus"></i>
-                    </a>
-                </li>
+                    <li class="nav-item text  small " style="width: 60px; ">
+                        <a class="nav-link text-white small" href="/login" title="Log in" style=" font-size:1.25em;">
+                            <i class="far fa-user"></i>
+                        </a>
+                    </li>
+                    {#Sign up#}
+                    <li class="nav-item text small " style="width: 60px; ">
+                        <a class="nav-link text-white small" href="/register" title="Sign up" style=" font-size:1.25em;">
+                            <i class="fas fa-user-plus"></i>
+                        </a>
+                    </li>
                 {% endif %}
             </ul>
         </form>
     </div>
 </nav>
-    <style>
+<style>
 
-        .step-image{
-            padding: 1%;
-            float: left;
-            position: absolute;
-            width: 70px;
-            height: 70px;
-            margin: 0 0 0 2%;
-        }
-        .step-activity{
-            left: 110px;
-            position: relative;
-            bottom: -25px;
-            padding: 0 100px 0 0;
-            font-size: 110%;
-        }
-    </style>
+    .step-image{
+        padding: 1%;
+        float: left;
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        margin: 0 0 0 2%;
+    }
+    .step-activity{
+        left: 110px;
+        position: relative;
+        bottom: -25px;
+        padding: 0 100px 0 0;
+        font-size: 110%;
+    }
+</style>
 
 <div class="view">
     <!-- Search Modal -->
@@ -262,116 +853,109 @@
         </div>
     </div>
 
-        <!-- Steps tips -->
-        <div class="steps">
-            <div class="display-3">Step By Step</div>
-            <div class="list-group">
-                <div class="list-group-item list-group-item-action flex-column align-items-start step">
-                    <div class="d-flex w-100 justify-content-between">
-                        <img class="img-fluid step-image" src="{{ asset('acceuil/signup.jpg') }}" alt="sign up">
-                        <h1 class="step-activity">Create An account</h1>
-                    </div>
+    <!-- Steps tips -->
+    <div class="steps">
+        <div class="display-3">Step By Step</div>
+        <div class="list-group">
+            <div class="list-group-item list-group-item-action flex-column align-items-start step">
+                <div class="d-flex w-100 justify-content-between">
+                    <img class="img-fluid step-image" src="{{ asset('acceuil/signup.jpg') }}" alt="sign up">
+                    <h1 class="step-activity">Create An account</h1>
                 </div>
+            </div>
 
-                <div class="list-group-item list-group-item-action flex-column align-items-start step">
-                    <div class="d-flex w-100 justify-content-between">
-                        <img class="img-fluid step-image" src="{{ asset('acceuil/catalogue.jpg') }}" alt="catalogue">
-                        <h1 class="step-activity">Visit Our Catalogue</h1>
-                    </div>
+            <div class="list-group-item list-group-item-action flex-column align-items-start step">
+                <div class="d-flex w-100 justify-content-between">
+                    <img class="img-fluid step-image" src="{{ asset('acceuil/catalogue.jpg') }}" alt="catalogue">
+                    <h1 class="step-activity">Visit Our Catalogue</h1>
                 </div>
+            </div>
 
-                <div class="list-group-item list-group-item-action flex-column align-items-start step">
-                    <div class="d-flex w-100 justify-content-between">
-                        <img class="img-fluid step-image" src="{{ asset('acceuil/addtopanier.jpg') }}" alt="panier">
-                        <h1 class="step-activity">Add Some Books To Your Personal Basket</h1>
-                    </div>
+            <div class="list-group-item list-group-item-action flex-column align-items-start step">
+                <div class="d-flex w-100 justify-content-between">
+                    <img class="img-fluid step-image" src="{{ asset('acceuil/addtopanier.jpg') }}" alt="panier">
+                    <h1 class="step-activity">Add Some Books To Your Personal Basket</h1>
                 </div>
+            </div>
 
-                <div class="list-group-item list-group-item-action flex-column align-items-start step">
-                    <div class="d-flex w-100 justify-content-between">
-                        <img class="img-fluid step-image" src="{{ asset('acceuil/validate.png') }}" alt="validate">
-                        <h1 class="step-activity">Validate The Purchase</h1>
-                    </div>
+            <div class="list-group-item list-group-item-action flex-column align-items-start step">
+                <div class="d-flex w-100 justify-content-between">
+                    <img class="img-fluid step-image" src="{{ asset('acceuil/validate.png') }}" alt="validate">
+                    <h1 class="step-activity">Validate The Purchase</h1>
                 </div>
+            </div>
 
-                <div class="list-group-item list-group-item-action flex-column align-items-start step">
-                    <div class="d-flex w-100 justify-content-between">
-                        <img class="img-fluid step-image" src="{{ asset('acceuil/recieveBook.jpg') }}" alt="recieve">
-                        <h1 class="step-activity">Recieve Your Book</h1>
-                    </div>
+            <div class="list-group-item list-group-item-action flex-column align-items-start step">
+                <div class="d-flex w-100 justify-content-between">
+                    <img class="img-fluid step-image" src="{{ asset('acceuil/recieveBook.jpg') }}" alt="recieve">
+                    <h1 class="step-activity">Recieve Your Book</h1>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-        <!-- FEEDBACK -->
+<!-- FEEDBACK -->
 
-    <div class="comment">
-        <div class="display-3">Because your opinion matters</div>
+<div class="comment">
+    <div class="display-3">Because your opinion matters</div>
 
-        <div class=" mt-5 mb-5">
-            <div class="d-flex justify-content-center row">
-                <div class="col-md-8">
-                    {#ADD COMMENT#}
-                    <div class="d-flex flex-row align-items-center shadow add-comment p-2 bg-light" style="border-radius: 20px">
-                        {% if form is defined %}
-                            {{ form_start(form) }}
-                            {{ form_widget(form.message) }}
-                            {{ form_rest(form) }}
-                            <script>
-                                document.getElementById("comment_message").placeholder="Comment..."
-                                btn=document.querySelector("form .btn");
-                                btn.onclick=document.getElementById('comment_message').value = '';
-                            </script>
-                        {% endif%}
-                    </div>
-                    {#COMMENTS FROM DATABASE#}
-                    {% if msg is defined %}
-                        {% for pers in msg %}
-                            <div class="p-3 bg-light mt-2 shadow" style="border-radius: 20px">
-                                {#Publisher#}
-                                <div class="d-flex justify-content-between">
-                                    {#Publisher name#}
-                                    <div class="d-flex flex-row user">
-                                        {#                            {{ pers.avatar }}#}
-                                        <img class="rounded-circle img-fluid img-responsive" src="{{ pers.avatar }}" width="40">
-                                        <div class="d-flex flex-column ml-2">
-                                            <span class="font-weight-bold">@{{ pers.publisher }}</span>
-                                            <span class="day">{{ pers.date|date("F jS \\a\\t g:ia")}} </span>
-                                        </div>
+    <div class=" mt-5 mb-5">
+        <div class="d-flex justify-content-center row">
+            <div class="col-md-8">
+                {#ADD COMMENT#}
+                <div class="d-flex flex-row align-items-center shadow add-comment p-2 bg-light" style="border-radius: 20px">
+                    {% if form is defined %}
+                        {{ form_start(form) }}
+                        {{ form_widget(form.message) }}
+                        {{ form_rest(form) }}
+                        <script>
+                            document.getElementById("comment_message").placeholder="Comment..."
+                            btn=document.querySelector("form .btn");
+                            btn.onclick=document.getElementById('comment_message').value = '';
+                        </script>
+                    {% endif%}
+                </div>
+                {#COMMENTS FROM DATABASE#}
+                {% if msg is defined %}
+                    {% for pers in msg %}
+                        <div class="p-3 bg-light mt-2 shadow" style="border-radius: 20px">
+                            {#Publisher#}
+                            <div class="d-flex justify-content-between">
+                                {#Publisher name#}
+                                <div class="d-flex flex-row user">
+                                    {#                            {{ pers.avatar }}#}
+                                    <img class="rounded-circle img-fluid img-responsive" src="{{ pers.avatar }}" width="40">
+                                    <div class="d-flex flex-column ml-2">
+                                        <span class="font-weight-bold">@{{ pers.publisher }}</span>
+                                        <span class="day">{{ pers.date|date("F jS \\a\\t g:ia")}} </span>
                                     </div>
                                 </div>
-                                {#message#}
-                                <div class="comment-text text-justify mt-2">
-                                    <p>{{ pers.message }}</p>
-                                </div>
                             </div>
-                        {% endfor %}
-                    {%endif %}
-                </div>
+                            {#message#}
+                            <div class="comment-text text-justify mt-2">
+                                <p>{{ pers.message }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {%endif %}
             </div>
         </div>
-        <!--PAGINATION-->
-{#        <nav aria-label="Page navigation example">#}
-{#            <ul class="pagination justify-content-center">#}
-{#              #}
-{#            </ul>#}
-{#        </nav>#}
-{#    </div>#}
-
-        <div class="container">
-            <div class="row">
-                <div class="col-7">
-                    <nav class="float-right " aria-label=" shadow Page">
-                        {{ knp_pagination_render(msg) }}
-
-                    </nav>
-                </div>
-
-            </div>
-        </div>
-
     </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-7">
+                <nav class="float-right " aria-label=" shadow Page">
+                    {{ knp_pagination_render(msg) }}
+
+                </nav>
+            </div>
+
+        </div>
+    </div>
+
+</div>
 
 
 </div>
@@ -391,7 +975,7 @@
                     <tr>
                         <td>
                             <a href="https://www.facebook.com/cheikhbooks/?epa=SEARCH_BOX" style="color:black" >
-                               <i class="fab fa-facebook"style="color:white"></i>
+                                <i class="fab fa-facebook"style="color:white"></i>
                                 <span class=" small" style="color:lightgrey">@cheikhbooks</span>
                             </a>
                         </td>
