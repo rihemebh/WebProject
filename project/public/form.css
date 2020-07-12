@@ -1,6 +1,8 @@
 body{
-    background: rgba(0, 0, 0, 0.3) url("bookcover.jpg") no-repeat center center;
+    background: rgba(0, 0, 0, 0.5) url("book.jpg") no-repeat center center fixed;
     background-blend-mode: overlay;
+    background-size: cover;
+
 }
 #forgot{
     color: #004041;

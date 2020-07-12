@@ -14,16 +14,10 @@
 {% endblock %}
 
 {% block body %}
-    <section class="meeting-jumbotron text-center mt-1">
-        <div class="container">
-            <h1>ONE LAST STEP</h1>
-        </div>
-        <div class="container mt-5">
-            <div class="col-sm-7">
-                    Decide based on our timing the best Date to get your books .
-            </div>
-        </div>
-    </section>
+
+    <div>
+        <a href="{{ path('payement') }}" style="color: black"> <i class="fas fa-arrow-left"></i> Continue Shopping</a>
+    </div>
     <div class="container" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
         {{ form_start(formview , {'attr' : { 'novalidate': 'novalidate','autocomplete':'off' }}) }}
         <div class="row">
