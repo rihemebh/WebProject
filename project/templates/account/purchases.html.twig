@@ -4,9 +4,8 @@
 {% block link_purch %}"active"{% endblock %}
 {% block header %} My purchases {% endblock %}
 {% block form %}
-
+<hr>
     {% for commande in commandes %}
-        <hr>
         <div class="container">
             <div class="row"><p> Command Id : {{ commande.NumPayement }}</p></div>
             {#        <tr>#}
@@ -68,7 +67,11 @@
     </div>
 
     {% else %}
-
+        <div style="display: flex;flex-direction: column;justify-content: center;align-items: center; margin-top: 10%">
+        <img style="width: 120px;margin-bottom: 20px;" src="{{ asset('purchase.png') }}">
+            <p> You didn't buy anything from Cheik Books yet . You can go back to the catalog and shop for books <a  href="{{ path("catalogue") }}" style="color: #0f6674">Here</a> </p>
+        </div>
+        
             {% endfor %}
 
         </div>
