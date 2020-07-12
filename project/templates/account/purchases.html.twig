@@ -6,7 +6,7 @@
 {% block form %}
 <hr>
     {% for commande in commandes %}
-        <div class="container">
+        <div class="container" style="margin-top: 5%">
             <div class="row"><p> Command Id : {{ commande.NumPayement }}</p></div>
             {#        <tr>#}
             {#   <td> <h5> command Id {{ commande.NumPayement }}</h5></td>#}
@@ -64,8 +64,11 @@
             </tr>
             </tbody>
         </table>
+        <a href="{{ path('fact', {'id' : commande.id}) }}" style="color: #0f6674;text-decoration:underline;margin-left:70%">Donwload Bill Here </a>
     </div>
 
+
+   <hr style="width: 80%;">
     {% else %}
         <div style="display: flex;flex-direction: column;justify-content: center;align-items: center; margin-top: 10%">
         <img style="width: 120px;margin-bottom: 20px;" src="{{ asset('purchase.png') }}">

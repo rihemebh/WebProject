@@ -7,6 +7,7 @@ use App\Entity\Payement;
 use App\Form\AddressType;
 use App\Form\PayementType;
 use App\Repository\LivreRepository;
+use App\Repository\PayementRepository;
 use App\ServiceValidate\address;
 use Doctrine\ORM\EntityManagerInterface;
 use Dompdf\Css\Stylesheet;
@@ -63,21 +64,24 @@ class PayementController extends AbstractController
                     $pay->setForUser($user);
                     $pay->setTypePayement('meeting');
                     $books = [];
-                    $totallll= 0;
-                    foreach ($session->get('panier') as $id => $livre) {
-                        $book = $liv->find($id);
-                        $namebook = $book->getNomLivre();
-                        $prix = $book->getPrix();
-                        $pathBook= $book->getPath();
-                        $authorBook = $book->getAuteur();
-                        $books[] = [
-                            'author' => $authorBook,
-                            'path'=> $pathBook,
-                            'prix' => $prix,
-                            'nom' => $namebook
-                        ];
-                        $totallll+=$prix;
-                        $manager->remove($book);
+                    if($session->get('panier') != null){
+                        foreach ($session->get('panier') as $id => $livre) {
+                            $book = $liv->find($id);
+                            $namebook = $book->getNomLivre();
+                            $prix = $book->getPrix();
+                            $pathBook= $book->getPath();
+                            $authorBook = $book->getAuteur();
+                            $books[] = [
+                                'author' => $authorBook,
+                                'path'=> $pathBook,
+                                'prix' => $prix,
+                                'nom' => $namebook
+                            ];
+                            $manager->remove($book);
+                        }
+                    }
+                    else{
+                        $this->redirectToRoute("panier");
                     }
                     $pay->setBooks($books);
                     $manager->persist($pay);
@@ -100,35 +104,7 @@ class PayementController extends AbstractController
                         );
 
                     $mailer->send($message);
-                    //pdf making
-                    $pdfOptions = new Options();
-                    $pdfOptions->set('defaultFont', 'Arial');
-
-                    // Instantiate Dompdf with our options
-                    $dompdf = new Dompdf($pdfOptions);
-
-                    // Retrieve the HTML generated in our twig file
-                    $html = $this->renderView('payement/facturepdf.html.twig',
-                        [
-                            'payement' => $pay,
-                            'total' => $totallll,
-                            'type' => 'By Meating'
-                        ]);
-
-                    // Load HTML to Dompdf
-                    $dompdf->loadHtml($html);
-
-                    // (Optional) Setup the paper size and orientation 'portrait' or 'portrait'
-                    $dompdf->setPaper('A4', 'portrait');
-
-                    // Render the HTML as PDF
-                    $dompdf->render();
-
-                    // Output the generated PDF to Browser (force download)
-                    $dompdf->stream("facture.pdf", [
-                        "Attachment" => true
-                    ]);
-                    return $this->redirectToRoute('/accueil');
+                    return $this->redirectToRoute('account');
                 }
 
             } else {
@@ -170,22 +146,26 @@ class PayementController extends AbstractController
                 $pay->setForUser($user);
                 $pay->setTypePayement('Par Post');
                 $books = [];
-                $totallll= 0;
-                foreach ($session->get('panier') as $id => $livre) {
-                    $book = $liv->find($id);
-                    $namebook = $book->getNomLivre();
-                    $prix = $book->getPrix();
-                    $pathBook= $book->getPath();
-                    $authorBook = $book->getAuteur();
-                    $books[] = [
-                        'author' => $authorBook,
-                        'path'=> $pathBook,
-                        'prix' => $prix,
-                        'nom' => $namebook
-                    ];
-                    $totallll+=$prix;
-                    $manager->remove($book);
+                if($session->get('panier') != null){
+                    foreach ($session->get('panier') as $id => $livre) {
+                        $book = $liv->find($id);
+                        $namebook = $book->getNomLivre();
+                        $prix = $book->getPrix();
+                        $pathBook= $book->getPath();
+                        $authorBook = $book->getAuteur();
+                        $books[] = [
+                            'author' => $authorBook,
+                            'path'=> $pathBook,
+                            'prix' => $prix,
+                            'nom' => $namebook
+                        ];
+                        $manager->remove($book);
+                    }
                 }
+                else{
+                    $this->redirectToRoute("panier");
+                }
+
                 $pay->setBooks($books);
                 $date = date('d/m/Y');
                 $time = date('H:i');
@@ -213,35 +193,7 @@ class PayementController extends AbstractController
 
                 $mailer->send($message);
 
-                //pdf making
-                $pdfOptions = new Options();
-                $pdfOptions->set('defaultFont', 'Arial');
-
-                // Instantiate Dompdf with our options
-                $dompdf = new Dompdf($pdfOptions);
-
-                // Retrieve the HTML generated in our twig file
-                $html = $this->renderView('payement/facturepdf.html.twig',
-                [
-                    'payement' => $pay,
-                    'total' => $totallll,
-                    'type' => 'By Post'
-                ]);
-
-                // Load HTML to Dompdf
-                $dompdf->loadHtml($html);
-
-                // (Optional) Setup the paper size and orientation 'portrait' or 'portrait'
-                $dompdf->setPaper('A4', 'portrait');
-
-                // Render the HTML as PDF
-                $dompdf->render();
-
-                // Output the generated PDF to Browser (force download)
-                $dompdf->stream("facture.pdf", [
-                    "Attachment" => true
-                ]);
-                return $this->redirectToRoute('/accueil');
+                return $this->redirectToRoute('account');
             }
 
         }
@@ -255,9 +207,17 @@ class PayementController extends AbstractController
 
     /**
      * @return Response
-     * @Route("/fac", name="fact")
+     * @Route("/fac/{id}", name="fact")
      */
-    public function testingpdf(){
+    public function testingpdf($id, PayementRepository $repo){
+        $pay = $repo->find($id);
+        $totallll = 0;
+        $books = $pay->getBooks();
+        foreach ($books as $book ){
+            $totallll+= $book['prix'];
+        }
+
+        //pdf making
         $pdfOptions = new Options();
         $pdfOptions->set('defaultFont', 'Arial');
 
@@ -265,26 +225,26 @@ class PayementController extends AbstractController
         $dompdf = new Dompdf($pdfOptions);
 
         // Retrieve the HTML generated in our twig file
-        $html =$this->renderView('payement/facturepdf.html.twig',
-            ['field' =>'field1',
-                'books'=>[1,2]]
-        );
-
+        $html = $this->renderView('payement/facturepdf.html.twig',[
+                'payement' => $pay,
+                'total' => $totallll
+            ]);
 
         // Load HTML to Dompdf
         $dompdf->loadHtml($html);
 
         // (Optional) Setup the paper size and orientation 'portrait' or 'portrait'
-        $dompdf->setPaper('A3', 'portrait');
+        $dompdf->setPaper('A4', 'portrait');
 
         // Render the HTML as PDF
         $dompdf->render();
 
-
         // Output the generated PDF to Browser (force download)
-        $dompdf->stream('facture.pdf', [
+        $dompdf->stream("facture.pdf", [
             "Attachment" => true
         ]);
+
+        dd();
 
     }
 

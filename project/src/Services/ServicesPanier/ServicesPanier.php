@@ -60,6 +60,8 @@ class ServicesPanier
         if ($this->session->has('panier')) {
             $panier = $this->session->get('panier');
             if (isset($panier["$id"])) {
+                $total = $this->session->get('total') - $this->livreRep->find($id)->getPrix();
+                $this->session->set('total',$total );
                 unset($panier["$id"]);
                 $this->session->set('panier', $panier);
                 return 1;
