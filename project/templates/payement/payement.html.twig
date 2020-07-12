@@ -5,7 +5,11 @@
 
 {% block body %}
 
-   <div class="container">
+    <div style="margin-left: 50px; margin-top: 20px;">
+        <a href="{{ path('payement') }}" style="color: #577C85; "> <i class="fas fa-arrow-left"></i> Back To Payement</a>
+    </div>
+    <hr>
+   <div class="container " style="margin-bottom: 120px;margin-top: 120px">
        <div class="row my-5 justify-content-center align-items-center">
            <div class="col-2">
                <i class="far fa-home fa-2x" ></i>
@@ -25,7 +29,7 @@
            </div>
            <div class="col-7">
                <h3>SET MEETING</h3>
-                <p>Chose a date and a time when you can visit us at megrine to recieve your books</p>
+                <p>Choose a date and a time when you can visit us at Megrine to receive your books</p>
            </div>
            <div class="col-3">
                <a href="{{ path('set_meeting') }}" class="btn" style=" width:150px; background-color: #52ACB4;color: white">Set a Meeting</a>

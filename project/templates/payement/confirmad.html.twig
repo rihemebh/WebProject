@@ -10,10 +10,10 @@
 
 {% block body %}
     <div>
-        <a href="{{ path('payement') }}" style="color: black"> <i class="fas fa-arrow-left"></i> Continue Shopping</a>
+        <a href="{{ path('payement') }}" style="color: #577C85; margin-left: 50px"> <i class="fas fa-arrow-left"></i> Back To Payement</a>
     </div>
-    <hr>
-    <div class="container">
+    <hr style="width:100%">
+    <div class="container" style="margin-bottom:80px">
         {% if address is not empty %}
             <div><p> Your current address is "<strong> {{ address }}</strong>" .Would You Like T o Change It Before buying ? </p></div>
         {% else %}
@@ -46,7 +46,6 @@
             {{ form_row(form.Save) }}
         </div>
     </div>
-    <hr>
 
     {{ form_end(form) }}
 {% endblock %}
