@@ -91,7 +91,7 @@ class PayementController extends AbstractController
                             $this->renderView('payement/mailremainder.html.twig',
                                 [
                                     'username' => $user->getUserName(),
-                                    'image_src' => $message->embed(Swift_Image::fromPath('C:\xampp\htdocs\WebProject\project\public\mail3.jpg'))
+                                    'image_src' => $message->embed(Swift_Image::fromPath('D:\xampp\htdocs\Final\WebProject\project\public\mail3.jpg'))
 
                                 ]),
                             'text/html'
