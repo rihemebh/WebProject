@@ -43,8 +43,8 @@
                 </div>
                 <div class="container">
                     <div class="row mb-5 mt-3" style="float: right">
-                        <div style="margin-right: 20px"><a href="#" class="btn" style="background-color: #52ACB4;color: white;"> Drop Cart</a></div>
-                        <div> <a href="{{ path('payement') }}" class="btn save " style="background-color: #52ACB4;color: white; ">Payement</a></div>
+                        <div style="margin-right: 20px"><a href="{{ path('dellall') }}" class="btn dropcartbtn" style="background-color: #52ACB4;color: white;"> Drop Cart</a></div>
+                        <div> <a href="{{ path('payement') }}" class="btn save payementbtn" style="background-color: #52ACB4;color: white; ">Payement</a></div>
                     </div>
                 </div>
             </div>
@@ -64,10 +64,17 @@
             const url = this.href;
             const row= this.parentElement.parentElement;
             const table= this.parentElement.parentElement.parentElement;
-            var total= document.querySelector('.totalmon')
+            const total= document.querySelector('.totalmon')
+            const btn1 = document.querySelector('.dropcartbtn')
+            const btn2 = document.querySelector('.payementbtn')
+
             axios.get(url).then(function (response) {
                 table.removeChild(row)
                 total.firstElementChild.innerText= response.data.total;
+                if(response.data.total == 0){
+                    btn1.classList.add('disabled');
+                    btn2.classList.add('disabled');
+                }
             });
         }
         document.querySelectorAll('.selector').forEach(function (link) {
