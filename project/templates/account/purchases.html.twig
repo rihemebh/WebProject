@@ -1,0 +1,76 @@
+{% extends 'account/BaseAccount.html.twig' %}
+{% block link_info %}{% endblock %}
+{% block link_address %} {% endblock %}
+{% block link_pursh %}"active" {% endblock %}
+{% block header %} My purchases {% endblock %}
+{% block form %}
+    {% for commande in commandes %}
+        <div class="container">
+            <div class="row"><h5> command Id {{ commande.NumPayement }}</h5></div>
+            {#        <tr>#}
+            {#   <td> <h5> command Id {{ commande.NumPayement }}</h5></td>#}
+            {#        </tr>#}
+        </div>
+    <div class="container">
+        <div class="row">
+
+    <div class="col-3" >
+    <table class=" table-borderless table-responsive-md">
+        <tr>
+    <td></td>
+        </tr>
+        <tr>
+            <td>
+                <h5><i>Type</i> :{{ commande.typePayement }}</h5>
+            </td>
+        </tr>
+
+        <tr>
+   <td>
+       <h5><i>Date</i> : {{ commande.datePayement }}</h5>
+    </td>
+        </tr>
+        <tr>
+            <td>
+                <h5><i>Time</i> : {{ commande.timePayement }}</h5>
+            </td>
+        </tr>
+
+    </table>
+    </div>
+
+    <div class="table-responsive-md col-8 float-left">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Name</th>
+                <th scope="col">Author</th>
+                <th scope="col">Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for book in commande.books %}
+            <tr>
+                <td><img src="{{ book.path }}" style="height: 50px; width: 50px"> </td>
+                <td>{{ book.nom }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.prix }} Dt</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td class="text-right" colspan="4">total : {{ totale[loop.index-1] }} Dt</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+            {% endfor %}
+
+
+
+
+        </div>
+    </div>
+
+{% endblock %}

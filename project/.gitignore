@@ -28,4 +28,4 @@ yarn-error.log
 ###> liip/imagine-bundle ###
 /public/media/cache/
 ###< liip/imagine-bundle ###
-/src/Migrations/stuff/Version20200612085413.php
+/src/Form/stuff/Version20200612085413.php

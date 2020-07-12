@@ -167,7 +167,7 @@
         </nav>
         {% endblock %}
     </header>
-
+    {% block flash %}
     {% for message in app.flashes('success') %}
         <div class="alert alert-success">
             <i class="fa fa-check-circle approve"></i>
@@ -180,6 +180,7 @@
             {{ message }}
         </div>
     {% endfor %}
+    {% endblock %}
 
         {% block body %}{% endblock %}
 

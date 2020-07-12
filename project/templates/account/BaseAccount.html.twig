@@ -3,6 +3,7 @@
 {% block Title %}My Account{% endblock %}
 {% block navitem2 %}{% endblock %}
 {% block navitem3 %}{% endblock %}
+{% block flash %} {% endblock %}
 {% block body %}
     <div class="wrapper">
         <!-- Sidebar  -->
@@ -30,7 +31,12 @@
                             <i class="fad fa-shopping-cart"></i>My Cart
                         </a>
                     </li>
+                    <li class={% block link_purch %}"" {% endblock %}  >
+                        <a href="/purchases/{{ app.user.id }}">
 
+                            <i class="fad fa-shopping-basket"></i> My purchase
+                        </a>
+                    </li>
                     <li class={% block link_wish %}"" {% endblock %}  >
                         <a href="/wishlist/{{ app.user.id }}">
 
@@ -57,6 +63,7 @@
                         </button>
                         <h3 style="padding-left: 20px;">{% block header %}{% endblock %}</h3>
                     </div>
+
                     {% block form %} {% endblock %}
                 </div>
             </div>

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Livre;
+use App\Entity\Payement;
 use App\Entity\PropertySearch;
 use App\Entity\SearchCategory;
 use App\Entity\User;
@@ -141,6 +142,31 @@ public function RemoveWishList (Livre $livre, EntityManagerInterface $manager){
         }
     }
 
+    /**
+     * @param User $user
+     * @Route ("/purchases/{id}" )
+     * @return Response
+     */
+ public function purchase(User $user){
+    $commande=$this->getDoctrine()->getRepository(Payement::class)->findBy(['forUser'=>$user]);
+    $totales = [];
+    $totale=0;
+    $i=0;
+    foreach ( $commande as $cmd){
+       $books=$cmd->getBooks();
+       foreach ($books as $book){
+           $totale += $book["prix"];
+       }
+       $totales[$i]=$totale;
+       $i++;
+    }
+     return $this->render('account/purchases.html.twig', [
+         'commandes'=>$commande,
+         'totale'=>$totales,
+         'user'=>$user,
+
+     ]);
+ }
 
 }
 

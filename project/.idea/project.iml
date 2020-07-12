@@ -25,6 +25,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/persistence" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/reflection" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/sql-formatter" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dompdf/dompdf" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/egulias/email-validator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/friendsofsymfony/jsrouting-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/fzaninotto/faker" />
@@ -39,6 +40,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/nikic/php-parser" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ocramius/package-versions" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ocramius/proxy-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phenx/php-font-lib" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phenx/php-svg-lib" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/type-resolver" />
@@ -47,6 +50,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/event-dispatcher" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/link" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sabberworm/php-css-parser" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sensio/framework-extra-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/stof/doctrine-extensions-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/asset" />
