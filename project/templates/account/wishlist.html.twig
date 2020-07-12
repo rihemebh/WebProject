@@ -34,8 +34,9 @@
         {% if user.booksLiked | length ==0 %}
             <div class="container">
                 <div class="row">
-                    <div class="col">
+                    <div class="col" style="display: flex;flex-direction: column;justify-content: center;align-items: center; margin-top: 10%">
                     <p class="text-center"> We're sorry, Your Wishlist is empty <i class="far fa-frown-open"></i></p>
+                        <p> You can start shopping <a href="{{ path('catalogue') }}" style="color:#0f6674"> Here</a> </p>
                     </div>
                 </div>
             </div>
