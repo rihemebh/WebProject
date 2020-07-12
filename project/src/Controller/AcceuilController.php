@@ -7,16 +7,26 @@ use App\Entity\Comment;
 use App\Entity\Livre;
 use App\Form\CommentType;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\CommentRepository;
+use Faker\Factory;
+
 
 class AcceuilController extends AbstractController
 {
+
+    private $repository;
+    public function __construct(CommentRepository $repository)
+    {
+        $this->repository = $repository;
+    }
     /**
-     * @Route("/", name="acceuil")
-     */
-    public function index(Request $request,Request $requestSearch, EntityManagerInterface $manager)
+    * @Route("/", name="acceuil")
+    */
+    public function index(Request $request,Request $requestSearch, EntityManagerInterface $manager, PaginatorInterface $paginator)
     {
         /*Categories DB*/
         $repositoryCategories = $this->getDoctrine()->getRepository(Categorie::class);
@@ -27,8 +37,12 @@ class AcceuilController extends AbstractController
         $page = $request->query->get('page') ?? 1;
         $repository = $this->getDoctrine()->getRepository(Comment::class);
         $nbEnregistrements = $repository->count(array());
-        $nbPages = ($nbEnregistrements % 2) ? ($nbEnregistrements / 2) + 1 : ($nbEnregistrements / 2);
-        $messages = $repository->findBy([], array('id' => 'desc'), 2, ($page - 1) * 2);
+        //$nbPages = ($nbEnregistrements % 5) ? ($nbEnregistrements / 5) + 1 : ($nbEnregistrements / 5);
+        //$messages = $repository->findBy([], array('id' => 'desc'),5, ($page - 1) *5);
+        $messages=$paginator->paginate(
+            $this->repository->findAll(),
+            $request->query->getInt('page', 1), 20
+        );
 
         /*Comment form*/
         $comment = new Comment();
@@ -49,9 +63,10 @@ class AcceuilController extends AbstractController
             }
 
             /*************************/
+            $faker = Factory::create();
             $comment->setPublisher("user" . "#" . $random_string);
             $comment->setLikes(0);
-            $comment->setAvatar('avatar');
+            $comment->setAvatar($faker->imageUrl($width = 640, $height = 480));
             $manager->persist($comment);
             $manager->flush();
         }
@@ -66,7 +81,6 @@ class AcceuilController extends AbstractController
                 'input' => $input,
 
                 'msg' => $messages,
-                'nbPage' => $nbPages,
                 'form' => $form->createView(),
 
                 'catogory'=>$category,
@@ -76,14 +90,13 @@ class AcceuilController extends AbstractController
         else{
             return $this->render('acceuil/acceuil.html.twig', [
                 'msg' => $messages,
-                'nbPage' => $nbPages,
+
                 'form' => $form->createView(),
 
                 'catogory'=>$category,
                 'nbrCategories'=>$nbreCategories
             ]);
         }
-
     }
 
 
