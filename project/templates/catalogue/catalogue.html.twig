@@ -130,9 +130,9 @@
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <p class="container"> {{ knp_pagination_sortable(filtre , "Newest (default) " , "p.date_pub" , ['desc'] ) }}</p>
                         <p class="container"> {{ knp_pagination_sortable(filtre , "Oldest" , "p.date_pub" ) }}</p>
-                        <p class="container">{{ knp_pagination_sortable(filtre , "price" , "p.prix") }}
-                            <i class="fas fa-sort-amount-down small "></i> </p>
                         <p class="container">{{ knp_pagination_sortable(filtre , "price" , "p.prix", ['desc']) }}
+                            <i class="fas fa-sort-amount-down small "></i> </p>
+                        <p class="container">{{ knp_pagination_sortable(filtre , "price" , "p.prix") }}
                             <i class="fas fa-sort-amount-up small "></i></p>
 
                     </div>
@@ -197,7 +197,12 @@
 
                 </div>
             {% else %}
-                <div class="container" style="height:80px">
+                <div class="container "class="text-center" style="height:180px">
+
+                    <div class="row">
+
+                        <div class="col-7"><img src="bookk.png" class="float-right" style="height: 135px;width:190px"></div>
+{#                        <div class="col-6"></div>#}</div>
                     <div class="row">
                         <div class="col-12">
                             <p class="text-center"> Sorry we don't have books with this features <i

@@ -1,8 +1,6 @@
 {% extends 'baseFront.html.twig' %}
 {% block Title %}Cart{% endblock %}
-
 {% block body%}
-
 
 
     {% if app.session.get('total') != 0 %}
@@ -54,15 +52,12 @@
     {% else %}
         <div style="margin-top: 200px;margin-bottom: 220px;display: flex;flex-direction: column;align-items: center;justify-content: center;"> <p style="font-size: 30px;color: slategray"> Your Cart Is Empty Now</p>
             <p> You can continue shopping  <a href="{{ path('catalogue') }}" style="color: #52ACB4"><i class="fad fa-cart-plus" style="color:#52ACB4"></i> Here</a></p> </div>
-
     {% endif %}
 {% endblock %}
-
 {% block javascripts %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
     <script>
         function onClickBtnDelete(event){
             event.preventDefault();

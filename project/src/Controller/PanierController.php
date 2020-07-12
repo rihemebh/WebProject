@@ -62,23 +62,6 @@ class PanierController extends AbstractController
         }
     }
 
-    /**
-     * @param SessionInterface $session
-     * @return RedirectResponse
-     * @Route("/panier/deleteall", name="dellall")
-     */
-    public function deleteall(SessionInterface $session){
-        if ($session->get('total')!=0){
-            $session->set('panier', []);
-            $session->set('total', 0);
-            $this->addFlash('success', 'your card is dropped successfully');
-        }
-        else{
-            $this->addFlash('success', 'your card is dropped successfully');
-        }
-        return $this->redirectToRoute('panier');
-
-    }
 }
 
 
