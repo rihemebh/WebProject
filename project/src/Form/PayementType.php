@@ -18,16 +18,15 @@ class PayementType extends AbstractType
         $builder
             ->add('datePayement',\Symfony\Component\Form\Extension\Core\Type\TextType::class, [
                 'label' => 'Chose a Day',
-                'attr' => ['class' =>'form-contol datetimepicker'],
-
+                'attr' => ['class' =>'form-control datetimepicker organize-form'],
             ])
             ->add('timePayement', \Symfony\Component\Form\Extension\Core\Type\TextType::class, [
                 'label' => 'Chose a Time',
-                'attr' => ['class' => 'form-control datetimepicker2'],
+                'attr' => ['class' => 'form-control datetimepicker2 organize-form'],
             ])
             ->add('Submit', SubmitType::class, [
                 'attr' => [
-                    'class'=>'btn btn-primary btn-lg btn-block'
+                    'class'=>' save btn btn-primary btn-lg btn-block'
                 ]
                 ])
         ;

@@ -56,11 +56,7 @@ class PayementController extends AbstractController
                 $pay = new Payement();
                 $form = $this->createForm(PayementType::class, $pay);
                 $view = $form->createView();
-                try {
                     $form->handleRequest($req);
-                } catch (\Exception $e) {
-                    echo "failed : " . $e->getMessage();
-                }
                 if ($form->isSubmitted() and $form->isValid()) {
                     $ident = md5(uniqid());
                     $pay->setNumPayement($ident);
@@ -132,7 +128,7 @@ class PayementController extends AbstractController
                     $dompdf->stream("facture.pdf", [
                         "Attachment" => true
                     ]);
-
+                    return $this->redirectToRoute('/accueil');
                 }
 
             } else {
@@ -245,8 +241,7 @@ class PayementController extends AbstractController
                 $dompdf->stream("facture.pdf", [
                     "Attachment" => true
                 ]);
-                $this->addFlash('success', 'Check you Email! the Meeting is confirmed');
-                return $this->redirectToRoute('acceuil');
+                return $this->redirectToRoute('/accueil');
             }
 
         }
@@ -288,9 +283,9 @@ class PayementController extends AbstractController
 
         // Output the generated PDF to Browser (force download)
         $dompdf->stream('facture.pdf', [
-            "Attachment" => false
+            "Attachment" => true
         ]);
-        dd();
+
     }
 
 }

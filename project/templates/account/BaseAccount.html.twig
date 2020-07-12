@@ -31,7 +31,7 @@
                             <i class="fad fa-shopping-cart"></i>My Cart
                         </a>
                     </li>
-                    <li class={% block link_purch %}"" {% endblock %}  >
+                    <li class={% block link_purch %}""{% endblock %}  >
                         <a href="/purchases/{{ app.user.id }}">
 
                             <i class="fad fa-shopping-basket"></i> My purchase
@@ -70,6 +70,7 @@
         </div>
     </div>
 {% endblock %}
+{% block foot %} {% endblock %}
 {% block javascripts %}
     <script type="text/javascript">
         $(document).ready(function () {
@@ -77,8 +78,5 @@
                 $('#sidebar').toggleClass('active');
             });
         });
-    </script>
-    <script>
-
     </script>
 {% endblock %}
