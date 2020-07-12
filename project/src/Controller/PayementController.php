@@ -9,6 +9,9 @@ use App\Form\PayementType;
 use App\Repository\LivreRepository;
 use App\ServiceValidate\address;
 use Doctrine\ORM\EntityManagerInterface;
+use Dompdf\Css\Stylesheet;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 use Swift_Image;
 use Swift_Mailer;
 use Swift_Message;
@@ -95,9 +98,30 @@ class PayementController extends AbstractController
                         );
 
                     $mailer->send($message);
+                    //pdf making
+                    $pdfOptions = new Options();
+                    $pdfOptions->set('defaultFont', 'Arial');
 
-                    $this->addFlash('success', 'Check you Email! the Meeting is confirmed');
-                    return $this->redirectToRoute('acceuil');
+                    // Instantiate Dompdf with our options
+                    $dompdf = new Dompdf($pdfOptions);
+
+                    // Retrieve the HTML generated in our twig file
+                    $html = $this->renderView('payement/facturepdf.html.twig');
+
+                    // Load HTML to Dompdf
+                    $dompdf->loadHtml($html);
+
+                    // (Optional) Setup the paper size and orientation 'portrait' or 'portrait'
+                    $dompdf->setPaper('A4', 'portrait');
+
+                    // Render the HTML as PDF
+                    $dompdf->render();
+
+                    // Output the generated PDF to Browser (force download)
+                    $dompdf->stream("facture.pdf", [
+                        "Attachment" => true
+                    ]);
+
                 }
 
             } else {
@@ -175,6 +199,32 @@ class PayementController extends AbstractController
                     );
 
                 $mailer->send($message);
+
+                //pdf making
+                $pdfOptions = new Options();
+                $pdfOptions->set('defaultFont', 'Arial');
+
+                // Instantiate Dompdf with our options
+                $dompdf = new Dompdf($pdfOptions);
+
+                // Retrieve the HTML generated in our twig file
+                $html = $this->renderView('payement/facturepdf.html.twig');
+
+                // Load HTML to Dompdf
+                $dompdf->loadHtml($html);
+
+                // (Optional) Setup the paper size and orientation 'portrait' or 'portrait'
+                $dompdf->setPaper('A4', 'portrait');
+
+                // Render the HTML as PDF
+                $dompdf->render();
+
+                // Output the generated PDF to Browser (force download)
+                $dompdf->stream("facture.pdf", [
+                    "Attachment" => true
+                ]);
+                $this->addFlash('success', 'Check you Email! the Meeting is confirmed');
+                return $this->redirectToRoute('acceuil');
             }
 
         }
@@ -184,6 +234,40 @@ class PayementController extends AbstractController
             'form' => $form->createView(),
             'address' => $address
         ]);
+    }
+
+    /**
+     * @return Response
+     * @Route("/fac", name="fact")
+     */
+    public function testingpdf(){
+        $pdfOptions = new Options();
+        $pdfOptions->set('defaultFont', 'Arial');
+
+        // Instantiate Dompdf with our options
+        $dompdf = new Dompdf($pdfOptions);
+
+        // Retrieve the HTML generated in our twig file
+        $html = '<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+              crossorigin="anonymous"> '.$this->renderView('payement/facturepdf.html.twig');
+
+
+        // Load HTML to Dompdf
+        $dompdf->loadHtml($html);
+
+        // (Optional) Setup the paper size and orientation 'portrait' or 'portrait'
+        $dompdf->setPaper('A3', 'portrait');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+
+        // Output the generated PDF to Browser (force download)
+        $dompdf->stream('facture.pdf', [
+            "Attachment" => false
+        ]);
+        dd();
     }
 
 }
