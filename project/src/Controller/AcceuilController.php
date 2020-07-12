@@ -41,7 +41,7 @@ class AcceuilController extends AbstractController
         //$messages = $repository->findBy([], array('id' => 'desc'),5, ($page - 1) *5);
         $messages=$paginator->paginate(
             $this->repository->findAll(),
-            $request->query->getInt('page', 1), 20
+            $request->query->getInt('page', 1), 5
         );
 
         /*Comment form*/
