@@ -3,7 +3,7 @@
 {% block Title %}catalog{% endblock %}
 {% block link %}
     <link rel="stylesheet" type="text/css" href="{{ asset('catalogue/style.css') }}">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
 {% endblock %}
 
@@ -40,7 +40,18 @@
         background-color: transparent;
     }
 
+    .cardbutton:hover{
+    background-color:  #90d5c6;
+    }
 
+    .love {
+        padding: 0.25rem 1.25rem;
+        color: black;
+        opacity: 1;
+        position: absolute;
+        margin: 3.7rem;
+        /*margin-top: -10px;*/
+    }
 </style>
 {% endblock %}
 {% block navitem1 %} {% endblock %}
@@ -141,8 +152,8 @@
                 {% set idd = livre.id %}
                 <div class="col card-col">
                     <div class="card " id="{{ livre.id }}" style="width: 11.5rem; ">
-                        <i style="font-size:70% " class="fas fa-heart disabled love">
-                            <span class="js-like small"> {{ livre.Likes | length }}</span></i>
+                        <i style="font-size:80% " class="fas fa-heart disabled love">
+                            <span class="js-like "> {{ livre.Likes | length }}</span></i>
                         <a href="/livre/{{ livre.id }}"> <img src="{{ livre.path }}" class="book-img  card-img-top"
                                                               alt="..." style="width:100%"></a>
 
@@ -216,6 +227,16 @@
 
 {% endblock %}
 {% block javascripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+{#    <script>#}
+{#    document.querySelectorAll(".hearticon").forEach(function (link) {#}
+{#        link.addEventListener('click', function () {#}
+{#            toastr.info('you have to be connected');#}
+
+{#        })#}
+{#    });#}
+{#    </script>#}
     <script>
         $(document).ready(function () {
             const $valueSpan = $('.valuespan');
@@ -239,15 +260,28 @@
             const like = this.parentElement.parentElement
                 .previousElementSibling.previousElementSibling.firstElementChild;
             const icon = this.querySelector('i.hearticon');
-           // console.log(like);
-            // get request
-           // console.log(axios.get(url));
             axios.get(url).then(function (response) {
                 like.textContent = response.data.likes;
-                //console.log(like);
                 if (icon.classList.contains('text-danger')) icon.classList.remove('text-danger');
                 else icon.classList.add('text-danger');
-            });
+            }).catch(function (error){
+                if(error.response.status===403){
+                    toastr.options = {
+                        "debug": false,
+                        "positionClass": "toast-bottom-full-width",
+                        "onclick": null,
+                        "fadeIn": 300,
+                        "fadeOut": 1000,
+                        "timeOut": 5000,
+                        "extendedTimeOut": 1000
+                    }
+                    toastr.error('You have to be connected');
+                    toastr.options.preventDuplicates = true;
+
+
+                }
+            })
+            ;
         }
 
         document.querySelectorAll('.js-like').forEach(function (link) {
