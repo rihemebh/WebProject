@@ -14,7 +14,7 @@
         {% if address is not empty %}
             <div><p> Your current address is "<strong> {{ address }}</strong>" .Would You Like T o Change It Before buying ? </p></div>
         {% else %}
-            <div><p> You Haven't Entered An Address Yet. Tou must do so now</p></div>
+            <div><p> You Haven't Entered An Address Yet. You must do so now</p></div>
         {% endif %}
         <div class="address">
             {{ form_start(form, {'attr': {'autocomplete':'off','novalidate':'novalidate'}}) }}

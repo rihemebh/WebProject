@@ -1,12 +1,14 @@
 {% extends 'account/BaseAccount.html.twig' %}
 {% block link_info %}{% endblock %}
-{% block link_address %} {% endblock %}
-{% block link_pursh %}"active" {% endblock %}
+{% block link_address %}{% endblock %}
+{% block link_purch %}"active"{% endblock %}
 {% block header %} My purchases {% endblock %}
 {% block form %}
+
     {% for commande in commandes %}
+        <hr>
         <div class="container">
-            <div class="row"><h5> command Id {{ commande.NumPayement }}</h5></div>
+            <div class="row"><p> Command Id : {{ commande.NumPayement }}</p></div>
             {#        <tr>#}
             {#   <td> <h5> command Id {{ commande.NumPayement }}</h5></td>#}
             {#        </tr>#}
@@ -15,24 +17,24 @@
         <div class="row">
 
     <div class="col-3" >
-    <table class=" table-borderless table-responsive-md">
+    <table class=" table-borderless table-responsive-md" style="margin-top: 30px">
         <tr>
     <td></td>
         </tr>
         <tr>
             <td>
-                <h5><i>Type</i> :{{ commande.typePayement }}</h5>
+                <h6 style="display: flex; flex-direction: row; align-items: center;"><p style="margin-right:10px;margin-top :15px ">Type</p >  :  {{ commande.typePayement }}</h6>
             </td>
         </tr>
 
         <tr>
    <td>
-       <h5><i>Date</i> : {{ commande.datePayement }}</h5>
+       <h6  style="display: flex; flex-direction: row; align-items: center;" ><p style="margin-right:10px;margin-top :15px ">Date</p> : {{ commande.datePayement }}</h6>
     </td>
         </tr>
         <tr>
             <td>
-                <h5><i>Time</i> : {{ commande.timePayement }}</h5>
+                <h6 style="display: flex; flex-direction: row; align-items: center;"><p style="margin-right:10px;margin-top :15px ">Time</p> :  {{ commande.timePayement }}</h6>
             </td>
         </tr>
 
@@ -44,9 +46,9 @@
             <thead>
             <tr>
                 <th scope="col"></th>
-                <th scope="col">Name</th>
-                <th scope="col">Author</th>
-                <th scope="col">Price</th>
+                <th scope="col" style="color: #0f6674">Name</th>
+                <th scope="col" style="color: #0f6674">Author</th>
+                <th scope="col" style="color: #0f6674">Price</th>
             </tr>
             </thead>
             <tbody>
@@ -59,18 +61,16 @@
             </tr>
             {% endfor %}
             <tr>
-                <td class="text-right" colspan="4">total : {{ totale[loop.index-1] }} Dt</td>
+                <td class="text-right" colspan="4" style="color:red"> <i class="fad fa-money-check-edit-alt" style="margin-right: 5px"></i> Total : {{ totale[loop.index-1] }} DT</td>
             </tr>
             </tbody>
         </table>
     </div>
 
+    {% else %}
+
             {% endfor %}
-
-
-
 
         </div>
     </div>
-
 {% endblock %}

@@ -56,11 +56,7 @@ class PayementController extends AbstractController
                 $pay = new Payement();
                 $form = $this->createForm(PayementType::class, $pay);
                 $view = $form->createView();
-                try {
                     $form->handleRequest($req);
-                } catch (\Exception $e) {
-                    echo "failed : " . $e->getMessage();
-                }
                 if ($form->isSubmitted() and $form->isValid()) {
                     $ident = md5(uniqid());
                     $pay->setNumPayement($ident);

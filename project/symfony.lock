@@ -129,6 +129,9 @@
     "knplabs/knp-paginator-bundle": {
         "version": "v5.2.0"
     },
+    "laminas/laminas-zendframework-bridge": {
+        "version": "1.0.4"
+    },
     "liip/imagine-bundle": {
         "version": "1.8",
         "recipe": {
@@ -161,7 +164,7 @@
         "version": "v0.3.3"
     },
     "php": {
-        "version": "7.2"
+        "version": "7.4"
     },
     "phpdocumentor/reflection-common": {
         "version": "2.1.0"
@@ -649,6 +652,9 @@
         "files": [
             "./config/packages/vich_uploader.yaml"
         ]
+    },
+    "webimpress/safe-writer": {
+        "version": "2.0.1"
     },
     "webmozart/assert": {
         "version": "1.8.0"

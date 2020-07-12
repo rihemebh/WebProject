@@ -26,7 +26,6 @@ class Payement
     /**
      * @ORM\Column(type="string", length=50)
      * @Assert\NotBlank(message="This field can not be empty")
-     * )
      */
     private $datePayement;
 
