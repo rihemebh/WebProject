@@ -132,7 +132,7 @@ class PayementController extends AbstractController
                     $dompdf->stream("facture.pdf", [
                         "Attachment" => true
                     ]);
-
+                    return $this->redirectToRoute('/accueil');
                 }
 
             } else {
@@ -245,8 +245,7 @@ class PayementController extends AbstractController
                 $dompdf->stream("facture.pdf", [
                     "Attachment" => true
                 ]);
-                $this->addFlash('success', 'Check you Email! the Meeting is confirmed');
-                return $this->redirectToRoute('acceuil');
+                return $this->redirectToRoute('/accueil');
             }
 
         }
@@ -288,9 +287,9 @@ class PayementController extends AbstractController
 
         // Output the generated PDF to Browser (force download)
         $dompdf->stream('facture.pdf', [
-            "Attachment" => false
+            "Attachment" => true
         ]);
-        dd();
+
     }
 
 }

@@ -19,7 +19,7 @@
                      </blockquote>
                  </th>
                  <th class="text-right">
-                     <h1>Facture No. {{ payement.numPayement }}</h1>
+                     <b>Facture No.</b> <p style="font-size: 15px;">{{ payement.numPayement }}</p>
                  </th>
              </tr>
          </table>
@@ -53,7 +53,7 @@
              </tr>
              {% for book in payement.books %}
                  <tr>
-                     <td> book.nom </td> <td> book.prix </td>
+                     <td> {{ book.nom }} </td> <td> {{ book.prix }} </td>
                  </tr>
              {% endfor %}
          </table>
