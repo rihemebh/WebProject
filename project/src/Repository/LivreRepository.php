@@ -70,7 +70,6 @@ class LivreRepository extends ServiceEntityRepository
             ->andWhere('l.id != :id')
             ->setParameter('val', $value)
             ->setParameter('id', $id)
-            ->setMaxResults(18)
             ->getQuery()
             ->getResult();
     }

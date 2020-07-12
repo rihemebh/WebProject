@@ -8,6 +8,9 @@
 
 {% block link %}
     <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK&display=swap" rel="stylesheet">
+
 {% endblock %}
 
 {% block style %}
@@ -18,16 +21,28 @@
         a.nav-link:hover {
             font-size: x-large;
         }
+        .cardbutton {
+            font-size: small;
+            background-color: var(--cardbutton_color);
+            width: 90%;
+        }
+        .cardbutton:hover{
+            background-color:  #90d5c6;
+        }
 
         .love {
-            margin:24.5%;
-            padding: 1.5rem 4.5rem;
+            margin:27%;
+            padding: 1.25rem 4.5rem;
             border-radius: 25px;
             color: black;
             opacity: 1;
             position: absolute;
-
             font-size:80%;
+        }
+        @media (min-width: 1025px) {
+            .love {
+                font-size: 200%;
+            }
         }
 
         .book-img {
@@ -123,17 +138,15 @@
                                              data-id="{{ livre.id }}" >
                                         Added to Cart
                                         <i class="fas fa-shopping-cart  icon"
-                                                style="font-size:70%;"> </i></button>
+                                                style="font-size:85%;"> </i></button>
 
 
                                 {% else %}
-                                    <button onclick=" window.location.href='{{ path('add.panier', {'id' : livre.id}) }}'"
-                                            class="btn btn-lg btn-block shadow-sm cardbutton page-link font-weight-light"
-                                            data-id="{{ livre.id }}">
+                                    <a href="{{ path('add.panier', {'id' : livre.id}) }}"
+                                       class="btn shadow-sm cardbutton" data-id="{{ livre.id }}" style="font-size:70%">
                                         Add to Cart
-                                        <i
-                                                class="fas fa-shopping-cart  icon"
-                                                style="font-size:70%;"> </i></button>
+                                        <i class="fas fa-shopping-cart  icon"
+                                           style="font-size:11px;"> </i></a>
                                 {% endif %}
 
 <br>
@@ -178,7 +191,7 @@
         function onClickBtnLike(event) {
             event.preventDefault();
             const url = this.href;
-            const like = this.parentElement.parentElement
+            const like = this.parentElement
                 .previousElementSibling.previousElementSibling.firstElementChild;
             const icon = this.querySelector('i.hearticon')
             console.log(like);
@@ -187,6 +200,22 @@
                 console.log(like);
                 if (icon.classList.contains('text-danger')) icon.classList.remove('text-danger');
                 else icon.classList.add('text-danger');
+            }).catch(function (error){
+                if(error.response.status===403){
+                    toastr.options = {
+                        "debug": false,
+                        "positionClass": "toast-bottom-full-width",
+                        "onclick": null,
+                        "fadeIn": 300,
+                        "fadeOut": 1000,
+                        "timeOut": 5000,
+                        "extendedTimeOut": 1000
+                    }
+                    toastr.error('You have to be connected');
+                    toastr.options.preventDuplicates = true;
+
+
+                }
             });
         }
 
@@ -198,12 +227,21 @@
         function onClickBtnCart(event){
             event.preventDefault();
             console.log(this);
-            this.classList.add('disabled');
-            this.innerHTML="Added to Cart  <i class='fas fa-shopping-cart  icon' style='font-size:70%;'> </i>";
+            const url = this.href;
+            const obj= this;
+
+            axios.get(url).then(function (response) {
+                console.log(response.data.message);
+                obj.classList.add('disabled');
+                obj.innerHTML="Added to Cart  <i class='fas fa-shopping-cart  icon' style='font-size:70%;'> </i>";
+            });
+
+
         }
         document.querySelectorAll('.cardbutton').forEach(function (link) {
             link.addEventListener('click',onClickBtnCart);
         })
     </script>
+
 
 {% endblock %}
