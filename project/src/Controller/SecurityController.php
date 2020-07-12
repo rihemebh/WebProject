@@ -23,7 +23,12 @@ class SecurityController extends AbstractController
     {
         if ($this->getUser()) {
             if(!$this->getUser()->getActivationToken())
-            return $this->redirectToRoute('account');
+            {
+                if ($this-> getUser()-> getRoles() =="ROLE_ADMIN")
+                    return $this->redirectToRoute('admin');
+                else return $this->redirectToRoute('account');
+            }
+//            return $this->redirectToRoute('account');
             else return $this->redirectToRoute('confirm');
         }
 
