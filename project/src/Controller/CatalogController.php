@@ -158,6 +158,7 @@ public function RemoveWishList (Livre $livre, EntityManagerInterface $manager){
            $totale += $book["prix"];
        }
        $totales[$i]=$totale;
+       $totale=0;
        $i++;
     }
      return $this->render('account/purchases.html.twig', [

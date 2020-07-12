@@ -18,6 +18,10 @@ class PropertySearch  {
      * @var float|null
      */
     private $maxPrice;
+    /**
+     * @var String|null
+     */
+    private $nom_livre ;
 
 
 
@@ -58,9 +62,16 @@ class PropertySearch  {
     {
         return $this->user_Name;
     }
+    /**
+     * @return String|null
+     */
+    public function getNomLivre(): ?string
+    {
+        return $this->nom_livre;
+    }
 
     /**
-     * @param String|null $author
+     * @param String|null $user_Name
      * @return PropertySearch
      */
     public function setUserName(string $user_Name): PropertySearch
@@ -69,6 +80,15 @@ class PropertySearch  {
         return $this;
     }
 
+    /**
+     * @param String|null $nom_livre
+     * @return PropertySearch
+     */
+    public function setNomLivre(string $nom_livre): PropertySearch
+    {
+        $this->nom_livre = $nom_livre;
+        return $this;
+    }
     /**
      * @param float|null $maxPrice
      * @return PropertySearch
@@ -79,23 +99,6 @@ class PropertySearch  {
         return $this;
     }
 
-//    /**
-//     * @return string
-//     */
-//    public function getQ(): string
-//    {
-//        return $this->q;
-//    }
-//
-//    /**
-//     * @param string $q
-//     * @return PropertySearch
-//     */
-//    public function setQ(string $q): PropertySearch
-//    {
-//        $this->q = $q;
-//        return $this;
-//    }
 
     /**
      * @return Categorie[]
@@ -115,10 +118,6 @@ class PropertySearch  {
         return $this;
     }
 
-//    /**
-//     * @var string
-//     */
-//    public $q ="";
     /**
      * @var Categorie[]
      */

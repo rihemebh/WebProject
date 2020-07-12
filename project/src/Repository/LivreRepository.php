@@ -25,6 +25,23 @@ class LivreRepository extends ServiceEntityRepository
     }
 
     /**
+     * @param PropertySearch|null $search
+     * @return Query
+     */
+    public function findAllByTitle(PropertySearch $search=null): Query
+    {
+        $query= $this->createQueryBuilder('b')
+            ->select('b')
+        ;
+        if($search->getNomLivre()){
+            $query=$query->andWhere('b.nom_livre LIKE :title')
+                ->setParameter('title','%'.$search->getNomLivre().'%');
+        }
+
+        return $query->getQuery();
+    }
+
+    /**
      * @return Query
      */
     public function findAllVisibleQuery(PropertySearch $search=null): Query
