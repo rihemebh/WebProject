@@ -22,10 +22,7 @@ security:
                 check_path: app_login
                 username_parameter: Email
                 password_parameter: password
-                always_use_default_target_path: false
-                    default_target_path: /
-                    target_path_parameter: Roles
-
+                default_target_path: account
             logout:
                 path: app_logout
                 target: app_login

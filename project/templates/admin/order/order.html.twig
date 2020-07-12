@@ -1,29 +1,29 @@
 {% extends 'baseBack.html.twig' %}
 
-{% block title %}List of Bills{% endblock %}
+{% block title %}List of Orders{% endblock %}
 
 {% block body %}
-    <h1>List of Bills</h1>
+    <h1>List of Orders</h1>
     <table class="table">
         <thead>
-        <th>ID</th>
+        <th>Type</th>
         <th>Date </th>
         <th>Num</th>
         </thead>
         <tbody>
 
-        {% for bill in bills %}
+        {% for order in orders %}
             <tr>
-                <td>{{ bill.id}}</td>
-                <td>{{ bill.date_pub }}</td>
-                <td>{{ bill.num_facture }}</td>
+                <td>{{ order.typePayement}}</td>
+                <td>{{ order.datePayement }}</td>
+                <td>{{ order.numPayement }}</td>
 
-                <td><a href="{{ path('admin_bills_delete', {'id': bill.Id}) }}" class="btn btn-warning">Delete</a></td>
+                <td><a href="{{ path('admin_orders_delete', {'id': order.Id}) }}" class="btn btn-warning">Delete</a></td>
             </tr>
 
         {% else %}
             <tr>
-                <td colspan=5>There is no bill here</td>
+                <td colspan=5>There is no order here</td>
             </tr>
         {% endfor %}
         </tbody>
@@ -32,7 +32,7 @@
         <div class="row">
             <div class="col-7">
                 <nav class="float-right " aria-label=" shadow Page">
-                    {{ knp_pagination_render(bills) }}
+                    {{ knp_pagination_render(orders) }}
 
                 </nav>
             </div>

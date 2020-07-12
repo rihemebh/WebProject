@@ -4,15 +4,18 @@ namespace App\Controller;
 
 use App\Entity\Categorie;
 use App\Entity\Livre;
+use App\Entity\Payement;
 use App\Entity\PropertySearch;
 use App\Entity\User;
 use App\Form\BookSearchType;
 use App\Form\CategoryType;
 use App\Form\LivreType;
+use App\Form\PayementType;
 use App\Form\PropertySearchType;
 use App\Form\SearchType;
 use App\Form\UserType;
 use App\Repository\CategorieRepository;
+use App\Repository\PayementRepository;
 use App\Repository\UserRepository;
 use App\Repository\LivreRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -35,12 +38,14 @@ class AdminController extends AbstractController
     private $bookRepository;
     private $userRepository;
     private $categoryRepository;
+    private $orderRepository;
 
-    public function __construct(LivreRepository $repository1,UserRepository $repository2,CategorieRepository $repository3)
+    public function __construct(LivreRepository $repository1,UserRepository $repository2,CategorieRepository $repository3,PayementRepository $repository4)
     {
         $this->bookRepository = $repository1;
         $this->userRepository = $repository2;
         $this->categoryRepository = $repository3;
+        $this->orderRepository = $repository4;
     }
 
 
@@ -267,25 +272,48 @@ class AdminController extends AbstractController
 //        );
 //
 //
-//        return $this->render('admin/bill/bill.html.twig', [
-//            'bill' => $bills,
+//        return $this->render('admin/order/order.html.twig', [
+//            'order' => $bills,
 //            'form'=>$form->createView(),
 //        ]);
 //    }
-//    /**
-//     * @Route("bills/delete/{id}", name="bills_delete")
-//     */
-//    public function deleteBill(Bill $bill = null)
-//    {
-//        if (!$bill) {
-//            $this->addFlash('error', "this bill doesn't exist");
-//        } else {
-//            $manager = $this->getDoctrine()->getManager();
-//            $manager->remove($bill);
-//            $manager->flush();
-//            $this->addFlash('success', 'the bill is deleted');
-//        }
-//        return $this->redirectToRoute('admin_bills');
-//    }
+    /**
+    //     * @route("/orders", name="orders")
+    //     *
+    //     */
+    public function ordersList(PaginatorInterface $paginator,Request $request)
+    {
+        $search=new PropertySearch();
+        $form=$this->createForm(PropertySearchType::class,$search);
+        $form->handleRequest($request);
+        $orders = $paginator
+            ->paginate($this
+                ->getDoctrine()
+                ->getRepository(Payement::class)
+                ->findAll(),
+                $request->query->getInt('page', 1), 20
+            );
+
+        return $this->render('admin/order/order.html.twig', [
+            'orders' => $orders,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("orders/delete/{id}", name="orders_delete")
+     */
+    public function deleteBill(Bill $order = null)
+    {
+        if (!$order) {
+            $this->addFlash('error', "this order doesn't exist");
+        } else {
+            $manager = $this->getDoctrine()->getManager();
+            $manager->remove($order);
+            $manager->flush();
+            $this->addFlash('success', 'the order is deleted');
+        }
+        return $this->redirectToRoute('admin_orders');
+    }
 }
 
