@@ -52,11 +52,9 @@
             </div>
         </div>
     {% else %}
-        <div class="container mb-4">
-            <div>
-                <a href="{{ path('catalogue') }}" style="color: black"> <i class="fas fa-arrow-left"></i> Continue Shopping</a>
-            </div>
-        </div>
+            <div style="margin-top: 200px;margin-bottom: 220px;display: flex;flex-direction: column;align-items: center;justify-content: center;"> <p style="font-size: 30px;color: slategray"> Your Cart Is Empty Now</p>
+                <p> You can continue shopping  <a href="{{ path('catalogue') }}" style="color: #52ACB4"><i class="fad fa-cart-plus" style="color:#52ACB4"></i> Here</a></p> </div>
+
     {% endif %}
 {% endblock %}
 
