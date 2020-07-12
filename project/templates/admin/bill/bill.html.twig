@@ -1,0 +1,55 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}List of Bills{% endblock %}
+
+{% block body %}
+    <h1>List of Bills</h1>
+    <table class="table">
+        <thead>
+        <th>ID</th>
+        <th>Date </th>
+        <th>Num</th>
+        </thead>
+        <tbody>
+
+        {% for bill in bills %}
+            <tr>
+                <td>{{ bill.id}}</td>
+                <td>{{ bill.date_pub }}</td>
+                <td>{{ bill.num_facture }}</td>
+{#                <td>{{ bill. }}</td>#}
+{#                <td>{{ bill. }}</td>#}
+{#                <td>{{ bill. }}</td>#}
+{#                <td>{{ bill. }}</td>#}
+{#                <td>{{ bill. }}</td>#}
+{#                <td>{{ bill. }}</td>#}
+{#                <td>{{ bill. }}</td>#}
+                <td><a href="{{ path('admin_bills_delete', {'id': bill.Id}) }}" class="btn btn-warning">Delete</a></td>
+            </tr>
+
+        {% else %}
+            <tr>
+                <td colspan=5>There is no bill here</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="container">
+        <div class="row">
+            <div class="col-7">
+                <nav class="float-right " aria-label=" shadow Page">
+                    {{ knp_pagination_render(bills) }}
+
+                </nav>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+{% block PageTitle %}
+    List
+{% endblock %}
+
+{% block mainTitle %}
+Bills
+{% endblock %}

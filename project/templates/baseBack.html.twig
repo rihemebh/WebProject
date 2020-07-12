@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="theme-color" content="#000000" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    {% block link %}{% endblock %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('style.css') }}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+          crossorigin="anonymous"/>
+
+
+    <title>{% block Title %}base{% endblock %}</title>
+    <link rel="icon" class="rounded-circle" href="{{ asset('icon.png') }}"
+          style="height: 50px; width:50px" type="image/x-icon">
+
+</head>
+{% block style %}{% endblock %}
+<style>
+
+    :root {
+        --price_color: #FE840E;
+        /*#FE840E; orange fluochwaya*/
+        /*#FF6F61;*/
+        /*#BC243C; rouge*/
+        /*#E15D44; orange*/
+        /*#ffa15e; orange feteh*/
+        --nav_color: #7FCDCD;
+        --nav_backcolor: #05212f;
+        --cardbutton_color: #b5e3d9;
+        --cheikh: 'El Messiri', sans-serif;
+    }
+
+    a.nav-link:hover {
+
+        font-size: medium;
+        color: var(--nav_backcolor);
+
+    }
+
+    .register {
+        background-color: var(--nav_color);
+    }
+
+    #header2 {
+        background-color: #05212F;
+        height: 90px;
+    }
+
+</style>
+
+<body>
+
+
+<header>
+    {% block siteTitle %}
+
+        <div class="container-fluid"  id="header2">
+            <div class="row">
+
+                <div class="col-md-7 col-sm-8"  >
+                    <img src="{{ asset('logo1.jpg') }}" class="img float-right " style="margin-top: 0; height:85px;width:auto" alt="logo.ico">
+                </div>
+
+            </div>
+        </div>
+
+    {% endblock %}
+
+</header>
+
+
+
+<main>
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid">
+                <h1 class="mt-4"></h1>
+                {% for message in app.session.flashBag.get('info') %}
+                    <div class="alert alert-info">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+                {% for message in app.session.flashBag.get('error') %}
+                    <div class="alert alert-danger">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+                {% for message in app.session.flashBag.get('success') %}
+                    <div class="alert alert-success">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+                <div class="container">
+                    <div class="row">
+                        {% block body %} {% endblock %}
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        {% block javascripts %}{% endblock %}
+</body>
+</html>

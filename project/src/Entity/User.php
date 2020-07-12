@@ -203,7 +203,7 @@ class User implements UserInterface
     public function eraseCredentials(){}
     public function getSalt(){}
     public function getRoles(){
-        return array('ROLE_USER');
+        return $this->Roles;
     }
 
     public function getAddress(): ?string

@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Livre;
+use App\Entity\PropertySearch;
 use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\Query;
@@ -25,48 +26,23 @@ class UserRepository extends ServiceEntityRepository
      * @param Livre $livre
      * @param User $user
      */
-//    public function findLike (Livre $livre , User $user) {
-//
-//        $query= $this->createQueryBuilder('p')
-//            ->select( 'p', 'b')
-//            ->join('p.BooksLiked', 'b')
-//
-//        ;
-//
-//        $query=$query->andWhere('p.id = :id and b.id  = :livre')
-//            ->setParameter('id',$user->getId())
-//            ->setParameter('livre',$livre->getId());
-//
-//        return $query->getQuery()->getSingleResult();
-//
-//    }
 
-    // /**
-    //  * @return User[] Returns an array of User objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return Query
+     */
+    public function findAllVisibleQuery(PropertySearch $search=null): Query
     {
-        return $this->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('u.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
+        $query= $this->createQueryBuilder('u')
+            ->select('u')
         ;
-    }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?User
-    {
-        return $this->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+
+        if($search->getUserName()){
+            $query=$query->andWhere('u.username LIKE :user_Name')
+                ->setParameter('username','%'.$search->getUserName().'%');
+        }
+
+        return $query->getQuery();
     }
-    */
+
 }
