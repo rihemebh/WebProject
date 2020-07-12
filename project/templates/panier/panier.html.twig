@@ -44,16 +44,17 @@
                     </div>
                 </div>
                 <div class="container">
-                        <div class="row mb-5 mt-3" style="float: right">
-                           <div style="margin-right: 20px"><a href="{{ path('dellall') }}" class="btn dropcartbtn" style="background-color: #52ACB4;color: white;"> Drop Cart</a></div>
-                           <div> <a href="{{ path('payement') }}" class="btn save payementbtn" style="background-color: #52ACB4;color: white; ">Payement</a></div>
-                        </div>
-            </div>
+                    <div class="row mb-5 mt-3" style="float: right">
+                        <div style="margin-right: 20px"><a href="#" class="btn" style="background-color: #52ACB4;color: white;"> Drop Cart</a></div>
+                        <div> <a href="{{ path('payement') }}" class="btn save " style="background-color: #52ACB4;color: white; ">Payement</a></div>
+                    </div>
+                </div>
             </div>
         </div>
     {% else %}
         <div style="margin-top: 200px;margin-bottom: 220px;display: flex;flex-direction: column;align-items: center;justify-content: center;"> <p style="font-size: 30px;color: slategray"> Your Cart Is Empty Now</p>
             <p> You can continue shopping  <a href="{{ path('catalogue') }}" style="color: #52ACB4"><i class="fad fa-cart-plus" style="color:#52ACB4"></i> Here</a></p> </div>
+
     {% endif %}
 {% endblock %}
 
@@ -68,17 +69,10 @@
             const url = this.href;
             const row= this.parentElement.parentElement;
             const table= this.parentElement.parentElement.parentElement;
-            const total= document.querySelector('.totalmon')
-            const btn1 = document.querySelector('.dropcartbtn')
-            const btn2 = document.querySelector('.payementbtn')
-
+            var total= document.querySelector('.totalmon')
             axios.get(url).then(function (response) {
                 table.removeChild(row)
                 total.firstElementChild.innerText= response.data.total;
-                if(response.data.total == 0){
-                    btn1.classList.add('disabled');
-                    btn2.classList.add('disabled');
-                }
             });
         }
         document.querySelectorAll('.selector').forEach(function (link) {
