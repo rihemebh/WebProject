@@ -54,11 +54,11 @@ class PanierController extends AbstractController
         $id = $request->get('id');
         $test = $service->deletion($id);
         if ($test == 1){
-            return $this->json(['code' => 200, 'total'=> ,$session 'message' => "book successfully deleted from the cart"], 200);
+            return $this->json(['code' => 200, 'total'=> $session->get('total'), 'message' => "book successfully deleted from the cart"], 200);
         }elseif ($test == 0){
-            return $this->json(['code' => 200, 'total'=>'' , 'message' => "book not Found"], 200);
+            return $this->json(['code' => 200, 'total'=>$session->get('total') , 'message' => "book not Found"], 200);
         }elseif (($test == -1)){
-            return $this->json(['code' => 200, 'total'=>'' , 'message' => "cart is empty"], 200);
+            return $this->json(['code' => 200, 'total'=>$session->get('total') , 'message' => "cart is empty"], 200);
         }
     }
 }
