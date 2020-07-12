@@ -65,7 +65,7 @@
             </tbody>
         </table>
     </div>
-
+        <a href="{{ path('fact', {'id' : commande.id}) }}">GET FACTURE</a>
     {% else %}
         <div style="display: flex;flex-direction: column;justify-content: center;align-items: center; margin-top: 10%">
         <img style="width: 120px;margin-bottom: 20px;" src="{{ asset('purchase.png') }}">
