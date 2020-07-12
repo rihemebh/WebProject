@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class PanierController extends AbstractController
@@ -48,18 +49,17 @@ class PanierController extends AbstractController
      * @return RedirectResponse
      * @Route("/deletepanier", name="delete.panier")
      */
-    public function deleteFromPanier(ServicesPanier $service, Request $request)
+    public function deleteFromPanier(SessionInterface $session ,ServicesPanier $service, Request $request)
     {
         $id = $request->get('id');
         $test = $service->deletion($id);
         if ($test == 1){
-            $this->addFlash('success', 'Deletion succeded');
+            return $this->json(['code' => 200, 'total'=> ,$session 'message' => "book successfully deleted from the cart"], 200);
         }elseif ($test == 0){
-            $this->addFlash('erreur', 'Book not Found');
+            return $this->json(['code' => 200, 'total'=>'' , 'message' => "book not Found"], 200);
         }elseif (($test == -1)){
-            $this->addFlash('erreur', 'Empty Cart');
+            return $this->json(['code' => 200, 'total'=>'' , 'message' => "cart is empty"], 200);
         }
-        return $this->redirectToRoute('panier');
     }
 }
 

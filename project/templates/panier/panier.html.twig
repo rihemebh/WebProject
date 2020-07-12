@@ -45,14 +45,14 @@
                                     <td><img src="{{ val.path }}" alt="BookImg" width="50px" height="50px"></td>
                                     <td>{{ val.nomLivre }}</td>
                                     <td class="text-right">{{ val.prix }}</td>
-                                    <td class="text-right"><a href="{{ path('delete.panier', {'id' : val.id}) }}" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
+                                    <td class="text-right"><a href="{{ path('delete.panier', {'id' : val.id}) }}" class="btn btn-sm btn-danger selector"><i class="fa fa-trash"></i> </a> </td>
                                 </tr>
                             {% endfor %}
                             <tr>
                                 <td></td>
                                 <td></td>
                                 <td><strong>Total</strong></td>
-                                <td class="text-right"><strong>{{ app.session.get('total') }} DT</strong></td>
+                                <td class="text-right totalmon"><strong>{{ app.session.get('total') }} DT</strong></td>
                             </tr>
                             </tbody>
                         </table>
@@ -75,4 +75,28 @@
             </div>
         </div>
     {% endif %}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+        function onClickBtnDelete(event){
+            event.preventDefault();
+            const url = this.href;
+            const row= this.parentElement.parentElement;
+            const table= this.parentElement.parentElement.parentElement;
+            var total= document.querySelector('.totalmon')
+
+            axios.get(url).then(function (response) {
+                table.removeChild(row)
+                total.innerHTML="<strong>response.data.total</strong>"
+            });
+        }
+        document.querySelectorAll('.selector').forEach(function (link) {
+            link.addEventListener('click',onClickBtnDelete);
+        })
+    </script>
 {% endblock %}
