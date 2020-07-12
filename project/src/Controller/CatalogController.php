@@ -148,11 +148,21 @@ public function RemoveWishList (Livre $livre, EntityManagerInterface $manager){
      * @return Response
      */
  public function purchase(User $user){
-     $books=$this->getDoctrine()->getRepository(Livre::class)->findAll();
     $commande=$this->getDoctrine()->getRepository(Payement::class)->findBy(['forUser'=>$user]);
+    $totales = [];
+    $totale=0;
+    $i=0;
+    foreach ( $commande as $cmd){
+       $books=$cmd->getBooks();
+       foreach ($books as $book){
+           $totale += $book["prix"];
+       }
+       $totales[$i]=$totale;
+       $i++;
+    }
      return $this->render('account/purchases.html.twig', [
          'commandes'=>$commande,
-         'books'=>$books,
+         'totale'=>$totales,
          'user'=>$user,
 
      ]);

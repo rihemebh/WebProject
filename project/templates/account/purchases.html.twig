@@ -4,30 +4,42 @@
 {% block link_pursh %}"active" {% endblock %}
 {% block header %} My purchases {% endblock %}
 {% block form %}
-
+    {% for commande in commandes %}
+        <div class="container">
+            <div class="row"><h5> command Id {{ commande.NumPayement }}</h5></div>
+            {#        <tr>#}
+            {#   <td> <h5> command Id {{ commande.NumPayement }}</h5></td>#}
+            {#        </tr>#}
+        </div>
     <div class="container">
         <div class="row">
-{% for commande in commandes %}
-    <table class="table-responsive-md">
+
+    <div class="col-3" >
+    <table class=" table-borderless table-responsive-md">
         <tr>
-    <td><h4>Command {{  loop.index }}  :</h4></td>
+    <td></td>
         </tr>
         <tr>
-   <td> <h5> command Id {{ commande.NumPayement }}</h5></td>
+            <td>
+                <h5><i>Type</i> :{{ commande.typePayement }}</h5>
+            </td>
         </tr>
+
         <tr>
    <td>
-    <h5>Date:{{ commande.datePayement }}</h5>
+       <h5><i>Date</i> : {{ commande.datePayement }}</h5>
     </td>
         </tr>
         <tr>
             <td>
-                <h5>Type :{{ commande.typePayement }}</h5>
+                <h5><i>Time</i> : {{ commande.timePayement }}</h5>
             </td>
         </tr>
+
     </table>
-    <br>
-    <div class="table-responsive-md">
+    </div>
+
+    <div class="table-responsive-md col-8 float-left">
         <table class="table">
             <thead>
             <tr>
@@ -40,12 +52,15 @@
             <tbody>
             {% for book in commande.books %}
             <tr>
-                <td><img src="{{ book.path }}"> </td>
-                <td>{{ book.nomLivre }}</td>
-                <td>{{ book.auteur }}</td>
-                <td>{{ book.prix }}</td>
+                <td><img src="{{ book.path }}" style="height: 50px; width: 50px"> </td>
+                <td>{{ book.nom }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.prix }} Dt</td>
             </tr>
             {% endfor %}
+            <tr>
+                <td class="text-right" colspan="4">total : {{ totale[loop.index-1] }} Dt</td>
+            </tr>
             </tbody>
         </table>
     </div>
@@ -57,28 +72,5 @@
 
         </div>
     </div>
-
-{% endblock %}
-
-{% block javascripts %}
-    {{ parent() }}
-{#    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>#}
-{#    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>#}
-{#    <script>#}
-{#        function onClickBtnDelete(event) {#}
-{#            event.preventDefault();#}
-{#            const url = this.href;#}
-{#            const card = this.parentElement.parentElement;#}
-
-{#            const row = this.parentElement.parentElement.parentElement;#}
-{#            axios.get(url).then(function (response) {#}
-{#                console.log(response.data.message);#}
-{#                row.removeChild(card);#}
-{#            });#}
-{#        }#}
-{#        document.querySelectorAll('.delete').forEach(function (link) {#}
-{#            link.addEventListener('click', onClickBtnDelete);#}
-{#        })#}
-{#    </script>#}
 
 {% endblock %}
