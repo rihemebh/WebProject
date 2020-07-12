@@ -153,10 +153,11 @@ class AdminController extends AbstractController
 
        $form = $this->createForm(LivreType::class, $livre);
        $form->remove('DatePub');
+       $form->remove('path');
        $form->handleRequest($request);
        if ($form->isSubmitted() && $form->isValid()) {
            $image =$form['image']->getData();
-           if($form['image']){
+
                $imagePath = md5(uniqid()).$image->getClientOriginalName();
                $destination = __DIR__.'/../../public/assets/uploads';
                try {
@@ -165,7 +166,7 @@ class AdminController extends AbstractController
                } catch (FileException $exception) {
                    echo $exception;
                }
-           }
+
            $manager->persist($livre);
            $manager->flush();
            return $this->redirectToRoute('admin_livres');
@@ -223,17 +224,17 @@ class AdminController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $image =$form['image']->getData();
-            if($form['image']){
+
                 $imagePath = md5(uniqid()).$image->getClientOriginalName();
-                $destination = __DIR__.'/../../../public/assets/uploads';
-                $image->move($destination,$imagePath);
+                $destination = __DIR__.'/../../public/assets/uploads';
+
                 try {
                     $image->move($destination,$imagePath);
-                    $category->setPath('public/assets/uploads/'.$imagePath);
+                    $category->setPath('assets/uploads/'.$imagePath);
                 } catch (FileException $exception) {
                     echo $exception;
                 }
-            }
+
             $manager->persist($category);
             $manager->flush();
             return $this->redirectToRoute('admin_categories');

@@ -19,11 +19,10 @@ class LivreType extends AbstractType
             ->add('type')
             ->add('description')
             ->add('auteur')
-            ->add('path')
             ->add('image', FileType::class, array(
                 'mapped'=> false,
-                'required'=> false,
-                'empty_data' =>'empty'
+                'required'=> true,
+                'empty_data' => 'empty'
 
             ))
             ->add('categories')

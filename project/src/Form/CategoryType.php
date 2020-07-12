@@ -19,9 +19,9 @@ class CategoryType extends AbstractType
             ->add('nom')
             ->add('image', FileType::class, array(
                 'mapped'=> false,
-//                'constraints'=> array(
-//                    new Image()
-//                )
+                'required'=> true,
+                'empty_data' => 'empty'
+
             ))
             ->add('done', SubmitType::class)
         ;
