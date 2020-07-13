@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
-    <table class="table table-responsive-md">
+    <table class="table table-responsive-md ">
         <thead>
         <th>ID</th>
         <th>Language id </th>
@@ -36,7 +36,6 @@
         <th>Price</th>
         <th>Type</th>
         <th>Description</th>
-        <th>Date_Pub</th>
         <th>Author</th>
         <th>Likes</th>
         <th>Path</th>
@@ -51,10 +50,9 @@
                 <td>{{ livre.Prix }}</td>
                 <td>{{ livre.Type }}</td>
                 <td>{{ livre.Description }}</td>
-                <td>{{ livre.DatePub | format_datetime() }}</td>
                 <td>{{ livre.Auteur }}</td>
                 <td>{{ livre.Likes |length }}</td>
-                <td>{{ livre.Path }}</td>
+                <td><img src="{{ livre.Path }}" style="height: 50px; width: 50px"> </td>
                 <td><a href="{{ path('admin_livres_edit', {'id': livre.Id}) }}" class="btn btn-warning">Edit</a></td>
                 <td><a href="{{ path('admin_livres_delete', {'id': livre.Id}) }}" class="btn btn-warning">Delete</a></td>
             </tr>

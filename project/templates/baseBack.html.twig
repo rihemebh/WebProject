@@ -63,25 +63,6 @@
     <main id="layoutSidenav_content">
         <main>
             <div class="container-fluid">
-                <h1 class="mt-4"></h1>
-                {% for message in app.session.flashBag.get('info') %}
-                    <div class="alert alert-info">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-                {% for message in app.session.flashBag.get('error') %}
-                    <div class="alert alert-danger">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-                {% for message in app.session.flashBag.get('success') %}
-                    <div class="alert alert-success">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-
-            </div>
-            <div class="container-fluid">
                 <div class="row">
                             <div class=" col-2 wrapper" style="width: 100%">
 
@@ -144,6 +125,25 @@
                 </div>
             </div>
 
+            <div class="container-fluid">
+                <h1 class="mt-4"></h1>
+                {% for message in app.session.flashBag.get('info') %}
+                    <div class="alert alert-info">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+                {% for message in app.session.flashBag.get('error') %}
+                    <div class="alert alert-danger">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+                {% for message in app.session.flashBag.get('success') %}
+                    <div class="alert alert-success">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+
+            </div>
         </main>
     </main>
 </main>

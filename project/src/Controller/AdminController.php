@@ -84,7 +84,7 @@ class AdminController extends AbstractController
         $form->handleRequest($request);
 //        $users=$this->getDoctrine()->getRepository(User::class)->findAll();
         $users_filter=$paginator->paginate(
-            $this->userRepository->findAllVisibleQuery(),
+            $this->userRepository->findAllVisibleQuery($search),
             $request->query->getInt('page', 1), 20
         );
 

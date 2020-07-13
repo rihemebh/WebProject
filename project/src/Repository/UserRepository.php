@@ -22,27 +22,22 @@ class UserRepository extends ServiceEntityRepository
         parent::__construct($registry, User::class);
     }
 
-
-
     /**
+     * @param PropertySearch|null $search
      * @return Query
      */
     public function findAllVisibleQuery(PropertySearch $search=null): Query
     {
         $query= $this->createQueryBuilder('u')
-            ->select('c')
+            ->select('u')
         ;
-
-
         if($search->getUserName()){
-            $query=$query->andWhere('u.UserName LIKE :username')
+            $query=$query->andWhere('u.User_Name LIKE :username' )
                 ->setParameter('username','%'.$search->getUserName().'%');
         }
 
-
         return $query->getQuery();
     }
-
 
 
 
