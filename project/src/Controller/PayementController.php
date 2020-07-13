@@ -109,7 +109,8 @@ class PayementController extends AbstractController
 
             } else {
                 $this->addFlash('erreur', 'your Cart is Empty');
-                return $this->redirectToRoute('catalogue');
+                $this->addFlash('success', 'Your meeting is set. Make sure you have your beel with you!');
+                return $this->redirectToRoute('account');
             }
 
         } else {
@@ -193,6 +194,7 @@ class PayementController extends AbstractController
 
                 $mailer->send($message);
 
+                $this->addFlash('success', 'You will recieve your books soonely by post. Make sure you get your beel');
                 return $this->redirectToRoute('account');
             }
 
