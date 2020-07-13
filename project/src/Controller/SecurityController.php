@@ -23,12 +23,8 @@ class SecurityController extends AbstractController
     {
         if ($this->getUser()) {
             if(!$this->getUser()->getActivationToken())
-            {
-                if ($this-> getUser()-> getRoles() =="ROLE_ADMIN")
-                    return $this->redirectToRoute('admin');
-                else return $this->redirectToRoute('account');
-            }
-//            return $this->redirectToRoute('account');
+
+            return $this->redirectToRoute('account');
             else return $this->redirectToRoute('confirm');
         }
 
@@ -39,7 +35,16 @@ class SecurityController extends AbstractController
 
         return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
     }
+    /**
+     * @Route("/redirectLogin", name="redirectLogin")
+     */
+    public function redirectLogin()
+    {
+        $user=$this->getUser();
+        if($user->getRoles()[0] === "ROLE_ADMIN") return $this->redirectToRoute('livres');
+        else  return $this->redirectToRoute("account");
 
+    }
     /**
      * @Route("/logout", name="app_logout")
      */

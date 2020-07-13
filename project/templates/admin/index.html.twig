@@ -1,100 +1,60 @@
-{% extends 'baseback.html.twig' %}
-{% block link %}<link rel="stylesheet" href={{ asset('Account/AccountStyle.css') }}>{% endblock %}
-{% block Title %}Hello CheikhBooks{% endblock %}
-{% block body %}
-    <div class="wrapper" style="width: 100%">
-        <div class="wrapper">
-             <nav id="sidebar" style="margin-left: 0%">
-                <div class="sidebar-header">
-                    <h3 >CheikhBooks</h3>
-                </div>
-                <ul class="list-unstyled components" >
-                    <li class={% block link_address2 %}{% endblock %} >
-                        <a href={{ path('admin_users') }}>
-                            <i class="fad fa-user"></i> Users
-                        </a>
-                    </li>
-                    <li class={% block link_info %}{% endblock %}>
-                        <a href={{ path('admin_livres') }}>
-                            <i class="fad fa-book"></i> Books
-                        </a>
-                    </li>
-                    <li class={% block link_address1 %}{% endblock %} >
-                        <a href={{ path('admin_livres_edit') }}>
-                            <i class="fad fa-plus"></i> Add a book
-                        </a>
-                    </li>
-                    <li class={% block link_address3 %}{% endblock %} >
-                        <a href={{ path('admin_categories') }}>
-                            <i class="fad fa-list"></i> Categories
-                        </a>
-                    </li>
-                    <li class={% block link_address4 %}{% endblock %} >
-                        <a href={{ path('admin_categories_edit') }}>
-                            <i class="fad fa-plus"></i> Add a category
-                        </a>
-                    </li>
-                    <li class={% block link_address5 %}{% endblock %} >
-                       <a href={{ path('admin_orders') }}>
-                            <i class="fad fa-shopping-cart"></i> Orders
-                        </a>
-                    </li>
+{#{% extends 'baseback.html.twig' %}#}
+{#{% block link %}<link rel="stylesheet" href={{ asset('Account/AccountStyle.css') }}>{% endblock %}#}
+{#{% block Title %}Hello CheikhBooks{% endblock %}#}
+{#{% block body %}#}
+{#    <div class="wrapper" style="width: 100%">#}
+{#        <div class="wrapper">#}
+{#             <nav id="sidebar" style="margin-left: 0%">#}
+{#                <div class="sidebar-header">#}
+{#                    <h3 >CheikhBooks</h3>#}
+{#                </div>#}
+{#                <ul class="list-unstyled components" >#}
+{#                    <li class={% block link_info %}{% endblock %}>#}
+{#                        <a href={{ path('admin_livres') }}>#}
+{#                            <i class="fad fa-book"></i> Books#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    <li class={% block link_address1 %}{% endblock %} >#}
+{#                        <a href={{ path('admin_livres_edit') }}>#}
+{#                            <i class="fad fa-plus"></i> Add a book#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    <li class={% block link_address3 %}{% endblock %} >#}
+{#                        <a href={{ path('admin_categories') }}>#}
+{#                            <i class="fad fa-list"></i> Categories#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    <li class={% block link_address4 %}{% endblock %} >#}
+{#                        <a href={{ path('admin_categories_edit') }}>#}
+{#                            <i class="fad fa-plus"></i> Add a category#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    <li class={% block link_address2 %}{% endblock %} >#}
+{#                        <a href={{ path('admin_users') }}>#}
+{#                            <i class="fad fa-user"></i> Users#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    <li class={% block link_address5 %}{% endblock %} >#}
+{#                       <a href={{ path('admin_orders') }}>#}
+{#                            <i class="fad fa-shopping-cart"></i> Orders#}
+{#                        </a>#}
+{#                    </li>#}
 
-                </ul>
-                <div id="signout">
-                    <a href="{{ path('app_logout') }}">
-                        <i class="fad fa-sign-out-alt"></i> <strong style="margin-left: 5px;"> Sign Out</strong>
-                    </a>
-                </div>
-            </nav>
-        </div>
+{#                </ul>#}
+{#                <div id="signout">#}
+{#                    <a href="{{ path('app_logout') }}">#}
+{#                        <i class="fad fa-sign-out-alt"></i> <strong style="margin-left: 5px;"> Sign Out</strong>#}
+{#                    </a>#}
+{#                </div>#}
+{#            </nav>#}
+{#        </div>#}
 
 
-        <div id="content">
-            <div class="content" style="margin-top: 20px">
-                <div class="container-fluid">
-                </div>
-            </div>
-        </div>
-    </div>
-{% endblock %}
-{#<input type="checkbox" id="close">#}
-{#<label for="close">#}
-{#    <span class="fas fa-bars"></span>#}
-{#</label>#}
-{#<nav>#}
-{#    <a class="admin">CheikhBooks</a>#}
-{#    <label class="fas fa-times" for="close"></label>#}
-{#    <ul>#}
-{#        <li><i class="fas fa-user" ></i>#}
-{#            <a href={{ path('admin_users') }}>#}
-{#                <i class="fad fa-cog"></i> Users#}
-{#            </a>#}
-{#        </li>#}
-{#        <li><i class="fas fa-book-open" ></i>#}
-{#            <a href={{ path('admin_livres') }}>#}
-{#                <i class="fad fa-cog"></i> Books#}
-{#            </a>#}
-{#        </li>#}
-{#        <li><i class="fas fa-user" ></i>i class="fas fa-plus" ></i>#}
-{#            <a href={{ path('admin_livres') }}>#}
-{#                <i class="fad fa-cog"></i> Add a book#}
-{#            </a>#}
-{#        </li>#}
-{#        <li><i class="fas fa-list" ></i>#}
-{#            <a href={{ path('admin_users') }}>#}
-{#                <i class="fad fa-cog"></i> Categories#}
-{#            </a>#}
-{#        </li>#}
-{#        <li><i class="fas fa-list" ></i>#}
-{#            <a href={{ path('admin_users') }}>#}
-{#                <i class="fad fa-cog"></i> Add a category#}
-{#            </a>#}
-{#        </li>#}
-{#    </ul>#}
-{#    <div id="signout">#}
-{#        <a href="{{ path('app_logout') }}">#}
-{#            <i class="fad fa-sign-out-alt"></i> <strong style="margin-left: 5px;"> Sign Out</strong>#}
-{#        </a>#}
+{#        <div id="content">#}
+{#            <div class="content" style="margin-top: 20px">#}
+{#                <div class="container-fluid">#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
 {#    </div>#}
-{#</nav>#}
+{#{% endblock %}#}

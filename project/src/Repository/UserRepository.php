@@ -22,36 +22,41 @@ class UserRepository extends ServiceEntityRepository
         parent::__construct($registry, User::class);
     }
 
+
+
     /**
-     * @param PropertySearch|null $search
      * @return Query
      */
     public function findAllVisibleQuery(PropertySearch $search=null): Query
     {
         $query= $this->createQueryBuilder('u')
-            ->select('u')
+            ->select('c')
         ;
+
+
         if($search->getUserName()){
-            $query=$query->andWhere('u.User_Name LIKE :username' AND 'u.User_Name <> CheikhBooks')
+            $query=$query->andWhere('u.UserName LIKE :username')
                 ->setParameter('username','%'.$search->getUserName().'%');
         }
 
+
         return $query->getQuery();
     }
 
 
 
-    public function findUsers(): Query
-    {
-        $query= $this->createQueryBuilder('u')
-            ->select('u')
-        ;
 
-            $query=$query->andWhere('u.Roles IN :role')
-                ->setParameter('role',array('ROLE_USER'));
-
-//        $query=$query->andWhere('u.Roles LIKE :role')
-//            ->setParameter('role','%'.'ROLE_USER'.'%');
-        return $query->getQuery();
-    }
+//    public function findUsers(): Query
+//    {
+//        $query= $this->createQueryBuilder('u')
+//            ->select('u')
+//        ;
+//
+//            $query=$query->andWhere('u.Roles IN :role')
+//                ->setParameter('role',array('ROLE_USER'));
+//
+////        $query=$query->andWhere('u.Roles LIKE :role')
+////            ->setParameter('role','%'.'ROLE_USER'.'%');
+//        return $query->getQuery();
+//    }
 }

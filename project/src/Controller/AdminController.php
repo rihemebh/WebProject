@@ -48,16 +48,29 @@ class AdminController extends AbstractController
         $this->orderRepository = $repository4;
     }
 
-
     /**
-     * @Route("/", name="")
+     * @route("/livres", name="livres")
+     *
      */
-    public function index()
+    public function booksList(PaginatorInterface $paginator,Request $request)
     {
-        return $this->render('admin/index.html.twig', [
-            'controller_name' => 'AdminController',
+
+        $search=new PropertySearch();
+        $form=$this->createForm(BookSearchType::class,$search);
+        $form->handleRequest($request);
+//        $books=$this->getDoctrine()->getRepository(Livre::class)->findAll();
+        $livres_filtre=$paginator->paginate(
+            $this->bookRepository->findAllByTitle($search),
+            $request->query->getInt('page', 1), 20
+        );
+
+
+        return $this->render('admin/livre/livre.html.twig',[
+            'filter'=> $livres_filtre,
+            'form'=>$form->createView(),
         ]);
     }
+
     /**
      * @route("/users", name="users")
      * @param PaginatorInterface $paginator
@@ -69,9 +82,9 @@ class AdminController extends AbstractController
     {   $search=new PropertySearch();
         $form=$this->createForm(SearchType::class,$search);
         $form->handleRequest($request);
-        $users=$this->getDoctrine()->getRepository(User::class)->findAll();
+//        $users=$this->getDoctrine()->getRepository(User::class)->findAll();
         $users_filter=$paginator->paginate(
-            $this->userRepository->findAllVisibleQuery($search),
+            $this->userRepository->findAllVisibleQuery(),
             $request->query->getInt('page', 1), 20
         );
 
@@ -79,7 +92,7 @@ class AdminController extends AbstractController
         return $this->render('admin/user/user.html.twig',[
             'filtre'=> $users_filter,
             'form'=>$form->createView(),
-            'users'=>$users,
+
         ]);
    }
     /**
@@ -120,29 +133,7 @@ class AdminController extends AbstractController
         return $this->redirectToRoute('admin_users');
     }
 
-    /**
-     * @route("/livres", name="livres")
-     *
-     */
-    public function booksList(PaginatorInterface $paginator,Request $request)
-    {
 
-        $search=new PropertySearch();
-        $form=$this->createForm(BookSearchType::class,$search);
-        $form->handleRequest($request);
-        $books=$this->getDoctrine()->getRepository(Livre::class)->findAll();
-        $livres_filtre=$paginator->paginate(
-            $this->bookRepository->findAllByTitle($search),
-            $request->query->getInt('page', 1), 20
-        );
-
-
-        return $this->render('admin/livre/livre.html.twig',[
-            'filter'=> $livres_filtre,
-            'form'=>$form->createView(),
-            'books'=>$books,
-        ]);
-    }
     /**
      * @Route("/livres/edit/{id?0}", name="livres_edit")
      */
@@ -258,25 +249,6 @@ class AdminController extends AbstractController
         }
         return $this->redirectToRoute('admin_categories');
     }
-//    /**
-//     * @route("/bills", name="bills")
-//     *
-//     */
-//    public function billsList(PaginatorInterface $paginator,Request $request)
-//    {   $search=new PropertySearch();
-//        $form=$this->createForm(PropertySearchType::class,$search);
-//        $form->handleRequest($request);
-//        $bills=$paginator->paginate(
-//            $this->FactureRepository->findAll(),
-//            $request->query->getInt('page', 1), 20
-//        );
-//
-//
-//        return $this->render('admin/order/order.html.twig', [
-//            'order' => $bills,
-//            'form'=>$form->createView(),
-//        ]);
-//    }
          /**
          * @route("/orders", name="orders")
          *

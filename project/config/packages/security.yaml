@@ -22,7 +22,7 @@ security:
                 check_path: app_login
                 username_parameter: Email
                 password_parameter: password
-                default_target_path: account
+                default_target_path: redirectLogin
             logout:
                 path: app_logout
                 target: app_login

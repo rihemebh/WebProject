@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,13 +8,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous">
-    {% block link %}{% endblock %}
+    {% block link %}<link rel="stylesheet" href={{ asset('Account/AccountStyle.css') }}>{% endblock %}
     <link rel="stylesheet" type="text/css" href="{{ asset('style.css') }}">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
           crossorigin="anonymous"/>
 
-    <title>{% block Title %}base{% endblock %}</title>
+    <title>{% block Title %}Hello CheikhBooks{% endblock %}</title>
     <link rel="icon" class="rounded-circle" href="{{ asset('icon.png') }}"
           style="height: 50px; width:50px" type="image/x-icon">
 </head>
@@ -80,7 +81,69 @@
                 {% endfor %}
 
             </div>
-            {% block body %} {% endblock %}
+            <div class="container-fluid">
+                <div class="row">
+                            <div class=" col-2 wrapper" style="width: 100%">
+
+                                    <nav id="sidebar" style="margin-left: -2%">
+                                        <div class="sidebar-header">
+                                            <h3 >CheikhBooks</h3>
+                                        </div>
+                                        <ul class="list-unstyled components" >
+                                            <li class={% block link_info %}{% endblock %}>
+                                                <a href={{ path('admin_livres') }}>
+                                                    <i class="fad fa-book"></i> Books
+                                                </a>
+                                            </li>
+                                            <li class={% block link_address1 %}{% endblock %} >
+                                                <a href={{ path('admin_livres_edit') }}>
+                                                    <i class="fad fa-plus"></i> Add a book
+                                                </a>
+                                            </li>
+                                            <li class={% block link_address3 %}{% endblock %} >
+                                                <a href={{ path('admin_categories') }}>
+                                                    <i class="fad fa-list"></i> Categories
+                                                </a>
+                                            </li>
+                                            <li class={% block link_address4 %}{% endblock %} >
+                                                <a href={{ path('admin_categories_edit') }}>
+                                                    <i class="fad fa-plus"></i> Add a category
+                                                </a>
+                                            </li>
+                                            <li class={% block link_address2 %}{% endblock %} >
+                                                <a href={{ path('admin_users') }}>
+                                                    <i class="fad fa-user"></i> Users
+                                                </a>
+                                            </li>
+                                            <li class={% block link_address5 %}{% endblock %} >
+                                                <a href={{ path('admin_orders') }}>
+                                                    <i class="fad fa-shopping-cart"></i> Orders
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                        <div id="signout">
+                                            <a href="{{ path('app_logout') }}">
+                                                <i class="fad fa-sign-out-alt"></i> <strong style="margin-left: 5px;"> Sign Out</strong>
+                                            </a>
+                                        </div>
+                                    </nav>
+
+
+
+                                <div id="content">
+                                    <div class="content" style="margin-top: 20px">
+                                        <div class="container-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    <div class="col-10">
+                        {% block body  %} {% endblock %}
+                    </div>
+                </div>
+            </div>
+
         </main>
     </main>
 </main>
